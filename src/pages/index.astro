@@ -14,10 +14,14 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
   <section class="hero wrapper">
     <div class="hero__text">
       <h1 class="hero__headline">
-        Hi, it's <em>Aditya</em><br />
-        an experience designer<br />
-        with roots in product<br />
-        and UI/UX <em class="hero__muted-em">who builds for impact.</em>
+        <span class="hero__line"><span class="hero__line-inner">Hi, it's <em>Aditya</em></span></span>
+        <span class="hero__line"><span class="hero__line-inner">an experience designer</span></span>
+        <span class="hero__line"><span class="hero__line-inner">with roots in product</span></span>
+        <span class="hero__line"
+          ><span class="hero__line-inner"
+            >and UI/UX <em class="hero__muted-em">who builds for impact.</em></span
+          ></span
+        >
       </h1>
     </div>
     <div class="hero__media">
@@ -89,6 +93,49 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 
   .hero__headline .hero__muted-em {
     color: var(--color-muted);
+  }
+
+  .hero__line {
+    display: block;
+    overflow: hidden;
+  }
+
+  .hero__line-inner {
+    display: block;
+    transform: translateY(110%);
+    opacity: 0;
+    animation: hero-line-in 650ms var(--ease-standard) forwards;
+  }
+
+  .hero__line:nth-of-type(1) .hero__line-inner {
+    animation-delay: 60ms;
+  }
+
+  .hero__line:nth-of-type(2) .hero__line-inner {
+    animation-delay: 160ms;
+  }
+
+  .hero__line:nth-of-type(3) .hero__line-inner {
+    animation-delay: 260ms;
+  }
+
+  .hero__line:nth-of-type(4) .hero__line-inner {
+    animation-delay: 360ms;
+  }
+
+  @keyframes hero-line-in {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__line-inner {
+      animation: none;
+      transform: none;
+      opacity: 1;
+    }
   }
 
   .hero__media {
