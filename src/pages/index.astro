@@ -29,6 +29,8 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
         muted
         playsinline
         disablepictureinpicture
+        disableRemotePlayback
+        controlslist="nodownload noremoteplayback nofullscreen noplaybackrate"
         aria-label="Looping 3D animation of Aditya working at a desk on a laptop"
         data-autoplay-video
       >
@@ -94,6 +96,7 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
     width: 100%;
     height: auto;
     display: block;
+    pointer-events: none;
   }
 
   .works__header {
