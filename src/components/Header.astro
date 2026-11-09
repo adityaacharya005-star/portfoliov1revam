@@ -1,0 +1,72 @@
+---
+import { Image } from 'astro:assets';
+import { site } from '../data/site';
+import avatar from '../assets/images/avatar.png';
+---
+
+<header class="header">
+  <div class="wrapper header__row">
+    <a href="/" class="header__avatar-link" aria-label="Home">
+      <Image src={avatar} alt="Portrait of Aditya Acharya" width={56} height={56} class="header__avatar" />
+    </a>
+    <nav class="header__nav" aria-label="Primary">
+      {site.nav.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+      <a href={site.resumeUrl} target="_blank" rel="noopener noreferrer" class="header__resume">
+        Resume
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    padding-top: var(--space-6);
+  }
+
+  .header__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__avatar-link {
+    display: block;
+    border-radius: 50%;
+  }
+
+  .header__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    font-size: var(--text-nav);
+  }
+
+  .header__nav a {
+    text-decoration: none;
+  }
+
+  .header__nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .header__resume {
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 480px) {
+    .header__nav {
+      gap: var(--space-4);
+      font-size: 0.875rem;
+    }
+  }
+</style>

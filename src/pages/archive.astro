@@ -1,0 +1,84 @@
+---
+import Base from '../layouts/Base.astro';
+import Contact from '../components/Contact.astro';
+
+// TODO: replace with real archived projects
+const items = [
+  { title: 'TODO — project title', year: '2024', note: 'TODO — one line description.' },
+  { title: 'TODO — project title', year: '2023', note: 'TODO — one line description.' },
+  { title: 'TODO — project title', year: '2023', note: 'TODO — one line description.' },
+];
+---
+
+<Base title="Archive" description="Older and smaller projects by Aditya Acharya.">
+  <section class="wrapper archive">
+    <h1 class="archive__heading">Archive</h1>
+    <ul class="archive__list">
+      {items.map((item) => (
+        <li class="archive__item">
+          <span class="archive__title">{item.title}</span>
+          <span class="archive__year">{item.year}</span>
+          <span class="archive__note">{item.note}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <Contact />
+</Base>
+
+<style>
+  .archive {
+    margin-top: var(--space-9);
+  }
+
+  .archive__heading {
+    font-size: var(--text-h2);
+    line-height: var(--leading-tight);
+  }
+
+  .archive__list {
+    margin-top: var(--space-7);
+    list-style: none;
+    padding: 0;
+  }
+
+  .archive__item {
+    display: grid;
+    grid-template-columns: 1fr auto 2fr;
+    gap: var(--space-5);
+    align-items: baseline;
+    padding: var(--space-4) 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .archive__item:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .archive__title {
+    font-size: var(--text-body-lg);
+  }
+
+  .archive__year {
+    color: var(--color-muted);
+    font-size: var(--text-body);
+  }
+
+  .archive__note {
+    color: var(--color-muted);
+    font-size: var(--text-small);
+    text-align: right;
+  }
+
+  @media (max-width: 480px) {
+    .archive__item {
+      grid-template-columns: 1fr;
+      gap: var(--space-1);
+    }
+
+    .archive__note {
+      text-align: left;
+    }
+  }
+</style>

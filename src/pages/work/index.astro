@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import WorkGrid from '../../components/WorkGrid.astro';
+import Contact from '../../components/Contact.astro';
+
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="Work" description="Selected product design case studies by Aditya Acharya.">
+  <section class="section wrapper works" aria-labelledby="work-heading">
+    <div class="works__header">
+      <h1 id="work-heading" class="works__heading">Selected Works</h1>
+      <p class="works__subheading">A few projects I am proud of.</p>
+    </div>
+    <WorkGrid entries={work} />
+  </section>
+
+  <Contact />
+</Base>
+
+<style>
+  .works {
+    margin-top: var(--space-9);
+  }
+
+  .works__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-7);
+  }
+
+  .works__heading {
+    font-size: var(--text-h2);
+    line-height: var(--leading-tight);
+  }
+
+  .works__subheading {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    text-align: right;
+  }
+
+  @media (max-width: 480px) {
+    .works__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-2);
+    }
+
+    .works__subheading {
+      text-align: left;
+    }
+  }
+</style>

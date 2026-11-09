@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import WorkGrid from '../components/WorkGrid.astro';
+import Contact from '../components/Contact.astro';
+import hero from '../assets/images/hero.png';
+
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base title="Home">
+  <section class="hero wrapper">
+    <div class="hero__text">
+      <h1 class="hero__headline">
+        Hi, it's <em>Aditya</em><br />
+        an experience designer<br />
+        with roots in product<br />
+        and UI/UX <em class="hero__muted-em">who builds for impact.</em>
+      </h1>
+    </div>
+    <div class="hero__media">
+      <Image src={hero} alt="3D illustration of Aditya working at a desk on a laptop" class="hero__image" />
+    </div>
+  </section>
+
+  <section class="section wrapper works" aria-labelledby="selected-works-heading">
+    <div class="works__header">
+      <h2 id="selected-works-heading" class="works__heading">Selected Works</h2>
+      <p class="works__subheading">A few projects I am proud of.</p>
+    </div>
+    <WorkGrid entries={work} />
+  </section>
+
+  <Contact />
+</Base>
+
+<style>
+  .hero {
+    margin-top: var(--space-8);
+    display: grid;
+    grid-template-columns: 0.85fr 1fr;
+    gap: var(--space-7);
+    align-items: center;
+  }
+
+  .hero__headline {
+    font-size: var(--text-hero);
+    line-height: var(--leading-tight);
+    font-style: normal;
+    white-space: nowrap;
+  }
+
+  .hero__headline em {
+    font-style: italic;
+    color: var(--color-text);
+  }
+
+  .hero__headline .hero__muted-em {
+    color: var(--color-muted);
+  }
+
+  .hero__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .works__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-7);
+  }
+
+  .works__heading {
+    font-size: var(--text-h2);
+    line-height: var(--leading-tight);
+  }
+
+  .works__subheading {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__headline {
+      white-space: normal;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero__headline {
+      font-size: 2.25rem;
+    }
+
+    .works__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-2);
+    }
+
+    .works__subheading {
+      text-align: left;
+    }
+  }
+</style>

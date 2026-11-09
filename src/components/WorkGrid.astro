@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import WorkCard from './WorkCard.astro';
+
+interface Props {
+  entries: CollectionEntry<'work'>[];
+}
+
+const { entries } = Astro.props;
+---
+
+<div class="work-grid">
+  {entries.map((entry) => (
+    <WorkCard
+      href={`/work/${entry.slug}`}
+      title={entry.data.title}
+      description={entry.data.description}
+      cover={entry.data.cover}
+      coverAlt={entry.data.coverAlt}
+    />
+  ))}
+</div>
+
+<style>
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--grid-gap-column);
+    row-gap: var(--grid-gap-row);
+  }
+
+  @media (max-width: 480px) {
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,147 @@
+---
+import Base from '../layouts/Base.astro';
+import Contact from '../components/Contact.astro';
+
+const experience = [
+  {
+    role: 'Product Design & Visualization Intern',
+    org: 'Theodon Technologies',
+    location: 'Pune',
+    timeline: 'Jun – Jul 2025',
+  },
+];
+
+const education = [
+  {
+    degree: 'B.Des Product Design (minor in Interaction Design)',
+    org: 'Anant National University',
+    timeline: 'Graduating May 2027',
+  },
+];
+
+const tools = ['Figma', 'Framer', 'Adobe Creative Suite'];
+---
+
+<Base title="About" description="About Aditya Acharya — product design student and experience designer.">
+  <section class="wrapper about">
+    <h1 class="about__heading">About</h1>
+    <p class="about__bio">
+      I'm Aditya Acharya, a B.Des Product Design student with a minor in Interaction Design at
+      Anant National University, graduating in May 2027. I design for product and UI/UX, with a
+      focus on systems that hold up under real use — from dashboards to accessibility-first
+      mobile interfaces.
+    </p>
+
+    <div class="about__block">
+      <h2 class="about__block-heading">Experience</h2>
+      <ul class="about__list">
+        {experience.map((item) => (
+          <li class="about__item">
+            <p class="about__item-title">{item.role}</p>
+            <p class="about__item-sub">{item.org}, {item.location}</p>
+            <p class="about__item-meta">{item.timeline}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="about__block">
+      <h2 class="about__block-heading">Education</h2>
+      <ul class="about__list">
+        {education.map((item) => (
+          <li class="about__item">
+            <p class="about__item-title">{item.degree}</p>
+            <p class="about__item-sub">{item.org}</p>
+            <p class="about__item-meta">{item.timeline}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="about__block">
+      <h2 class="about__block-heading">Tools</h2>
+      <ul class="about__tools">
+        {tools.map((tool) => (
+          <li>{tool}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <Contact />
+</Base>
+
+<style>
+  .about {
+    margin-top: var(--space-9);
+    max-width: 760px;
+  }
+
+  .about__heading {
+    font-size: var(--text-h2);
+    line-height: var(--leading-tight);
+  }
+
+  .about__bio {
+    margin-top: var(--space-5);
+    font-size: var(--text-body-lg);
+    color: var(--color-text);
+    max-width: 640px;
+  }
+
+  .about__block {
+    margin-top: var(--space-8);
+  }
+
+  .about__block-heading {
+    font-size: var(--text-h3);
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-5);
+  }
+
+  .about__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .about__item-title {
+    font-size: var(--text-body-lg);
+  }
+
+  .about__item-sub {
+    margin-top: var(--space-1);
+    color: var(--color-muted);
+    font-size: var(--text-body);
+  }
+
+  .about__item-meta {
+    margin-top: var(--space-1);
+    color: var(--color-muted);
+    font-size: var(--text-small);
+  }
+
+  .about__tools {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .about__tools li {
+    font-size: var(--text-body);
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--color-border);
+  }
+
+  @media (max-width: 480px) {
+    .about__heading {
+      font-size: 2rem;
+    }
+  }
+</style>

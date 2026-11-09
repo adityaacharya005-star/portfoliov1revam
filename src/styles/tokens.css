@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Color
+   Muted darkened from the reference's #6E6E6E to #5E5E5E to clear 4.5:1
+   contrast on --color-bg at body text sizes.
+   ========================================================================== */
+:root {
+  --color-bg: #f1eee8;
+  --color-text: #111111;
+  --color-muted: #5e5e5e;
+  --color-accent: #8b4a3a;
+  --color-placeholder: #d9d9d9;
+  --color-border: #dedad2;
+}
+
+/* ==========================================================================
+   Type
+   Serif (Besley) for display/headings, sans (Plus Jakarta Sans) for UI
+   and body copy. Scale is a limited set of sizes used across the site.
+   ========================================================================== */
+:root {
+  --font-serif: 'Besley', 'Iowan Old Style', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --text-hero: 3rem;        /* 48px — sized down from the 56px reference spec so each scripted line break in the hero fits its column without re-wrapping */
+  --text-h2: 3rem;          /* 48px */
+  --text-h3: 1.75rem;       /* 28px */
+  --text-body-lg: 1.125rem; /* 18px */
+  --text-body: 1rem;        /* 16px */
+  --text-small: 0.9375rem;  /* 15px */
+  --text-nav: 1rem;         /* 16px */
+
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+}
+
+/* ==========================================================================
+   Spacing
+   4px base unit. Named steps used for stacks, gaps and padding.
+   ========================================================================== */
+:root {
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 2.5rem;   /* 40px */
+  --space-8: 3.5rem;   /* 56px */
+  --space-9: 5rem;     /* 80px */
+  --space-10: 10rem;   /* 160px, inter-section rhythm */
+}
+
+/* ==========================================================================
+   Layout
+   Content width and side padding; collapses on smaller breakpoints below.
+   ========================================================================== */
+:root {
+  --layout-max-width: 1200px;
+  --layout-padding: 76px;
+  --layout-padding-tablet: 40px;
+  --layout-padding-mobile: 20px;
+
+  --grid-gap-column: 56px;
+  --grid-gap-row: 40px;
+
+  --card-aspect-ratio: 17 / 10;
+
+  --radius-none: 0;
+}
+
+/* ==========================================================================
+   Motion
+   Single easing/duration pair; disabled under prefers-reduced-motion.
+   ========================================================================== */
+:root {
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+}

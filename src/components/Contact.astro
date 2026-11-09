@@ -1,0 +1,67 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="section contact">
+  <div class="wrapper contact__row">
+    <div class="contact__main">
+      <h2 class="contact__heading">Would love to connect.</h2>
+      <a href={`mailto:${site.email}`} class="underline-link contact__email">{site.email}</a>
+    </div>
+    <div class="contact__links">
+      <a href={site.linkedinUrl} class="underline-link" target="_blank" rel="noopener noreferrer">linkedin</a>
+      <a href={site.behanceUrl} class="underline-link" target="_blank" rel="noopener noreferrer">behance</a>
+      <a href={site.resumeUrl} class="underline-link" target="_blank" rel="noopener noreferrer">resume</a>
+    </div>
+  </div>
+  <div class="wrapper contact__spacer" aria-hidden="true"></div>
+</section>
+
+<style>
+  .contact__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-6);
+  }
+
+  .contact__main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .contact__heading {
+    font-size: var(--text-h2);
+    line-height: var(--leading-tight);
+  }
+
+  .contact__email {
+    color: var(--color-muted);
+    font-size: var(--text-body-lg);
+  }
+
+  .contact__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-3);
+    font-size: var(--text-body);
+    text-transform: lowercase;
+  }
+
+  .contact__spacer {
+    height: var(--space-9);
+  }
+
+  @media (max-width: 768px) {
+    .contact__row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .contact__links {
+      align-items: flex-start;
+    }
+  }
+</style>
