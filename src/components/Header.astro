@@ -2,12 +2,28 @@
 import { Image } from 'astro:assets';
 import { site } from '../data/site';
 import avatar from '../assets/images/avatar.png';
+// TODO: replace with the real hover-state image (eyes open / smiling) once provided.
+import avatarHover from '../assets/images/avatar.png';
 ---
 
 <header class="header">
   <div class="wrapper header__row">
     <a href="/" class="header__avatar-link" aria-label="Home">
-      <Image src={avatar} alt="Portrait of Aditya Acharya" width={56} height={56} class="header__avatar" />
+      <Image
+        src={avatar}
+        alt="Portrait of Aditya Acharya"
+        width={72}
+        height={72}
+        class="header__avatar header__avatar--base"
+      />
+      <Image
+        src={avatarHover}
+        alt=""
+        aria-hidden="true"
+        width={72}
+        height={72}
+        class="header__avatar header__avatar--hover"
+      />
     </a>
     <nav class="header__nav" aria-label="Primary">
       {site.nav.map((item) => (
@@ -32,15 +48,49 @@ import avatar from '../assets/images/avatar.png';
   }
 
   .header__avatar-link {
+    position: relative;
     display: block;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
     border-radius: 50%;
   }
 
   .header__avatar {
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     object-fit: cover;
+    transition: transform var(--duration-fast) var(--ease-standard),
+      opacity var(--duration-fast) var(--ease-standard);
+  }
+
+  .header__avatar--hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  .header__avatar-link:hover .header__avatar--base,
+  .header__avatar-link:focus-visible .header__avatar--base {
+    opacity: 0;
+  }
+
+  .header__avatar-link:hover .header__avatar--hover,
+  .header__avatar-link:focus-visible .header__avatar--hover {
+    opacity: 1;
+    transform: scale(1.08) rotate(-4deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .header__avatar {
+      transition: none;
+    }
+
+    .header__avatar-link:hover .header__avatar--hover,
+    .header__avatar-link:focus-visible .header__avatar--hover {
+      transform: none;
+    }
   }
 
   .header__nav {

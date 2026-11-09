@@ -29,6 +29,7 @@ import { site } from '../data/site';
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
+    min-width: 0;
   }
 
   .contact__heading {
@@ -39,6 +40,7 @@ import { site } from '../data/site';
   .contact__email {
     color: var(--color-muted);
     font-size: var(--text-body-lg);
+    overflow-wrap: anywhere;
   }
 
   .contact__links {
