@@ -13,6 +13,10 @@ const work = defineCollection({
       tools: z.array(z.string()),
       order: z.number(),
       featured: z.boolean().default(false),
+      // Optional — case-study page template (sidebar nav / meta row)
+      eyebrow: z.string().optional(),
+      services: z.array(z.string()).optional(),
+      slidesUrl: z.string().optional(),
     }),
 });
 

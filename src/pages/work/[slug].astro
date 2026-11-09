@@ -5,100 +5,175 @@ import Base from '../../layouts/Base.astro';
 import Contact from '../../components/Contact.astro';
 
 export async function getStaticPaths() {
-  const work = await getCollection('work');
-  return work.map((entry) => ({
+  const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+  return work.map((entry, i) => ({
     params: { slug: entry.slug },
-    props: { entry },
+    props: { entry, next: work[(i + 1) % work.length] },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, next } = Astro.props;
 const { data } = entry;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const sections = headings.filter((h) => h.depth === 2);
 ---
 
 <Base title={data.title} description={data.description}>
-  <article class="wrapper case-study">
-    <header class="case-study__header">
-      <p class="case-study__eyebrow">Case Study</p>
-      <h1 class="case-study__title">{data.title}</h1>
-      <p class="case-study__description">{data.description}</p>
-      <dl class="case-study__meta">
-        <div>
-          <dt>Role</dt>
-          <dd>{data.role}</dd>
-        </div>
-        <div>
-          <dt>Timeline</dt>
-          <dd>{data.timeline}</dd>
-        </div>
-        <div>
-          <dt>Tools</dt>
-          <dd>{data.tools.join(', ')}</dd>
-        </div>
-      </dl>
-    </header>
+  <div class="case-study wrapper">
+    <aside class="case-study__sidebar" aria-label="Case study sections">
+      <a href="/work" class="case-study__close" aria-label="Back to Work">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+        </svg>
+      </a>
+      <nav>
+        <ul class="case-study__nav" data-section-nav>
+          {sections.map((s) => (
+            <li>
+              <a href={`#${s.slug}`} data-section-link={s.slug}>{s.text}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <a href={`/work/${next.slug}`} class="case-study__next">
+        Next <span aria-hidden="true">&rarr;</span>
+      </a>
+    </aside>
 
-    <div class="case-study__cover">
-      <Image src={data.cover} alt={data.coverAlt} class="case-study__cover-image" />
-    </div>
+    <article class="case-study__main">
+      <div class="case-study__cover">
+        <Image src={data.cover} alt={data.coverAlt} class="case-study__cover-image" />
+      </div>
 
-    <div class="case-study__body">
-      <Content />
-    </div>
-  </article>
+      <div class="case-study__intro">
+        <div class="case-study__intro-top">
+          {data.eyebrow && <p class="case-study__eyebrow">{data.eyebrow}</p>}
+          {data.slidesUrl && (
+            <a href={data.slidesUrl} class="case-study__slides" target="_blank" rel="noopener noreferrer">
+              View slides <span aria-hidden="true">&#8599;</span>
+            </a>
+          )}
+        </div>
+        <h1 class="case-study__title">{data.title}</h1>
+
+        <dl class="case-study__meta">
+          <div>
+            <dt>Timeline</dt>
+            <dd>{data.timeline}</dd>
+          </div>
+          <div>
+            <dt>Role</dt>
+            <dd>{data.role}</dd>
+          </div>
+          {data.services && (
+            <div>
+              <dt>Services</dt>
+              <dd>{data.services.join(', ')}</dd>
+            </div>
+          )}
+          <div>
+            <dt>Tools</dt>
+            <dd>{data.tools.join(', ')}</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="case-study__body">
+        <Content />
+      </div>
+    </article>
+  </div>
 
   <Contact />
 </Base>
 
+<script>
+  const links = document.querySelectorAll<HTMLAnchorElement>('[data-section-link]');
+  const sections = Array.from(links)
+    .map((link) => document.getElementById(link.dataset.sectionLink!))
+    .filter((el): el is HTMLElement => el !== null);
+
+  if (sections.length > 0) {
+    const setActive = (slug: string) => {
+      links.forEach((link) => {
+        link.classList.toggle('is-active', link.dataset.sectionLink === slug);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          const topMost = visible.reduce((a, b) => (a.boundingClientRect.top < b.boundingClientRect.top ? a : b));
+          setActive(topMost.target.id);
+        }
+      },
+      { rootMargin: '-10% 0px -70% 0px', threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    setActive(sections[0].id);
+  }
+</script>
+
 <style>
   .case-study {
     margin-top: var(--space-9);
-    max-width: 760px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-8);
+    align-items: start;
   }
 
-  .case-study__header {
+  .case-study__sidebar {
+    position: sticky;
+    top: var(--space-8);
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-6);
   }
 
-  .case-study__eyebrow {
-    font-size: var(--text-small);
-    color: var(--color-accent);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .case-study__title {
-    font-size: var(--text-h2);
-    line-height: var(--leading-tight);
-  }
-
-  .case-study__description {
-    font-size: var(--text-body-lg);
-    color: var(--color-muted);
-  }
-
-  .case-study__meta {
+  .case-study__close {
     display: flex;
-    gap: var(--space-7);
-    margin-top: var(--space-4);
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
   }
 
-  .case-study__meta dt {
+  .case-study__nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .case-study__nav a {
+    display: block;
     font-size: var(--text-small);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     color: var(--color-muted);
+    text-decoration: none;
   }
 
-  .case-study__meta dd {
-    margin: var(--space-1) 0 0;
-    font-size: var(--text-body);
+  .case-study__nav a.is-active {
+    color: var(--color-text);
+  }
+
+  .case-study__next {
+    font-size: var(--text-small);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text);
+    text-decoration: none;
   }
 
   .case-study__cover {
-    margin-top: var(--space-8);
     aspect-ratio: var(--card-aspect-ratio);
     overflow: hidden;
     background: var(--color-placeholder);
@@ -110,22 +185,108 @@ const { Content } = await render(entry);
     object-fit: cover;
   }
 
+  .case-study__intro {
+    margin-top: var(--space-7);
+  }
+
+  .case-study__intro-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-4);
+  }
+
+  .case-study__eyebrow {
+    margin: 0;
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .case-study__slides {
+    font-size: var(--text-small);
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+  }
+
+  .case-study__title {
+    margin-top: var(--space-3);
+    font-size: var(--text-h2);
+    line-height: var(--leading-tight);
+  }
+
+  .case-study__meta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    margin: var(--space-6) 0 0;
+  }
+
+  .case-study__meta dt {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .case-study__meta dd {
+    margin: var(--space-1) 0 0;
+    font-size: var(--text-body);
+  }
+
   .case-study__body {
     margin-top: var(--space-8);
     display: flex;
     flex-direction: column;
     gap: var(--space-7);
+    max-width: 720px;
   }
 
   .case-study__body :global(h2) {
     font-size: var(--text-h3);
     line-height: var(--leading-tight);
     margin-bottom: var(--space-3);
+    scroll-margin-top: var(--space-8);
   }
 
   .case-study__body :global(p) {
     font-size: var(--text-body);
     color: var(--color-text);
+  }
+
+  @media (max-width: 1024px) {
+    .case-study {
+      grid-template-columns: 180px 1fr;
+      gap: var(--space-6);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .case-study {
+      display: block;
+    }
+
+    .case-study__sidebar {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+
+    .case-study__nav {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    .case-study__next {
+      margin-left: auto;
+    }
   }
 
   @media (max-width: 480px) {
@@ -134,7 +295,7 @@ const { Content } = await render(entry);
     }
 
     .case-study__meta {
-      gap: var(--space-5);
+      grid-template-columns: 1fr 1fr;
     }
   }
 </style>
