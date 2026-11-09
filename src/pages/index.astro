@@ -63,6 +63,7 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 
 <style>
   .hero {
+    min-height: calc(100svh - 150px);
     margin-top: var(--space-8);
     display: grid;
     grid-template-columns: 0.85fr 1fr;
@@ -70,11 +71,14 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
     align-items: center;
   }
 
+  .hero__text {
+    min-width: 0;
+  }
+
   .hero__headline {
     font-size: var(--text-hero);
     line-height: var(--leading-tight);
     font-style: normal;
-    white-space: nowrap;
   }
 
   .hero__headline em {
@@ -112,6 +116,7 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 
   @media (max-width: 768px) {
     .hero {
+      min-height: auto;
       grid-template-columns: 1fr;
     }
 

@@ -21,7 +21,7 @@
   --font-serif: 'Besley', 'Iowan Old Style', serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --text-hero: 3rem;        /* 48px — sized down from the 56px reference spec so each scripted line break in the hero fits its column without re-wrapping */
+  --text-hero: 2.375rem;    /* 38px — sized down from the 56px reference spec so each scripted hero line break fits its column width without an unwanted extra wrap */
   --text-h2: 3rem;          /* 48px */
   --text-h3: 1.75rem;       /* 28px */
   --text-body-lg: 1.125rem; /* 18px */
