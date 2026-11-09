@@ -98,29 +98,31 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
   .hero__line {
     display: block;
     overflow: hidden;
+    padding-bottom: 0.18em;
+    margin-bottom: -0.18em;
   }
 
   .hero__line-inner {
     display: block;
-    transform: translateY(110%);
+    transform: translateY(100%);
     opacity: 0;
-    animation: hero-line-in 650ms var(--ease-standard) forwards;
+    animation: hero-line-in 900ms var(--ease-entrance) forwards;
   }
 
   .hero__line:nth-of-type(1) .hero__line-inner {
-    animation-delay: 60ms;
+    animation-delay: 80ms;
   }
 
   .hero__line:nth-of-type(2) .hero__line-inner {
-    animation-delay: 160ms;
+    animation-delay: 200ms;
   }
 
   .hero__line:nth-of-type(3) .hero__line-inner {
-    animation-delay: 260ms;
+    animation-delay: 320ms;
   }
 
   .hero__line:nth-of-type(4) .hero__line-inner {
-    animation-delay: 360ms;
+    animation-delay: 440ms;
   }
 
   @keyframes hero-line-in {

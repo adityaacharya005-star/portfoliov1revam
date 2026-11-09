@@ -74,5 +74,6 @@
    ========================================================================== */
 :root {
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-entrance: cubic-bezier(0.16, 1, 0.3, 1); /* smooth decelerating settle, for one-off entrances like the hero */
   --duration-fast: 150ms;
 }
