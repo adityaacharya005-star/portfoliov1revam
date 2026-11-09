@@ -37,52 +37,17 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
         <source src="/videos/hero.webm" type="video/webm" />
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
-      <button
-        type="button"
-        class="hero__video-toggle"
-        data-video-toggle
-        aria-pressed="false"
-        aria-label="Pause animation"
-      >
-        <svg data-icon-pause width="10" height="12" viewBox="0 0 10 12" aria-hidden="true">
-          <rect x="0" y="0" width="3" height="12" fill="currentColor" />
-          <rect x="7" y="0" width="3" height="12" fill="currentColor" />
-        </svg>
-        <svg data-icon-play width="10" height="12" viewBox="0 0 10 12" aria-hidden="true">
-          <path d="M0 0L10 6L0 12V0Z" fill="currentColor" />
-        </svg>
-      </button>
     </div>
   </section>
 
   <script>
     const video = document.querySelector<HTMLVideoElement>('[data-autoplay-video]');
-    const toggle = document.querySelector<HTMLButtonElement>('[data-video-toggle]');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if (video && toggle) {
-      const setPlayingState = (playing: boolean) => {
-        toggle.setAttribute('aria-pressed', String(!playing));
-        toggle.setAttribute('aria-label', playing ? 'Pause animation' : 'Play animation');
-        toggle.classList.toggle('is-paused', !playing);
-      };
-
-      if (prefersReducedMotion) {
-        video.removeAttribute('autoplay');
-        video.pause();
-        video.currentTime = 0;
-        setPlayingState(false);
-      }
-
-      toggle.addEventListener('click', () => {
-        if (video.paused) {
-          video.play();
-          setPlayingState(true);
-        } else {
-          video.pause();
-          setPlayingState(false);
-        }
-      });
+    if (video && prefersReducedMotion) {
+      video.removeAttribute('autoplay');
+      video.pause();
+      video.currentTime = 0;
     }
   </script>
 
@@ -138,41 +103,6 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
     pointer-events: none;
     mask-image: radial-gradient(ellipse 62% 60% at 50% 50%, black 78%, transparent 100%);
     -webkit-mask-image: radial-gradient(ellipse 62% 60% at 50% 50%, black 78%, transparent 100%);
-  }
-
-  .hero__video-toggle {
-    position: absolute;
-    bottom: var(--space-4);
-    right: var(--space-4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: color-mix(in srgb, var(--color-bg) 70%, transparent);
-    color: var(--color-text);
-    cursor: pointer;
-    opacity: 0;
-    transition: opacity var(--duration-fast) var(--ease-standard);
-  }
-
-  .hero__media:hover .hero__video-toggle,
-  .hero__media:focus-within .hero__video-toggle {
-    opacity: 1;
-  }
-
-  .hero__video-toggle [data-icon-play] {
-    display: none;
-  }
-
-  .hero__video-toggle.is-paused [data-icon-pause] {
-    display: none;
-  }
-
-  .hero__video-toggle.is-paused [data-icon-play] {
-    display: block;
   }
 
   .works__header {
