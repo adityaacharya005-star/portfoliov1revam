@@ -53,11 +53,12 @@ p {
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-color: currentColor;
-  transition: opacity var(--duration-fast) var(--ease-standard);
+  transition: color var(--duration-fast) var(--ease-standard);
 }
 
-.underline-link:hover {
-  opacity: 0.7;
+.underline-link:hover,
+.underline-link:focus-visible {
+  color: var(--color-accent);
 }
 
 a:focus-visible,
