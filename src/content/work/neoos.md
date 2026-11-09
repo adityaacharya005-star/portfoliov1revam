@@ -6,6 +6,7 @@ coverAlt: "TODO: describe the NeoOS screen shown here"
 role: TODO — e.g. Product Designer
 timeline: TODO — e.g. 2025
 tools: [Figma, TODO]
+services: [Mobile UI, Accessibility] # TODO — replace with real tags
 order: 3
 featured: true
 ---

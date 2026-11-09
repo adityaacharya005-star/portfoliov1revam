@@ -6,6 +6,7 @@ coverAlt: "TODO: describe the Qurate dashboard screen shown here"
 role: TODO — e.g. Product Designer
 timeline: TODO — e.g. 2025
 tools: [Figma, TODO]
+services: [Product Design, Dashboard Design] # TODO — replace with real tags
 order: 1
 featured: true
 ---

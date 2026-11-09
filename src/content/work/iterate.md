@@ -6,6 +6,7 @@ coverAlt: "TODO: describe the Iterate screen shown here"
 role: TODO — e.g. Product Designer
 timeline: TODO — e.g. 2025
 tools: [Figma, TODO]
+services: [Product Design, Platform Design] # TODO — replace with real tags
 order: 4
 featured: true
 ---
