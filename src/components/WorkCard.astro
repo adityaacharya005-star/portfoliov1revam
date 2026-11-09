@@ -80,9 +80,37 @@ const { href, title, description, cover, coverAlt, tags } = Astro.props;
   }
 
   .work-card__title-text {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-bottom: 2px;
+  }
+
+  .work-card__title-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .work-card:hover .work-card__title-text::after,
+  .work-card:focus-visible .work-card__title-text::after {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .work-card__title-text::after {
+      transition: none;
+    }
   }
 
   .work-card__arrow {
