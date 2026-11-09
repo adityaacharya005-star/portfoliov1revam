@@ -1,12 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import WorkGrid from '../components/WorkGrid.astro';
 import Contact from '../components/Contact.astro';
-import hero from '../assets/images/hero.png';
+import heroPosterSrc from '../assets/images/hero-poster.png';
 
 const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 ---
 
 <Base title="Home">
@@ -20,9 +21,34 @@ const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.
       </h1>
     </div>
     <div class="hero__media">
-      <Image src={hero} alt="3D illustration of Aditya working at a desk on a laptop" class="hero__image" />
+      <video
+        class="hero__video"
+        poster={heroPoster.src}
+        autoplay
+        loop
+        muted
+        playsinline
+        disablepictureinpicture
+        aria-label="Looping 3D animation of Aditya working at a desk on a laptop"
+        data-autoplay-video
+      >
+        <source src="/videos/hero.webm" type="video/webm" />
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
     </div>
   </section>
+
+  <script>
+    const videos = document.querySelectorAll<HTMLVideoElement>('[data-autoplay-video]');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      videos.forEach((video) => {
+        video.removeAttribute('autoplay');
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+  </script>
 
   <section class="section wrapper works" aria-labelledby="selected-works-heading">
     <div class="works__header">
@@ -60,9 +86,10 @@ const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.
     color: var(--color-muted);
   }
 
-  .hero__image {
+  .hero__video {
     width: 100%;
     height: auto;
+    display: block;
   }
 
   .works__header {
