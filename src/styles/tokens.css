@@ -21,7 +21,7 @@
   --font-serif: 'Besley', 'Iowan Old Style', serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --text-hero: clamp(1.5rem, 1.1rem + 2.1vw, 2.375rem); /* fluid: scales down in step with the hero video's width so the two stay proportionally in sync on any viewport, capped at 38px (sized down from the 56px reference spec so each scripted hero line break fits its column width without an unwanted extra wrap) */
+  --text-hero: clamp(1.5rem, 1.1rem + 2.1vw, 2.375rem); /* fluid: scales down in step with the hero video's width so the two stay proportionally in sync on any viewport, capped at 38px so each scripted hero line break fits its column width without an unwanted extra wrap */
   --text-h2: 3rem;          /* 48px */
   --text-h3: 1.75rem;       /* 28px */
   --text-body-lg: 1.125rem; /* 18px */
