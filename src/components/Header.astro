@@ -7,22 +7,25 @@ import avatarHover from '../assets/images/avatar-hover.png';
 
 <header class="header">
   <div class="wrapper header__row">
-    <a href="/" class="header__avatar-link" aria-label="Home">
-      <Image
-        src={avatar}
-        alt="Portrait of Aditya Acharya"
-        width={54}
-        height={54}
-        class="header__avatar header__avatar--base"
-      />
-      <Image
-        src={avatarHover}
-        alt=""
-        aria-hidden="true"
-        width={54}
-        height={54}
-        class="header__avatar header__avatar--hover"
-      />
+    <a href="/" class="header__brand">
+      <span class="header__avatar-link">
+        <Image
+          src={avatar}
+          alt=""
+          width={54}
+          height={54}
+          class="header__avatar header__avatar--base"
+        />
+        <Image
+          src={avatarHover}
+          alt=""
+          aria-hidden="true"
+          width={54}
+          height={54}
+          class="header__avatar header__avatar--hover"
+        />
+      </span>
+      <span class="header__name">Aditya Acharya</span>
     </a>
     <nav class="header__nav" aria-label="Primary">
       {site.nav.map((item) => (
@@ -46,6 +49,14 @@ import avatarHover from '../assets/images/avatar-hover.png';
     justify-content: space-between;
   }
 
+  .header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
   .header__avatar-link {
     position: relative;
     display: block;
@@ -53,6 +64,11 @@ import avatarHover from '../assets/images/avatar-hover.png';
     height: 54px;
     flex-shrink: 0;
     border-radius: 50%;
+  }
+
+  .header__name {
+    font-size: var(--text-nav);
+    font-weight: 500;
   }
 
   .header__avatar {
@@ -113,6 +129,10 @@ import avatarHover from '../assets/images/avatar-hover.png';
   }
 
   @media (max-width: 480px) {
+    .header__name {
+      display: none;
+    }
+
     .header__nav {
       gap: var(--space-4);
       font-size: 0.875rem;
