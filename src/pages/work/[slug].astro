@@ -568,8 +568,9 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.persona-portrait) {
     position: relative;
+    align-self: flex-end;
     width: auto;
-    height: 220px;
+    height: 300px;
     flex-shrink: 0;
     object-fit: contain;
     object-position: bottom;
@@ -593,7 +594,7 @@ const sections = headings.filter((h) => h.depth === 2);
     font-family: var(--font-serif);
     font-size: var(--text-h3);
     font-weight: 700;
-    color: var(--case-accent);
+    color: var(--color-text);
     line-height: var(--leading-tight);
     margin: var(--space-2) 0 0;
   }
