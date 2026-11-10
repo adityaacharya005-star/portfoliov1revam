@@ -18,7 +18,7 @@ const { Content, headings } = await render(entry);
 const sections = headings.filter((h) => h.depth === 2);
 ---
 
-<Base title={data.title} description={data.description}>
+<Base title={data.title} description={data.description} hideHeaderOnScroll>
   <div class="case-study wrapper">
     <aside class="case-study__sidebar" aria-label="Case study sections">
       <a href="/work" class="case-study__breadcrumb">
@@ -148,7 +148,7 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__sidebar {
     position: sticky;
-    top: var(--space-8);
+    top: calc(90px + var(--space-5)); /* clears the sticky header's own height */
     display: flex;
     flex-direction: column;
     gap: var(--space-6);

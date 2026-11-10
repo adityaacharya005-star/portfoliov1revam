@@ -11,9 +11,14 @@ import Header from '../components/Header.astro';
 interface Props {
   title: string;
   description?: string;
+  hideHeaderOnScroll?: boolean;
 }
 
-const { title, description = "Aditya Acharya's product design portfolio." } = Astro.props;
+const {
+  title,
+  description = "Aditya Acharya's product design portfolio.",
+  hideHeaderOnScroll = false,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -26,7 +31,7 @@ const { title, description = "Aditya Acharya's product design portfolio." } = As
     <title>{title} · Aditya Acharya</title>
   </head>
   <body>
-    <Header />
+    <Header hideOnScroll={hideHeaderOnScroll} />
     <main>
       <slot />
     </main>

@@ -3,9 +3,15 @@ import { Image } from 'astro:assets';
 import { site } from '../data/site';
 import avatar from '../assets/images/avatar.png';
 import avatarHover from '../assets/images/avatar-hover.png';
+
+interface Props {
+  hideOnScroll?: boolean;
+}
+
+const { hideOnScroll = false } = Astro.props;
 ---
 
-<header class="header">
+<header class:list={['header', { 'header--hide-on-scroll': hideOnScroll }]} data-header>
   <div class="wrapper header__row">
     <a href="/" class="header__brand">
       <span class="header__avatar-link">
@@ -38,9 +44,65 @@ import avatarHover from '../assets/images/avatar-hover.png';
   </div>
 </header>
 
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header].header--hide-on-scroll');
+
+  if (header) {
+    let lastY = window.scrollY;
+    let ticking = false;
+    const revealThreshold = 80; // don't hide until scrolled a bit past the top
+
+    const updateHeader = () => {
+      ticking = false;
+      const y = window.scrollY;
+      const scrollingDown = y > lastY;
+
+      if (y > revealThreshold && scrollingDown) {
+        header.classList.add('is-hidden');
+      } else {
+        header.classList.remove('is-hidden');
+      }
+
+      lastY = y;
+    };
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateHeader);
+        }
+      },
+      { passive: true },
+    );
+  }
+</script>
+
 <style>
   .header {
     padding-top: var(--space-5);
+  }
+
+  .header--hide-on-scroll {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--color-bg);
+    padding-bottom: var(--space-3);
+    transition: transform var(--duration-fast) var(--ease-standard),
+      opacity var(--duration-fast) var(--ease-standard);
+  }
+
+  .header--hide-on-scroll.is-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .header--hide-on-scroll {
+      transition: none;
+    }
   }
 
   .header__row {
