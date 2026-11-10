@@ -258,6 +258,11 @@ In India, a gap year usually means one thing: dropping a year to retake an exam.
     let f = 0;
     let animating = false;
 
+    for (let n = 1; n <= totalPages; n++) {
+      const preload = new Image();
+      preload.src = src(n);
+    }
+
     const setSlot = (img, n) => {
       const ok = valid(n);
       img.style.visibility = ok ? 'visible' : 'hidden';
@@ -303,9 +308,9 @@ In India, a gap year usually means one thing: dropping a year to retake an exam.
         const frontN = valid(2 * f - 1);
         leafFront.src = frontN ? src(frontN) : '';
         leaf.hidden = false;
-        leaf.className = 'book-flip__leaf is-left-origin is-flipped';
+        leaf.className = 'book-flip__leaf is-left-origin';
         void leaf.offsetWidth;
-        leaf.classList.remove('is-flipped');
+        leaf.classList.add('is-flipped');
         setTimeout(() => setSlot(leftImg, 2 * f - 2), 330);
       }
 
