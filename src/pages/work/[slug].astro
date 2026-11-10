@@ -177,6 +177,61 @@ const sections = headings.filter((h) => h.depth === 2);
       video.currentTime = 0;
     });
   }
+
+  // SETU curriculum booklet viewer, built on StPageFlip (the `page-flip`
+  // package) for a realistic page-turn instead of a hand-rolled one.
+  const pageflipEl = document.querySelector<HTMLElement>('[data-pageflip]');
+  if (pageflipEl) {
+    const { PageFlip } = await import('page-flip');
+
+    const totalPages = parseInt(pageflipEl.dataset.totalPages ?? '0', 10);
+    const base = pageflipEl.dataset.base ?? '';
+    const ext = pageflipEl.dataset.ext ?? 'webp';
+    const pageWidth = parseInt(pageflipEl.dataset.pageWidth ?? '600', 10);
+    const pageHeight = parseInt(pageflipEl.dataset.pageHeight ?? '848', 10);
+    const images = Array.from({ length: totalPages }, (_, i) => `${base}${i + 1}.${ext}`);
+
+    const counter = document.querySelector('[data-pageflip-counter]');
+    const prevBtn = document.querySelector<HTMLButtonElement>('[data-pageflip-prev]');
+    const nextBtn = document.querySelector<HTMLButtonElement>('[data-pageflip-next]');
+
+    const pageFlip = new PageFlip(pageflipEl, {
+      width: pageWidth,
+      height: pageHeight,
+      size: 'stretch',
+      minWidth: 240,
+      maxWidth: 1200,
+      minHeight: 340,
+      maxHeight: 1697,
+      showCover: true,
+      maxShadowOpacity: 0.3,
+      flippingTime: prefersReducedMotion ? 1 : 650,
+      useMouseEvents: true,
+    });
+
+    const updateControls = () => {
+      const page = pageFlip.getCurrentPageIndex();
+      const count = pageFlip.getPageCount();
+      const isEdge = page <= 0 || page >= count - 1;
+      const isSpread = pageFlip.getOrientation() === 'landscape' && !isEdge;
+      const rightMost = isSpread ? Math.min(page + 2, count) : page + 1;
+      if (counter) {
+        counter.textContent = isSpread
+          ? `Pages ${page + 1}–${rightMost} of ${count}`
+          : `Page ${rightMost} of ${count}`;
+      }
+      if (prevBtn) prevBtn.disabled = page <= 0;
+      if (nextBtn) nextBtn.disabled = rightMost >= count;
+    };
+
+    pageFlip.on('flip', updateControls);
+    pageFlip.on('init', updateControls);
+    pageFlip.on('changeOrientation', updateControls);
+    pageFlip.loadFromImages(images);
+
+    prevBtn?.addEventListener('click', () => pageFlip.flipPrev());
+    nextBtn?.addEventListener('click', () => pageFlip.flipNext());
+  }
 </script>
 
 <style>
@@ -550,119 +605,16 @@ const sections = headings.filter((h) => h.depth === 2);
     background: transparent;
   }
 
-  /* An interactive page-flip viewer for the curriculum booklet: a
-     real left/right spread (not a single stretched page), with a
-     double-sided leaf that flips between them like an actual book —
-     the front face is the page currently showing, the back face is
-     the page it reveals, so the same element IS the physical page. */
-  .case-study__body :global(.book-flip) {
+  /* The curriculum booklet viewer, powered by the StPageFlip library
+     (package: page-flip) — it owns the canvas, page curl and shadow
+     rendering; this just sizes its container and styles our controls. */
+  .case-study__body :global(.pageflip) {
     width: 100%;
     margin-inline: auto;
+    filter: drop-shadow(0 2px 4px rgba(17, 17, 17, 0.08)) drop-shadow(0 24px 48px rgba(17, 17, 17, 0.12));
   }
 
-  .case-study__body :global(.book-flip__frame) {
-    position: relative;
-    aspect-ratio: 1800 / 1273;
-    perspective: 2400px;
-    box-shadow: 0 2px 4px rgba(17, 17, 17, 0.08), 0 24px 48px rgba(17, 17, 17, 0.12);
-  }
-
-  .case-study__body :global(.book-flip__page) {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    background: #fdfdfc;
-    overflow: hidden;
-  }
-
-  .case-study__body :global(.book-flip__page--left) {
-    left: 0;
-    box-shadow: inset -12px 0 20px -14px rgba(17, 17, 17, 0.2);
-  }
-
-  .case-study__body :global(.book-flip__page--right) {
-    right: 0;
-    box-shadow: inset 12px 0 20px -14px rgba(17, 17, 17, 0.2);
-  }
-
-  .case-study__body :global(.book-flip__page img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    background: transparent;
-  }
-
-  .case-study__body :global(.book-flip__spine) {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 10px;
-    margin-left: -5px;
-    z-index: 4;
-    background: linear-gradient(
-      to right,
-      rgba(17, 17, 17, 0.1),
-      rgba(17, 17, 17, 0) 20%,
-      rgba(17, 17, 17, 0) 80%,
-      rgba(17, 17, 17, 0.1)
-    );
-    pointer-events: none;
-  }
-
-  .case-study__body :global(.book-flip__leaf) {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    z-index: 5;
-    transform-style: preserve-3d;
-    transition: transform 660ms cubic-bezier(0.45, 0, 0.2, 1);
-    will-change: transform;
-  }
-
-  .case-study__body :global(.book-flip__leaf.is-right-origin) {
-    right: 0;
-    transform-origin: left center;
-    transform: rotateY(0deg);
-  }
-
-  .case-study__body :global(.book-flip__leaf.is-right-origin.is-flipped) {
-    transform: rotateY(-180deg);
-  }
-
-  .case-study__body :global(.book-flip__leaf.is-left-origin) {
-    left: 0;
-    transform-origin: right center;
-    transform: rotateY(-180deg);
-  }
-
-  .case-study__body :global(.book-flip__leaf.is-left-origin.is-flipped) {
-    transform: rotateY(0deg);
-  }
-
-  .case-study__body :global(.book-flip__face) {
-    position: absolute;
-    inset: 0;
-    backface-visibility: hidden;
-    background: #fff;
-    box-shadow: 0 0 24px rgba(17, 17, 17, 0.15);
-  }
-
-  .case-study__body :global(.book-flip__face--back) {
-    transform: rotateY(180deg);
-  }
-
-  .case-study__body :global(.book-flip__face img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: transparent;
-  }
-
-  .case-study__body :global(.book-flip__controls) {
+  .case-study__body :global(.pageflip__controls) {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -670,7 +622,7 @@ const sections = headings.filter((h) => h.depth === 2);
     margin-top: var(--space-5);
   }
 
-  .case-study__body :global(.book-flip__btn) {
+  .case-study__body :global(.pageflip__btn) {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -682,34 +634,22 @@ const sections = headings.filter((h) => h.depth === 2);
     transition: background var(--duration-fast) var(--ease-standard);
   }
 
-  .case-study__body :global(.book-flip__btn:hover:not(:disabled)) {
+  .case-study__body :global(.pageflip__btn:hover:not(:disabled)) {
     background: var(--color-card-warm);
   }
 
-  .case-study__body :global(.book-flip__btn:disabled) {
+  .case-study__body :global(.pageflip__btn:disabled) {
     opacity: 0.35;
     cursor: default;
   }
 
-  .case-study__body :global(.book-flip__counter) {
+  .case-study__body :global(.pageflip__counter) {
     font-size: var(--text-small);
     color: var(--color-muted);
     min-width: 90px;
     text-align: center;
     max-width: none;
     margin: 0;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .case-study__body :global(.book-flip__leaf) {
-      transition: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .case-study__body :global(.book-flip__spine) {
-      display: none;
-    }
   }
 
   /* Several phone screens shown as their own cards with their own

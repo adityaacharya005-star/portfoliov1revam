@@ -214,119 +214,14 @@ The first screen after login isn't a subject picker. It's eight situational ques
 In India, a gap year usually means one thing: dropping a year to retake an exam. SETU, Sanskrit for bridge, reframes that year as a structured transition instead, built on three terms: Explore, Experience, Envision. Every term closes with a parent-facing deliverable, a family conversation, an industry interface day, a joint planning session, so the year builds trust alongside the student's own portfolio.
 
 <figure class="figure--white">
-<div class="book-flip" data-book-flip data-total-pages="25">
-<div class="book-flip__frame">
-<div class="book-flip__page book-flip__page--left" data-slot="left">
-<img alt="" />
-</div>
-<div class="book-flip__spine" aria-hidden="true"></div>
-<div class="book-flip__page book-flip__page--right" data-slot="right">
-<img alt="" />
-</div>
-<div class="book-flip__leaf" data-book-leaf hidden>
-<div class="book-flip__face book-flip__face--front"><img data-face="front" alt="" /></div>
-<div class="book-flip__face book-flip__face--back"><img data-face="back" alt="" /></div>
-</div>
-</div>
-<div class="book-flip__controls">
-<button type="button" class="book-flip__btn" data-book-prev aria-label="Previous spread">&larr;</button>
-<p class="book-flip__counter" data-book-counter></p>
-<button type="button" class="book-flip__btn" data-book-next aria-label="Next spread">&rarr;</button>
-</div>
+<div class="pageflip" data-pageflip data-total-pages="25" data-base="/images/conversations/booklet/booklet-page-" data-ext="webp" data-page-width="636" data-page-height="900"></div>
+<div class="pageflip__controls">
+<button type="button" class="pageflip__btn" data-pageflip-prev aria-label="Previous page">&larr;</button>
+<p class="pageflip__counter" data-pageflip-counter></p>
+<button type="button" class="pageflip__btn" data-pageflip-next aria-label="Next page">&rarr;</button>
 </div>
 <figcaption>Click through the 25-page booklet schools use to run the year: what NEP 2020 already allows, what it leaves open, and the week-by-week structure that fills the gap.</figcaption>
 </figure>
-
-<script>
-  document.querySelectorAll('[data-book-flip]').forEach((book) => {
-    const totalPages = parseInt(book.dataset.totalPages, 10);
-    const base = '/images/conversations/booklet/booklet-page-';
-    const src = (n) => `${base}${n}.webp`;
-    const valid = (n) => (n >= 1 && n <= totalPages ? n : null);
-
-    const leftImg = book.querySelector('[data-slot="left"] img');
-    const rightImg = book.querySelector('[data-slot="right"] img');
-    const leaf = book.querySelector('[data-book-leaf]');
-    const leafFront = leaf.querySelector('[data-face="front"]');
-    const leafBack = leaf.querySelector('[data-face="back"]');
-    const counter = book.querySelector('[data-book-counter]');
-    const prevBtn = book.querySelector('[data-book-prev]');
-    const nextBtn = book.querySelector('[data-book-next]');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    const maxF = Math.floor((totalPages - 1) / 2);
-    let f = 0;
-    let animating = false;
-
-    for (let n = 1; n <= totalPages; n++) {
-      const preload = new Image();
-      preload.src = src(n);
-    }
-
-    const setSlot = (img, n) => {
-      const ok = valid(n);
-      img.style.visibility = ok ? 'visible' : 'hidden';
-      if (ok) {
-        img.src = src(ok);
-        img.alt = `SETU booklet, page ${ok} of ${totalPages}`;
-      }
-    };
-
-    const render = () => {
-      const leftN = f >= 1 ? 2 * f : null;
-      const rightN = 2 * f + 1;
-      setSlot(leftImg, leftN);
-      setSlot(rightImg, rightN);
-      counter.textContent = leftN ? `Pages ${leftN}–${Math.min(rightN, totalPages)}` : `Page ${rightN}`;
-      prevBtn.disabled = f === 0;
-      nextBtn.disabled = f === maxF;
-    };
-
-    const flip = (dir) => {
-      const target = f + dir;
-      if (animating || target < 0 || target > maxF) return;
-      animating = true;
-
-      if (prefersReducedMotion) {
-        f = target;
-        render();
-        animating = false;
-        return;
-      }
-
-      if (dir > 0) {
-        leafFront.src = src(2 * f + 1);
-        const backN = valid(2 * f + 2);
-        leafBack.src = backN ? src(backN) : '';
-        leaf.hidden = false;
-        leaf.className = 'book-flip__leaf is-right-origin';
-        void leaf.offsetWidth;
-        leaf.classList.add('is-flipped');
-        setTimeout(() => setSlot(rightImg, 2 * f + 3), 330);
-      } else {
-        leafBack.src = src(2 * f);
-        const frontN = valid(2 * f - 1);
-        leafFront.src = frontN ? src(frontN) : '';
-        leaf.hidden = false;
-        leaf.className = 'book-flip__leaf is-left-origin';
-        void leaf.offsetWidth;
-        leaf.classList.add('is-flipped');
-        setTimeout(() => setSlot(leftImg, 2 * f - 2), 330);
-      }
-
-      setTimeout(() => {
-        f = target;
-        render();
-        leaf.hidden = true;
-        animating = false;
-      }, 660);
-    };
-
-    prevBtn.addEventListener('click', () => flip(-1));
-    nextBtn.addEventListener('click', () => flip(1));
-    render();
-  });
-</script>
 
 ## Field Validation
 
