@@ -10,7 +10,7 @@ const work = defineCollection({
       coverAlt: z.string(),
       role: z.string(),
       timeline: z.string(),
-      tools: z.array(z.string()),
+      tools: z.array(z.string()).optional(),
       order: z.number(),
       featured: z.boolean().default(false),
       // Optional — case-study page template (sidebar nav / meta row)

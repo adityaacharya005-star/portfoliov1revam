@@ -79,10 +79,12 @@ const sections = headings.filter((h) => h.depth === 2);
               <dd>{data.services.join(', ')}</dd>
             </div>
           )}
-          <div>
-            <dt>Tools</dt>
-            <dd>{data.tools.join(', ')}</dd>
-          </div>
+          {data.tools && data.tools.length > 0 && (
+            <div>
+              <dt>Tools</dt>
+              <dd>{data.tools.join(', ')}</dd>
+            </div>
+          )}
         </dl>
       </div>
 
@@ -524,6 +526,54 @@ const sections = headings.filter((h) => h.depth === 2);
     width: auto;
     max-width: 260px;
     margin-inline: auto;
+  }
+
+  /* App screenshots read cleaner on plain white than the warm tan
+     frame used for diagrams/photos, closer to how the screens
+     actually look standalone. */
+  .case-study__body :global(.figure--white) {
+    background: #fff;
+  }
+
+  /* One card per library zone, each tinted and topped in that
+     zone's own wayfinding color instead of the project accent, so
+     the grid reads the same color language as the floor plan. */
+  .case-study__body :global(.zone-grid) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-5);
+    margin-inline: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .case-study__body :global(.zone-card) {
+    padding: var(--space-5);
+    background: color-mix(in srgb, var(--zone-color) 12%, var(--color-bg));
+    border-top: 4px solid var(--zone-color);
+  }
+
+  .case-study__body :global(.zone-label) {
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--zone-color);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 var(--space-2);
+  }
+
+  .case-study__body :global(.zone-card h3) {
+    font-family: var(--font-serif);
+    font-size: var(--text-h3);
+    margin: 0 0 var(--space-3);
+  }
+
+  .case-study__body :global(.zone-card p) {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    max-width: none;
+    margin: 0;
   }
 
   .case-study__body :global(.figure-eyebrow) {

@@ -6,7 +6,6 @@ coverAlt: "Conversations Before College title card on a blue-to-green gradient b
 role: Lead System & Interaction Designer
 team: Group Project · 4 Designers
 timeline: March – April 2026
-tools: [Figma]
 services: [System Design, Service Design, UI/UX]
 order: 2
 featured: true
@@ -116,13 +115,31 @@ Subjects taught kids that knowledge lives in sealed boxes, Science over here, Ar
 
 <figure>
 <img src="/images/conversations/library-floorplan.webp" alt="Floor plan of the redesigned school library showing the Blue, Yellow, Green, and Purple intent-based zones with wayfinding paths" />
-<figcaption>The four zones: Blue (Reference), Yellow (Explorer), Green (Creation), Purple (Leisure), connected by a single color-coded wayfinding path from the entrance.</figcaption>
+<figcaption>Connected by a single color-coded wayfinding path from the entrance, built and in use at the school.</figcaption>
 </figure>
 
-<figure>
-<img src="/images/conversations/library-photos.webp" alt="Photos of the implemented library redesign: students working in each of the four color-coded zones, a digital zone-guide screen, and the floor wayfinding paths" />
-<figcaption>Built and in use. The zone guide screen at the entrance tells each grade which zone they're rotating through that week.</figcaption>
-</figure>
+<ul class="zone-grid">
+<li class="zone-card" style="--zone-color: #3E6FD9">
+<p class="zone-label">Blue</p>
+<h3>Reference</h3>
+<p>Quiet, academic research books and built-in perimeter shelving for focused, solitary work.</p>
+</li>
+<li class="zone-card" style="--zone-color: #D9A530">
+<p class="zone-label">Yellow</p>
+<h3>Explorer</h3>
+<p>Comfortable, semicircular alcoves for careers and exploring books, built for collaborative browsing.</p>
+</li>
+<li class="zone-card" style="--zone-color: #4F9D5C">
+<p class="zone-label">Green</p>
+<h3>Creation</h3>
+<p>Small circular maker tables stocked with craft boxes, for hands-on, think-and-imagine work.</p>
+</li>
+<li class="zone-card" style="--zone-color: #8B5FC2">
+<p class="zone-label">Purple</p>
+<h3>Leisure</h3>
+<p>Bean bags and soft mats around a comics and leisure corner, reading for fun treated as seriously as reading for grades.</p>
+</li>
+</ul>
 
 ## CareerBridge
 
@@ -138,33 +155,33 @@ The first screen after login isn't a subject picker. It's eight situational ques
 <figcaption>A quick run through CareerBridge end to end before the screen-by-screen breakdown below.</figcaption>
 </figure>
 
-<figure class="figure--core">
+<figure class="figure--core figure--white">
 <p class="figure-eyebrow">The core mechanism</p>
 <img src="/images/conversations/app-onboarding.webp" alt="CareerBridge onboarding: the welcome screen, and the dual-access login screens for students (Exploring) and parents (Assessing)" />
 <figcaption>Dual access from the first screen. A student logs in to explore; a parent logs in to a different view entirely, built to assess, not control.</figcaption>
 </figure>
 
-<figure>
+<figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-pathways.webp" alt="CareerBridge pathway results screen showing four broad industry pathways: Product Engineering & Design, Digital Systems & UX Strategy, Technology & Interactive Innovation, and Strategic Service Design" />
 <figcaption>What the eight questions produce: broad industry pathways, not a single forced major. A starting point for the 90 days, not a verdict.</figcaption>
 </figure>
 
-<figure>
+<figure class="figure--white">
 <img src="/images/conversations/app-dashboard-task.webp" alt="CareerBridge student dashboard showing today's focus task, and the detail view for a task from NID Ahmedabad" />
 <figcaption>Today's Focus. Every task is tagged with the real institution behind it, NID, IIIT, so a 90-day exploration carries actual academic weight, not a random internet module.</figcaption>
 </figure>
 
-<figure>
+<figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-curriculum.webp" alt="CareerBridge curriculum tracking screen showing completed and upcoming weeks with credit values per task" />
 <figcaption>Completed weeks collapse, the current week expands. Each task underneath carries its own credit value, so progress reads as a build-up, not a checklist.</figcaption>
 </figure>
 
-<figure>
+<figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-progress.webp" alt="CareerBridge student progress screen showing weekly engagement hours, total ABC credits, average mentor rating, and a portfolio link" />
 <figcaption>The student's own view: hours logged, credits earned, mentor ratings, a portfolio building itself in the background.</figcaption>
 </figure>
 
-<figure>
+<figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-parent.webp" alt="CareerBridge parent dashboard showing verified ABC credits, project consistency, mentor sessions, and program investment details" />
 <figcaption>The parent's view of the same data: verified credits, consistency score, engagement level. The anxious check-in becomes a number the parent can actually read.</figcaption>
 </figure>
