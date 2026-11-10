@@ -138,14 +138,14 @@ The first screen after login isn't a subject picker. It's eight situational ques
 <figcaption>A quick run through CareerBridge end to end before the screen-by-screen breakdown below.</figcaption>
 </figure>
 
-<figure class="figure--feature">
+<figure class="figure--core">
 <p class="figure-eyebrow">The core mechanism</p>
 <img src="/images/conversations/app-onboarding.webp" alt="CareerBridge onboarding: the welcome screen, and the dual-access login screens for students (Exploring) and parents (Assessing)" />
 <figcaption>Dual access from the first screen. A student logs in to explore; a parent logs in to a different view entirely, built to assess, not control.</figcaption>
 </figure>
 
 <figure>
-<img src="/images/conversations/app-pathways.webp" alt="CareerBridge pathway results screen showing four broad industry pathways: Product Engineering & Design, Digital Systems & UX Strategy, Technology & Interactive Innovation, and Strategic Service Design" />
+<img class="figure-img--phone" src="/images/conversations/app-pathways.webp" alt="CareerBridge pathway results screen showing four broad industry pathways: Product Engineering & Design, Digital Systems & UX Strategy, Technology & Interactive Innovation, and Strategic Service Design" />
 <figcaption>What the eight questions produce: broad industry pathways, not a single forced major. A starting point for the 90 days, not a verdict.</figcaption>
 </figure>
 
@@ -155,17 +155,17 @@ The first screen after login isn't a subject picker. It's eight situational ques
 </figure>
 
 <figure>
-<img src="/images/conversations/app-curriculum.webp" alt="CareerBridge curriculum tracking screen showing completed and upcoming weeks with credit values per task" />
+<img class="figure-img--phone" src="/images/conversations/app-curriculum.webp" alt="CareerBridge curriculum tracking screen showing completed and upcoming weeks with credit values per task" />
 <figcaption>Completed weeks collapse, the current week expands. Each task underneath carries its own credit value, so progress reads as a build-up, not a checklist.</figcaption>
 </figure>
 
 <figure>
-<img src="/images/conversations/app-progress.webp" alt="CareerBridge student progress screen showing weekly engagement hours, total ABC credits, average mentor rating, and a portfolio link" />
+<img class="figure-img--phone" src="/images/conversations/app-progress.webp" alt="CareerBridge student progress screen showing weekly engagement hours, total ABC credits, average mentor rating, and a portfolio link" />
 <figcaption>The student's own view: hours logged, credits earned, mentor ratings, a portfolio building itself in the background.</figcaption>
 </figure>
 
 <figure>
-<img src="/images/conversations/app-parent.webp" alt="CareerBridge parent dashboard showing verified ABC credits, project consistency, mentor sessions, and program investment details" />
+<img class="figure-img--phone" src="/images/conversations/app-parent.webp" alt="CareerBridge parent dashboard showing verified ABC credits, project consistency, mentor sessions, and program investment details" />
 <figcaption>The parent's view of the same data: verified credits, consistency score, engagement level. The anxious check-in becomes a number the parent can actually read.</figcaption>
 </figure>
 
