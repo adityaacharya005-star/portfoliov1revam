@@ -246,4 +246,3 @@ The proposal went to Sri Prakash Vidyaniketan's administration before it went an
 </li>
 </ul>
 
-None of this matters if a student still picks Science out of fear five years from now. That's the number this whole system was built to move, long after the library repaint and the app launch are forgotten.
