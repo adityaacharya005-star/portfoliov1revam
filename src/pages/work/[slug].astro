@@ -572,16 +572,18 @@ const sections = headings.filter((h) => h.depth === 2);
     top: 0;
     bottom: 0;
     width: 50%;
-    background: #fff;
+    background: #fdfdfc;
     overflow: hidden;
   }
 
   .case-study__body :global(.book-flip__page--left) {
     left: 0;
+    box-shadow: inset -12px 0 20px -14px rgba(17, 17, 17, 0.2);
   }
 
   .case-study__body :global(.book-flip__page--right) {
     right: 0;
+    box-shadow: inset 12px 0 20px -14px rgba(17, 17, 17, 0.2);
   }
 
   .case-study__body :global(.book-flip__page img) {
