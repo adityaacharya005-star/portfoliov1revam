@@ -140,7 +140,7 @@ const sections = headings.filter((h) => h.depth === 2);
 <style>
   .case-study {
     --case-accent: var(--color-accent);
-    max-width: 1680px;
+    max-width: 1320px;
     margin: var(--space-9) auto 0;
     padding-inline: var(--layout-padding);
     display: grid;
@@ -326,8 +326,7 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   /* Diagrams / UI screenshots embedded in the body: shown at natural
-     aspect ratio (never cropped), full column width, placeholder bg
-     while loading. */
+     aspect ratio (never cropped), placeholder bg while loading. */
   .case-study__body :global(img) {
     display: block;
     width: 100%;
@@ -335,11 +334,15 @@ const sections = headings.filter((h) => h.depth === 2);
     background: var(--color-placeholder);
   }
 
+  /* Framed like a card rather than bleeding edge-to-edge: padded,
+     tinted background behind the screenshot/diagram. */
   .case-study__body :global(figure) {
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
+    padding: var(--space-6);
+    background: var(--color-card-warm);
   }
 
   .case-study__body :global(figcaption) {
