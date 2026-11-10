@@ -22,6 +22,12 @@ const work = defineCollection({
       // still required and used as the <video> poster / no-JS and reduced-motion fallback.
       thumbVideoMp4: z.string().optional(),
       thumbVideoWebm: z.string().optional(),
+      // Optional — this project's own brand color (e.g. its UI's primary
+      // accent), used to tint the case-study body's decorative card
+      // blobs/icons so each case study feels tied to that product rather
+      // than reusing the site's own accent everywhere. Falls back to
+      // --color-accent when unset.
+      accentColor: z.string().optional(),
     }),
 });
 

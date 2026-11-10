@@ -10,6 +10,7 @@
   --color-accent: #8b4a3a;
   --color-placeholder: #d9d9d9;
   --color-border: #dedad2;
+  --color-card-warm: #ede2d3; /* tinted card background for case-study stat/outcome cards — a warmer step off --color-bg, not a new hue */
 }
 
 /* ==========================================================================
