@@ -17,7 +17,7 @@ accentColor: "#FF385C"
 
 ## Product Context
 
-Qurate is an online platform that revolutionized Indian travel bookings and expanded into an 'Experiences' segment.
+Qurate started as an Indian travel booking platform, then added an Experiences marketplace where hosts list tours, treks, and local activities.
 
 ## The Goal
 
@@ -32,19 +32,19 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="17" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M16 11v6l4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4h8M16 4v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 <p class="stat-number">70%</p>
 <p class="stat-label">Manual Overhead</p>
-<p>Evaluation time spent checking attachments, background, and formatting rules across separate windows.</p>
+<p>Reviewers spent this much time checking attachments, host backgrounds, and formatting rules across separate windows.</p>
 </li>
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M9 5h14M9 27h14M10 5c0 6 5 7.5 6 9-1 1.5-6 3-6 9M22 5c0 6-5 7.5-6 9 1 1.5 6 3 6 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <p class="stat-number">4.2 Days</p>
 <p class="stat-label">Host Resolution Time</p>
-<p>Average time taken by hosts to fix issues or drop off when receiving generic rejection emails.</p>
+<p>Hosts took this long to fix a flagged issue, or gave up, after a generic rejection email.</p>
 </li>
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="8" y="4" width="13" height="17" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M11 9h7M11 13h7M11 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="21" cy="22" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M24.5 25.5L27 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 <p class="stat-number">35%</p>
 <p class="stat-label">Verification Delay</p>
-<p>Total review time consumed by opening external PDF viewers and matching credentials against profile fields.</p>
+<p>Reviewers lost this share of their time opening external PDF viewers and matching credentials against profile fields by hand.</p>
 </li>
 </ul>
 
@@ -57,7 +57,7 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 <p class="persona-eyebrow">Employee</p>
 <p class="persona-name">Jitendra Gaur</p>
 <p class="persona-role">Experience Manager</p>
-<p><strong>Wants</strong> to process incoming experience listings rapidly while keeping SLA breaches near zero and quality checks consistent. An efficient workspace.</p>
+<p><strong>Wants</strong> to clear incoming listings fast, keep SLA breaches near zero, and apply the same quality bar every time.</p>
 <p><strong>Needs</strong> an all-in-one dashboard with live queue filters, pass/flag accordions, and automated host feedback generation.</p>
 </div>
 </li>
@@ -67,15 +67,15 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 <p class="persona-eyebrow">Experience Host</p>
 <p class="persona-name">Ritesh Pujara</p>
 <p class="persona-role">Tour Operator</p>
-<p><strong>Wants</strong> to get new listings approved quickly to begin earning through bookings.</p>
-<p><strong>Needs</strong> clear, transparent, and actionable feedback when items need revision, avoiding vague rejections so there is no need to change platforms.</p>
+<p><strong>Wants</strong> to get new listings approved so bookings can start.</p>
+<p><strong>Needs</strong> specific feedback when a listing needs revision, not a vague rejection that pushes him toward another platform.</p>
 </div>
 </li>
 </ul>
 
 ## Information Architecture
 
-The dashboard splits into three workspaces — an operations overview, the review queue, and a split evaluation workspace for the actual curation work.
+The dashboard splits into three workspaces: an operations overview, the review queue, and a split evaluation view for the curation work itself.
 
 <figure>
 <img src="/images/qurate/ia-diagram.webp" alt="Information architecture diagram: Qurate Experience Dashboard splits into Operations Dashboard, Review Queue, and Split Evaluation Workspace, each broken into their constituent panels" />
@@ -83,7 +83,7 @@ The dashboard splits into three workspaces — an operations overview, the revie
 
 ## User Flow
 
-From opening the dashboard to a decision being made on a submitted experience, with the two branches — approval, and the policy-violation check that routes to either a rejection or a revision request.
+From opening the dashboard to approving or rejecting a submission, with a policy-violation check that routes a flagged listing to either a rejection or a revision request.
 
 <figure>
 <img src="/images/qurate/user-flow.webp" alt="User flow diagram from opening the dashboard through inspecting an experience to an approve, reject, or request-revision outcome" />
@@ -107,17 +107,17 @@ Four key interfaces from the finished dashboard.
 
 <figure>
 <img src="/images/qurate/final-dashboard.webp" alt="Final Dashboard screen: summary cards, submission review queue, operations calendar, bookings and statistics, and host activity" />
-<figcaption>Dashboard — top summary cards for at-a-glance capacity planning; a submission queue table that opens straight into evaluation; a calendar that surfaces reviews nearing deadline; and host/booking telemetry without leaving the page.</figcaption>
+<figcaption>Dashboard. Summary cards show capacity at a glance, the submission queue opens straight into evaluation, the calendar surfaces reviews nearing their deadline, and host and booking numbers stay on the same page.</figcaption>
 </figure>
 
 <figure>
 <img src="/images/qurate/final-review-queue.webp" alt="Final Review Queue screen: status-filtered tabs, search and sort toolbar, and a queue table with SLA countdown timers" />
-<figcaption>Review Queue — status-filtered tabs isolate new submissions from active revisions; multi-parametric search and sort narrows to region or urgency in seconds; SLA countdown timers surface at-risk items first.</figcaption>
+<figcaption>Review Queue. Status tabs separate new submissions from active revisions, search and sort narrow the list by region or urgency, and SLA countdown timers put at-risk items first.</figcaption>
 </figure>
 
 <figure>
 <img src="/images/qurate/final-split-evaluation.webp" alt="Final Split Evaluation screen: media gallery and itinerary on the left, a 5-step compliance checklist and auto-generated feedback on the right" />
-<figcaption>Split Evaluation — every submission asset in one viewport; a 5-step checklist that standardizes the review; auto-generated, specific feedback for hosts; and a state-locked action footer that blocks approval until the checklist clears.</figcaption>
+<figcaption>Split Evaluation. Every submission asset sits in one viewport, a 5-step checklist standardizes the review, feedback for hosts writes itself from whatever gets flagged, and the action footer stays locked until the checklist clears.</figcaption>
 </figure>
 
 <figure>
@@ -131,16 +131,16 @@ Four key interfaces from the finished dashboard.
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="7" width="11" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="17" y="7" width="11" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M15 16h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 <h3>Efficient Interface</h3>
-<p>Combining external document previews directly into the workspace cut verification time significantly.</p>
+<p>Pulling document previews into the workspace cut verification time, since reviewers stopped switching out to a separate PDF viewer.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 18a8 8 0 1 1 3 6.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 24v-6h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <h3>Automated Feedback Generation</h3>
-<p>Structured compliance checklists replaced generic rejection emails, accelerating host responses.</p>
+<p>Structured compliance checklists replaced generic rejection emails. Hosts responded faster because they knew exactly what to fix.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 5l12 6-12 6-12-6 12-6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 17l12 6 12-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 23l12 6 12-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <h3>Density Without Overwhelm</h3>
-<p>Organizing workflows into accordion lists with clear status indicators improved information hierarchy while preserving curator accuracy.</p>
+<p>Accordion lists with status indicators keep the queue dense without burying what a curator needs to decide.</p>
 </li>
 </ul>
