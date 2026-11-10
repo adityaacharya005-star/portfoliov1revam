@@ -158,6 +158,16 @@ const sections = headings.filter((h) => h.depth === 2);
     );
     Array.from(body.children).forEach((child) => revealObserver.observe(child));
   }
+
+  // Body-content demo videos (not the hero/work-card ones, which handle
+  // this themselves): skip autoplay entirely under reduced motion.
+  if (prefersReducedMotion) {
+    document.querySelectorAll<HTMLVideoElement>('.case-study__body [data-autoplay-video]').forEach((video) => {
+      video.removeAttribute('autoplay');
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
 </script>
 
 <style>
@@ -462,7 +472,8 @@ const sections = headings.filter((h) => h.depth === 2);
 
   /* Diagrams / UI screenshots embedded in the body: shown at natural
      aspect ratio (never cropped), placeholder bg while loading. */
-  .case-study__body :global(img) {
+  .case-study__body :global(img),
+  .case-study__body :global(video) {
     display: block;
     width: 100%;
     height: auto;
