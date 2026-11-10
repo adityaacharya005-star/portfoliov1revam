@@ -19,10 +19,6 @@ accentColor: "#FF385C"
 
 Qurate started as an Indian travel booking platform, then added an Experiences marketplace where hosts list tours, treks, and local activities.
 
-## The Goal
-
-Design the interface of a backend tool for Qurate employees to evaluate, manage, and curate experiences submitted by hosts while handling bookings.
-
 ## Research & Data
 
 Three numbers that shaped the brief, identified while mapping the existing review workflow.
@@ -47,6 +43,10 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 <p>Lost opening external PDF viewers and matching credentials by hand.</p>
 </li>
 </ul>
+
+## The Goal
+
+Design the backend tool Qurate employees use to review, manage, and approve hosted experiences, alongside the bookings those experiences generate. One week meant picking a fight: fix the review workspace first, since that's where the 70% and 35% were bleeding, and leave booking management for a later pass.
 
 ## User Personas
 
@@ -73,9 +73,11 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 </li>
 </ul>
 
+Jitendra and Ritesh pull in opposite directions: a thorough review slows Ritesh down, a fast one risks Jitendra's quality bar. The dashboard has to let one through without giving up the other.
+
 ## Information Architecture
 
-Jitendra swings between a quick status check and deep, one-at-a-time evaluation all day. Splitting those into separate workspaces meant neither had to compromise for the other.
+A single merged workspace was the first sketch. It fell apart once revision requests needed different handling from brand-new submissions. Splitting into three, an operations overview, the review queue, and a focused evaluation view, let Jitendra's quick status checks and his slow one-at-a-time evaluations stop competing for the same screen.
 
 <figure>
 <img src="/images/qurate/ia-diagram.webp" alt="Information architecture diagram: Qurate Experience Dashboard splits into Operations Dashboard, Review Queue, and Split Evaluation Workspace, each broken into their constituent panels" />
@@ -83,7 +85,7 @@ Jitendra swings between a quick status check and deep, one-at-a-time evaluation 
 
 ## User Flow
 
-Every submission runs through the same policy check before a decision locks in, so two reviewers landing on the same listing reach the same call.
+Letting hosts self-certify compliance and skip review entirely would have been faster, but one missed violation going live outweighed the time saved. Every submission runs through the same policy check before a decision locks in, so two reviewers landing on the same listing reach the same call.
 
 <figure>
 <img src="/images/qurate/user-flow.webp" alt="User flow diagram from opening the dashboard through inspecting an experience to an approve, reject, or request-revision outcome" />
@@ -103,7 +105,7 @@ Every submission runs through the same policy check before a decision locks in, 
 
 ## Final Design
 
-Four key interfaces from the finished dashboard.
+Four key interfaces from the finished dashboard, scoped to the review workspace the data pointed to.
 
 <figure>
 <img src="/images/qurate/final-dashboard.webp" alt="Final Dashboard screen: summary cards, submission review queue, operations calendar, bookings and statistics, and host activity" />
@@ -117,7 +119,7 @@ Four key interfaces from the finished dashboard.
 
 <figure>
 <img src="/images/qurate/final-split-evaluation.webp" alt="Final Split Evaluation screen: media gallery and itinerary on the left, a 5-step compliance checklist and auto-generated feedback on the right" />
-<figcaption>Split Evaluation. Every asset sits next to the checklist that judges it, so nothing gets approved from memory.</figcaption>
+<figcaption>Split Evaluation. Flagging a checklist item drops its note straight into the host's feedback, so the same rejection reason never gets retyped by hand.</figcaption>
 </figure>
 
 <figure>
@@ -131,12 +133,12 @@ Four key interfaces from the finished dashboard.
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="7" width="11" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="17" y="7" width="11" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M15 16h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 <h3>Efficient Interface</h3>
-<p>Pulling document previews into the workspace cut verification time, since reviewers stopped switching out to a separate PDF viewer.</p>
+<p>Document previews live in the workspace instead of a separate PDF viewer, aimed straight at the context switch behind that 35%.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 18a8 8 0 1 1 3 6.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 24v-6h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <h3>Automated Feedback Generation</h3>
-<p>Structured compliance checklists replaced generic rejection emails. Hosts responded faster because they knew exactly what to fix.</p>
+<p>Structured checklists replace the generic rejection email. The bet is that a host who knows exactly what to fix responds faster than one guessing from a form letter, worth checking against that 4.2-day number once this ships.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 5l12 6-12 6-12-6 12-6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 17l12 6 12-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 23l12 6 12-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -144,3 +146,5 @@ Four key interfaces from the finished dashboard.
 <p>Accordion lists with status indicators keep the queue dense without burying what a curator needs to decide.</p>
 </li>
 </ul>
+
+Built in a week with no usage data behind it. The open question is whether the auto-generated feedback actually changes host behavior the way the compliance checklist assumes it will, and whether real SLA load holds up the three-workspace split.
