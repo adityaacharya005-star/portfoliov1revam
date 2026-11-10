@@ -16,11 +16,14 @@ thumbVideoWebm: /videos/conversations-thumb.webm
 accentColor: "#3B6FE0"
 ---
 
-## Product Context
+## 01 · Product Context
 
-Indian students pick their academic stream in Grade 10, years before most of them have any real sense of what they're good at. Fear fills that gap: parents push Science and Math because those paths feel financially safe, not because they fit the student.
+Indian students pick their academic stream in Grade 10, years before most of them have any real sense of what they're good at. Fear fills that gap: parents push Science and Math because those paths feel financially safe, not because they fit the student. The whole project argues for one reframe:
 
-## Research & Data
+<p><strong>The old family question:</strong> "What is the safest career?"</p>
+<p><strong>The proposed shift:</strong> "Where does my child have the highest competitive advantage?"</p>
+
+## 02 · Research & Data
 
 Two numbers from early research, and a team of four built the rest of this system around them.
 
@@ -39,38 +42,53 @@ Two numbers from early research, and a team of four built the rest of this syste
 </li>
 </ul>
 
-## The Goal
+## 03 · Ground Realities
 
-Design a system that replaces fear-based stream selection with structured autonomy, built on the Academic Bank of Credits that NEP 2020 already opened up but never gave students a way to use. The brief split into three deliverables: a redesigned school library, a one-year transition curriculum, and the app that ties both to real university credit.
+Three stakeholders, three different distortions. The system had to work around all three at once, not just the student.
 
-## User Personas
-
-<ul class="persona-grid">
-<li class="persona-card">
-<div>
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 6L29 12 16 18 3 12 16 6Z" stroke="var(--color-text)" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 15v7c0 1.8 3.1 3 7 3s7-1.2 7-3v-7" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><path d="M29 12v8" stroke="var(--case-accent)" stroke-width="2" stroke-linecap="round"/><circle cx="29" cy="22" r="1.6" fill="var(--case-accent)" stroke="none"/></svg>
-<p class="persona-eyebrow">Student</p>
-<p class="persona-name">The Pressure</p>
-<p class="persona-role">Grade 10, Undecided</p>
-<p><strong>Wants</strong> to find out what he's actually good at, instead of defaulting into Science because it keeps every door open.</p>
-<p><strong>Needs</strong> proof, credits, mentors, a portfolio, that exploring won't cost him his future.</p>
-</div>
+<ul class="quote-grid">
+<li class="quote-card">
+<p class="quote-label">Student · The Pressure</p>
+<p class="quote-text">"I'm not choosing Science. I'm just too scared to choose anything else."</p>
+<p class="quote-behavior"><strong>Key behavior:</strong> explores alone, freezes at the stream decision.</p>
 </li>
-<li class="persona-card">
-<div>
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4l10 4v8c0 7-10 12-10 12S6 23 6 16V8l10-4Z" stroke="var(--color-text)" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 16l3.5 3.5L21.5 12" stroke="var(--case-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<p class="persona-eyebrow">Parent</p>
-<p class="persona-name">The Safety Net</p>
-<p class="persona-role">Parent of a Grade 10 Student</p>
-<p><strong>Wants</strong> certainty that whatever path her child takes will still pay the bills.</p>
-<p><strong>Needs</strong> data she can see updating in real time, not reassurance she has to take on faith.</p>
-</div>
+<li class="quote-card">
+<p class="quote-label">Parent · The Safety Net</p>
+<p class="quote-text">"Passion is fine for hobbies. A degree has to pay the bills."</p>
+<p class="quote-behavior"><strong>Key behavior:</strong> treats a degree as financial insurance, not a fit.</p>
+</li>
+<li class="quote-card">
+<p class="quote-label">Teacher · The Untapped Resource</p>
+<p class="quote-text">"They sit in my class, but mentally they're solving coaching-center problem sets."</p>
+<p class="quote-behavior"><strong>Key behavior:</strong> sidelined by coaching culture, buried under syllabus.</p>
 </li>
 </ul>
 
-A library can change a student's habits on its own. A parent's mind doesn't move without evidence. That gap between the two personas is what the three deliverables below are each built to close, one friction level at a time.
+Three research findings, translated directly into the three systemic interventions below.
 
-## System Overview
+<ul class="insight-map">
+<li class="insight-row">
+<p class="insight-from">Information overload pushes families toward whichever coaching brand has the biggest billboard.</p>
+<span class="insight-arrow" aria-hidden="true">&rarr;</span>
+<p class="insight-to">CareerBridge, verified by real universities, to replace billboard trust with earned credit.</p>
+</li>
+<li class="insight-row">
+<p class="insight-from">Subject silos teach kids that knowledge lives in separate, non-overlapping boxes.</p>
+<span class="insight-arrow" aria-hidden="true">&rarr;</span>
+<p class="insight-to">An intent-based library, organized by human goal instead of subject label.</p>
+</li>
+<li class="insight-row">
+<p class="insight-from">Parents treat a gap year as a stigmatized, wasted year spent re-sitting exams.</p>
+<span class="insight-arrow" aria-hidden="true">&rarr;</span>
+<p class="insight-to">SETU, a credit-backed transition year with its own structure and deliverables.</p>
+</li>
+</ul>
+
+## 04 · The Goal
+
+Design a system that replaces fear-based stream selection with structured autonomy, built on the Academic Bank of Credits that NEP 2020 already opened up but never gave students a way to use. The brief split into three deliverables: a redesigned school library, a one-year transition curriculum, and the app that ties both to real university credit.
+
+## 05 · Systemic Interventions
 
 Three structural pillars, ordered by how much resistance each one meets on the way in.
 
@@ -92,7 +110,7 @@ Three structural pillars, ordered by how much resistance each one meets on the w
 </li>
 </ul>
 
-## The Library
+## 06 · The Library
 
 Subjects taught kids that knowledge lives in sealed boxes, Science over here, Arts over there. The redesign replaces those boxes with four zones organized by intent instead of subject: a quiet Reference vault, a collaborative Explorer zone, a hands-on Creation zone, and a Leisure corner that treats reading for fun as seriously as reading for grades. Color-coded floor paths make the whole room self-navigating, down to a third grader.
 
@@ -106,7 +124,7 @@ Subjects taught kids that knowledge lives in sealed boxes, Science over here, Ar
 <figcaption>Built and in use. The zone guide screen at the entrance tells each grade which zone they're rotating through that week.</figcaption>
 </figure>
 
-## CareerBridge
+## 07 · CareerBridge
 
 A curriculum on paper can't guide a student on a Tuesday morning. CareerBridge is the daily engine: a dual-access app that turns the transition year into bite-sized tasks for the student while giving the parent a live dashboard instead of a vague assurance.
 
@@ -124,6 +142,11 @@ The first screen after login isn't a subject picker. It's eight situational ques
 <p class="figure-eyebrow">The core mechanism</p>
 <img src="/images/conversations/app-onboarding.webp" alt="CareerBridge onboarding: the welcome screen, and the dual-access login screens for students (Exploring) and parents (Assessing)" />
 <figcaption>Dual access from the first screen. A student logs in to explore; a parent logs in to a different view entirely, built to assess, not control.</figcaption>
+</figure>
+
+<figure>
+<img src="/images/conversations/app-pathways.webp" alt="CareerBridge pathway results screen showing four broad industry pathways: Product Engineering & Design, Digital Systems & UX Strategy, Technology & Interactive Innovation, and Strategic Service Design" />
+<figcaption>What the eight questions produce: broad industry pathways, not a single forced major. A starting point for the 90 days, not a verdict.</figcaption>
 </figure>
 
 <figure>
@@ -146,7 +169,7 @@ The first screen after login isn't a subject picker. It's eight situational ques
 <figcaption>The parent's view of the same data: verified credits, consistency score, engagement level. The anxious check-in becomes a number the parent can actually read.</figcaption>
 </figure>
 
-## SETU Curriculum
+## 08 · SETU Curriculum
 
 In India, a gap year usually means one thing: dropping a year to retake an exam. SETU, Sanskrit for bridge, reframes that year as a structured transition instead, built on three terms: Explore, Experience, Envision. Every term closes with a parent-facing deliverable, a family conversation, an industry interface day, a joint planning session, so the year builds trust alongside the student's own portfolio.
 
@@ -155,7 +178,7 @@ In India, a gap year usually means one thing: dropping a year to retake an exam.
 <figcaption>The 25-page booklet schools use to run the year: what NEP 2020 already allows, what it leaves open, and the week-by-week structure that fills the gap.</figcaption>
 </figure>
 
-## Field Validation
+## 09 · Field Validation
 
 The proposal went to Sri Prakash Vidyaniketan's administration before it went anywhere else, specifically to the Vice Principal, since a system that adds work for already-stretched teachers doesn't survive contact with a real school.
 
@@ -163,7 +186,7 @@ The proposal went to Sri Prakash Vidyaniketan's administration before it went an
 >
 > — Sri Lakshmi, Vice Principal
 
-## Retrospective
+## 10 · Retrospective
 
 <ul class="outcome-grid">
 <li class="outcome-card">
