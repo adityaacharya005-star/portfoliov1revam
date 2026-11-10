@@ -31,7 +31,7 @@ const sections = headings.filter((h) => h.depth === 2);
             <li>
               <a href={`#${s.slug}`} data-section-link={s.slug}>
                 <span class="case-study__nav-bullet" aria-hidden="true"></span>
-                {s.text}
+                <span class="case-study__nav-text">{s.text}</span>
               </a>
             </li>
           ))}
@@ -187,10 +187,30 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__breadcrumb {
-    display: block;
+    position: relative;
+    display: inline-block;
     font-size: var(--text-small);
     color: var(--color-muted);
     text-decoration: none;
+    padding-bottom: 2px;
+  }
+
+  .case-study__breadcrumb::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__breadcrumb:hover::after,
+  .case-study__breadcrumb:focus-visible::after {
+    transform: scaleX(1);
   }
 
   .case-study__breadcrumb-sep {
@@ -228,6 +248,29 @@ const sections = headings.filter((h) => h.depth === 2);
     transition: background var(--duration-fast) var(--ease-standard);
   }
 
+  .case-study__nav-text {
+    position: relative;
+    padding-bottom: 2px;
+  }
+
+  .case-study__nav-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__nav a:hover .case-study__nav-text::after,
+  .case-study__nav a:focus-visible .case-study__nav-text::after {
+    transform: scaleX(1);
+  }
+
   .case-study__nav a.is-active {
     color: var(--color-accent);
   }
@@ -237,11 +280,32 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__next {
+    position: relative;
+    display: inline-block;
     font-size: var(--text-small);
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--color-text);
     text-decoration: none;
+    padding-bottom: 2px;
+  }
+
+  .case-study__next::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__next:hover::after,
+  .case-study__next:focus-visible::after {
+    transform: scaleX(1);
   }
 
   .case-study__cover {
@@ -278,6 +342,12 @@ const sections = headings.filter((h) => h.depth === 2);
     .case-study__cover,
     .case-study__intro {
       animation: none;
+    }
+
+    .case-study__breadcrumb::after,
+    .case-study__nav-text::after,
+    .case-study__next::after {
+      transition: none;
     }
   }
 
