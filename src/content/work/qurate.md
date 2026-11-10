@@ -105,7 +105,7 @@ Letting hosts self-certify compliance and skip review entirely would have been f
 
 ## Final Design
 
-Four key interfaces from the finished dashboard, scoped to the review workspace the data pointed to.
+Three key interfaces from the finished dashboard, scoped to the review workspace the data pointed to.
 
 <figure>
 <img src="/images/qurate/final-dashboard.webp" alt="Final Dashboard screen: summary cards, submission review queue, operations calendar, bookings and statistics, and host activity" />
@@ -122,9 +122,10 @@ Four key interfaces from the finished dashboard, scoped to the review workspace 
 <figcaption>Split Evaluation. Flagging a checklist item drops its note straight into the host's feedback, so the same rejection reason never gets retyped by hand.</figcaption>
 </figure>
 
+## Style Guide
+
 <figure>
 <img src="/images/qurate/final-style-guide.webp" alt="Qurate style guide: color palette, typography scale, action button states, and status badge colors" />
-<figcaption>Style Guide</figcaption>
 </figure>
 
 ## Retrospective
