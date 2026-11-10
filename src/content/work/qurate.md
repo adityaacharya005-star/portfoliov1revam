@@ -123,6 +123,28 @@ Three key interfaces from the finished dashboard. Split Evaluation is the one th
 <figcaption>Split Evaluation. Every asset and the checklist that judges it, in one viewport, no PDF viewer, no switching tabs to verify a credential. This is the 70% and the 35%, solved on one screen.</figcaption>
 </figure>
 
+## Other Directions
+
+Three other layouts for that same screen, each rejected for the same reason: they put evidence and judgment in different places instead of the same one.
+
+<ul class="compare-grid">
+<li class="compare-card">
+<img src="/images/qurate/alt-stacked-full.webp" alt="Rejected layout: gallery, info, and itinerary stacked full-width above a separate quality checklist panel" />
+<p class="compare-label">Stacked, checklist below</p>
+<p>Gallery and itinerary filled the screen before the checklist even started. Flagging an image meant scrolling back up to find it again.</p>
+</li>
+<li class="compare-card">
+<img src="/images/qurate/alt-checklist-first.webp" alt="Rejected layout: quality checklist on the left, experience overview and gallery on the right" />
+<p class="compare-label">Checklist first</p>
+<p>Closer to the final split, but leading with the checklist trains a reviewer to judge before they've looked at what they're judging.</p>
+</li>
+<li class="compare-card">
+<img src="/images/qurate/alt-stacked-feedback.webp" alt="Rejected layout: gallery and info stacked above a checklist with a feedback panel beside each flagged item" />
+<p class="compare-label">Stacked, feedback beside checklist</p>
+<p>Pairs the flagged item with its feedback box, but that pair still sits a full scroll away from the photo that triggered it.</p>
+</li>
+</ul>
+
 ## Style Guide
 
 <figure>
