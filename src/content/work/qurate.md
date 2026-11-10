@@ -1,8 +1,8 @@
 ---
 title: Qurate
 description: Dashboard for employees.
-cover: ./assets/qurate/cover.png
-coverAlt: Qurate Experiences operations dashboard shown on a laptop
+cover: ./assets/qurate/cover.webp
+coverAlt: Qurate Experiences dashboard shown on a desktop display, with a Mac Studio alongside it
 role: Product Designer
 timeline: 1 week
 tools: [Figma]
