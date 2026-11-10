@@ -535,6 +535,7 @@ const sections = headings.filter((h) => h.depth === 2);
     width: auto;
     max-width: 260px;
     margin-inline: auto;
+    background: transparent;
   }
 
   /* App screenshots read cleaner on plain white than the warm tan
@@ -542,6 +543,10 @@ const sections = headings.filter((h) => h.depth === 2);
      actually look standalone. */
   .case-study__body :global(.figure--white) {
     background: #fff;
+  }
+
+  .case-study__body :global(.figure--white img) {
+    background: transparent;
   }
 
   /* One card per library zone, each tinted and topped in that
