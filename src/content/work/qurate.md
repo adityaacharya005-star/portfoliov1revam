@@ -85,7 +85,7 @@ A single merged workspace was the first sketch. It fell apart once revision requ
 
 ## User Flow
 
-Letting hosts self-certify compliance and skip review entirely would have been faster, but one missed violation going live outweighed the time saved. Every submission runs through the same policy check before a decision locks in, so two reviewers landing on the same listing reach the same call.
+Every submission runs through the same policy check before a decision locks in. Consistency matters more here than speed: two reviewers landing on the same listing need to reach the same call, not a different one depending on who's faster that day.
 
 <figure>
 <img src="/images/qurate/user-flow.webp" alt="User flow diagram from opening the dashboard through inspecting an experience to an approve, reject, or request-revision outcome" />
