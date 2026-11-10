@@ -149,4 +149,3 @@ Three key interfaces from the finished dashboard. Split Evaluation is the one th
 </li>
 </ul>
 
-Built in a week with no usage data behind it. The open question is whether the auto-generated feedback actually changes host behavior the way the compliance checklist assumes it will, and whether real SLA load holds up the three-workspace split.
