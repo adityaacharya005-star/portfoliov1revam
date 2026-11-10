@@ -85,7 +85,11 @@ Three research findings, translated directly into the three systemic interventio
 
 ## The Goal
 
-Design a system that replaces fear-based stream selection with structured autonomy, built on the Academic Bank of Credits that NEP 2020 already opened up but never gave students a way to use. The brief split into three deliverables: a redesigned school library, a one-year transition curriculum, and the app that ties both to real university credit.
+Design a system that replaces fear-based stream selection with structured autonomy, built on the Academic Bank of Credits that NEP 2020 already opened up but never gave students a way to use. The brief split into three deliverables, one connected system:
+
+<p><strong>The Library.</strong> A physical space, repainted into four intent-based zones.</p>
+<p><strong>SETU.</strong> A one-year transition curriculum, credit-backed from day one.</p>
+<p><strong>CareerBridge.</strong> The daily app tying both of them to real university credit.</p>
 
 ## Systemic Interventions
 
@@ -155,8 +159,7 @@ The first screen after login isn't a subject picker. It's eight situational ques
 <figcaption>A quick run through CareerBridge end to end before the screen-by-screen breakdown below.</figcaption>
 </figure>
 
-<figure class="figure--core figure--white">
-<p class="figure-eyebrow">The core mechanism</p>
+<figure class="figure--white">
 <ul class="screen-grid">
 <li class="screen-item">
 <img src="/images/conversations/app-welcome.webp" alt="CareerBridge welcome screen with the value proposition and a get-started button" />
@@ -242,3 +245,5 @@ The proposal went to Sri Prakash Vidyaniketan's administration before it went an
 <p>Leading with the hardest change (a new exam, a new curriculum mandate) would have stalled before a single student felt the difference. Proving the library worked first made the harder asks easier to say yes to.</p>
 </li>
 </ul>
+
+None of this matters if a student still picks Science out of fear five years from now. That's the number this whole system was built to move, long after the library repaint and the app launch are forgotten.
