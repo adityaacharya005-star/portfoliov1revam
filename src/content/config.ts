@@ -15,6 +15,7 @@ const work = defineCollection({
       featured: z.boolean().default(false),
       // Optional — case-study page template (sidebar nav / meta row)
       eyebrow: z.string().optional(),
+      team: z.string().optional(),
       services: z.array(z.string()).optional(),
       slidesUrl: z.string().optional(),
       // Optional — looping video thumbnail on the work grid, in place of `cover`.

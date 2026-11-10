@@ -4,6 +4,7 @@ description: A system for the right career guidance in India.
 cover: ./assets/conversations-before-college-cover.webp
 coverAlt: "Conversations Before College title card on a blue-to-green gradient background"
 role: Lead System & Interaction Designer
+team: Group Project · 4 Designers
 timeline: March – April 2026
 tools: [Figma]
 services: [System Design, Service Design, UI/UX]
@@ -46,8 +47,8 @@ Design a system that replaces fear-based stream selection with structured autono
 
 <ul class="persona-grid">
 <li class="persona-card">
-<img class="persona-portrait" src="/images/qurate/persona-jitendra.webp" alt="Illustrated portrait representing a Grade 10 student" />
 <div>
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 6L29 12 16 18 3 12 16 6Z" stroke="var(--color-text)" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 15v7c0 1.8 3.1 3 7 3s7-1.2 7-3v-7" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><path d="M29 12v8" stroke="var(--case-accent)" stroke-width="2" stroke-linecap="round"/><circle cx="29" cy="22" r="1.6" fill="var(--case-accent)" stroke="none"/></svg>
 <p class="persona-eyebrow">Student</p>
 <p class="persona-name">The Pressure</p>
 <p class="persona-role">Grade 10, Undecided</p>
@@ -56,8 +57,8 @@ Design a system that replaces fear-based stream selection with structured autono
 </div>
 </li>
 <li class="persona-card">
-<img class="persona-portrait" src="/images/qurate/persona-ritesh.webp" alt="Illustrated portrait representing a parent" />
 <div>
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 4l10 4v8c0 7-10 12-10 12S6 23 6 16V8l10-4Z" stroke="var(--color-text)" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 16l3.5 3.5L21.5 12" stroke="var(--case-accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <p class="persona-eyebrow">Parent</p>
 <p class="persona-name">The Safety Net</p>
 <p class="persona-role">Parent of a Grade 10 Student</p>

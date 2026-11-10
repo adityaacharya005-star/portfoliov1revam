@@ -67,6 +67,12 @@ const sections = headings.filter((h) => h.depth === 2);
             <dt>Role</dt>
             <dd>{data.role}</dd>
           </div>
+          {data.team && (
+            <div>
+              <dt>Team</dt>
+              <dd>{data.team}</dd>
+            </div>
+          )}
           {data.services && (
             <div>
               <dt>Services</dt>
