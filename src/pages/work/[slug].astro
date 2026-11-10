@@ -703,6 +703,13 @@ const sections = headings.filter((h) => h.depth === 2);
     padding: var(--space-5);
     background: color-mix(in srgb, var(--zone-color) 12%, var(--color-bg));
     border-top: 4px solid var(--zone-color);
+    transition: transform var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.zone-card:hover) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(17, 17, 17, 0.1);
   }
 
   .case-study__body :global(.zone-label) {
@@ -753,6 +760,13 @@ const sections = headings.filter((h) => h.depth === 2);
     padding: var(--space-6);
     background: var(--color-bg);
     border-left: 3px solid var(--case-accent);
+    transition: transform var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.quote-card:hover) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(17, 17, 17, 0.08);
   }
 
   .case-study__body :global(.quote-label) {
@@ -841,6 +855,13 @@ const sections = headings.filter((h) => h.depth === 2);
     gap: var(--space-3);
     padding: var(--space-5);
     background: var(--color-card-warm);
+    transition: transform var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.compare-card:hover) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(17, 17, 17, 0.1);
   }
 
   .case-study__body :global(.compare-card img) {
@@ -884,26 +905,20 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study__body :global(.stat-card),
   .case-study__body :global(.outcome-card) {
     position: relative;
-    overflow: hidden;
     padding: var(--space-6);
     background: var(--color-card-warm);
+    border-top: 3px solid var(--case-accent);
+    transition: transform var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard);
   }
 
-  .case-study__body :global(.stat-card::before),
-  .case-study__body :global(.outcome-card::before) {
-    content: '';
-    position: absolute;
-    top: -30px;
-    right: -30px;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    background: color-mix(in srgb, var(--case-accent) 10%, transparent);
-    pointer-events: none;
+  .case-study__body :global(.stat-card:hover),
+  .case-study__body :global(.outcome-card:hover) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(17, 17, 17, 0.1);
   }
 
   .case-study__body :global(.card-icon) {
-    position: relative;
     display: block;
     width: 64px;
     height: 64px;
@@ -943,24 +958,19 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.persona-card) {
     position: relative;
-    overflow: hidden;
     display: flex;
     align-items: flex-end;
     gap: var(--space-6);
     padding: var(--space-6);
     background: var(--color-card-warm);
+    border-top: 3px solid var(--case-accent);
+    transition: transform var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard);
   }
 
-  .case-study__body :global(.persona-card::before) {
-    content: '';
-    position: absolute;
-    bottom: -40px;
-    left: -40px;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: color-mix(in srgb, var(--case-accent) 10%, transparent);
-    pointer-events: none;
+  .case-study__body :global(.persona-card:hover) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(17, 17, 17, 0.1);
   }
 
   .case-study__body :global(.persona-card > div) {
