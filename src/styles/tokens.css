@@ -67,7 +67,6 @@
   --card-aspect-ratio: 1440 / 1024; /* matches the Qurate thumbnail video's native size */
 
   --radius-none: 0;
-  --radius-card: 16px; /* case-study content cards (stat/outcome/persona) — the rest of the site stays sharp-cornered */
 }
 
 /* ==========================================================================

@@ -402,14 +402,13 @@ const sections = headings.filter((h) => h.depth === 2);
   /* Framed like a card rather than bleeding edge-to-edge: padded,
      tinted background behind the screenshot/diagram. */
   .case-study__body :global(figure) {
-    margin: 0;
+    margin-inline: 0;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
     padding: var(--space-7);
     background: var(--color-card-warm);
-    border-radius: var(--radius-card);
-    overflow: hidden;
   }
 
   .case-study__body :global(figcaption) {
@@ -422,7 +421,6 @@ const sections = headings.filter((h) => h.depth === 2);
      gets a visible marker, instead of the same even weight as every
      other screenshot. */
   .case-study__body :global(.figure--feature) {
-    border-radius: var(--radius-card);
     box-shadow: inset 0 0 0 2px var(--case-accent);
   }
 
@@ -440,7 +438,8 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study__body :global(.outcome-grid) {
     display: grid;
     gap: var(--space-5);
-    margin: 0;
+    margin-inline: 0;
+    margin-bottom: 0;
     padding: 0;
     list-style: none;
   }
@@ -460,8 +459,6 @@ const sections = headings.filter((h) => h.depth === 2);
     overflow: hidden;
     padding: var(--space-6);
     background: var(--color-card-warm);
-    border-radius: var(--radius-card);
-    box-shadow: 0 1px 2px rgba(17, 17, 17, 0.04), 0 12px 28px rgba(17, 17, 17, 0.05);
   }
 
   .case-study__body :global(.stat-card::before),
@@ -521,8 +518,6 @@ const sections = headings.filter((h) => h.depth === 2);
     gap: var(--space-6);
     padding: var(--space-6);
     background: var(--color-card-warm);
-    border-radius: var(--radius-card);
-    box-shadow: 0 1px 2px rgba(17, 17, 17, 0.04), 0 12px 28px rgba(17, 17, 17, 0.05);
   }
 
   .case-study__body :global(.persona-card::before) {
