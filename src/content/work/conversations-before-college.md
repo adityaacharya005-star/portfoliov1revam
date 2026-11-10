@@ -16,14 +16,14 @@ thumbVideoWebm: /videos/conversations-thumb.webm
 accentColor: "#3B6FE0"
 ---
 
-## 01 · Product Context
+## Product Context
 
 Indian students pick their academic stream in Grade 10, years before most of them have any real sense of what they're good at. Fear fills that gap: parents push Science and Math because those paths feel financially safe, not because they fit the student. The whole project argues for one reframe:
 
 <p><strong>The old family question:</strong> "What is the safest career?"</p>
 <p><strong>The proposed shift:</strong> "Where does my child have the highest competitive advantage?"</p>
 
-## 02 · Research & Data
+## Research & Data
 
 Two numbers from early research, and a team of four built the rest of this system around them.
 
@@ -42,7 +42,7 @@ Two numbers from early research, and a team of four built the rest of this syste
 </li>
 </ul>
 
-## 03 · Ground Realities
+## Ground Realities
 
 Three stakeholders, three different distortions. The system had to work around all three at once, not just the student.
 
@@ -84,11 +84,11 @@ Three research findings, translated directly into the three systemic interventio
 </li>
 </ul>
 
-## 04 · The Goal
+## The Goal
 
 Design a system that replaces fear-based stream selection with structured autonomy, built on the Academic Bank of Credits that NEP 2020 already opened up but never gave students a way to use. The brief split into three deliverables: a redesigned school library, a one-year transition curriculum, and the app that ties both to real university credit.
 
-## 05 · Systemic Interventions
+## Systemic Interventions
 
 Three structural pillars, ordered by how much resistance each one meets on the way in.
 
@@ -110,7 +110,7 @@ Three structural pillars, ordered by how much resistance each one meets on the w
 </li>
 </ul>
 
-## 06 · The Library
+## The Library
 
 Subjects taught kids that knowledge lives in sealed boxes, Science over here, Arts over there. The redesign replaces those boxes with four zones organized by intent instead of subject: a quiet Reference vault, a collaborative Explorer zone, a hands-on Creation zone, and a Leisure corner that treats reading for fun as seriously as reading for grades. Color-coded floor paths make the whole room self-navigating, down to a third grader.
 
@@ -124,7 +124,7 @@ Subjects taught kids that knowledge lives in sealed boxes, Science over here, Ar
 <figcaption>Built and in use. The zone guide screen at the entrance tells each grade which zone they're rotating through that week.</figcaption>
 </figure>
 
-## 07 · CareerBridge
+## CareerBridge
 
 A curriculum on paper can't guide a student on a Tuesday morning. CareerBridge is the daily engine: a dual-access app that turns the transition year into bite-sized tasks for the student while giving the parent a live dashboard instead of a vague assurance.
 
@@ -169,7 +169,7 @@ The first screen after login isn't a subject picker. It's eight situational ques
 <figcaption>The parent's view of the same data: verified credits, consistency score, engagement level. The anxious check-in becomes a number the parent can actually read.</figcaption>
 </figure>
 
-## 08 · SETU Curriculum
+## SETU Curriculum
 
 In India, a gap year usually means one thing: dropping a year to retake an exam. SETU, Sanskrit for bridge, reframes that year as a structured transition instead, built on three terms: Explore, Experience, Envision. Every term closes with a parent-facing deliverable, a family conversation, an industry interface day, a joint planning session, so the year builds trust alongside the student's own portfolio.
 
@@ -178,7 +178,7 @@ In India, a gap year usually means one thing: dropping a year to retake an exam.
 <figcaption>The 25-page booklet schools use to run the year: what NEP 2020 already allows, what it leaves open, and the week-by-week structure that fills the gap.</figcaption>
 </figure>
 
-## 09 · Field Validation
+## Field Validation
 
 The proposal went to Sri Prakash Vidyaniketan's administration before it went anywhere else, specifically to the Vice Principal, since a system that adds work for already-stretched teachers doesn't survive contact with a real school.
 
@@ -186,7 +186,7 @@ The proposal went to Sri Prakash Vidyaniketan's administration before it went an
 >
 > — Sri Lakshmi, Vice Principal
 
-## 10 · Retrospective
+## Retrospective
 
 <ul class="outcome-grid">
 <li class="outcome-card">
