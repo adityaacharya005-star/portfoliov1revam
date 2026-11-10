@@ -131,7 +131,7 @@ Three other layouts for that same screen, each rejected for the same reason: the
 <li class="compare-card">
 <img src="/images/qurate/alt-stacked-full.webp" alt="Rejected layout: gallery, info, and itinerary stacked full-width above a separate quality checklist panel" />
 <p class="compare-label">Stacked, checklist below</p>
-<p>Gallery and itinerary filled the screen before the checklist even started. Flagging an image meant scrolling back up to find it again.</p>
+<p>Gallery and itinerary filled the screen before the checklist even started. Flagging an image meant sending your eye all the way back up to find it again.</p>
 </li>
 <li class="compare-card">
 <img src="/images/qurate/alt-checklist-first.webp" alt="Rejected layout: quality checklist on the left, experience overview and gallery on the right" />
@@ -141,7 +141,7 @@ Three other layouts for that same screen, each rejected for the same reason: the
 <li class="compare-card">
 <img src="/images/qurate/alt-stacked-feedback.webp" alt="Rejected layout: gallery and info stacked above a checklist with a feedback panel beside each flagged item" />
 <p class="compare-label">Stacked, feedback beside checklist</p>
-<p>Pairs the flagged item with its feedback box, but that pair still sits a full scroll away from the photo that triggered it.</p>
+<p>Pairs the flagged item with its feedback box, but that pair still sits far enough from the photo that triggered it that your eye has to travel to connect them.</p>
 </li>
 </ul>
 
