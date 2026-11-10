@@ -214,38 +214,24 @@ The first screen after login isn't a subject picker. It's eight situational ques
 In India, a gap year usually means one thing: dropping a year to retake an exam. SETU, Sanskrit for bridge, reframes that year as a structured transition instead, built on three terms: Explore, Experience, Envision. Every term closes with a parent-facing deliverable, a family conversation, an industry interface day, a joint planning session, so the year builds trust alongside the student's own portfolio.
 
 <figure class="figure--white">
-<div class="book-flip" data-book-flip>
+<div class="book-flip" data-book-flip data-total-pages="25">
 <div class="book-flip__frame">
-<img class="book-flip__page is-active" src="/images/conversations/booklet/booklet-page-1.webp" alt="SETU curriculum booklet, page 1 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-2.webp" alt="SETU curriculum booklet, page 2 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-3.webp" alt="SETU curriculum booklet, page 3 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-4.webp" alt="SETU curriculum booklet, page 4 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-5.webp" alt="SETU curriculum booklet, page 5 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-6.webp" alt="SETU curriculum booklet, page 6 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-7.webp" alt="SETU curriculum booklet, page 7 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-8.webp" alt="SETU curriculum booklet, page 8 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-9.webp" alt="SETU curriculum booklet, page 9 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-10.webp" alt="SETU curriculum booklet, page 10 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-11.webp" alt="SETU curriculum booklet, page 11 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-12.webp" alt="SETU curriculum booklet, page 12 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-13.webp" alt="SETU curriculum booklet, page 13 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-14.webp" alt="SETU curriculum booklet, page 14 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-15.webp" alt="SETU curriculum booklet, page 15 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-16.webp" alt="SETU curriculum booklet, page 16 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-17.webp" alt="SETU curriculum booklet, page 17 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-18.webp" alt="SETU curriculum booklet, page 18 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-19.webp" alt="SETU curriculum booklet, page 19 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-20.webp" alt="SETU curriculum booklet, page 20 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-21.webp" alt="SETU curriculum booklet, page 21 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-22.webp" alt="SETU curriculum booklet, page 22 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-23.webp" alt="SETU curriculum booklet, page 23 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-24.webp" alt="SETU curriculum booklet, page 24 of 25" />
-<img class="book-flip__page" src="/images/conversations/booklet/booklet-page-25.webp" alt="SETU curriculum booklet, page 25 of 25" />
+<div class="book-flip__page book-flip__page--left" data-slot="left">
+<img alt="" />
+</div>
+<div class="book-flip__spine" aria-hidden="true"></div>
+<div class="book-flip__page book-flip__page--right" data-slot="right">
+<img alt="" />
+</div>
+<div class="book-flip__leaf" data-book-leaf hidden>
+<div class="book-flip__face book-flip__face--front"><img data-face="front" alt="" /></div>
+<div class="book-flip__face book-flip__face--back"><img data-face="back" alt="" /></div>
+</div>
 </div>
 <div class="book-flip__controls">
-<button type="button" class="book-flip__btn" data-book-prev aria-label="Previous page">&larr;</button>
-<p class="book-flip__counter" data-book-counter>1 / 25</p>
-<button type="button" class="book-flip__btn" data-book-next aria-label="Next page">&rarr;</button>
+<button type="button" class="book-flip__btn" data-book-prev aria-label="Previous spread">&larr;</button>
+<p class="book-flip__counter" data-book-counter></p>
+<button type="button" class="book-flip__btn" data-book-next aria-label="Next spread">&rarr;</button>
 </div>
 </div>
 <figcaption>Click through the 25-page booklet schools use to run the year: what NEP 2020 already allows, what it leaves open, and the week-by-week structure that fills the gap.</figcaption>
@@ -253,54 +239,87 @@ In India, a gap year usually means one thing: dropping a year to retake an exam.
 
 <script>
   document.querySelectorAll('[data-book-flip]').forEach((book) => {
-    const pages = Array.from(book.querySelectorAll('.book-flip__page'));
+    const totalPages = parseInt(book.dataset.totalPages, 10);
+    const base = '/images/conversations/booklet/booklet-page-';
+    const src = (n) => `${base}${n}.webp`;
+    const valid = (n) => (n >= 1 && n <= totalPages ? n : null);
+
+    const leftImg = book.querySelector('[data-slot="left"] img');
+    const rightImg = book.querySelector('[data-slot="right"] img');
+    const leaf = book.querySelector('[data-book-leaf]');
+    const leafFront = leaf.querySelector('[data-face="front"]');
+    const leafBack = leaf.querySelector('[data-face="back"]');
     const counter = book.querySelector('[data-book-counter]');
     const prevBtn = book.querySelector('[data-book-prev]');
     const nextBtn = book.querySelector('[data-book-next]');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let current = 0;
+
+    const maxF = Math.floor((totalPages - 1) / 2);
+    let f = 0;
     let animating = false;
 
-    const setButtons = () => {
-      prevBtn.disabled = current === 0;
-      nextBtn.disabled = current === pages.length - 1;
-      counter.textContent = `${current + 1} / ${pages.length}`;
+    const setSlot = (img, n) => {
+      const ok = valid(n);
+      img.style.visibility = ok ? 'visible' : 'hidden';
+      if (ok) {
+        img.src = src(ok);
+        img.alt = `SETU booklet, page ${ok} of ${totalPages}`;
+      }
     };
 
-    const goTo = (target, dir) => {
-      if (animating || target < 0 || target >= pages.length) return;
+    const render = () => {
+      const leftN = f >= 1 ? 2 * f : null;
+      const rightN = 2 * f + 1;
+      setSlot(leftImg, leftN);
+      setSlot(rightImg, rightN);
+      counter.textContent = leftN ? `Pages ${leftN}–${Math.min(rightN, totalPages)}` : `Page ${rightN}`;
+      prevBtn.disabled = f === 0;
+      nextBtn.disabled = f === maxF;
+    };
+
+    const flip = (dir) => {
+      const target = f + dir;
+      if (animating || target < 0 || target > maxF) return;
       animating = true;
-      const outgoing = pages[current];
-      const incoming = pages[target];
-      incoming.style.zIndex = '3';
 
       if (prefersReducedMotion) {
-        outgoing.classList.remove('is-active');
-        incoming.classList.add('is-active');
-        current = target;
-        setButtons();
+        f = target;
+        render();
         animating = false;
         return;
       }
 
-      outgoing.style.animation = `book-flip-out-${dir > 0 ? 'fwd' : 'back'} 240ms ease forwards`;
-      incoming.style.animation = `book-flip-in-${dir > 0 ? 'fwd' : 'back'} 240ms ease 240ms forwards`;
-      incoming.classList.add('is-active');
+      if (dir > 0) {
+        leafFront.src = src(2 * f + 1);
+        const backN = valid(2 * f + 2);
+        leafBack.src = backN ? src(backN) : '';
+        leaf.hidden = false;
+        leaf.className = 'book-flip__leaf is-right-origin';
+        void leaf.offsetWidth;
+        leaf.classList.add('is-flipped');
+        setTimeout(() => setSlot(rightImg, 2 * f + 3), 330);
+      } else {
+        leafBack.src = src(2 * f);
+        const frontN = valid(2 * f - 1);
+        leafFront.src = frontN ? src(frontN) : '';
+        leaf.hidden = false;
+        leaf.className = 'book-flip__leaf is-left-origin is-flipped';
+        void leaf.offsetWidth;
+        leaf.classList.remove('is-flipped');
+        setTimeout(() => setSlot(leftImg, 2 * f - 2), 330);
+      }
 
       setTimeout(() => {
-        outgoing.classList.remove('is-active');
-        outgoing.style.animation = '';
-        incoming.style.animation = '';
-        incoming.style.zIndex = '';
-        current = target;
-        setButtons();
+        f = target;
+        render();
+        leaf.hidden = true;
         animating = false;
-      }, 500);
+      }, 660);
     };
 
-    prevBtn.addEventListener('click', () => goTo(current - 1, -1));
-    nextBtn.addEventListener('click', () => goTo(current + 1, 1));
-    setButtons();
+    prevBtn.addEventListener('click', () => flip(-1));
+    nextBtn.addEventListener('click', () => flip(1));
+    render();
   });
 </script>
 
