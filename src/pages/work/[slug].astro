@@ -141,7 +141,13 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study {
     --case-accent: var(--color-accent);
     max-width: 1320px;
-    margin: var(--space-9) auto 0;
+    /* Anchor the left edge to the same position as the header's
+       .wrapper (max-width 1200, centered) and only extend further
+       right, so the sidebar always lines up under the avatar/nav
+       instead of the two containers centering independently. */
+    margin-left: max(calc((100vw - var(--layout-max-width)) / 2), 0px);
+    margin-right: auto;
+    margin-top: var(--space-9);
     padding-inline: var(--layout-padding);
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -501,6 +507,7 @@ const sections = headings.filter((h) => h.depth === 2);
 
   @media (max-width: 1024px) {
     .case-study {
+      padding-inline: var(--layout-padding-tablet);
       grid-template-columns: 180px 1fr;
       gap: var(--space-6);
     }
@@ -532,6 +539,10 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   @media (max-width: 480px) {
+    .case-study {
+      padding-inline: var(--layout-padding-mobile);
+    }
+
     .case-study__title {
       font-size: 2rem;
     }
