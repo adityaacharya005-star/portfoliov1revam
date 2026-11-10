@@ -513,17 +513,21 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study__body :global(.stat-number) {
     position: relative;
     font-family: var(--font-serif);
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
+    font-weight: 700;
+    line-height: 1;
     color: var(--case-accent);
     margin: 0 0 var(--space-3);
   }
 
   .case-study__body :global(.stat-label) {
-    font-weight: 600;
+    font-size: var(--text-body-lg);
+    font-weight: 700;
+    color: var(--color-text);
     margin: 0 0 var(--space-3);
   }
 
-  .case-study__body :global(.stat-card p),
+  .case-study__body :global(.stat-card p:not(.stat-number):not(.stat-label)),
   .case-study__body :global(.outcome-card p) {
     font-size: var(--text-small);
     color: var(--color-muted);
