@@ -32,19 +32,19 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="17" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M16 11v6l4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4h8M16 4v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 <p class="stat-number">70%</p>
 <p class="stat-label">Manual Overhead</p>
-<p>Reviewers spent this much time checking attachments, host backgrounds, and formatting rules across separate windows.</p>
+<p>Spent jumping between attachments, host profiles, and formatting rules in separate windows.</p>
 </li>
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M9 5h14M9 27h14M10 5c0 6 5 7.5 6 9-1 1.5-6 3-6 9M22 5c0 6-5 7.5-6 9 1 1.5 6 3 6 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <p class="stat-number">4.2 Days</p>
 <p class="stat-label">Host Resolution Time</p>
-<p>Hosts took this long to fix a flagged issue, or gave up, after a generic rejection email.</p>
+<p>To fix a flagged issue, or give up, after a generic rejection email.</p>
 </li>
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="8" y="4" width="13" height="17" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M11 9h7M11 13h7M11 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="21" cy="22" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M24.5 25.5L27 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
 <p class="stat-number">35%</p>
 <p class="stat-label">Verification Delay</p>
-<p>Reviewers lost this share of their time opening external PDF viewers and matching credentials against profile fields by hand.</p>
+<p>Lost opening external PDF viewers and matching credentials by hand.</p>
 </li>
 </ul>
 
@@ -75,7 +75,7 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 
 ## Information Architecture
 
-The dashboard splits into three workspaces: an operations overview, the review queue, and a split evaluation view for the curation work itself.
+Jitendra swings between a quick status check and deep, one-at-a-time evaluation all day. Splitting those into separate workspaces meant neither had to compromise for the other.
 
 <figure>
 <img src="/images/qurate/ia-diagram.webp" alt="Information architecture diagram: Qurate Experience Dashboard splits into Operations Dashboard, Review Queue, and Split Evaluation Workspace, each broken into their constituent panels" />
@@ -83,7 +83,7 @@ The dashboard splits into three workspaces: an operations overview, the review q
 
 ## User Flow
 
-From opening the dashboard to approving or rejecting a submission, with a policy-violation check that routes a flagged listing to either a rejection or a revision request.
+Every submission runs through the same policy check before a decision locks in, so two reviewers landing on the same listing reach the same call.
 
 <figure>
 <img src="/images/qurate/user-flow.webp" alt="User flow diagram from opening the dashboard through inspecting an experience to an approve, reject, or request-revision outcome" />
@@ -107,17 +107,17 @@ Four key interfaces from the finished dashboard.
 
 <figure>
 <img src="/images/qurate/final-dashboard.webp" alt="Final Dashboard screen: summary cards, submission review queue, operations calendar, bookings and statistics, and host activity" />
-<figcaption>Dashboard. Summary cards show capacity at a glance, the submission queue opens straight into evaluation, the calendar surfaces reviews nearing their deadline, and host and booking numbers stay on the same page.</figcaption>
+<figcaption>Dashboard. Scoped to the first two minutes of the day: what's overdue, what's new, what's already decided.</figcaption>
 </figure>
 
 <figure>
 <img src="/images/qurate/final-review-queue.webp" alt="Final Review Queue screen: status-filtered tabs, search and sort toolbar, and a queue table with SLA countdown timers" />
-<figcaption>Review Queue. Status tabs separate new submissions from active revisions, search and sort narrow the list by region or urgency, and SLA countdown timers put at-risk items first.</figcaption>
+<figcaption>Review Queue. Sorted by deadline by default, because the real risk was never a bad listing, it was a missed one.</figcaption>
 </figure>
 
 <figure>
 <img src="/images/qurate/final-split-evaluation.webp" alt="Final Split Evaluation screen: media gallery and itinerary on the left, a 5-step compliance checklist and auto-generated feedback on the right" />
-<figcaption>Split Evaluation. Every submission asset sits in one viewport, a 5-step checklist standardizes the review, feedback for hosts writes itself from whatever gets flagged, and the action footer stays locked until the checklist clears.</figcaption>
+<figcaption>Split Evaluation. Every asset sits next to the checklist that judges it, so nothing gets approved from memory.</figcaption>
 </figure>
 
 <figure>
