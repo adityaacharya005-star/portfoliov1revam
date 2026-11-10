@@ -233,27 +233,21 @@ The proposal went to Sri Prakash Vidyaniketan's administration before it went an
 
 ## Retrospective
 
-<ol class="lesson-list">
-<li class="lesson-row">
-<span class="lesson-number">01</span>
-<div>
+<ul class="outcome-grid">
+<li class="outcome-card">
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="10" stroke="var(--color-text)" stroke-width="1.5"/><path d="M16 6v6M16 20v6M6 16h6M20 16h6" stroke="var(--case-accent)" stroke-width="2" stroke-linecap="round"/></svg>
 <h3>Designing for Complex Systems</h3>
 <p>A policy like NEP 2020 can open a door on paper and still leave it shut in practice, because the real blocker was never the policy. It was the behavior built up around the old one.</p>
-</div>
 </li>
-<li class="lesson-row">
-<span class="lesson-number">02</span>
-<div>
+<li class="outcome-card">
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="10" cy="11" r="3.5" stroke="var(--color-text)" stroke-width="1.5"/><circle cx="22" cy="11" r="3.5" stroke="var(--case-accent)" stroke-width="2"/><path d="M4 25c0-4.5 3-7 6-7s6 2.5 6 7M16 25c0-4.5 3-7 6-7s6 2.5 6 7" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/></svg>
 <h3>Multi-Stakeholder Friction</h3>
 <p>Student anxiety, parental fear, and a school administration's workload don't resolve into one blueprint cleanly. The friction-ordered rollout, library first, app second, curriculum last, exists because that fight couldn't be won in one move.</p>
-</div>
 </li>
-<li class="lesson-row">
-<span class="lesson-number">03</span>
-<div>
+<li class="outcome-card">
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 23l6-14 6 9 4-6 6 11" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="12" r="1.8" fill="var(--case-accent)" stroke="none"/></svg>
 <h3>Sequencing the Ask</h3>
 <p>Leading with the hardest change (a new exam, a new curriculum mandate) would have stalled before a single student felt the difference. Proving the library worked first made the harder asks easier to say yes to.</p>
-</div>
 </li>
-</ol>
+</ul>
 

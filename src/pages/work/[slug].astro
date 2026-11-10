@@ -847,60 +847,6 @@ const sections = headings.filter((h) => h.depth === 2);
     line-height: 1;
   }
 
-  /* A systems case study closes on prose, not a product's feature
-     cards: numbered editorial rows instead of the icon-card grid
-     Qurate's retrospective uses, since there's no interface here for
-     an icon to echo. */
-  .case-study__body :global(.lesson-list) {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .case-study__body :global(.lesson-row) {
-    display: grid;
-    grid-template-columns: 72px 1fr;
-    gap: var(--space-5);
-    padding: var(--space-6) 0;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .case-study__body :global(.lesson-row:first-child) {
-    border-top: none;
-    padding-top: 0;
-  }
-
-  .case-study__body :global(.lesson-number) {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1;
-    color: var(--case-accent);
-  }
-
-  .case-study__body :global(.lesson-row h3) {
-    font-family: var(--font-sans);
-    font-size: var(--text-body-lg);
-    font-weight: 600;
-    margin: 0 0 var(--space-2);
-  }
-
-  .case-study__body :global(.lesson-row p) {
-    font-size: var(--text-small);
-    color: var(--color-muted);
-    max-width: 640px;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    .case-study__body :global(.lesson-row) {
-      grid-template-columns: 1fr;
-      gap: var(--space-2);
-    }
-  }
-
   /* Rejected directions shown three-up instead of full-width figures,
      so comparing them costs a glance, not a scroll. */
   .case-study__body :global(.compare-card) {
