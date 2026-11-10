@@ -414,6 +414,23 @@ const sections = headings.filter((h) => h.depth === 2);
     max-width: 720px;
   }
 
+  /* The one screen that solves the problem the research opened with
+     gets a visible marker, instead of the same even weight as every
+     other screenshot. */
+  .case-study__body :global(.figure--feature) {
+    outline: 2px solid var(--case-accent);
+    outline-offset: -2px;
+  }
+
+  .case-study__body :global(.figure-eyebrow) {
+    margin: 0;
+    font-size: var(--text-small);
+    font-weight: 600;
+    color: var(--case-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
   .case-study__body :global(.stat-grid),
   .case-study__body :global(.persona-grid),
   .case-study__body :global(.outcome-grid) {

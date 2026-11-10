@@ -105,7 +105,7 @@ Letting hosts self-certify compliance and skip review entirely would have been f
 
 ## Final Design
 
-Three key interfaces from the finished dashboard, scoped to the review workspace the data pointed to.
+Three key interfaces from the finished dashboard. Split Evaluation is the one that mattered, built to go straight at the 70% and 35% from the research. The dashboard and queue exist to feed reviewers into it fast.
 
 <figure>
 <img src="/images/qurate/final-dashboard.webp" alt="Final Dashboard screen: summary cards, submission review queue, operations calendar, bookings and statistics, and host activity" />
@@ -117,9 +117,10 @@ Three key interfaces from the finished dashboard, scoped to the review workspace
 <figcaption>Review Queue. Sorted by deadline by default, because the real risk was never a bad listing, it was a missed one.</figcaption>
 </figure>
 
-<figure>
+<figure class="figure--feature">
+<p class="figure-eyebrow">The core screen</p>
 <img src="/images/qurate/final-split-evaluation.webp" alt="Final Split Evaluation screen: media gallery and itinerary on the left, a 5-step compliance checklist and auto-generated feedback on the right" />
-<figcaption>Split Evaluation. Flagging a checklist item drops its note straight into the host's feedback, so the same rejection reason never gets retyped by hand.</figcaption>
+<figcaption>Split Evaluation. Every asset and the checklist that judges it, in one viewport, no PDF viewer, no switching tabs to verify a credential. This is the 70% and the 35%, solved on one screen.</figcaption>
 </figure>
 
 ## Style Guide
