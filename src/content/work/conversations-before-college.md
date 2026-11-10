@@ -157,8 +157,20 @@ The first screen after login isn't a subject picker. It's eight situational ques
 
 <figure class="figure--core figure--white">
 <p class="figure-eyebrow">The core mechanism</p>
-<img src="/images/conversations/app-onboarding.webp" alt="CareerBridge onboarding: the welcome screen, and the dual-access login screens for students (Exploring) and parents (Assessing)" />
-<figcaption>Dual access from the first screen. A student logs in to explore; a parent logs in to a different view entirely, built to assess, not control.</figcaption>
+<ul class="screen-grid">
+<li class="screen-item">
+<img src="/images/conversations/app-welcome.webp" alt="CareerBridge welcome screen with the value proposition and a get-started button" />
+<p class="screen-caption">The welcome screen, setting up the value proposition.</p>
+</li>
+<li class="screen-item">
+<img src="/images/conversations/app-login-student.webp" alt="CareerBridge student login screen, labeled Let's Start Exploring" />
+<p class="screen-caption">Exploring: a student logs in to start the 90 days.</p>
+</li>
+<li class="screen-item">
+<img src="/images/conversations/app-login-parent.webp" alt="CareerBridge parent login screen, labeled Let's Start Assessing" />
+<p class="screen-caption">Assessing: a parent logs in to a different view entirely, built to assess, not control.</p>
+</li>
+</ul>
 </figure>
 
 <figure class="figure--white">
@@ -167,8 +179,16 @@ The first screen after login isn't a subject picker. It's eight situational ques
 </figure>
 
 <figure class="figure--white">
-<img src="/images/conversations/app-dashboard-task.webp" alt="CareerBridge student dashboard showing today's focus task, and the detail view for a task from NID Ahmedabad" />
-<figcaption>Today's Focus. Every task is tagged with the real institution behind it, NID, IIIT, so a 90-day exploration carries actual academic weight, not a random internet module.</figcaption>
+<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
+<li class="screen-item">
+<img src="/images/conversations/app-today-focus.webp" alt="CareerBridge Today's Focus dashboard with the day's tasks" />
+<p class="screen-caption">Today's Focus, tagged with the real institution behind it, NID or IIIT.</p>
+</li>
+<li class="screen-item">
+<img src="/images/conversations/app-task-detail.webp" alt="CareerBridge task detail screen for a Visualizing Products task from NID Ahmedabad" />
+<p class="screen-caption">So a 90-day exploration carries real academic weight, not a random internet module.</p>
+</li>
+</ul>
 </figure>
 
 <figure class="figure--white">

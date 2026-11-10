@@ -416,7 +416,8 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__meta dt {
     font-size: var(--text-small);
-    color: var(--color-muted);
+    font-weight: 600;
+    color: var(--color-text);
     text-transform: uppercase;
     letter-spacing: 0.04em;
   }
@@ -424,7 +425,7 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study__meta dd {
     margin: var(--space-1) 0 0;
     font-size: var(--text-body);
-    font-weight: 600;
+    color: var(--color-muted);
   }
 
   .case-study__body {
@@ -547,6 +548,40 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.figure--white img) {
     background: transparent;
+  }
+
+  /* Several phone screens shown as their own cards with their own
+     caption, instead of one flattened composite image with a single
+     caption underneath, so every screen reads at the same size. */
+  .case-study__body :global(.screen-grid) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+    margin-inline: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .case-study__body :global(.screen-item) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .case-study__body :global(.screen-item img) {
+    width: auto;
+    max-width: 220px;
+    background: transparent;
+  }
+
+  .case-study__body :global(.screen-caption) {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    text-align: center;
+    max-width: none;
+    margin: 0;
   }
 
   /* One card per library zone, each tinted and topped in that
@@ -876,7 +911,8 @@ const sections = headings.filter((h) => h.depth === 2);
     .case-study__body :global(.outcome-grid),
     .case-study__body :global(.persona-grid),
     .case-study__body :global(.compare-grid),
-    .case-study__body :global(.quote-grid) {
+    .case-study__body :global(.quote-grid),
+    .case-study__body :global(.screen-grid) {
       grid-template-columns: 1fr;
     }
 
