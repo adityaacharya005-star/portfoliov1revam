@@ -2,7 +2,7 @@
 title: Conversations before college
 description: A system for the right career guidance in India.
 cover: ./assets/conversations-before-college-cover.webp
-coverAlt: "An overhead view of the redesigned school library, showing its four color-coded zones: blue reference, yellow exploring and careers, green maker's library, and purple leisure and fun"
+coverAlt: "Rows of students bent over desks in a packed exam hall, the scale of competition this project is designed against"
 role: Lead System & Interaction Designer
 team: Group Project · 4 Designers
 timeline: March – April 2026

@@ -974,9 +974,13 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.card-icon) {
     display: block;
-    width: 64px;
-    height: 64px;
+    box-sizing: border-box;
+    width: 56px;
+    height: 56px;
+    padding: 12px;
     margin-bottom: var(--space-5);
+    background: color-mix(in srgb, var(--case-accent) 12%, transparent);
+    border-radius: 12px;
   }
 
   .case-study__body :global(.stat-number) {
