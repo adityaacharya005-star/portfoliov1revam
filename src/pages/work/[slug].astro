@@ -291,10 +291,16 @@ const sections = headings.filter((h) => h.depth === 2);
     margin-top: var(--space-9);
   }
 
-  .case-study__body > :global(h2 + p),
+  .case-study__body > :global(h2 + p) {
+    margin-top: var(--space-3);
+  }
+
+  /* A grid/figure right after a heading (no lead paragraph in between)
+     needs more breathing room than text does — tight works for prose
+     continuing the heading's thought, not for a card grid or image. */
   .case-study__body > :global(h2 + ul),
   .case-study__body > :global(h2 + figure) {
-    margin-top: var(--space-3);
+    margin-top: var(--space-6);
   }
 
   .case-study__body > :global(p + p) {
