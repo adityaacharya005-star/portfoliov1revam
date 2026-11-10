@@ -2,9 +2,8 @@ export const site = {
   name: 'Aditya Acharya',
   email: 'connect.aditya.acharya@gmail.com',
   resumeUrl: '/resume.pdf',
-  // TODO: replace with real profile URLs
-  linkedinUrl: 'https://www.linkedin.com/in/TODO',
-  behanceUrl: 'https://www.behance.net/TODO',
+  linkedinUrl: 'https://www.linkedin.com/in/adityaacharya005/',
+  behanceUrl: 'https://www.behance.net/adityaacharya13',
   nav: [
     { label: 'Work', href: '/work' },
     { label: 'About', href: '/about' },

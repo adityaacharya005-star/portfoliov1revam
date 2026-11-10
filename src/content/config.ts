@@ -17,6 +17,11 @@ const work = defineCollection({
       eyebrow: z.string().optional(),
       services: z.array(z.string()).optional(),
       slidesUrl: z.string().optional(),
+      // Optional — looping video thumbnail on the work grid, in place of `cover`.
+      // Paths are relative to /public (e.g. /videos/qurate-thumb.mp4); `cover` is
+      // still required and used as the <video> poster / no-JS and reduced-motion fallback.
+      thumbVideoMp4: z.string().optional(),
+      thumbVideoWebm: z.string().optional(),
     }),
 });
 

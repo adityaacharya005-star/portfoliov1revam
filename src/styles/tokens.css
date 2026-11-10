@@ -63,7 +63,7 @@
   --grid-gap-column: 56px;
   --grid-gap-row: 40px;
 
-  --card-aspect-ratio: 17 / 10;
+  --card-aspect-ratio: 1440 / 1024; /* matches the Qurate thumbnail video's native size */
 
   --radius-none: 0;
 }

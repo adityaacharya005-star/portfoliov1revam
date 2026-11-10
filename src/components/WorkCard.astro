@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 
 interface Props {
@@ -9,14 +9,36 @@ interface Props {
   cover: ImageMetadata;
   coverAlt: string;
   tags?: string[];
+  thumbVideoMp4?: string;
+  thumbVideoWebm?: string;
 }
 
-const { href, title, description, cover, coverAlt, tags } = Astro.props;
+const { href, title, description, cover, coverAlt, tags, thumbVideoMp4, thumbVideoWebm } = Astro.props;
+const hasVideo = Boolean(thumbVideoMp4 && thumbVideoWebm);
+const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
 ---
 
 <a href={href} class="work-card">
   <span class="work-card__media">
-    <Image src={cover} alt={coverAlt} class="work-card__image" />
+    {hasVideo ? (
+      <video
+        class="work-card__image"
+        poster={poster!.src}
+        autoplay
+        loop
+        muted
+        playsinline
+        disablepictureinpicture
+        controlslist="nodownload noremoteplayback nofullscreen noplaybackrate"
+        aria-label={coverAlt}
+        data-autoplay-video
+      >
+        <source src={thumbVideoWebm} type="video/webm" />
+        <source src={thumbVideoMp4} type="video/mp4" />
+      </video>
+    ) : (
+      <Image src={cover} alt={coverAlt} class="work-card__image" />
+    )}
   </span>
   <span class="work-card__top">
     <span class="work-card__title">
@@ -33,6 +55,17 @@ const { href, title, description, cover, coverAlt, tags } = Astro.props;
   </span>
   <span class="work-card__description">{description}</span>
 </a>
+
+<script>
+  const videos = document.querySelectorAll<HTMLVideoElement>('[data-autoplay-video]');
+  if (videos.length > 0 && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    videos.forEach((video) => {
+      video.removeAttribute('autoplay');
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
+</script>
 
 <style>
   .work-card {
