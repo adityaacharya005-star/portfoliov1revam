@@ -25,19 +25,19 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 
 <ul class="stat-grid">
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="17" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M16 11v6l4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4h8M16 4v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="17" r="10" stroke="var(--color-text)" stroke-width="1.5"/><path d="M12 4h8M16 4v3" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><path d="M16 11v6l4 3" stroke="var(--case-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <p class="stat-number">70%</p>
 <p class="stat-label">Manual Overhead</p>
 <p>Spent jumping between attachments, host profiles, and formatting rules in separate windows.</p>
 </li>
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M9 5h14M9 27h14M10 5c0 6 5 7.5 6 9-1 1.5-6 3-6 9M22 5c0 6-5 7.5-6 9 1 1.5 6 3 6 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M9 5h14M9 27h14M10 5c0 6 5 7.5 6 9-1 1.5-6 3-6 9M22 5c0 6-5 7.5-6 9 1 1.5 6 3 6 9" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="16" r="1.5" fill="var(--case-accent)" stroke="none"/></svg>
 <p class="stat-number">4.2 Days</p>
 <p class="stat-label">Host Resolution Time</p>
 <p>To fix a flagged issue, or give up, after a generic rejection email.</p>
 </li>
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="8" y="4" width="13" height="17" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M11 9h7M11 13h7M11 17h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="21" cy="22" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M24.5 25.5L27 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="8" y="4" width="13" height="17" rx="1" stroke="var(--color-text)" stroke-width="1.5"/><path d="M11 9h7M11 13h7M11 17h4" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><circle cx="21" cy="22" r="5" stroke="var(--case-accent)" stroke-width="2"/><path d="M24.5 25.5L27 28" stroke="var(--case-accent)" stroke-width="2" stroke-linecap="round"/></svg>
 <p class="stat-number">35%</p>
 <p class="stat-label">Verification Delay</p>
 <p>Lost opening external PDF viewers and matching credentials by hand.</p>
@@ -155,17 +155,17 @@ Three other layouts for that same screen, each rejected for the same reason: the
 
 <ul class="outcome-grid">
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="7" width="11" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="17" y="7" width="11" height="18" rx="1" stroke="currentColor" stroke-width="1.5"/><path d="M15 16h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="4" y="7" width="11" height="18" rx="1" stroke="var(--color-text)" stroke-width="1.5"/><rect x="17" y="7" width="11" height="18" rx="1" stroke="var(--color-text)" stroke-width="1.5"/><path d="M15 16h2" stroke="var(--case-accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
 <h3>Efficient Interface</h3>
 <p>Document previews live in the workspace instead of a separate PDF viewer, aimed straight at the context switch behind that 35%.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 18a8 8 0 1 1 3 6.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M8 24v-6h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 18a8 8 0 1 1 3 6.2" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><path d="M8 24v-6h6" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15l2 2 4-4" stroke="var(--case-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <h3>Automated Feedback Generation</h3>
 <p>Structured checklists replace the generic rejection email. The bet is that a host who knows exactly what to fix responds faster than one guessing from a form letter, worth checking against that 4.2-day number once this ships.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 5l12 6-12 6-12-6 12-6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 17l12 6 12-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 23l12 6 12-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 5l12 6-12 6-12-6 12-6Z" stroke="var(--color-text)" stroke-width="1.5" stroke-linejoin="round"/><path d="M4 17l12 6 12-6" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 23l12 6 12-6" stroke="var(--case-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <h3>Density Without Overwhelm</h3>
 <p>Accordion lists with status indicators keep the queue dense without burying what a curator needs to decide.</p>
 </li>
