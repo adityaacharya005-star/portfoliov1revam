@@ -550,6 +550,102 @@ const sections = headings.filter((h) => h.depth === 2);
     background: transparent;
   }
 
+  /* An interactive page-flip viewer for the curriculum booklet:
+     stacked pages, one active at a time, with a 3D flip transition
+     between them and prev/next controls. */
+  .case-study__body :global(.book-flip) {
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .case-study__body :global(.book-flip__frame) {
+    position: relative;
+    aspect-ratio: 900 / 1273;
+    perspective: 1400px;
+    background: var(--color-placeholder);
+  }
+
+  .case-study__body :global(.book-flip__page) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 1;
+    background: transparent;
+    backface-visibility: hidden;
+  }
+
+  .case-study__body :global(.book-flip__page.is-active) {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .case-study__body :global(.book-flip__controls) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .case-study__body :global(.book-flip__btn) {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.book-flip__btn:hover:not(:disabled)) {
+    background: var(--color-card-warm);
+  }
+
+  .case-study__body :global(.book-flip__btn:disabled) {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .case-study__body :global(.book-flip__counter) {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    min-width: 56px;
+    text-align: center;
+    max-width: none;
+    margin: 0;
+  }
+
+  @keyframes book-flip-out-fwd {
+    from { transform: rotateY(0deg); opacity: 1; }
+    to { transform: rotateY(-90deg); opacity: 0; }
+  }
+
+  @keyframes book-flip-in-fwd {
+    from { transform: rotateY(90deg); opacity: 0; }
+    to { transform: rotateY(0deg); opacity: 1; }
+  }
+
+  @keyframes book-flip-out-back {
+    from { transform: rotateY(0deg); opacity: 1; }
+    to { transform: rotateY(90deg); opacity: 0; }
+  }
+
+  @keyframes book-flip-in-back {
+    from { transform: rotateY(-90deg); opacity: 0; }
+    to { transform: rotateY(0deg); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case-study__body :global(.book-flip__page) {
+      animation: none !important;
+    }
+  }
+
   /* Several phone screens shown as their own cards with their own
      caption, instead of one flattened composite image with a single
      caption underneath, so every screen reads at the same size. */
