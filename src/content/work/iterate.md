@@ -165,7 +165,6 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 <li class="persona-card persona-card--iterate persona-card--id">
 <div class="id-card__band">
 <span class="id-card__hole" aria-hidden="true"></span>
-<p class="id-card__band-label">Iterate · Student ID</p>
 </div>
 <div class="id-card__body">
 <span class="persona-portrait persona-portrait--sketch" role="img" aria-label="Sketch illustration representing Priya Sharma">
@@ -176,8 +175,8 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 <p class="id-card__meta"><span>No. 2025-014</span><span>Issued 2025</span></p>
 <p class="persona-role">"I design to be the best. Feedback is the fastest way to get there."</p>
 <div class="persona-traits">
-<p><strong>Wants</strong> To accelerate her practical skills and have a standout, job-ready portfolio before graduation.</p>
-<p><strong>Needs</strong> Specific, actionable critique instead of the "looks nice!" comments she gets from classmates.</p>
+<p><strong>Wants</strong> A job-ready portfolio.</p>
+<p><strong>Needs</strong> Specific, actionable critique.</p>
 </div>
 <div class="id-card__barcode" aria-hidden="true"></div>
 </div>
@@ -185,7 +184,6 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 <li class="persona-card persona-card--iterate persona-card--id">
 <div class="id-card__band">
 <span class="id-card__hole" aria-hidden="true"></span>
-<p class="id-card__band-label">Iterate · Student ID</p>
 </div>
 <div class="id-card__body">
 <span class="persona-portrait persona-portrait--sketch" role="img" aria-label="Sketch illustration representing Aniket Joshi">
@@ -196,8 +194,8 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 <p class="id-card__meta"><span>No. 2025-027</span><span>Issued 2025</span></p>
 <p class="persona-role">"I have so many ideas in my head, I just wish I had the confidence to share them."</p>
 <div class="persona-traits">
-<p><strong>Wants</strong> The confidence to post publicly for the first time, not just keep working privately.</p>
-<p><strong>Needs</strong> A low-pressure way to post anonymously and receive gentle, structured feedback.</p>
+<p><strong>Wants</strong> Confidence to post publicly.</p>
+<p><strong>Needs</strong> Low-pressure, anonymous feedback.</p>
 </div>
 <div class="id-card__barcode" aria-hidden="true"></div>
 </div>
