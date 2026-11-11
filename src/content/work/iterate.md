@@ -270,7 +270,7 @@ The first sketch pass mapped every screen the app could plausibly need: profile 
 </figure>
 
 <figure>
-<img src="/images/iterate/wireframe-iterations.webp" alt="Grid of low-fidelity wireframe screens iterating on the feed, search, posting, and profile layouts" />
+<img src="/images/iterate/wireframe-iterations.webp" alt="Figma board showing dozens of iterative wireframe screens across onboarding, feed, search, posting, and profile flows" />
 <figcaption>Wireframe Iterations</figcaption>
 </figure>
 
