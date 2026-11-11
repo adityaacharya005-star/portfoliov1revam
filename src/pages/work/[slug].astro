@@ -855,6 +855,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     box-shadow: 0 12px 28px rgba(17, 17, 17, 0.1);
   }
 
+  .case-study__body :global(.zone-icon) {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin-bottom: var(--space-3);
+    color: var(--zone-color);
+    filter: url(#sketch-wobble);
+  }
+
   .case-study__body :global(.zone-label) {
     font-size: var(--text-label);
     font-weight: 600;

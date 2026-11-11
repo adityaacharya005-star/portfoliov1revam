@@ -48,21 +48,21 @@ Student, parent, and teacher each distort the problem differently. The system ha
 
 <ul class="quote-grid">
 <li class="quote-card">
-<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="28" r="9"/><path d="M50 37v22"/><path d="M50 43l-13 9M50 43l13 9"/><path d="M50 59l-11 22M50 59l11 22"/><path d="M86 60h20v22h-20Z"/><path d="M90 60v-6c0-3 2-5 6-5s6 2 6 5v6"/><path d="M90 70h12"/></svg>
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 100V68"/><path d="M60 68L32 30"/><path d="M60 68L88 30"/><circle cx="60" cy="68" r="7" fill="currentColor" stroke="none"/></svg>
 <p class="quote-label">Student · The Pressure</p>
 <p class="quote-text">"I'm not choosing Science. I'm just too scared to choose anything else."</p>
 <span class="quote-behavior-tag">Key behavior</span>
 <p class="quote-behavior">Explores alone, freezes at the stream decision.</p>
 </li>
 <li class="quote-card">
-<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="28" r="9"/><path d="M50 37v22"/><path d="M50 43l-13 9M50 43l13 9"/><path d="M50 59l-11 22M50 59l11 22"/><rect x="86" y="68" width="22" height="18" rx="4"/><path d="M90 68v-8a7 7 0 0 1 14 0v8"/><circle cx="97" cy="76" r="2"/><path d="M97 78v4"/></svg>
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="28" y="38" width="64" height="26" rx="5"/><path d="M52 64l8 20 8-12 8 12 8-20"/></svg>
 <p class="quote-label">Parent · The Safety Net</p>
 <p class="quote-text">"Passion is fine for hobbies. A degree has to pay the bills."</p>
 <span class="quote-behavior-tag">Key behavior</span>
 <p class="quote-behavior">Treats a degree as financial insurance, not a fit.</p>
 </li>
 <li class="quote-card">
-<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="28" r="9"/><path d="M50 37v22"/><path d="M50 43l-13 9M50 43l13 9"/><path d="M50 59l-11 22M50 59l11 22"/><path d="M100 64c-5-3-13-3-18 0v22c5-3 13-3 18 0"/><path d="M100 64c5-3 13-3 18 0v22c-5-3-13-3-18 0"/><path d="M100 64v22"/></svg>
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 10v8M46 16l6 6M74 16l-6 6"/><circle cx="60" cy="40" r="18"/><path d="M53 58h14"/><rect x="28" y="66" width="64" height="16" rx="3"/><rect x="34" y="82" width="52" height="14" rx="3"/></svg>
 <p class="quote-label">Teacher · The Untapped Resource</p>
 <p class="quote-text">"They sit in my class, but mentally they're solving coaching-center problem sets."</p>
 <span class="quote-behavior-tag">Key behavior</span>
@@ -134,21 +134,25 @@ Subjects taught kids that knowledge lives in sealed boxes, Science over here, Ar
 
 <ul class="zone-grid">
 <li class="zone-card" style="--zone-color: #3E6FD9">
+<svg class="zone-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="34" y="40" width="12" height="46" rx="2"/><rect x="50" y="28" width="12" height="58" rx="2"/><rect x="66" y="46" width="12" height="40" rx="2"/><path d="M28 86h64"/></svg>
 <p class="zone-label">Blue</p>
 <h3>Reference</h3>
 <p>Quiet, academic research books and built-in perimeter shelving for focused, solitary work.</p>
 </li>
 <li class="zone-card" style="--zone-color: #D9A530">
+<svg class="zone-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="56" r="26"/><path d="M60 36l9 24-9 8-9-8Z" fill="currentColor" stroke="none"/></svg>
 <p class="zone-label">Yellow</p>
 <h3>Explorer</h3>
 <p>Comfortable, semicircular alcoves for careers and exploring books, built for collaborative browsing.</p>
 </li>
 <li class="zone-card" style="--zone-color: #4F9D5C">
+<svg class="zone-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="38" cy="84" r="9"/><circle cx="60" cy="84" r="9"/><path d="M44 78L90 30"/><path d="M54 78L20 40"/></svg>
 <p class="zone-label">Green</p>
 <h3>Creation</h3>
 <p>Small circular maker tables stocked with craft boxes, for hands-on, think-and-imagine work.</p>
 </li>
 <li class="zone-card" style="--zone-color: #8B5FC2">
+<svg class="zone-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 92S26 68 26 44a17 17 0 0 1 34-6 17 17 0 0 1 34 6c0 24-34 48-34 48Z"/></svg>
 <p class="zone-label">Purple</p>
 <h3>Leisure</h3>
 <p>Bean bags and soft mats around a comics and leisure corner, reading for fun treated as seriously as reading for grades.</p>
