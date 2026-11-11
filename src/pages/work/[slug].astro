@@ -1221,9 +1221,13 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     padding: var(--space-1) var(--space-4);
   }
 
-  /* A read-top-to-bottom competitor card, not CBC's insight-map
-     from/to arrows: this project's argument is "here's the field,"
-     not "here's one gap we're exploiting," so it gets its own shape. */
+  /* Same white/shadow/hover-lift family as .stat-card and
+     .outcome-card (not the flat tinted .zone-card/.compare-card
+     family) — a competitor card is a fact card like a stat, so it
+     gets that card's shape, not an invented third one. Reads
+     top-to-bottom instead of CBC's insight-map from/to arrows,
+     because this project's argument is "here's the whole field,"
+     not "here's one gap we're exploiting." */
   .case-study__body :global(.benchmark-grid) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1236,13 +1240,36 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.benchmark-card) {
     display: flex;
     flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(17, 17, 17, 0.05), 0 16px 32px rgba(17, 17, 17, 0.06);
+    transition: transform var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.benchmark-card:hover) {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(17, 17, 17, 0.06), 0 20px 40px rgba(17, 17, 17, 0.1);
+  }
+
+  .case-study__body :global(.benchmark-header) {
+    display: flex;
+    align-items: center;
     gap: var(--space-3);
-    padding: var(--space-5);
-    background: var(--color-card-warm);
-    border-top: 3px solid var(--case-accent);
+  }
+
+  .case-study__body :global(.benchmark-logo) {
+    display: block;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
   }
 
   .case-study__body :global(.benchmark-name) {
+    font-family: var(--font-serif);
+    font-size: var(--text-h3);
     font-weight: 700;
     color: var(--color-text);
     margin: 0;
@@ -1259,9 +1286,9 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.benchmark-split) {
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
+    gap: var(--space-2);
     margin: 0;
-    padding: var(--space-3) 0 0;
+    padding: var(--space-4) 0 0;
     border-top: 1px solid var(--color-border);
     list-style: none;
   }
@@ -1269,13 +1296,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.benchmark-split li) {
     font-size: var(--text-caption);
     line-height: var(--leading-normal);
-    padding-left: var(--space-4);
+    padding-left: var(--space-5);
     position: relative;
   }
 
   .case-study__body :global(.benchmark-split li::before) {
     position: absolute;
     left: 0;
+    top: 0;
   }
 
   .case-study__body :global(.benchmark-split--strength li) {
@@ -1297,12 +1325,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   /* The research wall: short, verbatim-feeling fragments grouped into
-     columns, instead of another stat card or quote block, so the raw
-     texture of 74 responses shows through rather than a summary of it. */
+     columns, built on the same left-accent-rule grammar as
+     .quote-card (this *is* a quote, just shorter) instead of an
+     invented flat chip, so the raw texture of 74 responses reads as
+     a native part of this design system rather than a bolt-on. */
   .case-study__body :global(.affinity-board) {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-5);
+    gap: var(--space-6);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -1312,15 +1342,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.affinity-column) {
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-4);
   }
 
   .case-study__body :global(.affinity-heading) {
-    font-size: var(--text-caption);
-    font-weight: 700;
+    font-size: var(--text-label);
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--case-accent-text);
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
     margin: 0;
   }
 
@@ -1328,9 +1358,10 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     font-size: var(--text-caption);
     line-height: var(--leading-normal);
     color: var(--color-text);
-    background: var(--color-card-warm);
-    padding: var(--space-3);
-    border-radius: 10px;
+    background: var(--color-bg);
+    padding: var(--space-4) var(--space-4) var(--space-4) var(--space-5);
+    border-left: 3px solid var(--case-accent);
+    margin: 0;
   }
 
   /* Rejected directions shown three-up instead of full-width figures,

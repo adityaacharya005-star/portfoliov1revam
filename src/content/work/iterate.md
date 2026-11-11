@@ -56,7 +56,10 @@ Four platforms students already use as workarounds, and the specific job none of
 
 <ul class="benchmark-grid">
 <li class="benchmark-card">
+<div class="benchmark-header">
+<svg class="benchmark-logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1769FF"/><text x="16" y="21" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">Be</text></svg>
 <p class="benchmark-name">Behance</p>
+</div>
 <p class="benchmark-purpose">A professional portfolio platform for in-depth, finished projects.</p>
 <ul class="benchmark-split benchmark-split--strength">
 <li>Industry standard</li>
@@ -69,7 +72,10 @@ Four platforms students already use as workarounds, and the specific job none of
 </ul>
 </li>
 <li class="benchmark-card">
+<div class="benchmark-header">
+<svg class="benchmark-logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#EA4C89"/><path d="M5 12c7 2.2 15 2.2 22 0M3.5 18.5c8.5 1 18 3.5 25.5 8.5M12.5 4c4.5 6.5 7 15.5 5 27" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
 <p class="benchmark-name">Dribbble</p>
+</div>
 <p class="benchmark-purpose">A design community for sharing quick visual "shots."</p>
 <ul class="benchmark-split benchmark-split--strength">
 <li>Massive reach, strong engagement</li>
@@ -81,7 +87,10 @@ Four platforms students already use as workarounds, and the specific job none of
 </ul>
 </li>
 <li class="benchmark-card">
+<div class="benchmark-header">
+<svg class="benchmark-logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#E1306C"/><rect x="7.5" y="7.5" width="17" height="17" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16" cy="16" r="4.4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="21.8" cy="10.2" r="1.2" fill="#fff"/></svg>
 <p class="benchmark-name">Instagram</p>
+</div>
 <p class="benchmark-purpose">General social media, used for marketing and branding.</p>
 <ul class="benchmark-split benchmark-split--strength">
 <li>Quick, simple</li>
@@ -94,7 +103,10 @@ Four platforms students already use as workarounds, and the specific job none of
 </ul>
 </li>
 <li class="benchmark-card">
+<div class="benchmark-header">
+<svg class="benchmark-logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#FF4500"/><path d="M16 13v-5M16 8c0-1.3 1.1-2.4 2.4-2.4" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="19.2" cy="5.4" r="1.4" fill="#fff"/><circle cx="16" cy="19.5" r="7" fill="#fff"/><circle cx="9.3" cy="17" r="2.5" fill="#fff"/><circle cx="22.7" cy="17" r="2.5" fill="#fff"/><circle cx="12.6" cy="19.5" r="1.3" fill="#FF4500"/><circle cx="19.4" cy="19.5" r="1.3" fill="#FF4500"/><path d="M12.8 22.8c1.9 1.3 4.5 1.3 6.4 0" stroke="#FF4500" stroke-width="1.1" fill="none" stroke-linecap="round"/></svg>
 <p class="benchmark-name">Reddit</p>
+</div>
 <p class="benchmark-purpose">A community forum for anonymous feedback.</p>
 <ul class="benchmark-split benchmark-split--strength">
 <li>Honest, direct feedback</li>
