@@ -1674,8 +1674,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     overflow: hidden;
   }
 
-  .case-study__body :global(.id-card__band) {
+  /* Two classes, not one: .persona-card > div (written for Qurate's
+     photo + bio-div layout) also matches this div as a direct child
+     of .persona-card and otherwise wins on specificity, overriding
+     flex-shrink back to its flex:1 1 0% and collapsing the band to 0
+     on whichever card is shorter. */
+  .case-study__body :global(.persona-card--id) :global(.id-card__band) {
     position: relative;
+    flex: 0 0 22px;
     width: 100%;
     height: 22px;
     background: var(--case-accent);
@@ -1693,9 +1699,11 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     box-shadow: inset 0 0 0 2px rgba(17, 17, 17, 0.08);
   }
 
-  .case-study__body :global(.id-card__body) {
+  .case-study__body :global(.persona-card--id) :global(.id-card__body) {
     display: flex;
     flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
     align-items: center;
     text-align: center;
     gap: var(--space-4);
