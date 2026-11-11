@@ -18,7 +18,7 @@ illustrationStyle: polished
 
 ## Product Context
 
-Qurate started as an Indian travel booking platform, then added an Experiences marketplace where hosts list tours, treks, and local activities.
+Qurate is a design brief modeled on Airbnb: an Indian travel booking platform launching an Experiences marketplace, where hosts list tours, treks, and local activities. My task was the side of that launch nobody designs for the demo, the backend tool the employees reviewing those listings use every day.
 
 ## Research & Data
 
@@ -94,14 +94,16 @@ Every submission runs through the same policy check before a decision locks in. 
 
 ## Exploration & Sketches
 
+Before committing to the three-panel split, each panel got its own round of rough exploration: how dense the dashboard could get before it turned into noise, how a reviewer actually wants a queue sorted, whether the calendar needed to exist as its own view at all.
+
 <figure>
 <img src="/images/qurate/sketch-iterations.webp" alt="Hand-drawn sketch iterations exploring the dashboard, review queue, and calendar layouts" />
-<figcaption>Sketch Iterations</figcaption>
+<figcaption>Early passes leaned toward cramming status, deadline, and actions into every card. Most of that got cut once it was clear a reviewer only needs three things at a glance: what's new, what's overdue, what's already decided.</figcaption>
 </figure>
 
 <figure>
 <img src="/images/qurate/lofi-screens.webp" alt="Grid of low-fidelity wireframe screens for the dashboard, review queue, and operations calendar" />
-<figcaption>Low-Fidelity Screens</figcaption>
+<figcaption>This is where the SLA countdown earned its place on the queue table, once sorting by submission date kept burying the listings actually at risk of breaching it.</figcaption>
 </figure>
 
 ## Final Design
