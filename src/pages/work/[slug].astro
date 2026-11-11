@@ -704,6 +704,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     background: transparent;
   }
 
+  /* No padding frame at all: for a diagram that's already a finished,
+     self-contained image (its own white ground, its own card
+     boxes) rather than a screenshot that needs a tinted mat around it. */
+  .case-study__body :global(.figure--flush) {
+    padding: 0;
+    background: #fff;
+  }
+
   /* The curriculum booklet viewer, powered by the StPageFlip library
      (package: page-flip) in its HTML mode — real <img> elements it
      flips with CSS 3D transforms, not canvas mode, whose canvas sizing
