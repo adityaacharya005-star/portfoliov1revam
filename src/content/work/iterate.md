@@ -112,7 +112,7 @@ Every path through the app was checked against the one that matters most: the ex
 <div class="flow-row">
 <span class="flow-step flow-step--accent">Opens Application</span>
 <svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<span class="flow-step">Log In / Sign Up</span>
+<span class="flow-step-group"><span class="flow-step">Log In</span><span class="flow-step">Sign Up</span></span>
 <svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 <span class="flow-step">Chose interested disciplines</span>
 <svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
