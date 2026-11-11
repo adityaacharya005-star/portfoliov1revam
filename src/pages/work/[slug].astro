@@ -1143,6 +1143,16 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     padding: var(--space-6);
     background: #fff;
     border-radius: 18px;
+    /* width:0 + min-width:100% (not overflow alone — Chromium still
+       lets a flex column's un-wrapped child inflate an ancestor grid's
+       fr-track even with overflow-x:hidden here) stops .flow-row's
+       un-wrapped content from bubbling up through this box to the
+       page's outer grid, which otherwise forces a page-wide
+       horizontal scrollbar. The row's own overflow-x:auto still
+       scrolls internally once this box is capped at the column width. */
+    width: 0;
+    min-width: 100%;
+    overflow-x: hidden;
   }
 
   .case-study__body :global(.flow-row) {
@@ -1152,6 +1162,11 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     gap: var(--space-2);
     overflow-x: auto;
     padding-bottom: var(--space-2);
+    /* Without this, a flex item's automatic min-width is its content's
+       min-content size, which bubbles all the way up to the page's
+       outer grid and forces a horizontal scrollbar on the whole
+       document instead of just scrolling inside this row. */
+    min-width: 0;
   }
 
   .case-study__body :global(.flow-connector) {
@@ -1230,7 +1245,11 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
      not "here's one gap we're exploiting." */
   .case-study__body :global(.benchmark-grid) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* minmax(0, 1fr), not plain 1fr: a plain 1fr track's automatic
+       minimum is its item's min-content, so a card with an unbreakable
+       run just a little wider than its share still forces the whole
+       grid (and the page) wider instead of wrapping tighter. */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--space-5);
     margin: 0;
     padding: 0;
@@ -1331,7 +1350,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
      a native part of this design system rather than a bolt-on. */
   .case-study__body :global(.affinity-board) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--space-6);
     margin: 0;
     padding: 0;
@@ -1419,6 +1438,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__body :global(.persona-grid) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* A class modifier instead of an inline style: an inline
+     grid-template-columns always wins over the mobile media query
+     below (inline style beats any stylesheet rule), so a 2-up grid
+     stayed 2-up at phone width and overflowed the page. */
+  .case-study__body :global(.stat-grid--2),
+  .case-study__body :global(.screen-grid--2) {
     grid-template-columns: repeat(2, 1fr);
   }
 

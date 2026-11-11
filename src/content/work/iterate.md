@@ -288,7 +288,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 
 <figure class="figure--white figure--feature">
 <p class="figure-eyebrow">The core screen</p>
-<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
+<ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/iterate/new-project-a.webp" alt="Iterate new project form with fields for Project Title, Visuals, and Project Bio" />
 <p class="screen-caption">Title, visuals, and a bio field, nothing else required to start a post.</p>
@@ -321,7 +321,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 
 <figure class="figure--white">
 <p class="figure-eyebrow">Profile, any student</p>
-<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
+<ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/iterate/profile-aditya.webp" alt="Iterate profile screen showing Aditya Nair's university, discipline, bio, external portfolio links, and published posts" />
 <p class="screen-caption">Profile. Posts, connections, and likes compound here automatically, so the portfolio is a byproduct of using the app, not a separate project.</p>

@@ -27,7 +27,7 @@ Indian students pick their academic stream in Grade 10, years before most of the
 
 Two numbers from early research, and a team of four built the rest of this system around them.
 
-<ul class="stat-grid" style="grid-template-columns: repeat(2, 1fr)">
+<ul class="stat-grid stat-grid--2">
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 24h84l-32 40v34l-20 10V64Z"/><circle cx="60" cy="100" r="3"/></svg>
 <p class="stat-number">99.7%</p>
@@ -198,7 +198,7 @@ The first screen after login asks eight situational questions: how a student rea
 </figure>
 
 <figure class="figure--white">
-<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
+<ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/conversations/app-today-focus.webp" alt="CareerBridge Today's Focus dashboard with the day's tasks" />
 <p class="screen-caption">Today's Focus answers one question only: what do I do right now, not what's my whole 90 days.</p>
