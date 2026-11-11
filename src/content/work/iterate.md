@@ -368,11 +368,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 ## Style Guide
 
 <figure>
-<img src="/images/iterate/design-system-a.webp" alt="Iterate design system: color palette, Poppins typography scale, and button components" />
-</figure>
-
-<figure>
-<img src="/images/iterate/design-system-b.webp" alt="Iterate design system: primary logo mark, typography weights, accent color values, and logo color variants" />
+<img src="/images/iterate/design-system.webp" alt="Iterate design system: color palette, Poppins typography scale, button and navigation bar components, primary logo mark, typography weights, and logo color variants" />
 </figure>
 
 ## Retrospective
