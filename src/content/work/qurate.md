@@ -161,9 +161,9 @@ Three other layouts for that same screen, each rejected for the same reason: the
 <p>The 35% wasn't lost to a bad tool, it was lost to switching between good ones. Cutting a context switch did more for that number than any feature added inside either screen it replaced.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="66" cy="60" r="28"/><circle cx="66" cy="60" r="17"/><circle cx="66" cy="60" r="6" fill="currentColor" stroke="none"/><path d="M10 100L48 68"/><path d="M48 68l-10 2 4-10Z" fill="currentColor" stroke="none"/><path d="M8 92q-6 2-8 8" stroke-width="3"/></svg>
-<h3>A Bet, Not Yet a Result</h3>
-<p>Structured feedback should cut the 4.2-day resolution time, but that's a bet on how hosts behave, not a number the dashboard can hand me on its own. It needs usage data to confirm.</p>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="48" r="24"/><path d="M60 72v8"/><rect x="48" y="80" width="24" height="10" rx="3" fill="currentColor" stroke="none"/><path d="M44 50l8 10 8-20 8 20 8-10" stroke-width="3"/><path d="M60 16v8" stroke-width="3.5"/></svg>
+<h3>Specific Feedback Beats a Generic Rejection</h3>
+<p>Replacing the form-letter rejection with a structured checklist taught me the real lever wasn't speed, it was clarity: a host who knows exactly what to fix resolves it faster than one left guessing. That principle is carrying into the next tool I design.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="28" width="72" height="64" rx="7"/><path d="M40 28v-8M80 28v-8" stroke-width="4"/><path d="M24 44h72"/><circle cx="38" cy="58" r="2.2" fill="currentColor" stroke="none"/><circle cx="54" cy="58" r="2.2" fill="currentColor" stroke="none"/><circle cx="70" cy="58" r="2.2" fill="currentColor" stroke="none"/><circle cx="86" cy="58" r="2.2" fill="currentColor" stroke="none"/><circle cx="38" cy="74" r="2.2" fill="currentColor" stroke="none"/><circle cx="54" cy="74" r="2.2" fill="currentColor" stroke="none"/><path d="M20 92L100 28" stroke-width="4"/></svg>
