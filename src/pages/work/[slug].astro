@@ -858,40 +858,44 @@ const sections = headings.filter((h) => h.depth === 2);
     flex-direction: column;
     align-items: center;
     max-width: 440px;
-    padding: var(--space-7) var(--space-6);
+    padding: var(--space-8) var(--space-7);
     background: color-mix(in srgb, var(--case-accent) 8%, var(--color-bg));
     border-radius: 18px;
     text-align: center;
   }
 
   .case-study__body :global(.testimonial-photo) {
-    width: 112px;
-    height: 112px;
+    width: 128px;
+    height: 128px;
     border-radius: 50%;
     object-fit: cover;
     background: transparent;
-    margin-bottom: var(--space-5);
+    margin-bottom: var(--space-6);
   }
 
   .case-study__body :global(.testimonial-name) {
     font-family: var(--font-serif);
-    font-size: var(--text-h3);
+    font-size: 2rem;
     font-weight: 700;
+    line-height: var(--leading-tight);
     color: var(--color-text);
-    margin: 0;
+    margin: 0 0 var(--space-3);
   }
 
   .case-study__body :global(.testimonial-role) {
-    font-size: var(--text-small);
-    color: var(--color-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--case-accent);
     max-width: none;
-    margin: var(--space-1) 0 var(--space-5);
+    margin: 0 0 var(--space-7);
   }
 
   .case-study__body :global(.testimonial-quote) {
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: var(--text-body-lg);
+    font-size: 1.375rem;
     line-height: var(--leading-normal);
     color: var(--color-text);
     max-width: none;
