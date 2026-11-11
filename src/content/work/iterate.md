@@ -3,7 +3,7 @@ title: Iterate
 description: A peer-feedback platform for design students.
 cover: ./assets/iterate/cover.webp
 coverAlt: "A hand holding a phone showing the Iterate home feed, with projects grouped by college, city, and country"
-coverRatio: "850 / 1050"
+coverRatio: "1165 / 785"
 role: Product Designer
 timeline: "2025"
 tools: [Figma]
