@@ -48,18 +48,21 @@ Student, parent, and teacher each distort the problem differently. The system ha
 
 <ul class="quote-grid">
 <li class="quote-card">
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="28" r="9"/><path d="M50 37v22"/><path d="M50 43l-13 9M50 43l13 9"/><path d="M50 59l-11 22M50 59l11 22"/><path d="M86 60h20v22h-20Z"/><path d="M90 60v-6c0-3 2-5 6-5s6 2 6 5v6"/><path d="M90 70h12"/></svg>
 <p class="quote-label">Student · The Pressure</p>
 <p class="quote-text">"I'm not choosing Science. I'm just too scared to choose anything else."</p>
 <span class="quote-behavior-tag">Key behavior</span>
 <p class="quote-behavior">Explores alone, freezes at the stream decision.</p>
 </li>
 <li class="quote-card">
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="28" r="9"/><path d="M50 37v22"/><path d="M50 43l-13 9M50 43l13 9"/><path d="M50 59l-11 22M50 59l11 22"/><rect x="86" y="68" width="22" height="18" rx="4"/><path d="M90 68v-8a7 7 0 0 1 14 0v8"/><circle cx="97" cy="76" r="2"/><path d="M97 78v4"/></svg>
 <p class="quote-label">Parent · The Safety Net</p>
 <p class="quote-text">"Passion is fine for hobbies. A degree has to pay the bills."</p>
 <span class="quote-behavior-tag">Key behavior</span>
 <p class="quote-behavior">Treats a degree as financial insurance, not a fit.</p>
 </li>
 <li class="quote-card">
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="28" r="9"/><path d="M50 37v22"/><path d="M50 43l-13 9M50 43l13 9"/><path d="M50 59l-11 22M50 59l11 22"/><path d="M100 64c-5-3-13-3-18 0v22c5-3 13-3 18 0"/><path d="M100 64c5-3 13-3 18 0v22c-5-3-13-3-18 0"/><path d="M100 64v22"/></svg>
 <p class="quote-label">Teacher · The Untapped Resource</p>
 <p class="quote-text">"They sit in my class, but mentally they're solving coaching-center problem sets."</p>
 <span class="quote-behavior-tag">Key behavior</span>

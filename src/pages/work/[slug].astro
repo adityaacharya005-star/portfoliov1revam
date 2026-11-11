@@ -896,7 +896,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.quote-grid) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     column-gap: var(--space-5);
     row-gap: 0;
     margin-inline: 0;
@@ -908,13 +908,22 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.quote-card) {
     display: grid;
     grid-template-rows: subgrid;
-    grid-row: span 4;
+    grid-row: span 5;
     row-gap: var(--space-4);
     padding: var(--space-6);
     background: var(--color-bg);
     border-left: 3px solid var(--case-accent);
     transition: transform var(--duration-fast) var(--ease-standard),
       box-shadow var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.quote-icon) {
+    display: block;
+    align-self: start;
+    width: 64px;
+    height: 64px;
+    color: var(--color-text);
+    filter: url(#sketch-wobble);
   }
 
   .case-study__body :global(.quote-card:hover) {
