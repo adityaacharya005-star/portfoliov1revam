@@ -156,18 +156,18 @@ Three other layouts for that same screen, each rejected for the same reason: the
 <ul class="outcome-grid">
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="30" width="40" height="62" rx="6"/><rect x="64" y="30" width="40" height="62" rx="6"/><path d="M58 36v50"/></svg>
-<h3>Efficient Interface</h3>
-<p>Document previews live in the workspace instead of a separate PDF viewer, aimed straight at the context switch behind that 35%.</p>
+<h3>One Screen Beats One Fewer Tab</h3>
+<p>The 35% wasn't lost to a bad tool, it was lost to switching between good ones. Cutting a context switch did more for that number than any feature added inside either screen it replaced.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M34 24h40l12 12v60H34Z"/><path d="M74 24v12h12"/><path d="M44 54h32M44 66h32M44 78h18"/><circle cx="90" cy="86" r="18"/><path d="M82 86l6 7 12-14"/></svg>
-<h3>Automated Feedback Generation</h3>
-<p>Structured checklists replace the generic rejection email. The bet is that a host who knows exactly what to fix responds faster than one guessing from a form letter, worth checking against that 4.2-day number once this ships.</p>
+<h3>A Bet, Not Yet a Result</h3>
+<p>Structured feedback should cut the 4.2-day resolution time, but that's a bet on how hosts behave, not a number the dashboard can hand me on its own. It needs usage data to confirm.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M26 82l34-16 34 16-34 16Z"/><path d="M26 66l34-16 34 16-34 16Z"/><path d="M26 50l34-16 34 16-34 16Z"/></svg>
-<h3>Density Without Overwhelm</h3>
-<p>Accordion lists with status indicators keep the queue dense without burying what a curator needs to decide.</p>
+<h3>Booking Management, Deliberately Cut</h3>
+<p>One week meant the review workspace only. Booking management stayed untouched, not because it's less important, but because it wasn't where the 70% and 35% were bleeding.</p>
 </li>
 </ul>
 

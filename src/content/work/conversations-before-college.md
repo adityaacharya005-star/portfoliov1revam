@@ -170,15 +170,15 @@ The first screen after login asks eight situational questions: how a student rea
 <ul class="screen-grid">
 <li class="screen-item">
 <img src="/images/conversations/app-welcome.webp" alt="CareerBridge welcome screen with the value proposition and a get-started button" />
-<p class="screen-caption">The welcome screen, setting up the value proposition.</p>
+<p class="screen-caption">One app, two logins: the split starts before either side sees a single screen.</p>
 </li>
 <li class="screen-item">
 <img src="/images/conversations/app-login-student.webp" alt="CareerBridge student login screen, labeled Let's Start Exploring" />
-<p class="screen-caption">Exploring: a student logs in to start the 90 days.</p>
+<p class="screen-caption">Exploring: framed as 90 days of discovery, not a test with a pass or fail.</p>
 </li>
 <li class="screen-item">
 <img src="/images/conversations/app-login-parent.webp" alt="CareerBridge parent login screen, labeled Let's Start Assessing" />
-<p class="screen-caption">Assessing: a parent logs in to a different view entirely, designed to inform rather than control.</p>
+<p class="screen-caption">Assessing: a different verb on purpose, built to inform a parent rather than hand them control.</p>
 </li>
 </ul>
 </figure>
@@ -192,23 +192,23 @@ The first screen after login asks eight situational questions: how a student rea
 <ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
 <li class="screen-item">
 <img src="/images/conversations/app-today-focus.webp" alt="CareerBridge Today's Focus dashboard with the day's tasks" />
-<p class="screen-caption">Today's Focus, tagged with the real institution behind it, NID or IIIT.</p>
+<p class="screen-caption">Today's Focus answers one question only: what do I do right now, not what's my whole 90 days.</p>
 </li>
 <li class="screen-item">
 <img src="/images/conversations/app-task-detail.webp" alt="CareerBridge task detail screen for a Visualizing Products task from NID Ahmedabad" />
-<p class="screen-caption">So progress toward the pathway carries institutional weight, graded like actual university coursework.</p>
+<p class="screen-caption">Naming NID Ahmedabad on the task is what makes it feel like coursework instead of an app exercise.</p>
 </li>
 </ul>
 </figure>
 
 <figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-curriculum.webp" alt="CareerBridge curriculum tracking screen showing completed and upcoming weeks with credit values per task" />
-<figcaption>Completed weeks collapse, the current week expands. Each task underneath carries its own credit value, so progress compounds instead of just getting checked off.</figcaption>
+<figcaption>Collapsing finished weeks keeps the only open question on screen: what's left, not what's done. A credit value sits under every task, so finishing one reads as progress banked, not a box checked.</figcaption>
 </figure>
 
 <figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-progress.webp" alt="CareerBridge student progress screen showing weekly engagement hours, total ABC credits, average mentor rating, and a portfolio link" />
-<figcaption>The student's own view: hours logged, credits earned, mentor ratings, a portfolio building itself in the background.</figcaption>
+<figcaption>Nothing here was filled in by hand. Hours, credits, ratings, even the portfolio, all collect themselves as a byproduct of doing the work.</figcaption>
 </figure>
 
 <figure class="figure--white">
