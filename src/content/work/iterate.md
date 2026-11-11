@@ -220,11 +220,26 @@ The screens across onboarding and the core flow, each one answering a specific f
 </figure>
 
 <figure class="figure--white">
+<p class="figure-eyebrow">Activity, three tabs</p>
 <ul class="screen-grid">
 <li class="screen-item">
-<img src="/images/iterate/activity-friends.webp" alt="Iterate activity feed showing friends' recent posts, comments, and collaboration invites" />
-<p class="screen-caption">Activity. A plain chronological log, not a notifications dump, because a student checking in on feedback shouldn't have to dig for it.</p>
+<img src="/images/iterate/activity-friends.webp" alt="Iterate activity feed, Friends tab, showing friends' recent posts, comments, and collaboration invites" />
+<p class="screen-caption">Friends. A plain chronological log, not a notifications dump, because a student checking in on feedback shouldn't have to dig for it.</p>
 </li>
+<li class="screen-item">
+<img src="/images/iterate/activity-you.webp" alt="Iterate activity feed, You tab, showing the student's own recent posts, comments, and collaborations" />
+<p class="screen-caption">You. The same log, filtered to your own actions, so checking what you've posted doesn't mean scrolling past everyone else's.</p>
+</li>
+<li class="screen-item">
+<img src="/images/iterate/activity-incoming.webp" alt="Iterate activity feed, Incoming tab, showing connection requests and messages sent to the student" />
+<p class="screen-caption">Incoming. Connection requests and messages kept separate from the activity log, so a request doesn't get lost in the scroll.</p>
+</li>
+</ul>
+</figure>
+
+<figure class="figure--white">
+<p class="figure-eyebrow">Profile, any student</p>
+<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
 <li class="screen-item">
 <img src="/images/iterate/profile-aditya.webp" alt="Iterate profile screen showing Aditya Nair's university, discipline, bio, external portfolio links, and published posts" />
 <p class="screen-caption">Profile. Posts, connections, and likes compound here automatically, so the portfolio is a byproduct of using the app, not a separate project.</p>
