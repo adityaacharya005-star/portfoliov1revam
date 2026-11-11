@@ -1130,6 +1130,82 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     transform: translateX(4px);
   }
 
+  /* A live flow diagram instead of a screenshot of one: same step
+     sequence and colors as the source wireframe (an indigo pill for
+     the start/end states, plain white pills for every step between),
+     redrawn as real boxes so it reads crisply at any zoom level. */
+  .case-study__body :global(.flow-diagram) {
+    --flow-accent: #3f3bf6;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin: 0;
+    padding: var(--space-6);
+    background: #fff;
+    border-radius: 18px;
+  }
+
+  .case-study__body :global(.flow-row) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .case-study__body :global(.flow-connector) {
+    display: flex;
+    padding-left: var(--space-7);
+  }
+
+  .case-study__body :global(.flow-connector--end) {
+    justify-content: flex-end;
+    padding-right: var(--space-7);
+    padding-left: 0;
+  }
+
+  .case-study__body :global(.flow-connector svg) {
+    width: 16px;
+    height: 28px;
+    color: var(--color-text);
+    flex-shrink: 0;
+  }
+
+  .case-study__body :global(.flow-step) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    max-width: 150px;
+    padding: var(--space-2) var(--space-4);
+    min-height: 44px;
+    background: #fff;
+    border: 1.5px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--color-text);
+    text-align: center;
+  }
+
+  .case-study__body :global(.flow-step--accent) {
+    background: var(--flow-accent);
+    border-color: var(--flow-accent);
+    color: #fff;
+  }
+
+  .case-study__body :global(.flow-arrow) {
+    flex-shrink: 0;
+    width: 26px;
+    height: 14px;
+    color: var(--color-text);
+  }
+
+  .case-study__body :global(.flow-arrow--left) {
+    transform: scaleX(-1);
+  }
+
   /* Rejected directions shown three-up instead of full-width figures,
      so comparing them costs a glance, not a scroll. */
   .case-study__body :global(.compare-card) {

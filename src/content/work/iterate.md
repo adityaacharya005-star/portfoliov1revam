@@ -108,9 +108,49 @@ Mapped against Aniket specifically, since he's the harder case: if the product w
 
 Every path through the app was checked against the one that matters most: the exit. A student who opens the app, finds nothing reassuring in the feed, and quits before ever posting is the failure case the whole product is designed against.
 
-<figure>
-<img src="/images/iterate/task-flow.webp" alt="User task flow diagram from opening the app through login, browsing, posting, and checking activity, to a branch where a user without enough reason to stay quits the application" />
-</figure>
+<div class="flow-diagram">
+<div class="flow-row">
+<span class="flow-step flow-step--accent">Opens Application</span>
+<svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Log In / Sign Up</span>
+<svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Chose interested disciplines</span>
+<svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Navigate Home Page</span>
+<svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Checks out projects</span>
+<svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Checks out events</span>
+<svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Makes a list</span>
+<svg class="flow-arrow" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Searches a particular project</span>
+</div>
+<div class="flow-connector flow-connector--end">
+<svg viewBox="0 0 12 24" fill="none" aria-hidden="true"><path d="M6 0v18M1 12l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<div class="flow-row">
+<span class="flow-step">Checks the demographic of the post</span>
+<svg class="flow-arrow flow-arrow--left" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Visits the profile page</span>
+<svg class="flow-arrow flow-arrow--left" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Checks friends and incoming notifications</span>
+<svg class="flow-arrow flow-arrow--left" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Checks the activity page</span>
+<svg class="flow-arrow flow-arrow--left" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Posts a project</span>
+<svg class="flow-arrow flow-arrow--left" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Also checks the similar projects</span>
+<svg class="flow-arrow flow-arrow--left" viewBox="0 0 24 12" fill="none" aria-hidden="true"><path d="M0 6h18M12 1l6 5-6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<span class="flow-step">Goes through the project</span>
+</div>
+<div class="flow-connector">
+<svg viewBox="0 0 12 24" fill="none" aria-hidden="true"><path d="M6 0v18M1 12l5 6 5-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<div class="flow-row">
+<span class="flow-step flow-step--accent">Quits the application</span>
+</div>
+</div>
 
 ## Exploration & Sketches
 
