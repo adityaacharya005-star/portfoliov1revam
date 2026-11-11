@@ -18,7 +18,7 @@ accentColor: "#3B6FE0"
 
 ## Product Context
 
-Indian students pick their academic stream in Grade 10, years before most of them have any real sense of what they're good at. Fear fills that gap: parents push Science and Math because those paths feel financially safe, not because they fit the student. The whole project argues for one reframe:
+Indian students pick their academic stream in Grade 10, years before most of them have any real sense of what they're good at. Fear fills that gap: parents push Science and Math toward financial safety over the student's actual fit. The whole project argues for one reframe:
 
 <p><strong>The old family question:</strong> "What is the safest career?"</p>
 <p><strong>The proposed shift:</strong> "Where does my child have the highest competitive advantage?"</p>
@@ -44,7 +44,7 @@ Two numbers from early research, and a team of four built the rest of this syste
 
 ## Ground Realities
 
-Three stakeholders, three different distortions. The system had to work around all three at once, not just the student.
+Student, parent, and teacher each distort the problem differently. The system had to work around all three at once, not just the student.
 
 <ul class="quote-grid">
 <li class="quote-card">
@@ -67,7 +67,7 @@ Three stakeholders, three different distortions. The system had to work around a
 </li>
 </ul>
 
-Three research findings, translated directly into the three systemic interventions below.
+These research findings map directly onto the three systemic interventions below.
 
 <ul class="insight-map">
 <li class="insight-row">
@@ -100,7 +100,7 @@ Design a system that replaces fear-based stream selection with structured autono
 
 ## Systemic Interventions
 
-Three structural pillars, ordered by how much resistance each one meets on the way in.
+The three structural pillars below are ordered by how much resistance each one meets on the way in.
 
 <ul class="outcome-grid">
 <li class="outcome-card">
@@ -156,7 +156,7 @@ Subjects taught kids that knowledge lives in sealed boxes, Science over here, Ar
 
 A curriculum on paper can't guide a student on a Tuesday morning. CareerBridge is the daily engine: a dual-access app that turns the transition year into bite-sized tasks for the student while giving the parent a live dashboard instead of a vague assurance.
 
-The first screen after login isn't a subject picker. It's eight situational questions, how a student reacts to failure, what kind of workspace they picture themselves in, which role they'd claim first on a team project. Subject-based onboarding just re-asks the question a student already can't answer. Behavior doesn't lie the same way.
+The first screen after login asks eight situational questions: how a student reacts to failure, what kind of workspace they picture themselves in, which role they'd claim first on a team project. Subject-based onboarding just re-asks a question the student already can't answer; watching what they actually do answers it instead.
 
 <figure>
 <video src="/videos/careerbridge-demo.mp4" autoplay loop muted playsinline data-autoplay-video aria-label="CareerBridge app walkthrough: onboarding, behavioral calibration, the student dashboard, curriculum tracking, and the parent trust tracker">
@@ -178,14 +178,14 @@ The first screen after login isn't a subject picker. It's eight situational ques
 </li>
 <li class="screen-item">
 <img src="/images/conversations/app-login-parent.webp" alt="CareerBridge parent login screen, labeled Let's Start Assessing" />
-<p class="screen-caption">Assessing: a parent logs in to a different view entirely, built to assess, not control.</p>
+<p class="screen-caption">Assessing: a parent logs in to a different view entirely, designed to inform rather than control.</p>
 </li>
 </ul>
 </figure>
 
 <figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-pathways.webp" alt="CareerBridge pathway results screen showing four broad industry pathways: Product Engineering & Design, Digital Systems & UX Strategy, Technology & Interactive Innovation, and Strategic Service Design" />
-<figcaption>What the eight questions produce: broad industry pathways, not a single forced major. A starting point for the 90 days, not a verdict.</figcaption>
+<figcaption>The eight questions produce broad industry pathways, a flexible starting point for the 90 days that the student can still revise.</figcaption>
 </figure>
 
 <figure class="figure--white">
@@ -196,14 +196,14 @@ The first screen after login isn't a subject picker. It's eight situational ques
 </li>
 <li class="screen-item">
 <img src="/images/conversations/app-task-detail.webp" alt="CareerBridge task detail screen for a Visualizing Products task from NID Ahmedabad" />
-<p class="screen-caption">So a 90-day exploration carries real academic weight, not a random internet module.</p>
+<p class="screen-caption">So progress toward the pathway carries institutional weight, graded like actual university coursework.</p>
 </li>
 </ul>
 </figure>
 
 <figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-curriculum.webp" alt="CareerBridge curriculum tracking screen showing completed and upcoming weeks with credit values per task" />
-<figcaption>Completed weeks collapse, the current week expands. Each task underneath carries its own credit value, so progress reads as a build-up, not a checklist.</figcaption>
+<figcaption>Completed weeks collapse, the current week expands. Each task underneath carries its own credit value, so progress compounds instead of just getting checked off.</figcaption>
 </figure>
 
 <figure class="figure--white">
@@ -213,7 +213,7 @@ The first screen after login isn't a subject picker. It's eight situational ques
 
 <figure class="figure--white">
 <img class="figure-img--phone" src="/images/conversations/app-parent.webp" alt="CareerBridge parent dashboard showing verified ABC credits, project consistency, mentor sessions, and program investment details" />
-<figcaption>The parent's view of the same data: verified credits, consistency score, engagement level. The anxious check-in becomes a number the parent can actually read.</figcaption>
+<figcaption>The parent's view of the same data: verified credits, consistency score, engagement level. The parent trades an anxious check-in for a number they can actually read.</figcaption>
 </figure>
 
 ## SETU Curriculum
@@ -244,7 +244,7 @@ The proposal went to Sri Prakash Vidyaniketan's administration before it went an
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 60h20v-20h-40v40h60v-60h-80v80h100"/></svg>
 <h3>Designing for Complex Systems</h3>
-<p>A policy like NEP 2020 can open a door on paper and still leave it shut in practice, because the real blocker was never the policy. It was the behavior built up around the old one.</p>
+<p>A policy like NEP 2020 can open a door on paper and still leave it shut in practice: the behavior built around the old system outlasts the policy that replaced it.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="40" r="9"/><path d="M22 50v20M22 58l-10 8M22 58l10 6M22 70l-8 16M22 70l8 16"/><circle cx="98" cy="40" r="9"/><path d="M98 50v20M98 58l-10 6M98 58l10 8M98 70l-8 16M98 70l8 16"/><path d="M34 62h52"/><path d="M40 57l-6 5 6 5M80 57l6 5-6 5"/></svg>
