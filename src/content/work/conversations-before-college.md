@@ -101,6 +101,8 @@ Design a system that replaces fear-based stream selection with structured autono
 <p><strong>SETU.</strong> A one-year transition curriculum, credit-backed from day one.</p>
 <p><strong>CareerBridge.</strong> The daily app tying both of them to real university credit.</p>
 
+<p>Across the four of us, I owned the CareerBridge app end to end and worked alongside the team on the curriculum and the research behind all three pieces.</p>
+
 ## Systemic Interventions
 
 The three structural pillars below are ordered by how much resistance each one meets on the way in.
