@@ -21,11 +21,15 @@ Design students are stuck between two bad options: a portfolio site like Behance
 
 Iterate is a mobile-first social platform built for that gap: a students-only space to post work-in-progress, trade structured peer feedback, and let a portfolio build itself out of the process instead of a highlight reel assembled after the fact.
 
+## The Goal
+
+Design a mobile platform where sharing early, unfinished work feels normal rather than risky: a verified student-only network instead of a public feed, structured feedback prompts instead of an open text box, and a portfolio that assembles itself from the process, not a highlight reel built after the fact.
+
 ## Research & Data
 
-Two numbers that shaped the brief, from two surveys and an interview round before a single screen got drawn.
+Two structured surveys and an interview round with design students, 74 responses total, against a market big enough to make the gap worth closing.
 
-<ul class="stat-grid" style="grid-template-columns: repeat(2, 1fr)">
+<ul class="stat-grid">
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="30" y="20" width="60" height="84" rx="6"/><path d="M46 20v-6h28v6"/><path d="M42 48h36M42 62h36M42 76h24"/><path d="M78 86l16-16 8 8-16 16Z"/></svg>
 <p class="stat-number">74</p>
@@ -38,36 +42,102 @@ Two numbers that shaped the brief, from two surveys and an interview round befor
 <p class="stat-label">Won't Post Unfinished Work</p>
 <p>The exact hesitation Iterate is built to reverse, not design around.</p>
 </li>
-</ul>
-
-## Competitive Landscape
-
-Every existing option fails design students the same general way: built for somebody else's definition of "ready."
-
-<ul class="insight-map">
-<li class="insight-row">
-<span class="insight-number">01</span>
-<p class="insight-from">Behance only rewards finished, polished work, intimidating for a first-year's rough sketch.</p>
-<svg class="insight-arrow" viewBox="0 0 48 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h38M30 3l12 9-12 9"/></svg>
-<p class="insight-to">A students-only feed built for work-in-progress, not finished portfolios.</p>
-</li>
-<li class="insight-row">
-<span class="insight-number">02</span>
-<p class="insight-from">Instagram's algorithm rewards whatever looks good, not whatever actually needed feedback.</p>
-<svg class="insight-arrow" viewBox="0 0 48 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h38M30 3l12 9-12 9"/></svg>
-<p class="insight-to">A discipline-filtered feed in submission order, no engagement algorithm.</p>
-</li>
-<li class="insight-row">
-<span class="insight-number">03</span>
-<p class="insight-from">Reddit gives honest feedback with no structure, no portfolio, and no way to find it again.</p>
-<svg class="insight-arrow" viewBox="0 0 48 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h38M30 3l12 9-12 9"/></svg>
-<p class="insight-to">Structured feedback prompts, on a profile that compounds into a real portfolio.</p>
+<li class="stat-card">
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 90h80"/><path d="M30 90V60l16-10 16 14 16-20 12 10v36"/><circle cx="46" cy="50" r="5"/><circle cx="78" cy="34" r="5"/></svg>
+<p class="stat-number">$400B+</p>
+<p class="stat-label">EdTech Market</p>
+<p>The size of the industry a dedicated student-design platform is missing from entirely.</p>
 </li>
 </ul>
 
-## The Goal
+## Competitor Benchmarking
 
-Design a mobile platform where sharing early, unfinished work feels normal rather than risky: a verified student-only network instead of a public feed, structured feedback prompts instead of an open text box, and a portfolio that assembles itself from the process, not a highlight reel built after the fact.
+Four platforms students already use as workarounds, and the specific job none of them actually does.
+
+<ul class="benchmark-grid">
+<li class="benchmark-card">
+<p class="benchmark-name">Behance</p>
+<p class="benchmark-purpose">A professional portfolio platform for in-depth, finished projects.</p>
+<ul class="benchmark-split benchmark-split--strength">
+<li>Industry standard</li>
+<li>High-quality, comprehensive</li>
+</ul>
+<ul class="benchmark-split benchmark-split--weakness">
+<li>Highly intimidating</li>
+<li>Superficial feedback</li>
+<li>Not a student community</li>
+</ul>
+</li>
+<li class="benchmark-card">
+<p class="benchmark-name">Dribbble</p>
+<p class="benchmark-purpose">A design community for sharing quick visual "shots."</p>
+<ul class="benchmark-split benchmark-split--strength">
+<li>Massive reach, strong engagement</li>
+<li>Trend-focused</li>
+</ul>
+<ul class="benchmark-split benchmark-split--weakness">
+<li>Popularity-contest culture</li>
+<li>Shallow feedback, lacks depth</li>
+</ul>
+</li>
+<li class="benchmark-card">
+<p class="benchmark-name">Instagram</p>
+<p class="benchmark-purpose">General social media, used for marketing and branding.</p>
+<ul class="benchmark-split benchmark-split--strength">
+<li>Quick, simple</li>
+<li>Effortless sharing</li>
+</ul>
+<ul class="benchmark-split benchmark-split--weakness">
+<li>Not design-specific</li>
+<li>Algorithmic pressure</li>
+<li>Poor for portfolios</li>
+</ul>
+</li>
+<li class="benchmark-card">
+<p class="benchmark-name">Reddit</p>
+<p class="benchmark-purpose">A community forum for anonymous feedback.</p>
+<ul class="benchmark-split benchmark-split--strength">
+<li>Honest, direct feedback</li>
+<li>Low pressure</li>
+</ul>
+<ul class="benchmark-split benchmark-split--weakness">
+<li>Inconsistent quality</li>
+<li>Clunky interface</li>
+<li>No portfolio features</li>
+</ul>
+</li>
+</ul>
+
+## What Students Actually Said
+
+Affinity-mapped straight from the 74 survey and interview responses, before any of it got turned into a feature.
+
+<ul class="affinity-board">
+<li class="affinity-column">
+<p class="affinity-heading">Why They Don't Post</p>
+<p class="affinity-chip">"Standards are too high."</p>
+<p class="affinity-chip">Fear of harsh criticism, trolls.</p>
+<p class="affinity-chip">More focus on pretty work than the thought process.</p>
+</li>
+<li class="affinity-column">
+<p class="affinity-heading">Why They Would</p>
+<p class="affinity-chip">Get constructive feedback.</p>
+<p class="affinity-chip">Build a better portfolio.</p>
+<p class="affinity-chip">Learn from more experienced people.</p>
+</li>
+<li class="affinity-column">
+<p class="affinity-heading">Current App Frustrations</p>
+<p class="affinity-chip">Fear of plagiarism, no way to protect work.</p>
+<p class="affinity-chip">Instagram isn't convenient for sharing process.</p>
+<p class="affinity-chip">Discord/WhatsApp groups have no visibility.</p>
+</li>
+<li class="affinity-column">
+<p class="affinity-heading">Features They Wanted</p>
+<p class="affinity-chip">Filters for finding a specific kind of work.</p>
+<p class="affinity-chip">Easy to post process, not just final work.</p>
+<p class="affinity-chip">Connections for future collaborations.</p>
+</li>
+</ul>
 
 ## User Personas
 
