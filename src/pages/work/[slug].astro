@@ -137,6 +137,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
             <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
           </filter>
+          <!-- A bolder, chunkier brush-stroke wobble for Qurate's icons:
+               wider noise cells and more displacement so a thick stroke
+               reads as a confident hand-brushed mark, not a thin wobbly
+               line. -->
+          <filter id="brush-wobble" x="-25%" y="-25%" width="150%" height="150%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="4" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
         </defs>
       </svg>
 
@@ -1211,15 +1219,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     filter: url(#sketch-wobble);
   }
 
-  /* A crisp continuous-line treatment in place of the hand-drawn
-     sketch wobble, for a case study that should read as a polished
-     product rather than a playful one: no wobble, no badge box (that
-     reads as a generic "AI dashboard" icon tile), just a clean line
-     drawing floating on the card like the sketch icons do, only tidier. */
+  /* A bold, chunky brush-stroke treatment for Qurate: a thick weighted
+     line with a rougher, more confident wobble than CBC's thin sketch
+     icons, closer to a hand-cut stamp or marker mark than a line
+     drawing — reads as a deliberate illustration style, not a
+     generic thin icon-font glyph. */
   .case-study[data-icon-style='polished'] .case-study__body :global(.card-icon) {
-    stroke-width: 2.25;
+    stroke-width: 9;
     color: var(--case-accent);
-    filter: none;
+    filter: url(#brush-wobble);
   }
 
   .case-study__body :global(.stat-number) {

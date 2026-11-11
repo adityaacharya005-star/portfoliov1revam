@@ -26,19 +26,19 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 
 <ul class="stat-grid">
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M44 12 Q50 16 58 20 L96 20 Q104 20 104 28 L104 54 Q104 62 96 62 L58 62 Q50 62 50 54 L50 28 Q50 20 58 20 Q40 30 28 42 L66 42 Q74 42 74 50 L74 88 Q74 96 66 96 L28 96 Q20 96 20 88 L20 50 Q20 42 28 42 Q14 36 8 40"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="46" y="20" width="54" height="46" rx="10"/><rect x="20" y="52" width="54" height="46" rx="10"/></svg>
 <p class="stat-number">70%</p>
 <p class="stat-label">Manual Overhead</p>
 <p>Spent jumping between attachments, host profiles, and formatting rules in separate windows.</p>
 </li>
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10 Q20 2 26 10 Q30 16 30 20 L90 20 C85 35 70 45 60 60 C70 75 85 85 90 100 L30 100 C35 85 50 75 60 60 C50 45 35 35 30 20 Q24 28 16 26 Q8 24 6 32"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 20 L90 20 C85 35 70 45 60 60 C70 75 85 85 90 100 L30 100 C35 85 50 75 60 60 C50 45 35 35 30 20"/></svg>
 <p class="stat-number">4.2 Days</p>
 <p class="stat-label">Host Resolution Time</p>
 <p>To fix a flagged issue, or give up, after a generic rejection email.</p>
 </li>
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20 Q16 14 22 20 Q26 26 26 32 L82 32 Q90 32 90 40 L90 68 Q90 76 82 76 L26 76 Q18 76 18 68 L18 40 Q18 32 26 32 Q70 45 92 64 A14 14 0 1 1 92 92 A14 14 0 1 1 92 64 L85 78 L90 85 L100 70 Q108 64 114 68"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="60" r="42"/><path d="M40 62 L54 78 L84 38"/></svg>
 <p class="stat-number">35%</p>
 <p class="stat-label">Verification Delay</p>
 <p>Lost opening external PDF viewers and matching credentials by hand.</p>
@@ -156,17 +156,17 @@ Three other layouts for that same screen, each rejected for the same reason: the
 
 <ul class="outcome-grid">
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 32 Q16 26 22 32 Q24 38 26 42 L40 42 L46 28 L64 28 L70 42 L92 42 Q100 42 100 50 L100 84 Q100 92 92 92 L26 92 Q18 92 18 84 L18 50 Q18 42 26 42 Q14 36 8 40"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="50" width="80" height="42" rx="10"/><rect x="20" y="32" width="36" height="22" rx="8"/></svg>
 <h3>One Screen Beats One Fewer Tab</h3>
 <p>The 35% wasn't lost to a bad tool, it was lost to switching between good ones. Cutting a context switch did more for that number than any feature added inside either screen it replaced.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 8 Q20 2 26 8 Q30 12 32 18 L70 18 Q78 18 78 26 L78 68 Q78 76 70 76 L32 76 Q24 76 24 68 L24 26 Q24 18 32 18 Q68 50 90 66 A14 14 0 1 1 90 94 A14 14 0 1 1 90 66 L90 73 A7 7 0 1 1 90 87 A7 7 0 1 1 90 73 Q96 66 104 68"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="18" width="54" height="58" rx="10"/><circle cx="90" cy="80" r="20"/></svg>
 <h3>A Bet, Not Yet a Result</h3>
 <p>Structured feedback should cut the 4.2-day resolution time, but that's a bet on how hosts behave, not a number the dashboard can hand me on its own. It needs usage data to confirm.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 8 Q16 2 22 8 Q24 12 25 15 L65 60 L85 81 A9 9 0 1 1 85 99 A9 9 0 1 1 85 81 L65 60 L105 15 L65 60 L45 81 A9 9 0 1 1 45 99 A9 9 0 1 1 45 81 Q40 90 34 92"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M25 15 L65 60 L45 85"/><path d="M105 15 L65 60 L85 85"/><circle cx="40" cy="92" r="14"/><circle cx="90" cy="92" r="14"/></svg>
 <h3>Booking Management, Deliberately Cut</h3>
 <p>One week meant the review workspace only. Booking management stayed untouched, not because it's less important, but because it wasn't where the 70% and 35% were bleeding.</p>
 </li>
