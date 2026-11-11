@@ -213,7 +213,7 @@ Onboarding funnels into five primary destinations, each one answering a single q
 Mapped against Aniket specifically, since he's the harder case: if the product works for someone this afraid of posting, it works for everyone less afraid. Two decisions came straight out of this map, verified-student signup and anonymous posting, both load-bearing enough to make the MVP cut on day one.
 
 <figure>
-<img src="/images/iterate/journey-map.webp" alt="User journey map for Aniket Joshi across four stages: Onboarding, First Post, Engagement, and Retention and Advocacy, split into MVP and to-be-prioritized items" />
+<img src="/images/iterate/journey-map.webp" alt="User journey map for Aniket Joshi across four stages, Onboarding, First Post, Engagement, and Retention & Advocacy, mapping touchpoints, actions, pain points, emotions, and opportunities, with an emotional curve rising from cautious to anxious to confident" />
 </figure>
 
 That journey was then checked against the path that matters most: the exit. A student who opens the app, finds nothing reassuring in the feed, and quits before ever posting is the failure case the whole product is designed against.
