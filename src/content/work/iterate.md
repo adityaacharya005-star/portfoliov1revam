@@ -61,6 +61,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <p class="benchmark-name">Behance</p>
 </div>
 <p class="benchmark-purpose">A professional portfolio platform for in-depth, finished projects.</p>
+<div class="benchmark-splits">
 <ul class="benchmark-split benchmark-split--strength">
 <li>Industry standard</li>
 <li>High-quality, comprehensive</li>
@@ -70,6 +71,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <li>Superficial feedback</li>
 <li>Not a student community</li>
 </ul>
+</div>
 </li>
 <li class="benchmark-card">
 <div class="benchmark-header">
@@ -77,6 +79,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <p class="benchmark-name">Dribbble</p>
 </div>
 <p class="benchmark-purpose">A design community for sharing quick visual "shots."</p>
+<div class="benchmark-splits">
 <ul class="benchmark-split benchmark-split--strength">
 <li>Massive reach, strong engagement</li>
 <li>Trend-focused</li>
@@ -85,6 +88,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <li>Popularity-contest culture</li>
 <li>Shallow feedback, lacks depth</li>
 </ul>
+</div>
 </li>
 <li class="benchmark-card">
 <div class="benchmark-header">
@@ -92,6 +96,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <p class="benchmark-name">Instagram</p>
 </div>
 <p class="benchmark-purpose">General social media, used for marketing and branding.</p>
+<div class="benchmark-splits">
 <ul class="benchmark-split benchmark-split--strength">
 <li>Quick, simple</li>
 <li>Effortless sharing</li>
@@ -101,6 +106,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <li>Algorithmic pressure</li>
 <li>Poor for portfolios</li>
 </ul>
+</div>
 </li>
 <li class="benchmark-card">
 <div class="benchmark-header">
@@ -108,6 +114,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <p class="benchmark-name">Reddit</p>
 </div>
 <p class="benchmark-purpose">A community forum for anonymous feedback.</p>
+<div class="benchmark-splits">
 <ul class="benchmark-split benchmark-split--strength">
 <li>Honest, direct feedback</li>
 <li>Low pressure</li>
@@ -117,6 +124,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <li>Clunky interface</li>
 <li>No portfolio features</li>
 </ul>
+</div>
 </li>
 </ul>
 

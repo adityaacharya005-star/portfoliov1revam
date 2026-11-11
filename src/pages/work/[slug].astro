@@ -1157,15 +1157,9 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 
   .case-study__body :global(.flow-row) {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
-    gap: var(--space-2);
-    overflow-x: auto;
-    padding-bottom: var(--space-2);
-    /* Without this, a flex item's automatic min-width is its content's
-       min-content size, which bubbles all the way up to the page's
-       outer grid and forces a horizontal scrollbar on the whole
-       document instead of just scrolling inside this row. */
+    gap: var(--space-3) var(--space-2);
     min-width: 0;
   }
 
@@ -1194,13 +1188,13 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     justify-content: center;
     flex-shrink: 0;
     gap: 1px;
-    width: 112px;
-    padding: var(--space-2) var(--space-3);
-    min-height: 44px;
+    width: 100px;
+    padding: var(--space-1) var(--space-3);
+    min-height: 40px;
     background: #fff;
     border: 1.5px solid var(--color-border);
     border-radius: 999px;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 600;
     line-height: 1.25;
     color: var(--color-text);
@@ -1215,8 +1209,8 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 
   .case-study__body :global(.flow-arrow) {
     flex-shrink: 0;
-    width: 20px;
-    height: 12px;
+    width: 16px;
+    height: 10px;
     color: var(--color-text);
   }
 
@@ -1245,11 +1239,16 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
      not "here's one gap we're exploiting." */
   .case-study__body :global(.benchmark-grid) {
     display: grid;
-    /* minmax(0, 1fr), not plain 1fr: a plain 1fr track's automatic
+    /* 2-up, not 4-up: four narrow, tall cards wrapped their list items
+       onto several lines each and went ragged at anything under full
+       desktop width. Two wider, squarer cards per row give each one
+       enough room for the strength/weakness lists to sit side by side
+       instead of stacked, so the card reads short instead of tall.
+       minmax(0, 1fr), not plain 1fr: a plain 1fr track's automatic
        minimum is its item's min-content, so a card with an unbreakable
        run just a little wider than its share still forces the whole
        grid (and the page) wider instead of wrapping tighter. */
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-5);
     margin: 0;
     padding: 0;
@@ -1302,13 +1301,20 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     min-height: 2.8em;
   }
 
+  .case-study__body :global(.benchmark-splits) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
   .case-study__body :global(.benchmark-split) {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
     margin: 0;
-    padding: var(--space-4) 0 0;
-    border-top: 1px solid var(--color-border);
+    padding: 0;
     list-style: none;
   }
 
