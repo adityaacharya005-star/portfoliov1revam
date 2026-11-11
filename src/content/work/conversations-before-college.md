@@ -152,7 +152,7 @@ Subjects taught kids that knowledge lives in sealed boxes, Science over here, Ar
 </li>
 </ul>
 
-## CareerBridge
+## CareerBridge App
 
 A curriculum on paper can't guide a student on a Tuesday morning. CareerBridge is the daily engine: a dual-access app that turns the transition year into bite-sized tasks for the student while giving the parent a live dashboard instead of a vague assurance.
 
