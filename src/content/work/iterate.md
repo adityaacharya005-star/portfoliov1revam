@@ -19,11 +19,7 @@ thumbVideoWebm: /videos/iterate-thumb.webm
 
 Design students are stuck between two bad options: a portfolio site like Behance that only rewards finished, polished work, or a classroom critique that never leaves the room. Neither has a place for the actual work, the sketch that's half-wrong, the layout you're still arguing with yourself about.
 
-Iterate is a mobile-first social platform built for that gap: a students-only space to post work-in-progress, trade structured peer feedback, and let a portfolio build itself out of the process instead of a highlight reel assembled after the fact.
-
-## The Goal
-
-Design a mobile platform where sharing early, unfinished work feels normal rather than risky: a verified student-only network instead of a public feed, structured feedback prompts instead of an open text box, and a portfolio that assembles itself from the process, not a highlight reel built after the fact.
+Iterate started as a college design-course assignment, designed solo end to end: a mobile-first social platform built for that gap, with a verified student-only network instead of a public feed, structured feedback prompts instead of an open text box, and a portfolio that assembles itself from the process instead of a highlight reel built after the fact.
 
 ## Research & Data
 
@@ -212,7 +208,7 @@ Onboarding funnels into five primary destinations, each one answering a single q
 <img src="/images/iterate/information-architecture.webp" alt="Information architecture diagram: onboarding into Welcome/Login and Create Account, feeding the Iterate app's five primary destinations, Home, Search, Create Project, Activity, and Profile, each broken into its own sub-sections" />
 </figure>
 
-## User Journey
+## User Flow
 
 Mapped against Aniket specifically, since he's the harder case: if the product works for someone this afraid of posting, it works for everyone less afraid. Two decisions came straight out of this map, verified-student signup and anonymous posting, both load-bearing enough to make the MVP cut on day one.
 
@@ -220,9 +216,7 @@ Mapped against Aniket specifically, since he's the harder case: if the product w
 <img src="/images/iterate/journey-map.webp" alt="User journey map for Aniket Joshi across four stages: Onboarding, First Post, Engagement, and Retention and Advocacy, split into MVP and to-be-prioritized items" />
 </figure>
 
-## User Flow
-
-Every path through the app was checked against the one that matters most: the exit. A student who opens the app, finds nothing reassuring in the feed, and quits before ever posting is the failure case the whole product is designed against.
+That journey was then checked against the path that matters most: the exit. A student who opens the app, finds nothing reassuring in the feed, and quits before ever posting is the failure case the whole product is designed against.
 
 <div class="flow-diagram">
 <div class="flow-row">
@@ -387,7 +381,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="24" width="56" height="72" rx="6"/><path d="M32 42h32M32 56h32M32 70h20"/><circle cx="86" cy="80" r="20"/><path d="M78 80l6 6 12-14"/></svg>
 <h3>Research Only Counts Once It's a Screen</h3>
-<p>A survey finding like "students fear harsh criticism" is just a sentence until it becomes a specific UI decision, here, an anonymous-post toggle. The gap between insight and feature is the actual design work.</p>
+<p>A survey finding like "students fear harsh criticism" is just a sentence until it becomes a specific UI decision, here, a college-email signup gate that keeps the whole feed verified-student-only. The gap between insight and feature is the actual design work.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="30" r="9"/><circle cx="94" cy="30" r="9"/><circle cx="60" cy="90" r="9"/><path d="M34 36l20 46M86 36L66 82"/></svg>
