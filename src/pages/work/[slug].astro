@@ -798,14 +798,25 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(.quote-behavior) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
     font-size: var(--text-small);
     color: var(--color-muted);
     max-width: none;
     margin: 0;
   }
 
-  .case-study__body :global(.quote-behavior strong) {
-    color: var(--color-text);
+  .case-study__body :global(.quote-behavior-tag) {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--case-accent);
+    background: color-mix(in srgb, var(--case-accent) 12%, transparent);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 999px;
   }
 
   /* Research insight -> system intervention: a plain divided list
