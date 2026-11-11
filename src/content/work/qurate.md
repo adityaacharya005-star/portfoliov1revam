@@ -26,7 +26,7 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 
 <ul class="stat-grid">
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="24" width="96" height="66" rx="7"/><path d="M12 38h96"/><circle cx="24" cy="31" r="2.5" fill="currentColor" stroke="none"/><circle cx="33" cy="31" r="2.5" fill="currentColor" stroke="none"/><circle cx="42" cy="31" r="2.5" fill="currentColor" stroke="none"/><path d="M52 52v26l6-6 4 10 5-2-4-10 9 0Z" fill="currentColor" stroke="none"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="24" width="96" height="66" rx="7"/><circle cx="23" cy="34" r="2.5" fill="currentColor" stroke="none"/><circle cx="32" cy="34" r="2.5" fill="currentColor" stroke="none"/><circle cx="41" cy="34" r="2.5" fill="currentColor" stroke="none"/><rect x="52" y="29" width="46" height="10" rx="5"/><path d="M50 54v26l6-6 4 10 5-2-4-10 9 0Z" fill="currentColor" stroke="none"/></svg>
 <p class="stat-number">70%</p>
 <p class="stat-label">Manual Overhead</p>
 <p>Spent jumping between attachments, host profiles, and formatting rules in separate windows.</p>
@@ -161,12 +161,12 @@ Three other layouts for that same screen, each rejected for the same reason: the
 <p>The 35% wasn't lost to a bad tool, it was lost to switching between good ones. Cutting a context switch did more for that number than any feature added inside either screen it replaced.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="38" y="38" width="48" height="48" rx="9"/><circle cx="50" cy="50" r="2.5" fill="currentColor" stroke="none"/><circle cx="76" cy="50" r="2.5" fill="currentColor" stroke="none"/><circle cx="63" cy="63" r="2.5" fill="currentColor" stroke="none"/><circle cx="50" cy="76" r="2.5" fill="currentColor" stroke="none"/><circle cx="76" cy="76" r="2.5" fill="currentColor" stroke="none"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 60L32 95L62 110L62 75Z"/><path d="M32 60L62 45L92 60L62 75Z"/><path d="M62 75L92 60L92 95L62 110Z"/><circle cx="40" cy="70" r="2.3" fill="currentColor" stroke="none"/><circle cx="40" cy="84" r="2.3" fill="currentColor" stroke="none"/><circle cx="54" cy="78" r="2.3" fill="currentColor" stroke="none"/><circle cx="54" cy="92" r="2.3" fill="currentColor" stroke="none"/><circle cx="50" cy="58" r="2.3" fill="currentColor" stroke="none"/><circle cx="74" cy="58" r="2.3" fill="currentColor" stroke="none"/><circle cx="68" cy="79" r="2.3" fill="currentColor" stroke="none"/><circle cx="77" cy="88" r="2.3" fill="currentColor" stroke="none"/><circle cx="86" cy="73" r="2.3" fill="currentColor" stroke="none"/></svg>
 <h3>A Bet, Not Yet a Result</h3>
 <p>Structured feedback should cut the 4.2-day resolution time, but that's a bet on how hosts behave, not a number the dashboard can hand me on its own. It needs usage data to confirm.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 62h20" stroke-dasharray="4 6"/><path d="M96 62h20" stroke-dasharray="4 6"/><circle cx="26" cy="44" r="8"/><circle cx="26" cy="82" r="8"/><path d="M26 44L68 63L94 51"/><path d="M26 82L68 63L94 75"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 63h20" stroke-dasharray="4 6"/><path d="M98 63h20" stroke-dasharray="4 6"/><circle cx="25" cy="42" r="9"/><circle cx="25" cy="84" r="9"/><path d="M31 38L66 61"/><path d="M31 88L66 65"/><path d="M66 58L66 63L100 48Z" fill="currentColor" stroke="none"/><path d="M66 63L66 68L100 78Z" fill="currentColor" stroke="none"/></svg>
 <h3>Booking Management, Deliberately Cut</h3>
 <p>One week meant the review workspace only. Booking management stayed untouched, not because it's less important, but because it wasn't where the 70% and 35% were bleeding.</p>
 </li>
