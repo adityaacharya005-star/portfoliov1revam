@@ -57,7 +57,7 @@ Four platforms students already use as workarounds, and the specific job none of
 <ul class="benchmark-grid">
 <li class="benchmark-card">
 <div class="benchmark-header">
-<svg class="benchmark-logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#1769FF"/><text x="16" y="21" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">Be</text></svg>
+<svg class="benchmark-logo" viewBox="0 0 48 48" fill="none" aria-hidden="true" stroke="#1769FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="40" height="40" rx="10"/><path d="M18 14v20"/><path d="M18 14h6a5 5 0 0 1 0 10h-6"/><path d="M18 24h7a5 5 0 0 1 0 10h-7"/></svg>
 <p class="benchmark-name">Behance</p>
 </div>
 <p class="benchmark-purpose">A professional portfolio platform for in-depth, finished projects.</p>
@@ -75,7 +75,7 @@ Four platforms students already use as workarounds, and the specific job none of
 </li>
 <li class="benchmark-card">
 <div class="benchmark-header">
-<svg class="benchmark-logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#EA4C89"/><path d="M5 12c7 2.2 15 2.2 22 0M3.5 18.5c8.5 1 18 3.5 25.5 8.5M12.5 4c4.5 6.5 7 15.5 5 27" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+<svg class="benchmark-logo" viewBox="0 0 48 48" fill="none" aria-hidden="true" stroke="#EA4C89" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="20"/><path d="M6 18c8 3 26 3 34 0"/><path d="M4 28c10 2 28 6 38 14"/><path d="M19 5c6 8 9 24 6 39"/></svg>
 <p class="benchmark-name">Dribbble</p>
 </div>
 <p class="benchmark-purpose">A design community for sharing quick visual "shots."</p>
@@ -92,7 +92,7 @@ Four platforms students already use as workarounds, and the specific job none of
 </li>
 <li class="benchmark-card">
 <div class="benchmark-header">
-<svg class="benchmark-logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#E1306C"/><rect x="7.5" y="7.5" width="17" height="17" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16" cy="16" r="4.4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="21.8" cy="10.2" r="1.2" fill="#fff"/></svg>
+<svg class="benchmark-logo" viewBox="0 0 48 48" fill="none" aria-hidden="true" stroke="#E1306C" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="38" height="38" rx="12"/><circle cx="24" cy="24" r="8"/><circle cx="33" cy="15" r="2" fill="#E1306C" stroke="none"/></svg>
 <p class="benchmark-name">Instagram</p>
 </div>
 <p class="benchmark-purpose">General social media, used for marketing and branding.</p>
@@ -110,7 +110,7 @@ Four platforms students already use as workarounds, and the specific job none of
 </li>
 <li class="benchmark-card">
 <div class="benchmark-header">
-<svg class="benchmark-logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="16" fill="#FF4500"/><path d="M16 13v-5M16 8c0-1.3 1.1-2.4 2.4-2.4" stroke="#fff" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="19.2" cy="5.4" r="1.4" fill="#fff"/><circle cx="16" cy="19.5" r="7" fill="#fff"/><circle cx="9.3" cy="17" r="2.5" fill="#fff"/><circle cx="22.7" cy="17" r="2.5" fill="#fff"/><circle cx="12.6" cy="19.5" r="1.3" fill="#FF4500"/><circle cx="19.4" cy="19.5" r="1.3" fill="#FF4500"/><path d="M12.8 22.8c1.9 1.3 4.5 1.3 6.4 0" stroke="#FF4500" stroke-width="1.1" fill="none" stroke-linecap="round"/></svg>
+<svg class="benchmark-logo" viewBox="0 0 48 48" fill="none" aria-hidden="true" stroke="#FF4500" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 18v-7"/><path d="M24 11c0-1.7 1.4-3 3-3"/><circle cx="29" cy="7" r="2" fill="#FF4500" stroke="none"/><circle cx="24" cy="29" r="11"/><circle cx="13" cy="25" r="4"/><circle cx="35" cy="25" r="4"/><circle cx="19" cy="29" r="1.4" fill="#FF4500" stroke="none"/><circle cx="29" cy="29" r="1.4" fill="#FF4500" stroke="none"/><path d="M19 33c3 2 7 2 10 0"/></svg>
 <p class="benchmark-name">Reddit</p>
 </div>
 <p class="benchmark-purpose">A community forum for anonymous feedback.</p>
@@ -163,7 +163,9 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 
 <ul class="persona-grid">
 <li class="persona-card">
-<img class="persona-portrait persona-portrait--avatar" src="/images/iterate/persona-priya.webp" alt="Portrait representing Priya Sharma" />
+<span class="persona-portrait persona-portrait--sketch" role="img" aria-label="Sketch illustration representing Priya Sharma">
+<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="42" r="17"/><path d="M44 32c4-9 28-9 32 0"/><path d="M43 30c-6 10-8 26-3 42"/><path d="M77 30c6 10 8 26 3 42"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
+</span>
 <div>
 <p class="persona-eyebrow">UI/UX Student · NID</p>
 <p class="persona-name">Priya Sharma</p>
@@ -173,7 +175,9 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 </div>
 </li>
 <li class="persona-card">
-<img class="persona-portrait persona-portrait--avatar" src="/images/iterate/persona-aniket.webp" alt="Portrait representing Aniket Joshi" />
+<span class="persona-portrait persona-portrait--sketch" role="img" aria-label="Sketch illustration representing Aniket Joshi">
+<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="44" r="17"/><path d="M43 37c2-11 32-11 34 0"/><circle cx="52" cy="46" r="6.5"/><circle cx="68" cy="46" r="6.5"/><path d="M58.5 46h3"/><path d="M39 44h6.5"/><path d="M74.5 44h6.5"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
+</span>
 <div>
 <p class="persona-eyebrow">Graphic Design Student · MIT-WPU</p>
 <p class="persona-name">Aniket Joshi</p>

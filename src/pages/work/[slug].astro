@@ -1281,9 +1281,10 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 
   .case-study__body :global(.benchmark-logo) {
     display: block;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
+    filter: url(#sketch-wobble);
   }
 
   .case-study__body :global(.benchmark-name) {
@@ -1585,6 +1586,30 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     object-position: center;
   }
 
+  /* A hand-sketched bust icon in a tinted circle instead of a real
+     photo, same card-icon/quote-icon vocabulary (clean SVG through
+     the wobble filter) as the rest of this project, rather than a
+     photo avatar or Qurate's full illustrated figure. */
+  .case-study__body :global(.persona-portrait--sketch) {
+    position: static;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--case-accent) 12%, var(--color-bg));
+  }
+
+  .case-study__body :global(.persona-portrait--sketch) :global(svg) {
+    width: 60px;
+    height: 60px;
+    color: var(--case-accent);
+    filter: url(#sketch-wobble);
+  }
+
   .case-study__body :global(.persona-card p + p) {
     margin-top: var(--space-4);
   }
@@ -1657,9 +1682,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
       height: 200px;
     }
 
-    .case-study__body :global(.persona-portrait--avatar) {
+    .case-study__body :global(.persona-portrait--avatar),
+    .case-study__body :global(.persona-portrait--sketch) {
       width: 110px;
       height: 110px;
+    }
+
+    .case-study__body :global(.persona-portrait--sketch) :global(svg) {
+      width: 68px;
+      height: 68px;
     }
   }
 
