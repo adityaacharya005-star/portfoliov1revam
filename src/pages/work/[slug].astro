@@ -835,6 +835,21 @@ const sections = headings.filter((h) => h.depth === 2);
     margin: 0;
   }
 
+  .case-study__body :global(.field-validation-row) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: var(--space-7);
+  }
+
+  .case-study__body > :global(h2 + .field-validation-row) {
+    margin-top: var(--space-4);
+  }
+
+  .case-study__body :global(.field-validation-row p) {
+    margin: 0;
+  }
+
   /* A real, named person's testimonial: her photo, not a generic
      quote block, so field validation reads as a specific person
      standing behind this, not an anonymous pull-quote. */
@@ -1146,6 +1161,14 @@ const sections = headings.filter((h) => h.depth === 2);
     .case-study__body :global(.insight-row) {
       grid-template-columns: 1fr;
       gap: var(--space-2);
+    }
+
+    .case-study__body :global(.field-validation-row) {
+      grid-template-columns: 1fr;
+    }
+
+    .case-study__body :global(.testimonial-card) {
+      max-width: none;
     }
 
     .case-study__body :global(.insight-arrow) {
