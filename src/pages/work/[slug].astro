@@ -1086,6 +1086,9 @@ const sections = headings.filter((h) => h.depth === 2);
     font-weight: 600;
     color: var(--color-text);
     margin: 0;
+    /* Reserves two lines so a longer label doesn't push this card's
+       body copy down relative to siblings whose label fits one line. */
+    min-height: 3.4em;
   }
 
   .case-study__body :global(.compare-card p) {
