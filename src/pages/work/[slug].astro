@@ -1110,6 +1110,11 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study__body :global(.outcome-grid),
   .case-study__body :global(.compare-grid) {
     grid-template-columns: repeat(3, 1fr);
+    /* Cards size to their own content instead of stretching to match
+       the tallest sibling — when one card's copy runs longer than its
+       neighbors, the shorter cards no longer carry dead space at the
+       bottom just to match its height. */
+    align-items: start;
   }
 
   .case-study__body :global(.persona-grid) {
