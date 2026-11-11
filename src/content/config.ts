@@ -32,6 +32,11 @@ const work = defineCollection({
       // than reusing the site's own accent everywhere. Falls back to
       // --color-accent when unset.
       accentColor: z.string().optional(),
+      // Optional — "polished" swaps the hand-drawn sketch-wobble card
+      // icons for crisp, tinted-badge icons (a more corporate-product
+      // feel for a dashboard/B2B case study). Unset keeps the default
+      // playful hand-drawn look.
+      illustrationStyle: z.enum(['sketch', 'polished']).optional(),
     }),
 });
 

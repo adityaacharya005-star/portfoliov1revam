@@ -13,6 +13,7 @@ featured: true
 thumbVideoMp4: /videos/qurate-thumb.mp4
 thumbVideoWebm: /videos/qurate-thumb.webm
 accentColor: "#FF385C"
+illustrationStyle: polished
 ---
 
 ## Product Context

@@ -57,6 +57,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 <Base title={data.title} description={data.description} hideHeaderOnScroll>
   <div
     class="case-study"
+    data-icon-style={data.illustrationStyle ?? 'sketch'}
     style={data.accentColor
       ? `--case-accent: ${data.accentColor}; --case-accent-text: ${accentColorText}`
       : undefined}
@@ -1208,6 +1209,23 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     margin-bottom: var(--space-5);
     color: var(--color-text);
     filter: url(#sketch-wobble);
+  }
+
+  /* A crisp, tinted-badge treatment in place of the hand-drawn sketch
+     look, for a case study that should read as a polished product
+     rather than a playful one. Smaller and contained in a colored
+     badge rather than a bare 112px line drawing, with no wobble and a
+     slightly thinner stroke. */
+  .case-study[data-icon-style='polished'] .case-study__body :global(.card-icon) {
+    width: 56px;
+    height: 56px;
+    padding: var(--space-4);
+    box-sizing: content-box;
+    stroke-width: 2.25;
+    color: var(--case-accent);
+    background: color-mix(in srgb, var(--case-accent) 10%, var(--color-bg));
+    border-radius: 16px;
+    filter: none;
   }
 
   .case-study__body :global(.stat-number) {
