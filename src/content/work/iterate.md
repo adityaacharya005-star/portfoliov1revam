@@ -206,8 +206,17 @@ Eight screens across onboarding and the core flow, each one answering a specific
 
 <figure class="figure--white figure--feature">
 <p class="figure-eyebrow">The core screen</p>
-<img class="figure-img--phone" src="/images/iterate/new-project-b.webp" alt="Iterate new project screen with tags for Ongoing or Complete, an Add People option, and a Publish button" />
-<figcaption>New Project. The "Ongoing" tag is the whole point: it's the one feature that turns posting unfinished work from a risk into the expected norm.</figcaption>
+<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
+<li class="screen-item">
+<img src="/images/iterate/new-project-a.webp" alt="Iterate new project form with fields for Project Title, Visuals, and Project Bio" />
+<p class="screen-caption">Title, visuals, and a bio field, nothing else required to start a post.</p>
+</li>
+<li class="screen-item">
+<img src="/images/iterate/new-project-b.webp" alt="Iterate new project screen with tags for Ongoing or Complete, an Add People option, and a Publish button" />
+<p class="screen-caption">The "Ongoing" tag is the whole point: it's the one feature that turns posting unfinished work from a risk into the expected norm.</p>
+</li>
+</ul>
+<figcaption>New Project. A short form you can clear in the time it takes to find the "Ongoing" tag.</figcaption>
 </figure>
 
 <figure class="figure--white">
