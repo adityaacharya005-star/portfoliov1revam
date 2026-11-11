@@ -320,8 +320,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 </ul>
 </figure>
 
-<figure class="figure--white figure--feature">
-<p class="figure-eyebrow">The core screen</p>
+<figure class="figure--white">
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/iterate/new-project-a.webp" alt="Iterate new project form with fields for Project Title, Visuals, and Project Bio" />
