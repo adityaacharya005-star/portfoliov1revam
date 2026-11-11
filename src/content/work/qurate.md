@@ -31,7 +31,7 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 <p>Spent jumping between attachments, host profiles, and formatting rules in separate windows.</p>
 </li>
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 94c0-11 9-18 20-18s18 9 18 18"/><path d="M20 94h48"/><path d="M68 94c7 0 12-4 12-10"/><path d="M28 78l-7-9M46 78l2-10"/><circle cx="64" cy="54" r="27"/><path d="M64 54V34M64 54l18 9"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="70" cy="56" r="26"/><path d="M70 56m-15 0a15 15 0 1 1 15 15 9 9 0 1 1-9-9 4 4 0 1 1 4 4"/><path d="M18 92c0-14 12-22 26-22 16 0 26 10 26 22"/><path d="M18 92h52"/><path d="M86 78c6 2 10 7 10 14"/><path d="M28 70l-8-10M42 66l-2-11"/></svg>
 <p class="stat-number">4.2 Days</p>
 <p class="stat-label">Host Resolution Time</p>
 <p>To fix a flagged issue, or give up, after a generic rejection email.</p>

@@ -913,23 +913,9 @@ const sections = headings.filter((h) => h.depth === 2);
 
   /* A signature hand-sketched card: white ground, a loose-ink icon
      (clean SVG run through an SVG displacement filter so it reads as
-     drawn, not vector-perfect), and three recurring accent colors
-     cycling across every stat/outcome grid regardless of project —
-     this is the one motif that's consistently "mine" rather than
-     reskinned per project accent. */
-  .case-study__body :global(.stat-grid > .stat-card:nth-child(3n+1)),
-  .case-study__body :global(.outcome-grid > .outcome-card:nth-child(3n+1)) {
-    --spark: #ff3b5f;
-  }
-  .case-study__body :global(.stat-grid > .stat-card:nth-child(3n+2)),
-  .case-study__body :global(.outcome-grid > .outcome-card:nth-child(3n+2)) {
-    --spark: #f5a623;
-  }
-  .case-study__body :global(.stat-grid > .stat-card:nth-child(3n+3)),
-  .case-study__body :global(.outcome-grid > .outcome-card:nth-child(3n+3)) {
-    --spark: #22b573;
-  }
-
+     drawn, not vector-perfect) and the stat number in this project's
+     own accent, so Qurate reads red and Conversations Before College
+     reads blue instead of an unrelated rainbow. */
   .case-study__body :global(.stat-card),
   .case-study__body :global(.outcome-card) {
     position: relative;
@@ -962,7 +948,7 @@ const sections = headings.filter((h) => h.depth === 2);
     font-size: 2rem;
     font-weight: 700;
     line-height: 1;
-    color: var(--spark, var(--case-accent));
+    color: var(--case-accent);
     margin: 0 0 var(--space-2);
   }
 

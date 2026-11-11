@@ -235,7 +235,7 @@ The proposal went to Sri Prakash Vidyaniketan's administration before it went an
 
 <ul class="outcome-grid">
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 20c22 0 32 14 24 26-6 9-22 4-20-6 2-8 14-10 18-2 5 10-4 22-18 22-16 0-26-12-26-26 0-18 16-30 34-30"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 60h20v-20h-40v40h60v-60h-80v80h100"/></svg>
 <h3>Designing for Complex Systems</h3>
 <p>A policy like NEP 2020 can open a door on paper and still leave it shut in practice, because the real blocker was never the policy. It was the behavior built up around the old one.</p>
 </li>
