@@ -188,7 +188,7 @@ Eight screens across onboarding and the core flow, each one answering a specific
 </figure>
 
 <figure class="figure--white">
-<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
+<ul class="screen-grid">
 <li class="screen-item">
 <img src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
 <p class="screen-caption">Home. Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</p>
@@ -196,6 +196,10 @@ Eight screens across onboarding and the core flow, each one answering a specific
 <li class="screen-item">
 <img src="/images/iterate/search.webp" alt="Iterate search screen with fields for author name, project name, college name, and discipline name" />
 <p class="screen-caption">Search. Filtered by discipline and college, not just keyword, so a student can find peers in their own field instead of scrolling a generic feed.</p>
+</li>
+<li class="screen-item">
+<img src="/images/iterate/search-results.webp" alt="Iterate search results screen with active filter chips for author, project, college, and discipline, plus a similar projects section" />
+<p class="screen-caption">Results stay tied to the filters that produced them, shown as chips, and surface similar projects underneath so a dead-end search still leads somewhere.</p>
 </li>
 </ul>
 </figure>
