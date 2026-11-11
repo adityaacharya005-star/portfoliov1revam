@@ -26,19 +26,19 @@ Three numbers that shaped the brief, identified while mapping the existing revie
 
 <ul class="stat-grid">
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="24" width="96" height="66" rx="7"/><circle cx="23" cy="34" r="2.5" fill="currentColor" stroke="none"/><circle cx="32" cy="34" r="2.5" fill="currentColor" stroke="none"/><circle cx="41" cy="34" r="2.5" fill="currentColor" stroke="none"/><rect x="52" y="29" width="46" height="10" rx="5"/><path d="M50 54v26l6-6 4 10 5-2-4-10 9 0Z" fill="currentColor" stroke="none"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="22" width="92" height="68" rx="8"/><circle cx="25" cy="32" r="2.2" fill="currentColor" stroke="none"/><circle cx="34" cy="32" r="2.2" fill="currentColor" stroke="none"/><circle cx="43" cy="32" r="2.2" fill="currentColor" stroke="none"/><rect x="54" y="27" width="44" height="9" rx="4.5"/><path d="M28 60q9 5 14 -1" stroke-width="3.5"/><path d="M26 70q9 5 14 -1" stroke-width="3.5"/><path d="M50 54L50 80 56 74 60 84 65 82 61 72 70 72Z" fill="currentColor" stroke="none"/></svg>
 <p class="stat-number">70%</p>
 <p class="stat-label">Manual Overhead</p>
 <p>Spent jumping between attachments, host profiles, and formatting rules in separate windows.</p>
 </li>
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 20 L90 20 C85 35 70 45 60 60 C70 75 85 85 90 100 L30 100 C35 85 50 75 60 60 C50 45 35 35 30 20"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="60" r="40"/><path d="M60 60L60 38"/><path d="M60 60Q78 50 86 62" stroke-width="3.5"/><circle cx="60" cy="60" r="4" fill="currentColor" stroke="none"/><path d="M60 20v6M100 60h-6M60 100v-6M20 60h6" stroke-width="3.5"/></svg>
 <p class="stat-number">4.2 Days</p>
 <p class="stat-label">Host Resolution Time</p>
 <p>To fix a flagged issue, or give up, after a generic rejection email.</p>
 </li>
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="30" width="42" height="60" rx="5"/><path d="M19 44h20M19 54h20M19 64h14"/><circle cx="88" cy="58" r="20"/><path d="M102 72l14 14"/><path d="M79 58l7 6 12-14"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M35 20H71L85 34V90H35Z"/><path d="M71 20L85 34H71Z" fill="currentColor" stroke="none"/><path d="M43 50h28M43 60h20"/><path d="M43 74l6 6 14-14" stroke-width="3.5"/></svg>
 <p class="stat-number">35%</p>
 <p class="stat-label">Verification Delay</p>
 <p>Lost opening external PDF viewers and matching credentials by hand.</p>
@@ -156,7 +156,7 @@ Three other layouts for that same screen, each rejected for the same reason: the
 
 <ul class="outcome-grid">
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="15" y="34" width="90" height="66" rx="7"/><path d="M15 48h90"/><path d="M26 34v-9a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v9"/><path d="M62 34v-9a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v9"/><path d="M70 24L82 32M70 32L82 24" stroke-width="2.2"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="22" width="92" height="68" rx="8"/><circle cx="23" cy="32" r="2.2" fill="currentColor" stroke="none"/><circle cx="32" cy="32" r="2.2" fill="currentColor" stroke="none"/><circle cx="41" cy="32" r="2.2" fill="currentColor" stroke="none"/><rect x="52" y="27" width="20" height="9" rx="4.5"/><rect x="76" y="27" width="20" height="9" rx="4.5"/><path d="M82 29.5l8 4M82 33.5l8-4" stroke-width="2.2"/></svg>
 <h3>One Screen Beats One Fewer Tab</h3>
 <p>The 35% wasn't lost to a bad tool, it was lost to switching between good ones. Cutting a context switch did more for that number than any feature added inside either screen it replaced.</p>
 </li>
@@ -166,7 +166,7 @@ Three other layouts for that same screen, each rejected for the same reason: the
 <p>Structured feedback should cut the 4.2-day resolution time, but that's a bet on how hosts behave, not a number the dashboard can hand me on its own. It needs usage data to confirm.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 63h20" stroke-dasharray="4 6"/><path d="M98 63h20" stroke-dasharray="4 6"/><circle cx="25" cy="42" r="9"/><circle cx="25" cy="84" r="9"/><path d="M31 38L66 61"/><path d="M31 88L66 65"/><path d="M66 58L66 63L100 48Z" fill="currentColor" stroke="none"/><path d="M66 63L66 68L100 78Z" fill="currentColor" stroke="none"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 63q8 -6 14 0" stroke-width="3.5"/><path d="M98 63h20" stroke-dasharray="4 7"/><circle cx="25" cy="42" r="9"/><circle cx="25" cy="84" r="9"/><path d="M31 38L66 61"/><path d="M31 88L66 65"/><path d="M66 58L66 63L100 48Z" fill="currentColor" stroke="none"/><path d="M66 63L66 68L100 78Z" fill="currentColor" stroke="none"/></svg>
 <h3>Booking Management, Deliberately Cut</h3>
 <p>One week meant the review workspace only. Booking management stayed untouched, not because it's less important, but because it wasn't where the 70% and 35% were bleeding.</p>
 </li>

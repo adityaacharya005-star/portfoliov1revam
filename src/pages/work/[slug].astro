@@ -1219,14 +1219,13 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     filter: url(#sketch-wobble);
   }
 
-  /* A clean, precise spot-illustration style for Qurate: uniform thin
-     line weight, no wobble, small literal scenes (a cursor in a
-     window, a hand with a magnifying glass, scissors on a cut line)
-     instead of abstract icon glyphs, so the subject reads in one
-     look. */
+  /* Qurate's brand icon style: medium-weight rounded strokes, a
+     filled accent shape somewhere in each icon (a folded page corner,
+     a cursor), and one confident curled/swept line per icon for
+     personality, in the case's own accent color. */
   .case-study[data-icon-style='polished'] .case-study__body :global(.card-icon) {
-    stroke-width: 3;
-    color: var(--color-text);
+    stroke-width: 4.5;
+    color: var(--case-accent);
     filter: none;
   }
 
