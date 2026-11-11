@@ -49,17 +49,20 @@ Three stakeholders, three different distortions. The system had to work around a
 <li class="quote-card">
 <p class="quote-label">Student · The Pressure</p>
 <p class="quote-text">"I'm not choosing Science. I'm just too scared to choose anything else."</p>
-<p class="quote-behavior"><span class="quote-behavior-tag">Key behavior</span>Explores alone, freezes at the stream decision.</p>
+<span class="quote-behavior-tag">Key behavior</span>
+<p class="quote-behavior">Explores alone, freezes at the stream decision.</p>
 </li>
 <li class="quote-card">
 <p class="quote-label">Parent · The Safety Net</p>
 <p class="quote-text">"Passion is fine for hobbies. A degree has to pay the bills."</p>
-<p class="quote-behavior"><span class="quote-behavior-tag">Key behavior</span>Treats a degree as financial insurance, not a fit.</p>
+<span class="quote-behavior-tag">Key behavior</span>
+<p class="quote-behavior">Treats a degree as financial insurance, not a fit.</p>
 </li>
 <li class="quote-card">
 <p class="quote-label">Teacher · The Untapped Resource</p>
 <p class="quote-text">"They sit in my class, but mentally they're solving coaching-center problem sets."</p>
-<p class="quote-behavior"><span class="quote-behavior-tag">Key behavior</span>Sidelined by coaching culture, buried under syllabus.</p>
+<span class="quote-behavior-tag">Key behavior</span>
+<p class="quote-behavior">Sidelined by coaching culture, buried under syllabus.</p>
 </li>
 </ul>
 
