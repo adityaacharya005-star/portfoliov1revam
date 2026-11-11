@@ -161,7 +161,7 @@ Three other layouts for that same screen, each rejected for the same reason: the
 <p>The 35% wasn't lost to a bad tool, it was lost to switching between good ones. Cutting a context switch did more for that number than any feature added inside either screen it replaced.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="46" r="22"/><path d="M48 64L44 78h32l-4-14Z"/><rect x="46" y="78" width="28" height="8" rx="2" fill="currentColor" stroke="none"/><path d="M48 92h24"/><path d="M51 48l5 6 4-9 4 9 5-6" stroke-width="2.6"/><path d="M60 14v8M38 22l5 7M82 22l-5 7" stroke-width="3.5"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="46" r="22"/><path d="M54 68L46 80h28l-8-12Z"/><rect x="46" y="80" width="28" height="8" rx="2" fill="currentColor" stroke="none"/><path d="M48 92h24"/><path d="M51 44l5 6 4-9 4 9 5-6" stroke-width="2.6"/><path d="M60 14v8M38 22l5 7M82 22l-5 7" stroke-width="3.5"/></svg>
 <h3>Specific Feedback Beats a Generic Rejection</h3>
 <p>Replacing the form-letter rejection with a structured checklist taught me the real lever wasn't speed, it was clarity: a host who knows exactly what to fix resolves it faster than one left guessing. That principle is carrying into the next tool I design.</p>
 </li>
