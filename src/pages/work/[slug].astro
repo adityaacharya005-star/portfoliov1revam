@@ -1301,6 +1301,20 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     background: transparent;
   }
 
+  /* A real circular photo instead of a full illustrated figure: sits
+     inline as a compact avatar rather than bleeding the card's full
+     height. */
+  .case-study__body :global(.persona-portrait--avatar) {
+    position: static;
+    align-self: flex-start;
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   .case-study__body :global(.persona-card p + p) {
     margin-top: var(--space-4);
   }
@@ -1369,6 +1383,11 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     .case-study__body :global(.persona-portrait) {
       align-self: center;
       height: 200px;
+    }
+
+    .case-study__body :global(.persona-portrait--avatar) {
+      width: 110px;
+      height: 110px;
     }
   }
 
