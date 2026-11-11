@@ -3,6 +3,7 @@ title: Conversations before college
 description: A system for the right career guidance in India.
 cover: ./assets/conversations-before-college-cover.webp
 coverAlt: "Rows of students bent over desks in a packed exam hall, the scale of competition this project is designed against"
+coverRatio: "16 / 9"
 role: Lead System & Interaction Designer
 team: Group Project · 4 Designers
 timeline: March – April 2026

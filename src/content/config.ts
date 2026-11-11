@@ -8,6 +8,9 @@ const work = defineCollection({
       description: z.string(),
       cover: image(),
       coverAlt: z.string(),
+      // Optional — overrides the case-study hero's aspect-ratio (e.g. "16 / 9")
+      // when its cover photo doesn't fit the default --card-aspect-ratio box.
+      coverRatio: z.string().optional(),
       role: z.string(),
       timeline: z.string(),
       tools: z.array(z.string()).optional(),

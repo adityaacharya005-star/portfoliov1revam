@@ -43,7 +43,7 @@ const sections = headings.filter((h) => h.depth === 2);
     </aside>
 
     <article class="case-study__main">
-      <div class="case-study__cover">
+      <div class="case-study__cover" style={data.coverRatio ? `--cover-ratio-override: ${data.coverRatio}` : undefined}>
         <Image src={data.cover} alt={data.coverAlt} class="case-study__cover-image" />
       </div>
 
@@ -392,10 +392,11 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__cover {
-    /* Its own ratio, not the homepage card's --card-aspect-ratio
-       (~1440/1024, sized for Qurate's thumbnail): a full-width hero
-       reads better wider and shorter than a small card does. */
-    aspect-ratio: 16 / 9;
+    /* Defaults to the homepage card's own ratio (Qurate's hero was
+       shot to match it); a case study whose cover needs a different
+       crop sets coverRatio in its frontmatter to override per page,
+       rather than changing this sitewide. */
+    aspect-ratio: var(--cover-ratio-override, var(--card-aspect-ratio));
     overflow: hidden;
     background: var(--color-placeholder);
     animation: case-fade-up 700ms var(--ease-entrance) both;
