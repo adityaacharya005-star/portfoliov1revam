@@ -216,6 +216,12 @@ The first screen after login asks eight situational questions: how a student rea
 <figcaption>The parent's view of the same data: verified credits, consistency score, engagement level. The parent trades an anxious check-in for a number they can actually read.</figcaption>
 </figure>
 
+## Style Guide
+
+<figure>
+<img src="/images/conversations/careerbridge-design-system.webp" alt="CareerBridge design system: color palette, typography scale, and button states across student, parent, primary, secondary, and brand variants" />
+</figure>
+
 ## SETU Curriculum
 
 In India, a gap year usually means one thing: dropping a year to retake an exam. SETU, Sanskrit for bridge, reframes that year as a structured transition instead, built on three terms: Explore, Experience, Envision. Every term closes with a parent-facing deliverable, a family conversation, an industry interface day, a joint planning session, so the year builds trust alongside the student's own portfolio.
