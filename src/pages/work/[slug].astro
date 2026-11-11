@@ -1663,6 +1663,90 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     box-shadow: 0 4px 8px rgba(17, 17, 17, 0.06), 0 24px 48px rgba(17, 17, 17, 0.12);
   }
 
+  /* The ID-card chrome: a lanyard punch-hole and a colored header
+     band standing in for an institution name, a dashed "perforation"
+     line before the fields, and a barcode strip at the bottom — a
+     student-ID badge instead of a generic bio card, which is the
+     one piece of visual furniture nothing else in the portfolio has. */
+  .case-study__body :global(.persona-card--id) {
+    padding: 0;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .case-study__body :global(.id-card__band) {
+    position: relative;
+    width: 100%;
+    padding: var(--space-3) var(--space-5);
+    background: var(--case-accent);
+  }
+
+  .case-study__body :global(.id-card__hole) {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-bg);
+    box-shadow: inset 0 0 0 2px rgba(17, 17, 17, 0.08);
+  }
+
+  .case-study__body :global(.id-card__band-label) {
+    margin: 0;
+    font-size: var(--text-label);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    max-width: none;
+  }
+
+  .case-study__body :global(.id-card__body) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-4);
+    padding: var(--space-7) var(--space-6);
+  }
+
+  .case-study__body :global(.id-card__meta) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px dashed var(--color-border);
+    font-size: var(--text-micro);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    max-width: none;
+  }
+
+  .case-study__body :global(.id-card__barcode) {
+    width: 100%;
+    height: 24px;
+    margin-top: var(--space-1);
+    background: repeating-linear-gradient(
+      90deg,
+      var(--color-text) 0,
+      var(--color-text) 2px,
+      transparent 2px,
+      transparent 5px,
+      var(--color-text) 5px,
+      var(--color-text) 6px,
+      transparent 6px,
+      transparent 11px
+    );
+    opacity: 0.45;
+    border-radius: 2px;
+  }
+
   .case-study__body :global(.persona-card--iterate) :global(.persona-portrait--sketch) {
     position: relative;
     width: 176px;

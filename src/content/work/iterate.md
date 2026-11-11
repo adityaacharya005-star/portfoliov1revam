@@ -162,28 +162,44 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 ## User Personas
 
 <ul class="persona-grid">
-<li class="persona-card persona-card--iterate">
+<li class="persona-card persona-card--iterate persona-card--id">
+<div class="id-card__band">
+<span class="id-card__hole" aria-hidden="true"></span>
+<p class="id-card__band-label">Iterate · Student ID</p>
+</div>
+<div class="id-card__body">
 <span class="persona-portrait persona-portrait--sketch" role="img" aria-label="Sketch illustration representing Priya Sharma">
 <svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="42" r="17"/><path d="M44 32c4-9 28-9 32 0"/><path d="M43 30c-6 10-8 26-3 42"/><path d="M77 30c6 10 8 26 3 42"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
 </span>
 <p class="persona-eyebrow">UI/UX Student · NID</p>
 <p class="persona-name">Priya Sharma</p>
+<p class="id-card__meta"><span>No. 2025-014</span><span>Issued 2025</span></p>
 <p class="persona-role">"I design to be the best. Feedback is the fastest way to get there."</p>
 <div class="persona-traits">
 <p><strong>Wants</strong> To accelerate her practical skills and have a standout, job-ready portfolio before graduation.</p>
 <p><strong>Needs</strong> Specific, actionable critique instead of the "looks nice!" comments she gets from classmates.</p>
 </div>
+<div class="id-card__barcode" aria-hidden="true"></div>
+</div>
 </li>
-<li class="persona-card persona-card--iterate">
+<li class="persona-card persona-card--iterate persona-card--id">
+<div class="id-card__band">
+<span class="id-card__hole" aria-hidden="true"></span>
+<p class="id-card__band-label">Iterate · Student ID</p>
+</div>
+<div class="id-card__body">
 <span class="persona-portrait persona-portrait--sketch" role="img" aria-label="Sketch illustration representing Aniket Joshi">
 <svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="44" r="17"/><path d="M43 37c2-11 32-11 34 0"/><circle cx="52" cy="46" r="6.5"/><circle cx="68" cy="46" r="6.5"/><path d="M58.5 46h3"/><path d="M39 44h6.5"/><path d="M74.5 44h6.5"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
 </span>
 <p class="persona-eyebrow">Graphic Design Student · MIT-WPU</p>
 <p class="persona-name">Aniket Joshi</p>
+<p class="id-card__meta"><span>No. 2025-027</span><span>Issued 2025</span></p>
 <p class="persona-role">"I have so many ideas in my head, I just wish I had the confidence to share them."</p>
 <div class="persona-traits">
 <p><strong>Wants</strong> The confidence to post publicly for the first time, not just keep working privately.</p>
 <p><strong>Needs</strong> A low-pressure way to post anonymously and receive gentle, structured feedback.</p>
+</div>
+<div class="id-card__barcode" aria-hidden="true"></div>
 </div>
 </li>
 </ul>
