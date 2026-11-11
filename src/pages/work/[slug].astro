@@ -1219,15 +1219,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     filter: url(#sketch-wobble);
   }
 
-  /* A bold, chunky brush-stroke treatment for Qurate: a thick weighted
-     line with a rougher, more confident wobble than CBC's thin sketch
-     icons, closer to a hand-cut stamp or marker mark than a line
-     drawing — reads as a deliberate illustration style, not a
-     generic thin icon-font glyph. */
+  /* A clean, precise spot-illustration style for Qurate: uniform thin
+     line weight, no wobble, small literal scenes (a cursor in a
+     window, a hand with a magnifying glass, scissors on a cut line)
+     instead of abstract icon glyphs, so the subject reads in one
+     look. */
   .case-study[data-icon-style='polished'] .case-study__body :global(.card-icon) {
-    stroke-width: 9;
-    color: var(--case-accent);
-    filter: url(#brush-wobble);
+    stroke-width: 3;
+    color: var(--color-text);
+    filter: none;
   }
 
   .case-study__body :global(.stat-number) {
