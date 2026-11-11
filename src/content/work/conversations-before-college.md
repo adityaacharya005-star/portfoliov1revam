@@ -28,13 +28,13 @@ Two numbers from early research, and a team of four built the rest of this syste
 
 <ul class="stat-grid" style="grid-template-columns: repeat(2, 1fr)">
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 6h22l-8 12v8l-6 3v-11L5 6Z" stroke="var(--color-text)" stroke-width="1.5" stroke-linejoin="round"/><circle cx="16" cy="24" r="1.6" fill="var(--case-accent)" stroke="none"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 24h84l-32 40v34l-20 10V64Z"/><circle cx="60" cy="100" r="3"/></svg>
 <p class="stat-number">99.7%</p>
 <p class="stat-label">Bottleneck Failure</p>
 <p>Students who don't clear JEE, NEET, or UPSC each year, after staking years of their schooling on passing.</p>
 </li>
 <li class="stat-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="9" cy="11" r="3" stroke="var(--color-text)" stroke-width="1.5"/><path d="M3 24c0-4 3-6 6-6s6 2 6 6" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><circle cx="23" cy="11" r="3" stroke="var(--color-text)" stroke-width="1.5"/><path d="M17 24c0-4 3-6 6-6s6 2 6 6" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="9" r="3.4" stroke="var(--case-accent)" stroke-width="2"/><path d="M9 23c0-4.5 3.2-7 7-7s7 2.5 7 7" stroke="var(--case-accent)" stroke-width="2" stroke-linecap="round"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="38" r="9"/><path d="M14 60h24v18H14Z"/><circle cx="60" cy="30" r="10"/><path d="M46 54h28v22H46Z"/><circle cx="94" cy="38" r="9"/><path d="M82 60h24v18H82Z"/><path d="M10 96h100"/></svg>
 <p class="stat-number">22.79L</p>
 <p class="stat-label">Candidates, One Exam</p>
 <p>NEET 2026 registrations alone, all competing for the same narrow set of "safe" seats.</p>
@@ -97,17 +97,17 @@ Three structural pillars, ordered by how much resistance each one meets on the w
 
 <ul class="outcome-grid">
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 7c-2.5-1.5-6-2-9-1v18c3-1 6.5-.5 9 1 2.5-1.5 6-2 9-1V6c-3-1-6.5-.5-9 1Z" stroke="var(--color-text)" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 7v18" stroke="var(--color-text)" stroke-width="1.5"/><path d="M13 22v6l2-1.5 2 1.5v-6Z" fill="var(--case-accent)" stroke="var(--case-accent)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 30c-10-8-30-8-40 0v56c10-8 30-8 40 0"/><path d="M60 30c10-8 30-8 40 0v56c-10-8-30-8-40 0"/><path d="M60 30v56"/></svg>
 <h3>The Library</h3>
 <p>Physical, low friction. A school can repaint shelves over a weekend, no policy or parent buy-in required.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M4 22c4-8 20-8 24 0" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><path d="M4 22h24" stroke="var(--case-accent)" stroke-width="2.5" stroke-linecap="round"/><path d="M9 22v4M16 22v4M23 22v4" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 78c20-28 72-28 92 0"/><path d="M14 78v14M106 78v14"/><path d="M34 78V60M60 78V52M86 78V60"/></svg>
 <h3>SETU Curriculum</h3>
 <p>Structural, high friction. A full transition-year framework that needs school and board-level buy-in to run.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="9" y="4" width="14" height="24" rx="2.5" stroke="var(--color-text)" stroke-width="1.5"/><path d="M13 8h6" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/><path d="M13 24h6" stroke="var(--case-accent)" stroke-width="2.5" stroke-linecap="round"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="38" y="16" width="44" height="88" rx="10"/><path d="M52 92h16"/><path d="M50 40l10 10 14-18"/></svg>
 <h3>CareerBridge App</h3>
 <p>Digital, medium friction. The daily engine that turns the curriculum into tasks and the library's habits into data.</p>
 </li>
@@ -235,17 +235,17 @@ The proposal went to Sri Prakash Vidyaniketan's administration before it went an
 
 <ul class="outcome-grid">
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="10" stroke="var(--color-text)" stroke-width="1.5"/><path d="M16 6v6M16 20v6M6 16h6M20 16h6" stroke="var(--case-accent)" stroke-width="2" stroke-linecap="round"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 20c22 0 32 14 24 26-6 9-22 4-20-6 2-8 14-10 18-2 5 10-4 22-18 22-16 0-26-12-26-26 0-18 16-30 34-30"/></svg>
 <h3>Designing for Complex Systems</h3>
 <p>A policy like NEP 2020 can open a door on paper and still leave it shut in practice, because the real blocker was never the policy. It was the behavior built up around the old one.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="10" cy="11" r="3.5" stroke="var(--color-text)" stroke-width="1.5"/><circle cx="22" cy="11" r="3.5" stroke="var(--case-accent)" stroke-width="2"/><path d="M4 25c0-4.5 3-7 6-7s6 2.5 6 7M16 25c0-4.5 3-7 6-7s6 2.5 6 7" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="40" r="9"/><path d="M22 50v20M22 58l-10 8M22 58l10 6M22 70l-8 16M22 70l8 16"/><circle cx="98" cy="40" r="9"/><path d="M98 50v20M98 58l-10 6M98 58l10 8M98 70l-8 16M98 70l8 16"/><path d="M34 62h52"/><path d="M40 57l-6 5 6 5M80 57l6 5-6 5"/></svg>
 <h3>Multi-Stakeholder Friction</h3>
 <p>Student anxiety, parental fear, and a school administration's workload don't resolve into one blueprint cleanly. The friction-ordered rollout, library first, app second, curriculum last, exists because that fight couldn't be won in one move.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 23l6-14 6 9 4-6 6 11" stroke="var(--color-text)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="12" r="1.8" fill="var(--case-accent)" stroke="none"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 100h18V82h18V64h18V46h16"/><path d="M84 46v-28l24 10-24 10"/></svg>
 <h3>Sequencing the Ask</h3>
 <p>Leading with the hardest change (a new exam, a new curriculum mandate) would have stalled before a single student felt the difference. Proving the library worked first made the harder asks easier to say yes to.</p>
 </li>

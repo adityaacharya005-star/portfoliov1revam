@@ -89,6 +89,15 @@ const sections = headings.filter((h) => h.depth === 2);
         </dl>
       </div>
 
+      <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+        <defs>
+          <filter id="sketch-wobble" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="7" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+      </svg>
+
       <div class="case-study__body">
         <Content />
       </div>
@@ -902,31 +911,49 @@ const sections = headings.filter((h) => h.depth === 2);
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* A signature hand-sketched card: white ground, a loose-ink icon
+     (clean SVG run through an SVG displacement filter so it reads as
+     drawn, not vector-perfect), and three recurring accent colors
+     cycling across every stat/outcome grid regardless of project —
+     this is the one motif that's consistently "mine" rather than
+     reskinned per project accent. */
+  .case-study__body :global(.stat-grid > .stat-card:nth-child(3n+1)),
+  .case-study__body :global(.outcome-grid > .outcome-card:nth-child(3n+1)) {
+    --spark: #ff3b5f;
+  }
+  .case-study__body :global(.stat-grid > .stat-card:nth-child(3n+2)),
+  .case-study__body :global(.outcome-grid > .outcome-card:nth-child(3n+2)) {
+    --spark: #f5a623;
+  }
+  .case-study__body :global(.stat-grid > .stat-card:nth-child(3n+3)),
+  .case-study__body :global(.outcome-grid > .outcome-card:nth-child(3n+3)) {
+    --spark: #22b573;
+  }
+
   .case-study__body :global(.stat-card),
   .case-study__body :global(.outcome-card) {
     position: relative;
     padding: var(--space-6);
-    background: var(--color-card-warm);
-    border-top: 3px solid var(--case-accent);
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgba(17, 17, 17, 0.05), 0 16px 32px rgba(17, 17, 17, 0.06);
     transition: transform var(--duration-fast) var(--ease-standard),
       box-shadow var(--duration-fast) var(--ease-standard);
   }
 
   .case-study__body :global(.stat-card:hover),
   .case-study__body :global(.outcome-card:hover) {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(17, 17, 17, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(17, 17, 17, 0.06), 0 20px 40px rgba(17, 17, 17, 0.1);
   }
 
   .case-study__body :global(.card-icon) {
     display: block;
-    box-sizing: border-box;
-    width: 56px;
-    height: 56px;
-    padding: 12px;
+    width: 112px;
+    height: 112px;
     margin-bottom: var(--space-5);
-    background: color-mix(in srgb, var(--case-accent) 12%, transparent);
-    border-radius: 12px;
+    color: var(--color-text);
+    filter: url(#sketch-wobble);
   }
 
   .case-study__body :global(.stat-number) {
@@ -935,7 +962,7 @@ const sections = headings.filter((h) => h.depth === 2);
     font-size: 2rem;
     font-weight: 700;
     line-height: 1;
-    color: var(--case-accent);
+    color: var(--spark, var(--case-accent));
     margin: 0 0 var(--space-2);
   }
 
