@@ -168,14 +168,27 @@ The first sketch pass mapped every screen the app could plausibly need: profile 
 
 ## Final Design
 
-Six core screens, each one answering a specific fear from the research: posting too early, posting publicly, or posting into silence.
+Eight screens across onboarding and the core flow, each one answering a specific fear from the research: posting too early, posting publicly, or posting into silence.
 
 <figure class="figure--white">
 <ul class="screen-grid">
 <li class="screen-item">
-<img src="/images/iterate/onboard-3.webp" alt="Iterate onboarding screen requiring a college email, name, and password to create an account" />
-<p class="screen-caption">Onboarding. Signup only accepts a college email, so the feed stays verified-student-only, the one guarantee that made the 82% comfortable enough to post.</p>
+<img src="/images/iterate/onboard-splash.webp" alt="Iterate onboarding splash screen with the tagline Discover new perspectives, elevate your work, over a background of the app's own hand-drawn sketches" />
+<p class="screen-caption">Onboarding opens on the mood, not a form. The background is the sketches themselves, so the app's identity reads as a process before anyone logs in.</p>
 </li>
+<li class="screen-item">
+<img src="/images/iterate/onboard-login.webp" alt="Iterate login screen with options to continue with Google, phone, or email" />
+<p class="screen-caption">Three login paths, Google, phone, or email, so the account choice doesn't become the first point of friction.</p>
+</li>
+<li class="screen-item">
+<img src="/images/iterate/onboard-signup.webp" alt="Iterate create account screen requiring a name, college email, and password" />
+<p class="screen-caption">Signup only accepts a college email, so the feed stays verified-student-only, the one guarantee that made the 82% comfortable enough to post.</p>
+</li>
+</ul>
+</figure>
+
+<figure class="figure--white">
+<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
 <li class="screen-item">
 <img src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
 <p class="screen-caption">Home. Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</p>
