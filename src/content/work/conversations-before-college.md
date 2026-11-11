@@ -48,21 +48,21 @@ Student, parent, and teacher each distort the problem differently. The system ha
 
 <ul class="quote-grid">
 <li class="quote-card">
-<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 100V68"/><path d="M60 68L32 30"/><path d="M60 68L88 30"/><circle cx="60" cy="68" r="7" fill="currentColor" stroke="none"/></svg>
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 102V40"/><path d="M60 50h-24l-8 8 8 8h24Z"/><path d="M60 66h24l8 8-8 8h-24Z"/></svg>
 <p class="quote-label">Student · The Pressure</p>
 <p class="quote-text">"I'm not choosing Science. I'm just too scared to choose anything else."</p>
 <span class="quote-behavior-tag">Key behavior</span>
 <p class="quote-behavior">Explores alone, freezes at the stream decision.</p>
 </li>
 <li class="quote-card">
-<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="28" y="38" width="64" height="26" rx="5"/><path d="M52 64l8 20 8-12 8 12 8-20"/></svg>
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="30" y="26" width="60" height="44" rx="4"/><path d="M40 40h40M40 50h40M40 60h24"/><path d="M50 70l4 24 6-11 6 11 4-24"/><circle cx="60" cy="74" r="11"/></svg>
 <p class="quote-label">Parent · The Safety Net</p>
 <p class="quote-text">"Passion is fine for hobbies. A degree has to pay the bills."</p>
 <span class="quote-behavior-tag">Key behavior</span>
 <p class="quote-behavior">Treats a degree as financial insurance, not a fit.</p>
 </li>
 <li class="quote-card">
-<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 10v8M46 16l6 6M74 16l-6 6"/><circle cx="60" cy="40" r="18"/><path d="M53 58h14"/><rect x="28" y="66" width="64" height="16" rx="3"/><rect x="34" y="82" width="52" height="14" rx="3"/></svg>
+<svg class="quote-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 8v8M47 15l6 6M73 15l-6 6"/><circle cx="60" cy="38" r="18"/><rect x="52" y="56" width="16" height="6" rx="1"/><rect x="54" y="63" width="12" height="5" rx="1"/><path d="M26 76h58v16H26Z"/><path d="M84 76v16l10-16Z"/><path d="M32 94h52v14H32Z"/><path d="M84 94v14l8-14Z"/></svg>
 <p class="quote-label">Teacher · The Untapped Resource</p>
 <p class="quote-text">"They sit in my class, but mentally they're solving coaching-center problem sets."</p>
 <span class="quote-behavior-tag">Key behavior</span>
