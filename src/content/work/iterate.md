@@ -9,6 +9,8 @@ tools: [Figma, TODO]
 services: [Product Design, Platform Design] # TODO — replace with real tags
 order: 4
 featured: true
+thumbVideoMp4: /videos/iterate-thumb.mp4
+thumbVideoWebm: /videos/iterate-thumb.webm
 ---
 
 ## Problem
