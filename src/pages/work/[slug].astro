@@ -392,7 +392,10 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__cover {
-    aspect-ratio: var(--card-aspect-ratio);
+    /* Its own ratio, not the homepage card's --card-aspect-ratio
+       (~1440/1024, sized for Qurate's thumbnail): a full-width hero
+       reads better wider and shorter than a small card does. */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: var(--color-placeholder);
     animation: case-fade-up 700ms var(--ease-entrance) both;
