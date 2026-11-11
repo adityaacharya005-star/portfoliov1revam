@@ -7,5 +7,6 @@ npm-debug.log*
 # Local agent tooling (installed via `npx skills add`), not site content
 .agents/
 .claude/
+.codex/
 skills-lock.json
 .taste-skill/
