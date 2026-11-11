@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "src/pages/work/[slug].astro"
+        ],
+        "createdAt": "2026-11-11T20:14:36.272Z",
+        "reason": "Matches the existing .quote-card left-accent-border pattern already used elsewhere in this file (CBC's quote-grid); applied intentionally to affinity-chip for visual consistency with the established component system, not a generic AI-slop tell."
+      }
+    ]
+  }
+}
