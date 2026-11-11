@@ -835,6 +835,54 @@ const sections = headings.filter((h) => h.depth === 2);
     margin: 0;
   }
 
+  /* A real, named person's testimonial: her photo, not a generic
+     quote block, so field validation reads as a specific person
+     standing behind this, not an anonymous pull-quote. */
+  .case-study__body :global(.testimonial-card) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 440px;
+    padding: var(--space-7) var(--space-6);
+    background: color-mix(in srgb, var(--case-accent) 8%, var(--color-bg));
+    border-radius: 18px;
+    text-align: center;
+  }
+
+  .case-study__body :global(.testimonial-photo) {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: transparent;
+    margin-bottom: var(--space-5);
+  }
+
+  .case-study__body :global(.testimonial-name) {
+    font-family: var(--font-serif);
+    font-size: var(--text-h3);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .case-study__body :global(.testimonial-role) {
+    font-size: var(--text-small);
+    color: var(--color-muted);
+    max-width: none;
+    margin: var(--space-1) 0 var(--space-5);
+  }
+
+  .case-study__body :global(.testimonial-quote) {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: var(--text-body-lg);
+    line-height: var(--leading-normal);
+    color: var(--color-text);
+    max-width: none;
+    margin: 0;
+  }
+
   /* Research insight -> system intervention: a plain divided list
      rather than another card grid, since this is a logical mapping,
      not a set of parallel items. A serif index number and a hand-drawn

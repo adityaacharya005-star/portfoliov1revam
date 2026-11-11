@@ -234,9 +234,12 @@ In India, a gap year usually means one thing: dropping a year to retake an exam.
 
 The proposal went to Sri Prakash Vidyaniketan's administration before it went anywhere else, specifically to the Vice Principal, since a system that adds work for already-stretched teachers doesn't survive contact with a real school.
 
-> "By this it will be very helpful for the kids... from the school's side, we feel content seeing the children happy with their choices and this helps them focus more for their preparation. Parents will also be happy seeing kids settled in their chosen direction."
->
-> — Sri Lakshmi, Vice Principal
+<div class="testimonial-card">
+<img class="testimonial-photo" src="/images/conversations/sri-lakshmi.webp" alt="Sri Lakshmi, Vice Principal at Sri Prakash Vidyaniketan" />
+<h3 class="testimonial-name">Sri Lakshmi</h3>
+<p class="testimonial-role">Vice Principal · Sri Prakash Vidyaniketan</p>
+<p class="testimonial-quote">"By this it will be very helpful for the kids... from the school's side, we feel content seeing the children happy with their choices and this helps them focus more for their preparation. Parents will also be happy seeing kids settled in their chosen direction."</p>
+</div>
 
 ## Retrospective
 
