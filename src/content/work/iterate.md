@@ -168,7 +168,7 @@ The first sketch pass mapped every screen the app could plausibly need: profile 
 
 ## Final Design
 
-Eight screens across onboarding and the core flow, each one answering a specific fear from the research: posting too early, posting publicly, or posting into silence.
+The screens across onboarding and the core flow, each one answering a specific fear from the research: posting too early, posting publicly, or posting into silence.
 
 <figure class="figure--white">
 <ul class="screen-grid">
@@ -220,16 +220,25 @@ Eight screens across onboarding and the core flow, each one answering a specific
 </figure>
 
 <figure class="figure--white">
-<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
+<ul class="screen-grid">
 <li class="screen-item">
 <img src="/images/iterate/activity-friends.webp" alt="Iterate activity feed showing friends' recent posts, comments, and collaboration invites" />
 <p class="screen-caption">Activity. A plain chronological log, not a notifications dump, because a student checking in on feedback shouldn't have to dig for it.</p>
 </li>
 <li class="screen-item">
-<img src="/images/iterate/profile-aditya.webp" alt="Iterate profile screen showing a student's university, discipline, bio, external portfolio links, and published posts" />
+<img src="/images/iterate/profile-aditya.webp" alt="Iterate profile screen showing Aditya Nair's university, discipline, bio, external portfolio links, and published posts" />
 <p class="screen-caption">Profile. Posts, connections, and likes compound here automatically, so the portfolio is a byproduct of using the app, not a separate project.</p>
 </li>
+<li class="screen-item">
+<img src="/images/iterate/profile-arka.webp" alt="Iterate profile screen for a different student, Arka Gupta, showing the same layout with their own bio and posts" />
+<p class="screen-caption">Same layout, any student. The profile is a template the app fills in, not a page every student builds from scratch.</p>
+</li>
 </ul>
+</figure>
+
+<figure class="figure--white">
+<img class="figure-img--phone" src="/images/iterate/project-detail.webp" alt="Iterate project detail screen for Solace, a conceptual smart companion by Arka Gupta, tagged Ongoing" />
+<figcaption>Project Detail. Opened from a profile, the "Ongoing" tag follows the project everywhere it's shown, so the context never gets lost between the feed, the profile, and the post itself.</figcaption>
 </figure>
 
 ## Style Guide
