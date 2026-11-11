@@ -833,7 +833,9 @@ const sections = headings.filter((h) => h.depth === 2);
 
   /* Research insight -> system intervention: a plain divided list
      rather than another card grid, since this is a logical mapping,
-     not a set of parallel items. */
+     not a set of parallel items. A serif index number and a hand-drawn
+     arrow (same displacement filter as the card icons) give it some
+     rhythm; the arrow nudges forward on hover as a small sign of life. */
   .case-study__body :global(.insight-map) {
     margin: 0;
     padding: 0;
@@ -844,16 +846,24 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.insight-row) {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr auto 1fr;
     gap: var(--space-5);
     align-items: center;
-    padding: var(--space-5) 0;
+    padding: var(--space-6) 0;
     border-top: 1px solid var(--color-border);
   }
 
   .case-study__body :global(.insight-row:first-child) {
     border-top: none;
     padding-top: 0;
+  }
+
+  .case-study__body :global(.insight-number) {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--case-accent);
   }
 
   .case-study__body :global(.insight-from),
@@ -869,14 +879,26 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.insight-to) {
     font-size: var(--text-body);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--color-text);
   }
 
-  .case-study__body :global(.insight-arrow) {
+  .case-study__body :global(.insight-to strong) {
     color: var(--case-accent);
-    font-size: 1.25rem;
-    line-height: 1;
+    font-weight: 700;
+  }
+
+  .case-study__body :global(.insight-arrow) {
+    width: 40px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--case-accent);
+    filter: url(#sketch-wobble);
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.insight-row:hover .insight-arrow) {
+    transform: translateX(4px);
   }
 
   /* Rejected directions shown three-up instead of full-width figures,
@@ -1075,6 +1097,11 @@ const sections = headings.filter((h) => h.depth === 2);
 
     .case-study__body :global(.insight-arrow) {
       transform: rotate(90deg);
+      margin: var(--space-1) 0;
+    }
+
+    .case-study__body :global(.insight-row:hover .insight-arrow) {
+      transform: rotate(90deg) translateX(4px);
     }
 
     .case-study__body :global(.persona-card) {
