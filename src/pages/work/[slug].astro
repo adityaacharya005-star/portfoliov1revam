@@ -1211,20 +1211,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     filter: url(#sketch-wobble);
   }
 
-  /* A crisp, tinted-badge treatment in place of the hand-drawn sketch
-     look, for a case study that should read as a polished product
-     rather than a playful one. Smaller and contained in a colored
-     badge rather than a bare 112px line drawing, with no wobble and a
-     slightly thinner stroke. */
+  /* A crisp continuous-line treatment in place of the hand-drawn
+     sketch wobble, for a case study that should read as a polished
+     product rather than a playful one: no wobble, no badge box (that
+     reads as a generic "AI dashboard" icon tile), just a clean line
+     drawing floating on the card like the sketch icons do, only tidier. */
   .case-study[data-icon-style='polished'] .case-study__body :global(.card-icon) {
-    width: 56px;
-    height: 56px;
-    padding: var(--space-4);
-    box-sizing: content-box;
     stroke-width: 2.25;
     color: var(--case-accent);
-    background: color-mix(in srgb, var(--case-accent) 10%, var(--color-bg));
-    border-radius: 16px;
     filter: none;
   }
 
