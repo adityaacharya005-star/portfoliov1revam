@@ -198,7 +198,23 @@ const sections = headings.filter((h) => h.depth === 2);
     const ext = pageflipEl.dataset.ext ?? 'webp';
     const pageWidth = parseInt(pageflipEl.dataset.pageWidth ?? '600', 10);
     const pageHeight = parseInt(pageflipEl.dataset.pageHeight ?? '848', 10);
-    const images = Array.from({ length: totalPages }, (_, i) => `${base}${i + 1}.${ext}`);
+
+    // HTML mode (real <img> elements) instead of loadFromImages' canvas
+    // mode: the library's canvas sizing ignores devicePixelRatio, so on
+    // any retina display the canvas backing store renders at 1x and gets
+    // blurred up to fill its CSS box no matter how sharp the source
+    // images are. Real <img> elements scale natively at full resolution.
+    const pageEls: HTMLElement[] = [];
+    for (let i = 1; i <= totalPages; i++) {
+      const pageEl = document.createElement('div');
+      pageEl.className = 'pf-page';
+      const img = document.createElement('img');
+      img.src = `${base}${i}.${ext}`;
+      img.alt = `SETU booklet, page ${i} of ${totalPages}`;
+      img.loading = i <= 2 ? 'eager' : 'lazy';
+      pageEl.appendChild(img);
+      pageEls.push(pageEl);
+    }
 
     const counter = document.querySelector('[data-pageflip-counter]');
     const prevBtn = document.querySelector<HTMLButtonElement>('[data-pageflip-prev]');
@@ -236,7 +252,7 @@ const sections = headings.filter((h) => h.depth === 2);
     pageFlip.on('flip', updateControls);
     pageFlip.on('init', updateControls);
     pageFlip.on('changeOrientation', updateControls);
-    pageFlip.loadFromImages(images);
+    pageFlip.loadFromHTML(pageEls);
 
     prevBtn?.addEventListener('click', () => pageFlip.flipPrev());
     nextBtn?.addEventListener('click', () => pageFlip.flipNext());
@@ -619,12 +635,65 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   /* The curriculum booklet viewer, powered by the StPageFlip library
-     (package: page-flip) — it owns the canvas, page curl and shadow
-     rendering; this just sizes its container and styles our controls. */
+     (package: page-flip) in its HTML mode — real <img> elements it
+     flips with CSS 3D transforms, not canvas mode, whose canvas sizing
+     ignores devicePixelRatio and blurs on retina regardless of source
+     image resolution. This just sizes the container and styles our
+     controls; the four .stf__* classes below are the library's own
+     required base styles for HTML mode (normally shipped as a separate
+     stPageFlip.css we don't otherwise load). */
   .case-study__body :global(.pageflip) {
     width: 100%;
     margin-inline: auto;
     filter: drop-shadow(0 2px 4px rgba(17, 17, 17, 0.08)) drop-shadow(0 24px 48px rgba(17, 17, 17, 0.12));
+  }
+
+  .case-study__body :global(.stf__parent) {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  .case-study__body :global(.stf__wrapper) {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .case-study__body :global(.stf__block) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    perspective: 2000px;
+  }
+
+  .case-study__body :global(.stf__item) {
+    display: none;
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+
+  .case-study__body :global(.stf__outerShadow),
+  .case-study__body :global(.stf__innerShadow),
+  .case-study__body :global(.stf__hardShadow),
+  .case-study__body :global(.stf__hardInnerShadow) {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .case-study__body :global(.pf-page) {
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .case-study__body :global(.pf-page img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: transparent;
   }
 
   .case-study__body :global(.pageflip__controls) {
