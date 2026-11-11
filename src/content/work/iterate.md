@@ -170,35 +170,40 @@ The first sketch pass mapped every screen the app could plausibly need: profile 
 
 Six core screens, each one answering a specific fear from the research: posting too early, posting publicly, or posting into silence.
 
-<figure>
+<figure class="figure--white">
+<ul class="screen-grid">
+<li class="screen-item">
 <img src="/images/iterate/onboard-3.webp" alt="Iterate onboarding screen requiring a college email, name, and password to create an account" />
-<figcaption>Onboarding. Signup only accepts a college email, so the feed stays verified-student-only, the one guarantee that made the 82% comfortable enough to post.</figcaption>
-</figure>
-
-<figure>
+<p class="screen-caption">Onboarding. Signup only accepts a college email, so the feed stays verified-student-only, the one guarantee that made the 82% comfortable enough to post.</p>
+</li>
+<li class="screen-item">
 <img src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
-<figcaption>Home. Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</figcaption>
-</figure>
-
-<figure>
+<p class="screen-caption">Home. Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</p>
+</li>
+<li class="screen-item">
 <img src="/images/iterate/search.webp" alt="Iterate search screen with fields for author name, project name, college name, and discipline name" />
-<figcaption>Search. Filtered by discipline and college, not just keyword, so a student can find peers in their own field instead of scrolling a generic feed.</figcaption>
+<p class="screen-caption">Search. Filtered by discipline and college, not just keyword, so a student can find peers in their own field instead of scrolling a generic feed.</p>
+</li>
+</ul>
 </figure>
 
-<figure class="figure--feature">
+<figure class="figure--white figure--feature">
 <p class="figure-eyebrow">The core screen</p>
-<img src="/images/iterate/new-project-b.webp" alt="Iterate new project screen with tags for Ongoing or Complete, an Add People option, and a Publish button" />
+<img class="figure-img--phone" src="/images/iterate/new-project-b.webp" alt="Iterate new project screen with tags for Ongoing or Complete, an Add People option, and a Publish button" />
 <figcaption>New Project. The "Ongoing" tag is the whole point: it's the one feature that turns posting unfinished work from a risk into the expected norm.</figcaption>
 </figure>
 
-<figure>
+<figure class="figure--white">
+<ul class="screen-grid" style="grid-template-columns: repeat(2, 1fr)">
+<li class="screen-item">
 <img src="/images/iterate/activity-friends.webp" alt="Iterate activity feed showing friends' recent posts, comments, and collaboration invites" />
-<figcaption>Activity. A plain chronological log, not a notifications dump, because a student checking in on feedback shouldn't have to dig for it.</figcaption>
-</figure>
-
-<figure>
+<p class="screen-caption">Activity. A plain chronological log, not a notifications dump, because a student checking in on feedback shouldn't have to dig for it.</p>
+</li>
+<li class="screen-item">
 <img src="/images/iterate/profile-aditya.webp" alt="Iterate profile screen showing a student's university, discipline, bio, external portfolio links, and published posts" />
-<figcaption>Profile. Posts, connections, and likes compound here automatically, so the portfolio is a byproduct of using the app, not a separate project.</figcaption>
+<p class="screen-caption">Profile. Posts, connections, and likes compound here automatically, so the portfolio is a byproduct of using the app, not a separate project.</p>
+</li>
+</ul>
 </figure>
 
 ## Style Guide
