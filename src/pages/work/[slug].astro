@@ -333,7 +333,10 @@ const sections = headings.filter((h) => h.depth === 2);
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    font-size: var(--text-body);
+    font-size: var(--text-micro);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--color-muted);
     text-decoration: none;
     transition: color var(--duration-fast) var(--ease-standard);
@@ -381,9 +384,10 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study__next {
     position: relative;
     display: inline-block;
-    font-size: var(--text-small);
+    font-size: var(--text-micro);
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     color: var(--color-text);
     text-decoration: none;
     padding-bottom: 2px;
@@ -463,14 +467,15 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__eyebrow {
     margin: 0;
-    font-size: var(--text-small);
+    font-size: var(--text-label);
+    font-weight: 500;
     color: var(--color-muted);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
   }
 
   .case-study__slides {
-    font-size: var(--text-small);
+    font-size: var(--text-label);
     color: var(--color-text);
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -480,13 +485,13 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study__title {
     margin-top: var(--space-3);
     font-size: 2.25rem;
-    line-height: var(--leading-tight);
+    line-height: 1.15;
   }
 
   .case-study__subtitle {
     margin-top: var(--space-3);
     max-width: 640px;
-    font-size: var(--text-body-lg);
+    font-size: var(--text-small);
     color: var(--color-muted);
     line-height: var(--leading-normal);
   }
@@ -499,17 +504,18 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__meta dt {
-    font-size: var(--text-small);
-    font-weight: 600;
+    font-size: var(--text-micro);
+    font-weight: 500;
     color: var(--color-text);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
   }
 
   .case-study__meta dd {
     margin: var(--space-1) 0 0;
-    font-size: var(--text-body);
+    font-size: var(--text-caption);
     color: var(--color-muted);
+    line-height: var(--leading-normal);
   }
 
   .case-study__body {
@@ -537,8 +543,16 @@ const sections = headings.filter((h) => h.depth === 2);
     margin-top: var(--space-9);
   }
 
+  /* A section's heading is now a quiet label rather than a big
+     display heading, so it no longer visually announces "new section"
+     on its own — the whitespace ahead of it has to do that work
+     instead, wider than the rhythm between ordinary elements. */
+  .case-study__body > :global(* + h2) {
+    margin-top: 7rem;
+  }
+
   .case-study__body > :global(h2 + p) {
-    margin-top: var(--space-4);
+    margin-top: var(--space-5);
   }
 
   /* A grid/figure right after a heading (no lead paragraph in between)
@@ -554,15 +568,19 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(h2) {
-    font-size: var(--text-h3);
-    font-weight: 500;
-    line-height: var(--leading-tight);
+    font-family: var(--font-sans);
+    font-size: var(--text-label);
+    font-weight: 600;
+    line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text);
     scroll-margin-top: var(--space-8);
   }
 
   .case-study__body :global(p) {
     max-width: 720px;
-    font-size: var(--text-body);
+    font-size: var(--text-small);
     line-height: 1.7;
     color: var(--color-muted);
   }
@@ -595,7 +613,8 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(figcaption) {
-    font-size: var(--text-small);
+    font-size: var(--text-caption);
+    line-height: var(--leading-normal);
     color: var(--color-muted);
     max-width: 720px;
   }
@@ -726,7 +745,7 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(.pageflip__counter) {
-    font-size: var(--text-small);
+    font-size: var(--text-caption);
     color: var(--color-muted);
     min-width: 90px;
     text-align: center;
@@ -761,7 +780,7 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(.screen-caption) {
-    font-size: var(--text-small);
+    font-size: var(--text-caption);
     color: var(--color-muted);
     text-align: center;
     max-width: none;
@@ -795,11 +814,11 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(.zone-label) {
-    font-size: var(--text-small);
+    font-size: var(--text-label);
     font-weight: 600;
     color: var(--zone-color);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     margin: 0 0 var(--space-2);
   }
 
@@ -810,7 +829,7 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(.zone-card p) {
-    font-size: var(--text-small);
+    font-size: var(--text-caption);
     color: var(--color-muted);
     max-width: none;
     margin: 0;
@@ -818,11 +837,11 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.figure-eyebrow) {
     margin: 0;
-    font-size: var(--text-small);
+    font-size: var(--text-label);
     font-weight: 600;
     color: var(--case-accent);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
   }
 
   /* Stakeholder quotes: a flat pull-quote treatment (left accent rule,
@@ -863,11 +882,11 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.quote-label) {
     align-self: start;
-    font-size: var(--text-small);
+    font-size: var(--text-label);
     font-weight: 600;
     color: var(--color-muted);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     margin: 0;
   }
 
@@ -875,8 +894,8 @@ const sections = headings.filter((h) => h.depth === 2);
     align-self: start;
     font-family: var(--font-serif);
     font-style: italic;
-    font-size: var(--text-body-lg);
-    line-height: var(--leading-normal);
+    font-size: var(--text-quote);
+    line-height: 1.35;
     color: var(--color-text);
     max-width: none;
     margin: 0;
@@ -898,7 +917,7 @@ const sections = headings.filter((h) => h.depth === 2);
 
   .case-study__body :global(.quote-behavior) {
     align-self: start;
-    font-size: var(--text-small);
+    font-size: var(--text-caption);
     color: var(--color-muted);
     max-width: none;
     margin: 0;
@@ -1014,7 +1033,7 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(.insight-from) {
-    font-size: var(--text-small);
+    font-size: var(--text-caption);
     color: var(--color-muted);
   }
 
@@ -1070,7 +1089,7 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(.compare-card p) {
-    font-size: var(--text-small);
+    font-size: var(--text-caption);
     color: var(--color-muted);
     max-width: none;
   }
@@ -1131,30 +1150,32 @@ const sections = headings.filter((h) => h.depth === 2);
   .case-study__body :global(.stat-number) {
     position: relative;
     font-family: var(--font-serif);
-    font-size: 2rem;
+    font-size: var(--text-stat);
     font-weight: 700;
     line-height: 1;
+    letter-spacing: -0.02em;
     color: var(--case-accent);
     margin: 0 0 var(--space-2);
   }
 
   .case-study__body :global(.stat-label) {
-    font-size: var(--text-body);
-    font-weight: 700;
+    font-size: var(--text-caption);
+    font-weight: 600;
     color: var(--color-text);
     margin: 0 0 var(--space-3);
   }
 
   .case-study__body :global(.stat-card p:not(.stat-number):not(.stat-label)),
   .case-study__body :global(.outcome-card p) {
-    font-size: var(--text-small);
+    font-size: var(--text-caption);
+    line-height: var(--leading-normal);
     color: var(--color-muted);
     max-width: none;
   }
 
   .case-study__body :global(.outcome-card h3) {
     font-family: var(--font-sans);
-    font-size: var(--text-body-lg);
+    font-size: var(--text-small);
     font-weight: 600;
     margin: 0 0 var(--space-3);
   }
@@ -1198,11 +1219,11 @@ const sections = headings.filter((h) => h.depth === 2);
   }
 
   .case-study__body :global(.persona-eyebrow) {
-    font-size: var(--text-small);
+    font-size: var(--text-label);
     font-weight: 600;
     color: var(--color-muted);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
     margin: 0;
   }
 

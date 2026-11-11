@@ -30,6 +30,18 @@
   --text-small: 0.9375rem;  /* 15px */
   --text-nav: 1rem;         /* 16px */
 
+  /* A case study's own, denser scale (yinyeeho.com's project pages):
+     quiet uppercase section labels instead of big recurring headings,
+     body copy and card text a step down, pull-quotes and stat numbers
+     a step up — so emphasis comes from a few deliberately large
+     moments against a mostly-small, mostly-grey page, not from every
+     heading being the same loud size. */
+  --text-micro: 0.75rem;    /* 12px - sidebar nav, meta dt labels */
+  --text-label: 0.8125rem;  /* 13px - eyebrows, section labels, tags */
+  --text-caption: 0.875rem; /* 14px - card/caption body copy, meta dd */
+  --text-quote: 1.5rem;     /* 24px - pull-quotes */
+  --text-stat: 1.75rem;     /* 28px - big stat numbers */
+
   --leading-tight: 1.2;
   --leading-normal: 1.5;
 }
