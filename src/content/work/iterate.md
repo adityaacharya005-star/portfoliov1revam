@@ -227,7 +227,7 @@ That journey was then checked against the path that matters most: the exit. A st
 The first sketch pass mapped every screen the app could plausibly need: profile settings, a full discovery search, a calendar of design events. The wireframe pass cut most of it, keeping only what a first-time, scared-to-post student actually touches before deciding whether to stay.
 
 <figure>
-<img src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" style="width: auto; max-width: 661px; margin-inline: auto;" />
+<img src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" style="width: auto; max-width: min(661px, 100%); margin-inline: auto;" />
 <figcaption>Sketch Iterations</figcaption>
 </figure>
 
@@ -258,11 +258,13 @@ The screens across onboarding and the core flow, each one answering a specific f
 </figure>
 
 <figure class="figure--white">
-<ul class="screen-grid">
-<li class="screen-item">
-<img src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
-<p class="screen-caption">Home. Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</p>
-</li>
+<img class="figure-img--phone" src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
+<figcaption>Home. Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</figcaption>
+</figure>
+
+<figure class="figure--white">
+<p class="figure-eyebrow">Search</p>
+<ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/iterate/search.webp" alt="Iterate search screen with fields for author name, project name, college name, and discipline name" />
 <p class="screen-caption">Search. Filtered by discipline and college, not just keyword, so a student can find peers in their own field instead of scrolling a generic feed.</p>
