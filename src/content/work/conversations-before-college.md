@@ -18,7 +18,9 @@ accentColor: "#3B6FE0"
 
 ## Product Context
 
-Indian students pick their academic stream in Grade 10, years before most of them have any real sense of what they're good at. Fear fills that gap: parents push Science and Math toward financial safety over the student's actual fit. The whole project argues for one reframe:
+Indian students pick their academic stream in Grade 10, years before most of them have any real sense of what they're good at. Fear fills that gap: parents push Science and Math toward financial safety over the student's actual fit.
+
+I've watched this happen up close, friends and family pushed toward the "safe" stream by parents, and then pushed again by whatever their friends were picking. Neither pressure had much to do with what they were actually good at. The whole project argues for one reframe:
 
 <p><strong>The old family question:</strong> "What is the safest career?"</p>
 <p><strong>The proposed shift:</strong> "Where does my child have the highest competitive advantage?"</p>

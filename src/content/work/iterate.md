@@ -19,6 +19,8 @@ thumbVideoWebm: /videos/iterate-thumb.webm
 
 Design students are stuck between two bad options: a portfolio site like Behance that only rewards finished, polished work, or a classroom critique that never leaves the room. Neither has a place for the actual work, the sketch that's half-wrong, the layout you're still arguing with yourself about.
 
+I know the feeling from the inside. Scroll Behance long enough and every sketch starts to feel embarrassing next to someone else's fully rendered case study, even though that's not a fair comparison to make at 1am. Turns out most design students feel exactly the same way, which is what made this worth building instead of just complaining about.
+
 Iterate started as a college design-course assignment, designed solo end to end: a mobile-first social platform built for that gap, with three decisions at its core.
 
 <ul class="takeaway-list">
