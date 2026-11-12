@@ -226,8 +226,9 @@ That journey was then checked against the exit: a student who opens the app, fin
 
 The first sketch pass mapped every screen the app could plausibly need: profile settings, a full discovery search, a calendar of design events. The wireframe pass cut most of it, keeping only what a first-time, scared-to-post student touches before deciding whether to stay.
 
+<div class="figure-row">
 <figure>
-<img src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" style="width: auto; max-width: min(661px, 100%); margin-inline: auto;" />
+<img src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" />
 <figcaption>Sketch Iterations</figcaption>
 </figure>
 
@@ -235,6 +236,9 @@ The first sketch pass mapped every screen the app could plausibly need: profile 
 <img src="/images/iterate/wireframe-iterations.webp" alt="Figma board showing dozens of iterative wireframe screens across onboarding, feed, search, posting, and profile flows" />
 <figcaption>Wireframe Iterations</figcaption>
 </figure>
+</div>
+
+Three decisions came out of those rounds and made it into the final screens. Filters stopped living inline in the feed and got their own Search destination. Every profile collapsed into one fixed template instead of a custom layout per student, so the feature shipped without needing per-user design work. And Activity split cleanly into Friends, You, and Incoming instead of one mixed notifications tab, because a scared-to-post student checking their own activity shouldn't have to wade through everyone else's.
 
 ## Final Design
 

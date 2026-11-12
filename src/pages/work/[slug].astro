@@ -712,6 +712,20 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     background: #fff;
   }
 
+  /* Two process artifacts side by side instead of each one stacked
+     full-width: a sketch sheet and a wireframe board are reference
+     material, not the final work, so they don't need hero-sized
+     real estate. */
+  .case-study__body :global(.figure-row) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .case-study__body :global(.figure-row) :global(figure) {
+    height: 100%;
+  }
+
   /* The curriculum booklet viewer, powered by the StPageFlip library
      (package: page-flip) in its HTML mode — real <img> elements it
      flips with CSS 3D transforms, not canvas mode, whose canvas sizing
@@ -1742,7 +1756,8 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     .case-study__body :global(.screen-grid),
     .case-study__body :global(.zone-grid),
     .case-study__body :global(.benchmark-grid),
-    .case-study__body :global(.affinity-board) {
+    .case-study__body :global(.affinity-board),
+    .case-study__body :global(.figure-row) {
       grid-template-columns: 1fr;
     }
 
