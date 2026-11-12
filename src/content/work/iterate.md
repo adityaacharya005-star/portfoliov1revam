@@ -197,7 +197,7 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 <p class="persona-role">"I have so many ideas in my head, I just wish I had the confidence to share them."</p>
 <div class="persona-traits">
 <p><strong>Wants</strong> Confidence to post publicly.</p>
-<p><strong>Needs</strong> Low-pressure, anonymous feedback.</p>
+<p><strong>Needs</strong> Low-pressure, structured feedback.</p>
 </div>
 <div class="id-card__barcode" aria-hidden="true"></div>
 </div>
@@ -220,7 +220,7 @@ Mapped against Aniket, the harder case: if the product works for someone this af
 
 <ul class="takeaway-list">
 <li><strong>Verified-student signup.</strong> Keeps the feed closed to outsiders.</li>
-<li><strong>Anonymous posting.</strong> Removes the fear of being seen mid-process.</li>
+<li><strong>The "Ongoing" tag.</strong> Makes posting unfinished work the expected norm, not a risk.</li>
 </ul>
 
 <figure>
@@ -369,11 +369,11 @@ The screens across onboarding and the core flow, each one answering a specific f
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="30" r="9"/><circle cx="94" cy="30" r="9"/><circle cx="60" cy="90" r="9"/><path d="M34 36l20 46M86 36L66 82"/></svg>
 <h3>A Flow Diagram Finds the Dead Ends</h3>
-<p>Mapping Aniket's journey instead of a generic one surfaced a real exit ramp: a student who checks the feed, finds nothing reassuring, and quits before ever posting. That single path shaped more decisions than the other three personas combined.</p>
+<p>Mapping Aniket's journey instead of a generic one surfaced a real exit ramp: a student who checks the feed, finds nothing reassuring, and quits before ever posting. That single path shaped more of the final design than any other single insight from the research.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M48 60l9 9 16-18"/></svg>
 <h3>Safety Is a Structural Decision, Not a Feature</h3>
-<p>Verified student emails and anonymous posting make the feed usable at all for someone like Aniket. Psychological safety has to come before the fun parts, not after them.</p>
+<p>Verified student emails make the feed usable at all for someone like Aniket. Psychological safety has to come before the fun parts, not after them.</p>
 </li>
 </ul>
