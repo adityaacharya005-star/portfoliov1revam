@@ -48,7 +48,7 @@ Two structured surveys and an interview round with design students, 74 responses
 
 ## Competitor Benchmarking
 
-Four platforms students already use as workarounds, and the specific job none of them actually does.
+Four platforms students already use as workarounds, and the specific job none of them does.
 
 <ul class="benchmark-grid">
 <li class="benchmark-card">
@@ -210,13 +210,13 @@ Onboarding funnels into five primary destinations, each one answering a single q
 
 ## User Flow
 
-Mapped against Aniket specifically, since he's the harder case: if the product works for someone this afraid of posting, it works for everyone less afraid. Two decisions came straight out of this map, verified-student signup and anonymous posting, both load-bearing enough to make the MVP cut on day one.
+Mapped against Aniket, the harder case: if the product works for someone this afraid of posting, it works for everyone less afraid. Two decisions came straight out of this map, verified-student signup and anonymous posting, both load-bearing enough to make the MVP cut on day one.
 
 <figure>
 <img src="/images/iterate/journey-map.webp" alt="User journey map for Aniket Joshi across four stages, Onboarding, First Post, Engagement, and Retention & Advocacy, mapping touchpoints, actions, pain points, emotions, and opportunities, with an emotional curve rising from cautious to anxious to confident" />
 </figure>
 
-That journey was then checked against the path that matters most: the exit. A student who opens the app, finds nothing reassuring in the feed, and quits before ever posting is the failure case the whole product is designed against.
+That journey was then checked against the exit: a student who opens the app, finds nothing reassuring in the feed, and quits before ever posting. The whole product is designed against that one failure case.
 
 <figure class="figure--flush">
 <img src="/images/iterate/user-flow.webp" alt="User flow diagram: Opens Application leads to Log In or Sign Up, then discipline selection, Home Page, projects, events, lists, and a project search, down into the project itself, then across profile, friends and notifications, activity, posting, and similar projects, ending at Quits the Application" />
@@ -224,7 +224,7 @@ That journey was then checked against the path that matters most: the exit. A st
 
 ## Exploration & Sketches
 
-The first sketch pass mapped every screen the app could plausibly need: profile settings, a full discovery search, a calendar of design events. The wireframe pass cut most of it, keeping only what a first-time, scared-to-post student actually touches before deciding whether to stay.
+The first sketch pass mapped every screen the app could plausibly need: profile settings, a full discovery search, a calendar of design events. The wireframe pass cut most of it, keeping only what a first-time, scared-to-post student touches before deciding whether to stay.
 
 <figure>
 <img src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" style="width: auto; max-width: min(661px, 100%); margin-inline: auto;" />
@@ -349,6 +349,6 @@ The screens across onboarding and the core flow, each one answering a specific f
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M48 60l9 9 16-18"/></svg>
 <h3>Safety Is a Structural Decision, Not a Feature</h3>
-<p>Verified student emails and anonymous posting aren't bonus features bolted onto a social feed, they're the reason the feed is usable at all for someone like Aniket. Psychological safety has to be designed before the fun parts, not after.</p>
+<p>Verified student emails and anonymous posting make the feed usable at all for someone like Aniket. Psychological safety has to come before the fun parts, not after them.</p>
 </li>
 </ul>
