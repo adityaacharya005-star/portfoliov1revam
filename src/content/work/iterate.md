@@ -266,15 +266,15 @@ The screens across onboarding and the core flow, each one answering a specific f
 <ul class="screen-grid">
 <li class="screen-item">
 <img src="/images/iterate/onboard-splash.webp" alt="Iterate onboarding splash screen with the tagline Discover new perspectives, elevate your work, over a background of the app's own hand-drawn sketches" />
-<p class="screen-caption">Onboarding opens on the mood, not a form. The background is the sketches themselves, so the app's identity reads as a process before anyone logs in.</p>
+<p class="screen-caption">The first screen is the app's own sketches, not a signup form. It sets the mood before asking for anything.</p>
 </li>
 <li class="screen-item">
 <img src="/images/iterate/onboard-login.webp" alt="Iterate login screen with options to continue with Google, phone, or email" />
-<p class="screen-caption">Three login paths, Google, phone, or email, so the account choice doesn't become the first point of friction.</p>
+<p class="screen-caption">Three ways to log in: Google, phone, or email. No one option to get stuck on.</p>
 </li>
 <li class="screen-item">
 <img src="/images/iterate/onboard-signup.webp" alt="Iterate create account screen requiring a name, college email, and password" />
-<p class="screen-caption">Signup only accepts a college email, so the feed stays verified-student-only, the one guarantee that made the 82% comfortable enough to post.</p>
+<p class="screen-caption">Signing up needs a college email. That's what keeps the whole feed verified-student-only.</p>
 </li>
 </ul>
 </figure>
@@ -282,7 +282,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 <figure class="figure--white">
 <p class="figure-eyebrow">Home</p>
 <img class="figure-img--phone" src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
-<figcaption>Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</figcaption>
+<figcaption>The feed shows projects first, each tagged in progress or complete, so no one mistakes a sketch for a finished pitch.</figcaption>
 </figure>
 
 <figure class="figure--white">
@@ -290,11 +290,11 @@ The screens across onboarding and the core flow, each one answering a specific f
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/iterate/search.webp" alt="Iterate search screen with fields for author name, project name, college name, and discipline name" />
-<p class="screen-caption">Search. Filtered by discipline and college, not just keyword, so a student can find peers in their own field instead of scrolling a generic feed.</p>
+<p class="screen-caption">Search filters by discipline and college, not just keywords, so a student can find peers in their own field quickly.</p>
 </li>
 <li class="screen-item">
 <img src="/images/iterate/search-results.webp" alt="Iterate search results screen with active filter chips for author, project, college, and discipline, plus a similar projects section" />
-<p class="screen-caption">Results stay tied to the filters that produced them, shown as chips, and surface similar projects underneath so a dead-end search still leads somewhere.</p>
+<p class="screen-caption">Results show the filters used as chips, with similar projects listed below in case the search comes up short.</p>
 </li>
 </ul>
 </figure>
@@ -304,14 +304,14 @@ The screens across onboarding and the core flow, each one answering a specific f
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/iterate/new-project-a.webp" alt="Iterate new project form with fields for Project Title, Visuals, and Project Bio" />
-<p class="screen-caption">Title, visuals, and a bio field, nothing else required to start a post.</p>
+<p class="screen-caption">Starting a post only needs a title, some visuals, and a short bio.</p>
 </li>
 <li class="screen-item">
 <img src="/images/iterate/new-project-b.webp" alt="Iterate new project screen with tags for Ongoing or Complete, an Add People option, and a Publish button" />
-<p class="screen-caption">The "Ongoing" tag is the whole point: it's the one feature that turns posting unfinished work from a risk into the expected norm.</p>
+<p class="screen-caption">The "Ongoing" tag is the key part. It makes posting unfinished work expected, not risky.</p>
 </li>
 </ul>
-<figcaption>A short form you can clear in the time it takes to find the "Ongoing" tag.</figcaption>
+<figcaption>A short form, simple enough to fill out before you second-guess posting at all.</figcaption>
 </figure>
 
 <figure class="figure--white">
@@ -319,15 +319,15 @@ The screens across onboarding and the core flow, each one answering a specific f
 <ul class="screen-grid">
 <li class="screen-item">
 <img src="/images/iterate/activity-friends.webp" alt="Iterate activity feed, Friends tab, showing friends' recent posts, comments, and collaboration invites" />
-<p class="screen-caption">Friends. A plain chronological log, not a notifications dump, because a student checking in on feedback shouldn't have to dig for it.</p>
+<p class="screen-caption">Friends shows a simple timeline of what people are up to, not a pile of notifications.</p>
 </li>
 <li class="screen-item">
 <img src="/images/iterate/activity-you.webp" alt="Iterate activity feed, You tab, showing the student's own recent posts, comments, and collaborations" />
-<p class="screen-caption">You. The same log, filtered to your own actions, so checking what you've posted doesn't mean scrolling past everyone else's.</p>
+<p class="screen-caption">You shows that same timeline, filtered down to just your own activity.</p>
 </li>
 <li class="screen-item">
 <img src="/images/iterate/activity-incoming.webp" alt="Iterate activity feed, Incoming tab, showing connection requests and messages sent to the student" />
-<p class="screen-caption">Incoming. Connection requests and messages kept separate from the activity log, so a request doesn't get lost in the scroll.</p>
+<p class="screen-caption">Incoming keeps requests and messages separate, so one doesn't get buried in the other.</p>
 </li>
 </ul>
 </figure>
@@ -337,11 +337,11 @@ The screens across onboarding and the core flow, each one answering a specific f
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/iterate/profile-aditya.webp" alt="Iterate profile screen showing Aditya Nair's university, discipline, bio, external portfolio links, and published posts" />
-<p class="screen-caption">Profile. Posts, connections, and likes compound here automatically, so the portfolio is a byproduct of using the app, not a separate project.</p>
+<p class="screen-caption">Posts, connections, and likes build up here automatically, just from using the app.</p>
 </li>
 <li class="screen-item">
 <img src="/images/iterate/profile-arka.webp" alt="Iterate profile screen for a different student, Arka Gupta, showing the same layout with their own bio and posts" />
-<p class="screen-caption">Same layout, any student. The profile is a template the app fills in, not a page every student builds from scratch.</p>
+<p class="screen-caption">Every student gets this same layout filled in with their own work. No one designs their own profile.</p>
 </li>
 </ul>
 </figure>
@@ -349,7 +349,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 <figure class="figure--white">
 <p class="figure-eyebrow">Project Detail</p>
 <img class="figure-img--phone" src="/images/iterate/project-detail.webp" alt="Iterate project detail screen for Solace, a conceptual smart companion by Arka Gupta, tagged Ongoing" />
-<figcaption>Opened from a profile, the "Ongoing" tag follows the project everywhere it's shown, so the context never gets lost between the feed, the profile, and the post itself.</figcaption>
+<figcaption>Opening a project keeps its "Ongoing" tag visible, so that context carries through from the feed to the profile to the post itself.</figcaption>
 </figure>
 
 ## Style Guide
