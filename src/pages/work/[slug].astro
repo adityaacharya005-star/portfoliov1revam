@@ -618,6 +618,13 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     margin-top: var(--space-5);
   }
 
+  /* A takeaway-list reads as the paragraph finishing its own thought
+     ("three decisions:" → the three decisions), not a separate
+     exhibit like a stat grid — tight, the same as two paragraphs. */
+  .case-study__body > :global(p + .takeaway-list) {
+    margin-top: var(--space-5);
+  }
+
   .case-study__body :global(h2) {
     font-family: var(--font-sans);
     font-size: var(--text-label);
@@ -736,7 +743,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-4);
   }
 
   .case-study__body :global(.takeaway-list) :global(li) {
