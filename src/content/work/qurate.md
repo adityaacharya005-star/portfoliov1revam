@@ -112,7 +112,7 @@ Three key interfaces from the finished dashboard. Split Evaluation is the one th
 
 <figure>
 <img src="/images/qurate/final-dashboard.webp" alt="Final Dashboard screen: summary cards, submission review queue, operations calendar, bookings and statistics, and host activity" />
-<figcaption>Dashboard. Scoped to the first two minutes of the day: what's overdue, what's new, what's already decided.</figcaption>
+<figcaption>The dashboard only shows what's overdue, what's new, and what's already decided, everything a reviewer needs for the first two minutes of the day.</figcaption>
 </figure>
 
 <figure>
@@ -123,7 +123,7 @@ Three key interfaces from the finished dashboard. Split Evaluation is the one th
 <figure class="figure--feature">
 <p class="figure-eyebrow">The core screen</p>
 <img src="/images/qurate/final-split-evaluation.webp" alt="Final Split Evaluation screen: media gallery and itinerary on the left, a 5-step compliance checklist and auto-generated feedback on the right" />
-<figcaption>Split Evaluation. Every asset and the checklist that judges it, in one viewport, no PDF viewer, no switching tabs to verify a credential. This is the 70% and the 35%, solved on one screen.</figcaption>
+<figcaption>Split Evaluation keeps every asset and the checklist that judges it in one viewport. No PDF viewer, no switching tabs to verify a credential.</figcaption>
 </figure>
 
 ## Other Directions
