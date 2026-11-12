@@ -19,7 +19,13 @@ thumbVideoWebm: /videos/iterate-thumb.webm
 
 Design students are stuck between two bad options: a portfolio site like Behance that only rewards finished, polished work, or a classroom critique that never leaves the room. Neither has a place for the actual work, the sketch that's half-wrong, the layout you're still arguing with yourself about.
 
-Iterate started as a college design-course assignment, designed solo end to end: a mobile-first social platform built for that gap, with a verified student-only network instead of a public feed, structured feedback prompts instead of an open text box, and a portfolio that assembles itself from the process instead of a highlight reel built after the fact.
+Iterate started as a college design-course assignment, designed solo end to end: a mobile-first social platform built for that gap, with three decisions at its core.
+
+<ul class="takeaway-list">
+<li><strong>A verified student-only network,</strong> not a public feed.</li>
+<li><strong>Structured feedback prompts,</strong> not an open text box.</li>
+<li><strong>A self-assembling portfolio,</strong> not a highlight reel built after the fact.</li>
+</ul>
 
 ## Research & Data
 
@@ -210,7 +216,12 @@ Onboarding funnels into five primary destinations, each one answering a single q
 
 ## User Flow
 
-Mapped against Aniket, the harder case: if the product works for someone this afraid of posting, it works for everyone less afraid. Two decisions came straight out of this map, verified-student signup and anonymous posting, both load-bearing enough to make the MVP cut on day one.
+Mapped against Aniket, the harder case: if the product works for someone this afraid of posting, it works for everyone less afraid. Two decisions came straight out of this map and made the MVP cut on day one.
+
+<ul class="takeaway-list">
+<li><strong>Verified-student signup.</strong> Keeps the feed closed to outsiders.</li>
+<li><strong>Anonymous posting.</strong> Removes the fear of being seen mid-process.</li>
+</ul>
 
 <figure>
 <img src="/images/iterate/journey-map.webp" alt="User journey map for Aniket Joshi across four stages, Onboarding, First Post, Engagement, and Retention & Advocacy, mapping touchpoints, actions, pain points, emotions, and opportunities, with an emotional curve rising from cautious to anxious to confident" />
