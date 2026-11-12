@@ -227,7 +227,7 @@ That journey was then checked against the path that matters most: the exit. A st
 The first sketch pass mapped every screen the app could plausibly need: profile settings, a full discovery search, a calendar of design events. The wireframe pass cut most of it, keeping only what a first-time, scared-to-post student actually touches before deciding whether to stay.
 
 <figure>
-<img src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" />
+<img src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" style="width: auto; max-width: 661px; margin-inline: auto;" />
 <figcaption>Sketch Iterations</figcaption>
 </figure>
 
