@@ -726,6 +726,46 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     height: 100%;
   }
 
+  /* A short scannable list instead of one dense paragraph: each
+     takeaway is a bold lead-in plus a half-sentence, not a full
+     sentence of connective tissue — easier to skim down than read
+     across. */
+  .case-study__body :global(.takeaway-list) {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .case-study__body :global(.takeaway-list) :global(li) {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--space-2);
+    padding-left: var(--space-5);
+    position: relative;
+    font-size: var(--text-caption);
+    line-height: var(--leading-normal);
+    color: var(--color-muted);
+  }
+
+  .case-study__body :global(.takeaway-list) :global(li::before) {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--case-accent);
+  }
+
+  .case-study__body :global(.takeaway-list) :global(strong) {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
   /* The curriculum booklet viewer, powered by the StPageFlip library
      (package: page-flip) in its HTML mode — real <img> elements it
      flips with CSS 3D transforms, not canvas mode, whose canvas sizing

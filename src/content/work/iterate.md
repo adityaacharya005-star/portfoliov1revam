@@ -238,7 +238,13 @@ The first sketch pass mapped every screen the app could plausibly need: profile 
 </figure>
 </div>
 
-Three decisions came out of those rounds and made it into the final screens. Filters stopped living inline in the feed and got their own Search destination. Every profile collapsed into one fixed template instead of a custom layout per student, so the feature shipped without needing per-user design work. And Activity split cleanly into Friends, You, and Incoming instead of one mixed notifications tab, because a scared-to-post student checking their own activity shouldn't have to wade through everyone else's.
+Three decisions came out of those rounds and shaped the final screens.
+
+<ul class="takeaway-list">
+<li><strong>Search became its own destination.</strong> Filters moved out of the feed.</li>
+<li><strong>One profile template, not custom layouts.</strong> No per-student design work.</li>
+<li><strong>Activity split into three tabs.</strong> Friends, You, and Incoming stay separate.</li>
+</ul>
 
 ## Final Design
 
