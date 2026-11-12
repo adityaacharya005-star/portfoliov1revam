@@ -252,9 +252,9 @@ The first sketch pass mapped every screen the app could plausibly need: profile 
 Three decisions came out of those rounds and shaped the final screens.
 
 <ul class="takeaway-list">
-<li><strong>Search became its own destination.</strong> Filters moved out of the feed.</li>
-<li><strong>One profile template, not custom layouts.</strong> No per-student design work.</li>
-<li><strong>Activity split into three tabs.</strong> Friends, You, and Incoming stay separate.</li>
+<li><strong>Search became its own destination.</strong> Filters moved out of the main feed so browsing stays uncluttered.</li>
+<li><strong>One profile template, not custom layouts.</strong> Every student gets the same layout, so the feature ships without per-student design work.</li>
+<li><strong>Activity split into three tabs.</strong> Friends, You, and Incoming stay separate, so checking your own activity never means scrolling past everyone else's.</li>
 </ul>
 
 ## Final Design
@@ -262,6 +262,7 @@ Three decisions came out of those rounds and shaped the final screens.
 The screens across onboarding and the core flow, each one answering a specific fear from the research: posting too early, posting publicly, or posting into silence.
 
 <figure class="figure--white">
+<p class="figure-eyebrow">Onboarding</p>
 <ul class="screen-grid">
 <li class="screen-item">
 <img src="/images/iterate/onboard-splash.webp" alt="Iterate onboarding splash screen with the tagline Discover new perspectives, elevate your work, over a background of the app's own hand-drawn sketches" />
@@ -279,8 +280,9 @@ The screens across onboarding and the core flow, each one answering a specific f
 </figure>
 
 <figure class="figure--white">
+<p class="figure-eyebrow">Home</p>
 <img class="figure-img--phone" src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
-<figcaption>Home. Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</figcaption>
+<figcaption>Projects feed first, tagged in progress or complete so nobody mistakes a sketch for a finished pitch.</figcaption>
 </figure>
 
 <figure class="figure--white">
@@ -298,6 +300,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 </figure>
 
 <figure class="figure--white">
+<p class="figure-eyebrow">New Project</p>
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/iterate/new-project-a.webp" alt="Iterate new project form with fields for Project Title, Visuals, and Project Bio" />
@@ -308,7 +311,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 <p class="screen-caption">The "Ongoing" tag is the whole point: it's the one feature that turns posting unfinished work from a risk into the expected norm.</p>
 </li>
 </ul>
-<figcaption>New Project. A short form you can clear in the time it takes to find the "Ongoing" tag.</figcaption>
+<figcaption>A short form you can clear in the time it takes to find the "Ongoing" tag.</figcaption>
 </figure>
 
 <figure class="figure--white">
@@ -344,8 +347,9 @@ The screens across onboarding and the core flow, each one answering a specific f
 </figure>
 
 <figure class="figure--white">
+<p class="figure-eyebrow">Project Detail</p>
 <img class="figure-img--phone" src="/images/iterate/project-detail.webp" alt="Iterate project detail screen for Solace, a conceptual smart companion by Arka Gupta, tagged Ongoing" />
-<figcaption>Project Detail. Opened from a profile, the "Ongoing" tag follows the project everywhere it's shown, so the context never gets lost between the feed, the profile, and the post itself.</figcaption>
+<figcaption>Opened from a profile, the "Ongoing" tag follows the project everywhere it's shown, so the context never gets lost between the feed, the profile, and the post itself.</figcaption>
 </figure>
 
 ## Style Guide
