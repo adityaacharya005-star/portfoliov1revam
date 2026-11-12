@@ -36,7 +36,7 @@ Two structured surveys and an interview round with design students, 74 responses
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="30" y="20" width="60" height="84" rx="6"/><path d="M46 20v-6h28v6"/><path d="M42 48h36M42 62h36M42 76h24"/><path d="M78 86l16-16 8 8-16 16Z"/></svg>
 <p class="stat-number">74</p>
 <p class="stat-label">Research Responses</p>
-<p>Two structured surveys and an interview round with design students, before any feature got named.</p>
+<p>The baseline every later screen and feature got checked against.</p>
 </li>
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="30" width="50" height="60" rx="6"/><path d="M49 30c-14 0-20 10-20 20"/><circle cx="86" cy="80" r="20"/><path d="M78 80h16M86 72v16"/></svg>
