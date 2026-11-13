@@ -307,6 +307,39 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     prevBtn?.addEventListener('click', () => pageFlip.flipPrev());
     nextBtn?.addEventListener('click', () => pageFlip.flipNext());
   }
+
+  // Stakeholder graph (NeoOS): clicking a node highlights the edges
+  // touching it and swaps the detail panel to that stakeholder's own
+  // text, so the relationship map is explored rather than just read.
+  const stakeholderGraph = document.querySelector<HTMLElement>('.stakeholder-graph');
+  if (stakeholderGraph) {
+    const nodes = stakeholderGraph.querySelectorAll<HTMLButtonElement>('.graph-node');
+    const edges = stakeholderGraph.querySelectorAll<SVGElement>('.graph-edge');
+    const detailNameText = stakeholderGraph.querySelector('.stakeholder-graph__detail-name-text');
+    const detailTier = stakeholderGraph.querySelector('.stakeholder-graph__detail-tier');
+    const detailText = stakeholderGraph.querySelector('.stakeholder-graph__detail-text');
+
+    nodes.forEach((node) => {
+      node.addEventListener('click', () => {
+        const id = node.dataset.id ?? '';
+
+        nodes.forEach((n) => {
+          const active = n === node;
+          n.classList.toggle('is-active', active);
+          n.setAttribute('aria-pressed', String(active));
+        });
+
+        edges.forEach((edge) => {
+          const pair = edge.dataset.pair?.split(' ') ?? [];
+          edge.classList.toggle('is-highlighted', pair.includes(id));
+        });
+
+        if (detailNameText) detailNameText.textContent = node.dataset.name ?? '';
+        if (detailTier) detailTier.textContent = node.dataset.tier ?? '';
+        if (detailText) detailText.textContent = node.dataset.detail ?? '';
+      });
+    });
+  }
 </script>
 
 <style>
@@ -2017,119 +2050,172 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     border-bottom-right-radius: 4px;
   }
 
-  /* The stakeholder map, redrawn as NeoOS's own stacked-card widget
-     (the Focus app's Day at a Glance blocks) instead of a flat ranked
-     list or the deck's concentric-circle chart: each tier's weight
-     reads as how many layers sit behind the card, in the product's
-     own pastel tokens, not a generic accent-colored row. */
-  .case-study__body :global(.stakeholder-ladder) {
-    list-style: none;
-    margin: 0;
-    padding: 0 var(--space-3) var(--space-3) 0;
+  /* The stakeholder map as an interactive node graph instead of any
+     kind of list: the teen is the hub because every other opinion is
+     downstream of his, straight spokes show direct influence, and the
+     two dashed arcs on the right are the one relationship that skips
+     him entirely, parents coordinating with therapists and the
+     school. HTML buttons carry the labels (crisp at any width); the
+     SVG underneath carries only geometry, so nothing shrinks to the
+     point of being unreadable on a small screen. */
+  .case-study__body :global(.stakeholder-graph) {
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
   }
 
-  .case-study__body :global(.stakeholder-row) {
+  .case-study__body :global(.stakeholder-graph__canvas) {
     position: relative;
+    width: 100%;
+    aspect-ratio: 800 / 500;
   }
 
-  .case-study__body :global(.stakeholder-row)::before,
-  .case-study__body :global(.stakeholder-row)::after {
-    content: '';
+  .case-study__body :global(.stakeholder-graph__lines) {
     position: absolute;
     inset: 0;
-    border-radius: 16px;
-    background: var(--tier-tint);
-    filter: brightness(0.86);
-    z-index: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  .case-study__body :global(.stakeholder-row)::before {
-    transform: translate(5px, 5px);
+  .case-study__body :global(.graph-edge) {
+    stroke: var(--color-border);
     opacity: 0.7;
+    transition: stroke var(--duration-fast) var(--ease-standard),
+      opacity var(--duration-fast) var(--ease-standard);
   }
 
-  .case-study__body :global(.stakeholder-row)::after {
-    transform: translate(10px, 10px);
-    opacity: 0.45;
+  .case-study__body :global(.graph-edge.is-highlighted) {
+    stroke: #282828;
+    opacity: 1;
   }
 
-  .case-study__body :global(.stakeholder-row--medium)::after {
-    content: none;
-  }
-
-  .case-study__body :global(.stakeholder-row--thin)::before,
-  .case-study__body :global(.stakeholder-row--thin)::after {
-    content: none;
-  }
-
-  .case-study__body :global(.stakeholder-row__face) {
-    position: relative;
-    z-index: 1;
+  .case-study__body :global(.graph-node) {
+    position: absolute;
+    transform: translate(-50%, -50%);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-5);
-    border-radius: 16px;
-    background: var(--tier-tint);
-    transition: transform var(--duration-fast) var(--ease-standard);
+    gap: var(--space-2);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
   }
 
-  .case-study__body :global(.stakeholder-row:hover) :global(.stakeholder-row__face) {
-    transform: translateY(-2px);
-  }
-
-  .case-study__body :global(.stakeholder-row__icon) {
+  .case-study__body :global(.graph-node__circle) {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.55);
+    background: var(--node-tint);
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(17, 17, 17, 0.12);
+    transition: transform var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard);
   }
 
-  .case-study__body :global(.stakeholder-row__icon) :global(svg) {
-    width: 24px;
-    height: 24px;
+  .case-study__body :global(.graph-node--hub) :global(.graph-node__circle) {
+    width: 100px;
+    height: 100px;
+  }
+
+  .case-study__body :global(.graph-node__circle) :global(svg) {
+    width: 30px;
+    height: 30px;
     color: #282828;
   }
 
-  .case-study__body :global(.stakeholder-row__text) {
-    flex: 1;
-    min-width: 0;
+  .case-study__body :global(.graph-node--hub) :global(.graph-node__circle) :global(svg) {
+    width: 40px;
+    height: 40px;
   }
 
-  .case-study__body :global(.stakeholder-row__name) {
+  .case-study__body :global(.graph-node:hover) :global(.graph-node__circle),
+  .case-study__body :global(.graph-node:focus-visible) :global(.graph-node__circle) {
+    transform: scale(1.08);
+  }
+
+  .case-study__body :global(.graph-node.is-active) :global(.graph-node__circle) {
+    box-shadow: 0 0 0 3px #282828, 0 4px 10px rgba(17, 17, 17, 0.18);
+  }
+
+  .case-study__body :global(.graph-node__label) {
+    position: relative;
+    z-index: 1;
+    font-size: var(--text-caption);
+    font-weight: 700;
+    color: var(--color-text);
+    white-space: nowrap;
+    background: var(--color-bg);
+    padding: 1px var(--space-2);
+    border-radius: 999px;
+  }
+
+  .case-study__body :global(.stakeholder-graph__detail) {
+    padding: var(--space-5);
+    background: var(--color-card-warm);
+    border-radius: 16px;
+    min-height: 92px;
+  }
+
+  .case-study__body :global(.stakeholder-graph__detail-name) {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
     gap: var(--space-2);
     font-weight: 700;
-    color: #1f1f1f;
+    color: var(--color-text);
     margin: 0;
   }
 
-  .case-study__body :global(.stakeholder-row__tier) {
+  .case-study__body :global(.stakeholder-graph__detail-tier) {
     font-size: var(--text-micro);
     font-weight: 600;
-    color: rgba(31, 31, 31, 0.55);
+    color: var(--color-muted);
   }
 
-  .case-study__body :global(.stakeholder-row__detail) {
+  .case-study__body :global(.stakeholder-graph__detail-text) {
     font-size: var(--text-caption);
-    color: rgba(31, 31, 31, 0.72);
+    color: var(--color-muted);
     line-height: var(--leading-normal);
-    margin: var(--space-1) 0 0;
+    margin: var(--space-2) 0 0;
     max-width: none;
   }
 
-  @media (max-width: 480px) {
-    .case-study__body :global(.stakeholder-row__face) {
-      padding: var(--space-4);
+  @media (max-width: 600px) {
+    /* The fixed 800/500 ratio leaves too little absolute height at
+       phone widths for the top node's label to clear the hub's own
+       label below it; a taller ratio gives every row room without
+       having to touch the percentage positions. */
+    .case-study__body :global(.stakeholder-graph__canvas) {
+      aspect-ratio: 800 / 650;
+    }
+
+    .case-study__body :global(.graph-node__circle) {
+      width: 56px;
+      height: 56px;
+    }
+
+    .case-study__body :global(.graph-node--hub) :global(.graph-node__circle) {
+      width: 76px;
+      height: 76px;
+    }
+
+    .case-study__body :global(.graph-node__circle) :global(svg) {
+      width: 22px;
+      height: 22px;
+    }
+
+    .case-study__body :global(.graph-node--hub) :global(.graph-node__circle) :global(svg) {
+      width: 30px;
+      height: 30px;
+    }
+
+    .case-study__body :global(.graph-node__label) {
+      font-size: var(--text-micro);
     }
   }
 

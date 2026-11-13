@@ -99,55 +99,44 @@ Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic,
 
 ## Stakeholder Mapping
 
-The stack depth under each card is the same idea as the Focus app's own Day at a Glance widget: more weight in the room, more layers behind the card.
+Tap anyone in the graph to see how they connect: the teen sits at the center because nothing ships without his buy-in, and the two curved lines on the right show the one relationship that runs independent of him, parents coordinating directly with both therapists and school.
 
-<ul class="stakeholder-ladder">
-<li class="stakeholder-row stakeholder-row--thick" style="--tier-tint: #C6DBF0">
-<div class="stakeholder-row__face">
-<span class="stakeholder-row__icon" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="40" r="20"/><path d="M26 100c0-22 15-36 34-36s34 14 34 36"/></svg></span>
-<div class="stakeholder-row__text">
-<p class="stakeholder-row__name">The teen<span class="stakeholder-row__tier">Highest say</span></p>
-<p class="stakeholder-row__detail">Nothing ships if he won't use it. Every other opinion in this list is downstream of his.</p>
+<div class="stakeholder-graph">
+<div class="stakeholder-graph__canvas">
+<svg class="stakeholder-graph__lines" viewBox="0 0 800 500" aria-hidden="true">
+<line class="graph-edge is-highlighted" data-pair="teen therapists" x1="400" y1="250" x2="400" y2="60" stroke-width="3"/>
+<line class="graph-edge is-highlighted" data-pair="teen parents" x1="400" y1="250" x2="590" y2="250" stroke-width="4.5"/>
+<line class="graph-edge is-highlighted" data-pair="teen teachers" x1="400" y1="250" x2="400" y2="440" stroke-width="2.5"/>
+<line class="graph-edge is-highlighted" data-pair="teen classmates" x1="400" y1="250" x2="210" y2="250" stroke-width="3.5"/>
+<path class="graph-edge graph-edge--arc" data-pair="parents therapists" d="M400,60 Q590,60 590,250" fill="none" stroke-width="2.5" stroke-dasharray="7 7"/>
+<path class="graph-edge graph-edge--arc" data-pair="parents teachers" d="M590,250 Q590,440 400,440" fill="none" stroke-width="2.5" stroke-dasharray="7 7"/>
+</svg>
+<button type="button" class="graph-node graph-node--hub is-active" style="left:50%;top:50%" data-id="teen" aria-pressed="true" data-name="The teen" data-tier="Highest say" data-detail="Nothing ships if he won't use it. Every other opinion here is downstream of his.">
+<span class="graph-node__circle" style="--node-tint:#C6DBF0"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="40" r="20"/><path d="M26 100c0-22 15-36 34-36s34 14 34 36"/></svg></span>
+<span class="graph-node__label">The teen</span>
+</button>
+<button type="button" class="graph-node" style="left:50%;top:12%" data-id="therapists" aria-pressed="false" data-name="Therapists & psychiatrists" data-tier="Medium-High" data-detail="The closest thing to an evidence-based opinion in the room.">
+<span class="graph-node__circle" style="--node-tint:#E8D0EE"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M48 60l9 9 16-18"/></svg></span>
+<span class="graph-node__label">Therapists</span>
+</button>
+<button type="button" class="graph-node" style="left:73.75%;top:50%" data-id="parents" aria-pressed="false" data-name="Parents" data-tier="High" data-detail="They buy it, set it up, and live with whatever happens if it fails.">
+<span class="graph-node__circle" style="--node-tint:#FCE3B8"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="38" r="16"/><circle cx="82" cy="40" r="14"/><path d="M14 98c0-18 12-30 28-30 10 0 18 4 23 11"/><path d="M58 98c2-16 12-26 27-26s25 10 27 26"/></svg></span>
+<span class="graph-node__label">Parents</span>
+</button>
+<button type="button" class="graph-node" style="left:50%;top:88%" data-id="teachers" aria-pressed="false" data-name="Teachers & school staff" data-tier="Medium-Low" data-detail="Enforce whatever rules the school already has, nothing more.">
+<span class="graph-node__circle" style="--node-tint:#E4E4E0"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="30" width="80" height="56" rx="6"/><path d="M20 46h80"/><path d="M40 30v-8M80 30v-8"/></svg></span>
+<span class="graph-node__label">Teachers</span>
+</button>
+<button type="button" class="graph-node" style="left:26.25%;top:50%" data-id="classmates" aria-pressed="false" data-name="Classmates" data-tier="Medium" data-detail="Decide whether using the tool looks normal or makes him a target.">
+<span class="graph-node__circle" style="--node-tint:#CCE8CD"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="34" cy="42" r="13"/><circle cx="86" cy="42" r="13"/><path d="M12 92c0-16 10-26 22-26s22 10 22 26"/><path d="M64 92c0-16 10-26 22-26s22 10 22 26"/></svg></span>
+<span class="graph-node__label">Classmates</span>
+</button>
+</div>
+<div class="stakeholder-graph__detail">
+<p class="stakeholder-graph__detail-name"><span class="stakeholder-graph__detail-name-text">The teen</span><span class="stakeholder-graph__detail-tier">Highest say</span></p>
+<p class="stakeholder-graph__detail-text">Nothing ships if he won't use it. Every other opinion here is downstream of his.</p>
 </div>
 </div>
-</li>
-<li class="stakeholder-row stakeholder-row--thick" style="--tier-tint: #FCE3B8">
-<div class="stakeholder-row__face">
-<span class="stakeholder-row__icon" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="38" r="16"/><circle cx="82" cy="40" r="14"/><path d="M14 98c0-18 12-30 28-30 10 0 18 4 23 11"/><path d="M58 98c2-16 12-26 27-26s25 10 27 26"/></svg></span>
-<div class="stakeholder-row__text">
-<p class="stakeholder-row__name">Parents<span class="stakeholder-row__tier">High</span></p>
-<p class="stakeholder-row__detail">They buy it, set it up, and live with whatever happens if it fails.</p>
-</div>
-</div>
-</li>
-<li class="stakeholder-row stakeholder-row--medium" style="--tier-tint: #E8D0EE">
-<div class="stakeholder-row__face">
-<span class="stakeholder-row__icon" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M48 60l9 9 16-18"/></svg></span>
-<div class="stakeholder-row__text">
-<p class="stakeholder-row__name">Therapists &amp; psychiatrists<span class="stakeholder-row__tier">Medium-High</span></p>
-<p class="stakeholder-row__detail">The closest thing to an evidence-based opinion in the room.</p>
-</div>
-</div>
-</li>
-<li class="stakeholder-row stakeholder-row--medium" style="--tier-tint: #CCE8CD">
-<div class="stakeholder-row__face">
-<span class="stakeholder-row__icon" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="34" cy="42" r="13"/><circle cx="86" cy="42" r="13"/><path d="M12 92c0-16 10-26 22-26s22 10 22 26"/><path d="M64 92c0-16 10-26 22-26s22 10 22 26"/></svg></span>
-<div class="stakeholder-row__text">
-<p class="stakeholder-row__name">Classmates<span class="stakeholder-row__tier">Medium</span></p>
-<p class="stakeholder-row__detail">Decide whether using the tool looks normal or makes him a target.</p>
-</div>
-</div>
-</li>
-<li class="stakeholder-row stakeholder-row--thin" style="--tier-tint: #E4E4E0">
-<div class="stakeholder-row__face">
-<span class="stakeholder-row__icon" aria-hidden="true"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="30" width="80" height="56" rx="6"/><path d="M20 46h80"/><path d="M40 30v-8M80 30v-8"/></svg></span>
-<div class="stakeholder-row__text">
-<p class="stakeholder-row__name">Teachers &amp; school staff<span class="stakeholder-row__tier">Medium-Low</span></p>
-<p class="stakeholder-row__detail">Enforce whatever rules the school already has, nothing more.</p>
-</div>
-</div>
-</li>
-</ul>
 
 ## User Flow
 
