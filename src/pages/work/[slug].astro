@@ -340,6 +340,25 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
       });
     });
   }
+
+  // NeoOS dark-mode toggles: each button flips every screenshot in its
+  // own figure between its light and dark export, so a reader compares
+  // a whole set of screens at once instead of one image at a time.
+  document.querySelectorAll<HTMLButtonElement>('[data-darkmode-toggle]').forEach((toggle) => {
+    const figure = toggle.closest('figure');
+    if (!figure) return;
+    const images = figure.querySelectorAll<HTMLImageElement>('img[data-dark]');
+
+    toggle.addEventListener('click', () => {
+      const isDark = toggle.getAttribute('aria-pressed') === 'true';
+      const next = !isDark;
+      toggle.setAttribute('aria-pressed', String(next));
+      images.forEach((img) => {
+        const source = next ? img.dataset.dark : img.dataset.light;
+        if (source) img.src = source;
+      });
+    });
+  });
 </script>
 
 <style>
@@ -1045,6 +1064,45 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     color: var(--case-accent-text);
     text-transform: uppercase;
     letter-spacing: 0.06em;
+  }
+
+  /* Pairs the eyebrow label with the dark-mode toggle on the same
+     row, instead of the toggle pushing onto its own line. */
+  .case-study__body :global(.figure-header) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .case-study__body :global(.darkmode-toggle) {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font: inherit;
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--case-accent-text);
+    background: color-mix(in srgb, var(--case-accent) 12%, transparent);
+    border: none;
+    border-radius: 999px;
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    transition: background var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.darkmode-toggle:hover) {
+    background: color-mix(in srgb, var(--case-accent) 20%, transparent);
+  }
+
+  .case-study__body :global(.darkmode-toggle__icon) {
+    width: 14px;
+    height: 14px;
+  }
+
+  .case-study__body :global(.darkmode-toggle[aria-pressed="true"]) {
+    color: #fff;
+    background: #282828;
   }
 
   /* Stakeholder quotes: a flat pull-quote treatment (left accent rule,

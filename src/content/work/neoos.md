@@ -182,30 +182,36 @@ That structure carried almost unchanged into grayscale wireframes, then into the
 Every screen below answers a specific piece of the research: an abrupt support drop at 15–16, task paralysis, working-memory overload, a teen who struggles to name what he's feeling, and a parent who only wants confirmation without a follow-up call.
 
 <figure class="figure--white">
+<div class="figure-header">
 <p class="figure-eyebrow">Onboarding</p>
-<img class="figure-img--phone" src="/images/neoos/onboard-landing.webp" alt="NeoOS onboarding landing screen reading Say hi to NeoOS, your phone built for the way you think, with a Get Started button" />
+<button type="button" class="darkmode-toggle" data-darkmode-toggle aria-pressed="false">
+<svg class="darkmode-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+<span>Dark mode</span>
+</button>
+</div>
+<img class="figure-img--phone" src="/images/neoos/onboard-landing.webp" data-light="/images/neoos/onboard-landing.webp" data-dark="/images/neoos/onboard-landing-dark.webp" alt="NeoOS onboarding landing screen reading Say hi to NeoOS, your phone built for the way you think, with a Get Started button" />
 <figcaption>The first screen just says hello and sets expectations in one line. No form, no questions yet.</figcaption>
 <ul class="screen-grid">
 <li class="screen-item">
-<img src="/images/neoos/onboard-info.webp" alt="NeoOS onboarding preference screen asking How would you like to see information, with options Visual, Simple, Spoken, and Mixed" />
+<img src="/images/neoos/onboard-info.webp" data-light="/images/neoos/onboard-info.webp" data-dark="/images/neoos/onboard-info-dark.webp" alt="NeoOS onboarding preference screen asking How would you like to see information, with options Visual, Simple, Spoken, and Mixed" />
 <p class="screen-caption">How to see information: visual, simple, spoken, or mixed.</p>
 </li>
 <li class="screen-item">
-<img src="/images/neoos/onboard-focus.webp" alt="NeoOS onboarding preference screen asking How do you like to focus, with options One Thing, Steps, Progress, and My Way" />
+<img src="/images/neoos/onboard-focus.webp" data-light="/images/neoos/onboard-focus.webp" data-dark="/images/neoos/onboard-focus-dark.webp" alt="NeoOS onboarding preference screen asking How do you like to focus, with options One Thing, Steps, Progress, and My Way" />
 <p class="screen-caption">How to break down tasks: one thing at a time, in steps, by progress, or left open-ended.</p>
 </li>
 <li class="screen-item">
-<img src="/images/neoos/onboard-feel.webp" alt="NeoOS onboarding preference screen asking How do you want the screen to feel, with options Calm, Clear, Fast, and Custom" />
+<img src="/images/neoos/onboard-feel.webp" data-light="/images/neoos/onboard-feel.webp" data-dark="/images/neoos/onboard-feel-dark.webp" alt="NeoOS onboarding preference screen asking How do you want the screen to feel, with options Calm, Clear, Fast, and Custom" />
 <p class="screen-caption">How the screen should feel: calm, clear, fast, or custom. Naming an emotion is often the hardest part of regulating it, so this asks for a texture instead of a word.</p>
 </li>
 </ul>
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
-<img src="/images/neoos/onboard-font.webp" alt="NeoOS font selection screen offering Atkinson Hyperlegible, Lexend, and OpenDyslexic" />
+<img src="/images/neoos/onboard-font.webp" data-light="/images/neoos/onboard-font.webp" data-dark="/images/neoos/onboard-font-dark.webp" alt="NeoOS font selection screen offering Atkinson Hyperlegible, Lexend, and OpenDyslexic" />
 <p class="screen-caption">The font list includes Atkinson Hyperlegible and OpenDyslexic alongside the usual options, picked for reading speed, not branding.</p>
 </li>
 <li class="screen-item">
-<img src="/images/neoos/onboard-ready.webp" alt="NeoOS loading screen reading NeoOS is ready for you" />
+<img src="/images/neoos/onboard-ready.webp" data-light="/images/neoos/onboard-ready.webp" data-dark="/images/neoos/onboard-ready-dark.webp" alt="NeoOS loading screen reading NeoOS is ready for you" />
 <p class="screen-caption">Three questions and a font choice, and onboarding is already done. No account to set up first.</p>
 </li>
 </ul>
@@ -267,32 +273,44 @@ Every screen below answers a specific piece of the research: an abrupt support d
 </figure>
 
 <figure class="figure--white">
+<div class="figure-header">
 <p class="figure-eyebrow">Focus App</p>
+<button type="button" class="darkmode-toggle" data-darkmode-toggle aria-pressed="false">
+<svg class="darkmode-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+<span>Dark mode</span>
+</button>
+</div>
 <ul class="screen-grid">
 <li class="screen-item">
-<img src="/images/neoos/focus-tasks.webp" alt="NeoOS Focus app task stack showing Prep for School broken into three sub-steps with a progress count" />
+<img src="/images/neoos/focus-tasks.webp" data-light="/images/neoos/focus-tasks.webp" data-dark="/images/neoos/focus-tasks-dark.webp" alt="NeoOS Focus app task stack showing Prep for School broken into three sub-steps with a progress count" />
 <p class="screen-caption">The day's task opens as a single card with its own sub-steps checked off one at a time, not a long list competing for attention.</p>
 </li>
 <li class="screen-item">
-<img src="/images/neoos/focus-timer.webp" alt="NeoOS Focus app countdown timer for the current task, showing 14 minutes 55 seconds remaining on a ring" />
+<img src="/images/neoos/focus-timer.webp" data-light="/images/neoos/focus-timer.webp" data-dark="/images/neoos/focus-timer-dark.webp" alt="NeoOS Focus app countdown timer for the current task, showing 14 minutes 55 seconds remaining on a ring" />
 <p class="screen-caption">Isolating one task behind its own countdown ring keeps attention on it without needing a separate timer app.</p>
 </li>
 <li class="screen-item">
-<img src="/images/neoos/focus-day-glance.webp" alt="NeoOS Focus app Day at a Glance view with Morning, Afternoon, Evening, and Night blocks color-coded by time of day" />
+<img src="/images/neoos/focus-day-glance.webp" data-light="/images/neoos/focus-day-glance.webp" data-dark="/images/neoos/focus-day-glance-dark.webp" alt="NeoOS Focus app Day at a Glance view with Morning, Afternoon, Evening, and Night blocks color-coded by time of day" />
 <p class="screen-caption">Mapping the day into four color-coded blocks, morning through night, gives a sense of the whole day without reading a full schedule.</p>
 </li>
 </ul>
 </figure>
 
 <figure class="figure--white">
+<div class="figure-header">
 <p class="figure-eyebrow">Inbox App</p>
+<button type="button" class="darkmode-toggle" data-darkmode-toggle aria-pressed="false">
+<svg class="darkmode-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+<span>Dark mode</span>
+</button>
+</div>
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
-<img src="/images/neoos/inbox-stack.webp" alt="NeoOS Inbox app message stack grouped by School, Parents, Work, Sports, and Library, with stack size showing unread count" />
+<img src="/images/neoos/inbox-stack.webp" data-light="/images/neoos/inbox-stack.webp" data-dark="/images/neoos/inbox-stack-dark.webp" alt="NeoOS Inbox app message stack grouped by School, Parents, Work, Sports, and Library, with stack size showing unread count" />
 <p class="screen-caption">Messages stack by sender, with the size of each stack showing how many are waiting, not just a number badge.</p>
 </li>
 <li class="screen-item">
-<img src="/images/neoos/inbox-ai-summary.webp" alt="NeoOS Inbox app AI summary of the Parents message stack, listing items to grab and a schedule change before the raw messages" />
+<img src="/images/neoos/inbox-ai-summary.webp" data-light="/images/neoos/inbox-ai-summary.webp" data-dark="/images/neoos/inbox-ai-summary-dark.webp" alt="NeoOS Inbox app AI summary of the Parents message stack, listing items to grab and a schedule change before the raw messages" />
 <p class="screen-caption">Opening a stack offers an AI summary first, items to grab, a schedule change, before the raw messages underneath it.</p>
 </li>
 </ul>
