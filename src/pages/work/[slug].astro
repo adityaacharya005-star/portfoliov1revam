@@ -2123,16 +2123,32 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
      school. HTML buttons carry the labels (crisp at any width); the
      SVG underneath carries only geometry, so nothing shrinks to the
      point of being unreadable on a small screen. */
+  /* Side by side on desktop instead of stacked: the detail panel sits
+     beside the graph so clicking a node updates something already in
+     view, instead of a change the reader has to scroll down to see. */
   .case-study__body :global(.stakeholder-graph) {
     display: flex;
-    flex-direction: column;
-    gap: var(--space-5);
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: var(--space-6);
   }
 
   .case-study__body :global(.stakeholder-graph__canvas) {
     position: relative;
-    width: 100%;
+    flex: 1 1 480px;
+    min-width: 0;
     aspect-ratio: 800 / 500;
+  }
+
+  @media (min-width: 640px) {
+    .case-study__body :global(.stakeholder-graph__canvas) {
+      min-width: 480px;
+    }
+
+    .case-study__body :global(.stakeholder-graph__detail) {
+      min-width: 260px;
+    }
   }
 
   .case-study__body :global(.stakeholder-graph__lines) {
@@ -2172,8 +2188,8 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 72px;
-    height: 72px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: var(--node-tint);
     border: 3px solid #fff;
@@ -2183,20 +2199,20 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__body :global(.graph-node--hub) :global(.graph-node__circle) {
-    width: 100px;
-    height: 100px;
+    width: 82px;
+    height: 82px;
   }
 
   .case-study__body :global(.graph-node__circle) :global(svg) {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     color: #282828;
     filter: url(#sketch-wobble);
   }
 
   .case-study__body :global(.graph-node--hub) :global(.graph-node__circle) :global(svg) {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
   }
 
   .case-study__body :global(.graph-node:hover) :global(.graph-node__circle),
@@ -2221,10 +2237,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__body :global(.stakeholder-graph__detail) {
+    flex: 1 1 280px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: var(--space-5);
     background: var(--color-card-warm);
     border-radius: 16px;
-    min-height: 92px;
   }
 
   .case-study__body :global(.stakeholder-graph__detail-name) {

@@ -116,7 +116,7 @@ Tap anyone in the graph to see how they connect: the teen sits at the center wit
 <line class="graph-edge is-highlighted" data-pair="teen classmates" x1="400" y1="250" x2="210" y2="250" stroke-width="3.5"/>
 <path class="graph-edge graph-edge--arc" data-pair="parents therapists" d="M400,60 Q590,60 590,250" fill="none" stroke-width="2.5" stroke-dasharray="7 7"/>
 <path class="graph-edge graph-edge--arc" data-pair="parents teachers" d="M590,250 Q590,440 400,440" fill="none" stroke-width="2.5" stroke-dasharray="7 7"/>
-<path class="graph-edge graph-edge--arc" data-pair="parents extended-family" d="M590,250 Q650,320 620,390" fill="none" stroke-width="2" stroke-dasharray="7 7"/>
+<path class="graph-edge graph-edge--arc" data-pair="parents extended-family" d="M590,250 Q690,320 720,390" fill="none" stroke-width="2" stroke-dasharray="7 7"/>
 </svg>
 <button type="button" class="graph-node graph-node--hub is-active" style="left:50%;top:50%" data-id="teen" aria-pressed="true" data-name="The teen" data-tier="Absolute veto power" data-detail="Nothing ships if he won't use it. Every other opinion here is downstream of that veto.">
 <span class="graph-node__circle" style="--node-tint:#C6DBF0"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="40" r="20"/><path d="M26 100c0-22 15-36 34-36s34 14 34 36"/></svg></span>
@@ -138,7 +138,7 @@ Tap anyone in the graph to see how they connect: the teen sits at the center wit
 <span class="graph-node__circle" style="--node-tint:#CCE8CD"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="36" r="11"/><path d="M14 78c0-13 8-22 18-22s18 9 18 22"/><circle cx="88" cy="36" r="11"/><path d="M70 78c0-13 8-22 18-22s18 9 18 22"/><circle cx="60" cy="52" r="13"/><path d="M38 102c0-15 10-26 22-26s22 11 22 26"/></svg></span>
 <span class="graph-node__label">Classmates</span>
 </button>
-<button type="button" class="graph-node" style="left:77.5%;top:78%" data-id="extended-family" aria-pressed="false" data-name="Extended family" data-tier="Domestic social pressure" data-detail="Rarely involved directly, but the pressure they put on parents about what's 'normal' still reaches the teen secondhand.">
+<button type="button" class="graph-node" style="left:90%;top:78%" data-id="extended-family" aria-pressed="false" data-name="Extended family" data-tier="Domestic social pressure" data-detail="Rarely involved directly, but the pressure they put on parents about what's 'normal' still reaches the teen secondhand.">
 <span class="graph-node__circle" style="--node-tint:#F2F4F7"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 58L60 26l40 32"/><rect x="34" y="58" width="52" height="38" rx="4"/><rect x="52" y="76" width="16" height="20"/></svg></span>
 <span class="graph-node__label">Family</span>
 </button>
@@ -172,9 +172,9 @@ That structure carried almost unchanged into grayscale wireframes, then into the
 </figure>
 
 <ul class="takeaway-list">
-<li><strong>The preference-based onboarding was there from the first sketch.</strong> Visual, Simple, Spoken, and Mixed, even color-coded by shape in an early pass, went almost untouched into the final screens.</li>
-<li><strong>App placement was argued out on paper first.</strong> A note reading "apps should be near the thumb" became the thumb-zone layout behind the App Drawer and Quick Panel.</li>
-<li><strong>Focus and Inbox kept their grayscale bones.</strong> The task stack, timer ring, and Day at a Glance blocks are structurally the same boxes from the wireframe pass, just colored in.</li>
+<li><strong>Preference over assumption, settled before any screen existed.</strong> Research showed no two neurodivergent profiles take in information the same way, so the first sketch asked a question instead of picking one default. That single decision shaped the rest of the OS.</li>
+<li><strong>Thumb-zone placement, to cut the physical cost of finding an app.</strong> A margin note reading "apps should be near the thumb" became the fixed layout behind the App Drawer and Quick Panel, so using the phone never takes more effort or reach than it has to.</li>
+<li><strong>One task, one ring, solved before a single color was picked.</strong> The Focus app's single-card-per-task structure and its isolating timer ring, the actual answer to task paralysis, were locked in grayscale. Color and polish only arrived after the problem itself was already handled on paper.</li>
 </ul>
 
 ## Final Design
