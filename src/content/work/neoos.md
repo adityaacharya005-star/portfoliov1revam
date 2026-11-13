@@ -16,17 +16,17 @@ featured: true
 
 <ul class="persona-grid">
 <li class="persona-card persona-card--neo">
-<div class="persona-neo__head">
-<span class="persona-neo__icon" role="img" aria-label="Sketch illustration representing Aarav">
-<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="44" r="17"/><path d="M43 37c2-11 32-11 34 0"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/><path d="M38 50q-6 2-6 10M82 50q6 2 6 10"/></svg>
-</span>
-<div class="persona-neo__id">
-<p class="persona-eyebrow">High School Student · ADHD</p>
-<p class="persona-name">Aarav</p>
-</div>
-<p class="persona-neo__age"><span>16</span>yrs</p>
+<div class="persona-neo__portrait" style="--persona-tint: #C6DBF0">
+<p class="persona-neo__tag">High School Student · ADHD</p>
+<span class="persona-neo__dot" aria-hidden="true"></span>
+<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="76" r="38"/><path d="M62 58a38 38 0 0 1 76 0"/><rect x="48" y="66" width="20" height="30" rx="10"/><rect x="132" y="66" width="20" height="30" rx="10"/><path d="M88 108v10M112 108v10"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/></svg>
 </div>
 <div class="persona-neo__body">
+<div class="persona-neo__head">
+<p class="persona-name">Aarav</p>
+<p class="persona-neo__age">16 years old</p>
+</div>
+<div class="persona-neo__lists">
 <div class="persona-neo__col">
 <p class="persona-neo__label">Needs</p>
 <ul class="persona-neo__list">
@@ -44,19 +44,20 @@ featured: true
 </ul>
 </div>
 </div>
+</div>
 </li>
 <li class="persona-card persona-card--neo">
-<div class="persona-neo__head">
-<span class="persona-neo__icon" role="img" aria-label="Sketch illustration representing Sunita">
-<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="44" r="17"/><path d="M41 34c2-12 36-12 38 0"/><path d="M39 38c-6 14-4 28 2 36M81 38c6 14 4 28-2 36"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
-</span>
-<div class="persona-neo__id">
-<p class="persona-eyebrow">Working Parent</p>
-<p class="persona-name">Sunita</p>
-</div>
-<p class="persona-neo__age"><span>44</span>yrs</p>
+<div class="persona-neo__portrait" style="--persona-tint: #FCE3B8">
+<p class="persona-neo__tag">Working Parent</p>
+<span class="persona-neo__dot" aria-hidden="true"></span>
+<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="36"/><path d="M66 58c0-24 68-24 68 0"/><circle cx="100" cy="40" r="13"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/><path d="M132 150c9-5 15-16 13-27"/></svg>
 </div>
 <div class="persona-neo__body">
+<div class="persona-neo__head">
+<p class="persona-name">Sunita</p>
+<p class="persona-neo__age">44 years old</p>
+</div>
+<div class="persona-neo__lists">
 <div class="persona-neo__col">
 <p class="persona-neo__label">Needs</p>
 <ul class="persona-neo__list">
@@ -72,6 +73,7 @@ featured: true
 <li>No way to tell if a permission slip got seen.</li>
 <li>Every step back feels like a risk, not progress.</li>
 </ul>
+</div>
 </div>
 </div>
 </li>

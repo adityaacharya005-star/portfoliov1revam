@@ -1794,19 +1794,22 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     }
   }
 
-  /* NeoOS's own persona identity: neither the ID badge nor Qurate's
-     bleeding photo figure, but a flat card built out of the same
-     bento-widget language as the product itself (a tinted icon
-     circle, a stat-like age chip) instead of a photo or a badge. */
+  /* NeoOS's own persona identity: a tinted portrait block in one of
+     the product's actual pastel tokens, carrying a hand-drawn bust
+     (the same sketch-wobble stroke vocabulary as Iterate, just
+     bigger) instead of the ID badge's barcode chrome or a photo. The
+     label-and-dot layout on the tint block is this project's own
+     touch, not reused from either other persona style. */
   .case-study__body :global(.persona-card--neo) {
     flex-direction: column;
     align-items: stretch;
     text-align: left;
-    gap: var(--space-5);
-    padding: var(--space-7) var(--space-6);
+    gap: 0;
+    padding: 0;
     background: #fff;
     border-top: none;
     border-radius: 20px;
+    overflow: hidden;
     box-shadow: 0 1px 2px rgba(17, 17, 17, 0.05), 0 16px 32px rgba(17, 17, 17, 0.06);
   }
 
@@ -1815,27 +1818,41 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     box-shadow: 0 4px 8px rgba(17, 17, 17, 0.06), 0 24px 48px rgba(17, 17, 17, 0.12);
   }
 
-  .case-study__body :global(.persona-neo__head) {
+  .case-study__body :global(.persona-neo__portrait) {
+    position: relative;
+    height: 220px;
+    background: var(--persona-tint, color-mix(in srgb, var(--case-accent) 18%, #fff));
     display: flex;
-    align-items: center;
-    gap: var(--space-4);
-  }
-
-  .case-study__body :global(.persona-neo__icon) {
-    display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: color-mix(in srgb, var(--case-accent) 12%, var(--color-bg));
+    padding-top: var(--space-6);
   }
 
-  .case-study__body :global(.persona-neo__icon) :global(svg) {
-    width: 34px;
-    height: 34px;
-    color: var(--case-accent);
+  .case-study__body :global(.persona-neo__tag) {
+    position: absolute;
+    top: var(--space-5);
+    left: var(--space-5);
+    font-size: var(--text-label);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .case-study__body :global(.persona-neo__dot) {
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-5);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--case-accent);
+  }
+
+  .case-study__body :global(.persona-neo__figure) {
+    width: 168px;
+    height: 168px;
+    color: var(--color-text);
+    opacity: 0.85;
     filter: url(#sketch-wobble);
   }
 
@@ -1852,34 +1869,32 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     margin: var(--space-1) 0 0;
   }
 
-  .case-study__body :global(.persona-neo__age) {
+  .case-study__body :global(.persona-neo__body) {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    background: var(--case-accent);
-    color: #fff;
-    font-size: var(--text-micro);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    gap: var(--space-5);
+    padding: var(--space-6);
   }
 
-  .case-study__body :global(.persona-neo__age) :global(span) {
-    font-size: var(--text-stat);
-    font-weight: 700;
-    line-height: 1.1;
+  .case-study__body :global(.persona-neo__head) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
   }
 
-  .case-study__body :global(.persona-neo__body) {
+  .case-study__body :global(.persona-neo__age) {
+    font-size: var(--text-caption);
+    color: var(--color-muted);
+    margin: var(--space-1) 0 0;
+    white-space: nowrap;
+  }
+
+  .case-study__body :global(.persona-neo__lists) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-5);
-    padding-top: var(--space-5);
+    padding-top: var(--space-4);
     border-top: 1px solid var(--color-border);
   }
 
@@ -1903,7 +1918,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 
   .case-study__body :global(.persona-neo__list) :global(li) {
     position: relative;
-    padding-left: var(--space-4);
+    padding-left: var(--space-5);
     font-size: var(--text-caption);
     line-height: var(--leading-normal);
     color: var(--color-text);
@@ -1913,7 +1928,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.persona-neo__list) :global(li::before) {
     content: '';
     position: absolute;
-    left: 0;
+    left: 2px;
     top: 0.55em;
     width: 5px;
     height: 5px;
@@ -1922,7 +1937,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   @media (max-width: 480px) {
-    .case-study__body :global(.persona-neo__body) {
+    .case-study__body :global(.persona-neo__lists) {
       grid-template-columns: 1fr;
       gap: var(--space-4);
     }
