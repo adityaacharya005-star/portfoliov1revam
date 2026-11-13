@@ -274,7 +274,7 @@ Every screen below answers a specific piece of the research: an abrupt support d
 </ul>
 </figure>
 
-## Style Guide
+## Color Psychology
 
 <ul class="swatch-grid">
 <li class="swatch"><span class="swatch-color" style="background:#FCE3B8"></span><p class="swatch-name">Pastel Yellow</p><p class="swatch-hex">#FCE3B8</p></li>
