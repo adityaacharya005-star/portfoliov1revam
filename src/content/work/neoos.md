@@ -14,17 +14,17 @@ featured: true
 
 ## Product Context
 
-Most phones assume a steady nervous system and a working short-term memory: same taps, same steps, same pace, every time. That assumption breaks down for a lot of neurodivergent teenagers on an ordinary day, and the phone has no idea anything changed. "Neurodivergent" here spans four conditions with very different daily friction: autism, dyspraxia, ADHD, and dyslexia or dyscalculia.
+Most phones assume a steady nervous system and a working short-term memory: same taps, same steps, same pace, every time. That assumption breaks down for a lot of neurodivergent people on an ordinary day, and the phone has no idea anything changed. "Neurodivergent" here spans four conditions with very different daily friction: autism, dyspraxia, ADHD, and dyslexia or dyscalculia.
 
-The real gap opens around age 15–16. Up to that point, parents and schools hand-hold through routines, schedules, and reminders. Then, almost overnight, that support gets pulled, not faded, right as the teen is expected to self-manage everything from homework to leaving the house on time. One side ends up in task paralysis and anxiety; the other defaults to nagging and micromanaging, which undermines the independence everyone was hoping for.
+The usual fallback is a caregiver filling the gap: repeating instructions, managing the calendar, double-checking everything got done. That works, but it's exhausting for whoever's doing it, and it leaves the person at the center of it more dependent, not less. Task paralysis on one side, nagging and micromanaging on the other.
 
-NeoOS is a custom mobile interface built around that transition instead of a generic "accessible phone" brief. The working name for the reframe was bridging dependency to individuality: support that fades like training wheels coming off, not one that gets pulled like a cord. It trades loud alarms and one-size UI for an age-fading system: quiet visual structure a teen can run without a parent standing over their shoulder, and caregiver updates that confirm without needing a follow-up call.
+NeoOS is a custom mobile interface built around that gap instead of a generic "accessible phone" brief. It's built to work for anyone, regardless of age, caregiver, or household. It trades loud alarms and one-size UI for quiet visual structure a person can run on their own, with caregiver or support-person updates that confirm without needing a follow-up call.
 
 ## Research & Data
 
 The research ran an AEIOU pass, activities, environments, interactions, objects, and users, alongside national statistics and primary visits to three psychiatry and therapy clinics in Ahmedabad, so the design would be grounded in clinical practice, not just survey data.
 
-<ul class="stat-grid">
+<ul class="stat-grid stat-grid--2">
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="44" r="16"/><path d="M16 96c0-18 11-30 24-30s24 12 24 30"/><circle cx="82" cy="50" r="12"/><path d="M62 96c2-14 10-24 20-24s20 10 22 24"/></svg>
 <p class="stat-number">1 in 8</p>
@@ -35,14 +35,9 @@ The research ran an AEIOU pass, activities, environments, interactions, objects,
 <p class="stat-number">85%</p>
 <p class="stat-label">Autistic youth who can't name what they're feeling until it's already too late</p>
 </li>
-<li class="stat-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="64" r="36"/><path d="M60 40v24l18 12"/><path d="M42 22l9 9M78 22l-9 9"/></svg>
-<p class="stat-number">15–16</p>
-<p class="stat-label">The age caregiver support disappears, instead of fading</p>
-</li>
 </ul>
 
-Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic, and Genius Brain, three clinics in Ahmedabad, to hear how clinicians talk about this transition with families, not just how it reads in a paper.
+Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic, and Genius Brain, three clinics in Ahmedabad, to hear how clinicians talk about this with families, not just how it reads in a paper.
 
 <ul class="takeaway-list">
 <li><strong>Teens quietly drop tools that feel juvenile.</strong> An assistive app that looks like it was built for a younger kid gets uninstalled within weeks, no matter how well it works.</li>
@@ -151,7 +146,7 @@ Tap anyone in the graph to see how they connect: the teen sits at the center wit
 
 ## User Flow
 
-Onboarding splits into the OS layer and the two native apps, Focus and Inbox, each with its own short loop back to the home screen rather than one long path a teen has to retrace every time.
+Onboarding splits into the OS layer and two native apps, picked for the two complaints that came up most in research. Focus breaks an overwhelming workload into one step at a time, against task paralysis. Inbox turns chaotic chat threads into short summaries, against working-memory overload and notification anxiety. Each loops back to the home screen on its own, instead of one long path a teen has to retrace every time.
 
 <figure class="figure--flush">
 <img src="/images/neoos/user-flow.webp" alt="NeoOS user flow diagram: Installs UI leads through Onboarding (Information, Focus, Feel), font choice, and home screen setup, then branches into the Focus app loop (current task, timer, full day tasks) and the Inbox app loop (message stack, AI summary or full messages, reply), both returning to the home screen" />
@@ -179,7 +174,7 @@ That structure carried almost unchanged into grayscale wireframes, then into the
 
 ## Final Design
 
-Every screen below answers a specific piece of the research: an abrupt support drop at 15–16, a teen who struggles to name what he's feeling, and a parent who only wants confirmation without a follow-up call.
+Every screen below answers a specific piece of the research: task paralysis, working-memory overload, a teen who struggles to name what he's feeling, and a parent who only wants confirmation without a follow-up call.
 
 <figure class="figure--white">
 <p class="figure-eyebrow">Onboarding</p>
@@ -323,9 +318,11 @@ Every screen below answers a specific piece of the research: an abrupt support d
 <li class="swatch"><span class="swatch-color" style="background:#F2F4F7"></span><p class="swatch-name">Off-White</p><p class="swatch-hex">#F2F4F7</p></li>
 </ul>
 
-Every hue stays low-saturation on purpose. A bright, high-contrast palette reads as alert and urgent, which is the opposite of what a teen trying to self-regulate needs from their own phone.
+Every hue stays low-saturation on purpose. A bright, high-contrast palette reads as alert and urgent, which is the opposite of what someone trying to self-regulate needs from their own phone.
 
 Typography runs on Atkinson Hyperlegible by default, a typeface built by the Braille Institute specifically to keep letterforms distinct at a glance, with Lexend and OpenDyslexic offered as alternatives in settings. All three exist to cut the effort of decoding text, not to make a style statement.
+
+App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. Rounded, dimensional shapes read as less harsh than hard edges, which makes a crowded home screen feel inviting instead of overwhelming. A flat icon style stays available in settings for anyone who prefers it, changing only the icon shading, not the rest of the system.
 
 ## Retrospective
 
