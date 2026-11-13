@@ -14,7 +14,7 @@ featured: true
 
 ## Product Context
 
-Most phones assume a steady nervous system and a working short-term memory: same taps, same steps, same pace, every time. That assumption breaks down for a lot of neurodivergent people on an ordinary day, and the phone has no idea anything changed. "Neurodivergent" here spans four conditions with very different daily friction: autism, dyspraxia, ADHD, and dyslexia or dyscalculia.
+Most phones assume a steady nervous system and a working short-term memory: same taps, same steps, same pace, every time. That assumption breaks down for a lot of neurodivergent people on an ordinary day, and the phone has no idea anything changed. "Neurodivergent" here spans four conditions, each with its own daily friction: autism, dyspraxia, ADHD, and dyslexia or dyscalculia.
 
 The project started from its sharpest case: autistic teenagers moving into adulthood and independence. Around age 15–16, parents and schools pull back the hand-holding fast, expecting a teen to self-manage homework, schedules, and daily routines with little warning. What doesn't happen is an actual transition. Task paralysis on one side, nagging and micromanaging on the other, and neither builds the independence everyone was hoping for.
 
@@ -22,7 +22,7 @@ NeoOS is a custom mobile interface built around that transition instead of a gen
 
 ## Research & Data
 
-The research ran an AEIOU pass, activities, environments, interactions, objects, and users, alongside national statistics and primary visits to three psychiatry and therapy clinics in Ahmedabad, so the design would be grounded in clinical practice, not just survey data.
+I ran an AEIOU pass, activities, environments, interactions, objects, and users, alongside national statistics and primary visits to three psychiatry and therapy clinics in Ahmedabad, to ground the design in clinical practice, not just survey data.
 
 <ul class="stat-grid">
 <li class="stat-card">
@@ -45,7 +45,7 @@ The research ran an AEIOU pass, activities, environments, interactions, objects,
 Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic, and Genius Brain, three clinics in Ahmedabad, to hear how clinicians talk about this transition with families, not just how it reads in a paper.
 
 <ul class="takeaway-list">
-<li><strong>Teens quietly drop tools that feel juvenile.</strong> An assistive app that looks like it was built for a younger kid gets uninstalled within weeks, no matter how well it works.</li>
+<li><strong>Teens drop tools that feel juvenile, and don't say why.</strong> An assistive app that looks like it was built for a younger kid gets uninstalled within weeks, no matter how well it works.</li>
 <li><strong>Masking all day leaves nothing left for home.</strong> A teen who holds it together at school often comes home and falls apart, which parents read as defiance instead of exhaustion.</li>
 <li><strong>Reminders turn into nagging loops.</strong> A parent repeats the same instruction enough times that it stops being information and starts being noise both people tune out.</li>
 </ul>
@@ -343,9 +343,9 @@ Every screen below answers a specific piece of the research: an abrupt support d
 
 Every hue stays low-saturation on purpose. A bright, high-contrast palette reads as alert and urgent, which is the opposite of what a teen trying to self-regulate needs from their own phone.
 
-Typography runs on Atkinson Hyperlegible by default, a typeface built by the Braille Institute specifically to keep letterforms distinct at a glance, with Lexend and OpenDyslexic offered as alternatives in settings. All three exist to cut the effort of decoding text, not to make a style statement.
+Typography defaults to Atkinson Hyperlegible, a typeface the Braille Institute built to keep letterforms distinct at a glance; settings also offer Lexend and OpenDyslexic. I picked all three to cut the effort of decoding text, not to make a style statement.
 
-App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. Rounded, dimensional shapes read as less harsh than hard edges, which makes a crowded home screen feel inviting instead of overwhelming. A flat icon style stays available in settings for anyone who prefers it, changing only the icon shading, not the rest of the system.
+App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. Rounded, dimensional shapes read as less harsh than hard edges, so a crowded home screen feels inviting rather than loud. A flat icon style stays available in settings for anyone who prefers it, changing only the icon shading, not the rest of the system.
 
 <ul class="icon-grid">
 <li><img src="/images/neoos/icon-phone.webp" alt="Soft 3D phone icon" /></li>
@@ -364,7 +364,7 @@ App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. R
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="24" width="56" height="72" rx="6"/><path d="M32 42h32M32 56h32M32 70h20"/><circle cx="86" cy="80" r="20"/><path d="M78 80l6 6 12-14"/></svg>
 <h3>A Preference Screen Instead of One Fixed Interface</h3>
-<p>Letting a teen choose how they want information shown, visual, simple, spoken, or mixed, admits from the first screen that no two neurodivergent profiles work the same way. The OS adapts instead of assuming.</p>
+<p>The first screen doesn't assume how a teen takes in information: it asks, visual, simple, spoken, or mixed. That one question acknowledges, before anything else loads, that no two neurodivergent profiles work the same way.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="30" r="9"/><circle cx="94" cy="30" r="9"/><circle cx="60" cy="90" r="9"/><path d="M34 36l20 46M86 36L66 82"/></svg>
