@@ -1883,9 +1883,9 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__body :global(.persona-neo__lists) {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
     padding-top: var(--space-4);
     border-top: 1px solid var(--color-border);
   }
@@ -1899,40 +1899,40 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     margin: 0 0 var(--space-2);
   }
 
-  .case-study__body :global(.persona-neo__list) {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  /* A wrapped chip cluster instead of a bulleted list: the same
+     facts, but reading as a loose cloud of tags rather than a report,
+     a filled pill for what helps him and an outlined one for what
+     trips him up, so the two kinds are told apart by shape, not by
+     introducing a second colour into a one-accent system. */
+  .case-study__body :global(.persona-neo__chip-row) {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: var(--space-2);
   }
 
-  .case-study__body :global(.persona-neo__list) :global(li) {
-    position: relative;
-    padding-left: var(--space-5);
+  .case-study__body :global(.persona-neo__chip) {
     font-size: var(--text-caption);
     line-height: var(--leading-normal);
-    color: var(--color-text);
+    padding: var(--space-2) var(--space-4);
+    border-radius: 999px;
     max-width: none;
+    margin: 0;
+    transition: transform var(--duration-fast) var(--ease-standard);
   }
 
-  .case-study__body :global(.persona-neo__list) :global(li::before) {
-    content: '';
-    position: absolute;
-    left: 2px;
-    top: 0.55em;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--case-accent);
+  .case-study__body :global(.persona-neo__chip:hover) {
+    transform: translateY(-2px);
   }
 
-  @media (max-width: 480px) {
-    .case-study__body :global(.persona-neo__lists) {
-      grid-template-columns: 1fr;
-      gap: var(--space-4);
-    }
+  .case-study__body :global(.persona-neo__chip--need) {
+    background: color-mix(in srgb, var(--case-accent) 14%, #fff);
+    color: var(--color-text);
+  }
+
+  .case-study__body :global(.persona-neo__chip--friction) {
+    background: transparent;
+    border: 1.5px solid color-mix(in srgb, var(--case-accent) 35%, var(--color-border));
+    color: var(--color-muted);
   }
 
   /* The stakeholder map, flattened: the deck's concentric-circle chart

@@ -26,21 +26,21 @@ featured: true
 <p class="persona-neo__age">16 years old</p>
 </div>
 <div class="persona-neo__lists">
-<div class="persona-neo__col">
+<div class="persona-neo__group">
 <p class="persona-neo__label">Needs</p>
-<ul class="persona-neo__list">
-<li>A calm screen, not a loud one.</li>
-<li>Visual cues instead of walls of text.</li>
-<li>A routine that doesn't need a parent to repeat it.</li>
-</ul>
+<div class="persona-neo__chip-row">
+<span class="persona-neo__chip persona-neo__chip--need">A calm screen</span>
+<span class="persona-neo__chip persona-neo__chip--need">Visual cues over walls of text</span>
+<span class="persona-neo__chip persona-neo__chip--need">Routines that don't need repeating</span>
 </div>
-<div class="persona-neo__col">
+</div>
+<div class="persona-neo__group">
 <p class="persona-neo__label">Friction</p>
-<ul class="persona-neo__list">
-<li>A long text message is enough to stall him.</li>
-<li>Switching apps wipes what he was just doing.</li>
-<li>A strict schedule raises his anxiety instead of lowering it.</li>
-</ul>
+<div class="persona-neo__chip-row">
+<span class="persona-neo__chip persona-neo__chip--friction">Long texts stall him</span>
+<span class="persona-neo__chip persona-neo__chip--friction">App-switching wipes his focus</span>
+<span class="persona-neo__chip persona-neo__chip--friction">Rigid schedules spike anxiety</span>
+</div>
 </div>
 </div>
 </div>
@@ -56,21 +56,21 @@ featured: true
 <p class="persona-neo__age">44 years old</p>
 </div>
 <div class="persona-neo__lists">
-<div class="persona-neo__col">
+<div class="persona-neo__group">
 <p class="persona-neo__label">Needs</p>
-<ul class="persona-neo__list">
-<li>Proof a reminder actually landed.</li>
-<li>A way to follow up without nagging.</li>
-<li>Tools that build Aarav's independence, not her workload.</li>
-</ul>
+<div class="persona-neo__chip-row">
+<span class="persona-neo__chip persona-neo__chip--need">Proof the reminder landed</span>
+<span class="persona-neo__chip persona-neo__chip--need">Following up without nagging</span>
+<span class="persona-neo__chip persona-neo__chip--need">Tools that build independence</span>
 </div>
-<div class="persona-neo__col">
+</div>
+<div class="persona-neo__group">
 <p class="persona-neo__label">Friction</p>
-<ul class="persona-neo__list">
-<li>Repeating herself is the only thing that works.</li>
-<li>No way to tell if a permission slip got seen.</li>
-<li>Every step back feels like a risk, not progress.</li>
-</ul>
+<div class="persona-neo__chip-row">
+<span class="persona-neo__chip persona-neo__chip--friction">Repeating herself is the only fix</span>
+<span class="persona-neo__chip persona-neo__chip--friction">No visibility into what's seen</span>
+<span class="persona-neo__chip persona-neo__chip--friction">Every step back feels risky</span>
+</div>
 </div>
 </div>
 </div>
