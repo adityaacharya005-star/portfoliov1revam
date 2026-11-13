@@ -1794,6 +1794,245 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     }
   }
 
+  /* NeoOS's own persona identity: neither the ID badge nor Qurate's
+     bleeding photo figure, but a flat card built out of the same
+     bento-widget language as the product itself (a tinted icon
+     circle, a stat-like age chip) instead of a photo or a badge. */
+  .case-study__body :global(.persona-card--neo) {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    gap: var(--space-5);
+    padding: var(--space-7) var(--space-6);
+    background: #fff;
+    border-top: none;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px rgba(17, 17, 17, 0.05), 0 16px 32px rgba(17, 17, 17, 0.06);
+  }
+
+  .case-study__body :global(.persona-card--neo:hover) {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(17, 17, 17, 0.06), 0 24px 48px rgba(17, 17, 17, 0.12);
+  }
+
+  .case-study__body :global(.persona-neo__head) {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  .case-study__body :global(.persona-neo__icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--case-accent) 12%, var(--color-bg));
+  }
+
+  .case-study__body :global(.persona-neo__icon) :global(svg) {
+    width: 34px;
+    height: 34px;
+    color: var(--case-accent);
+    filter: url(#sketch-wobble);
+  }
+
+  .case-study__body :global(.persona-neo__id) {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .case-study__body :global(.persona-card--neo) :global(.persona-eyebrow) {
+    margin: 0;
+  }
+
+  .case-study__body :global(.persona-card--neo) :global(.persona-name) {
+    margin: var(--space-1) 0 0;
+  }
+
+  .case-study__body :global(.persona-neo__age) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: var(--case-accent);
+    color: #fff;
+    font-size: var(--text-micro);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .case-study__body :global(.persona-neo__age) :global(span) {
+    font-size: var(--text-stat);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .case-study__body :global(.persona-neo__body) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .case-study__body :global(.persona-neo__label) {
+    font-size: var(--text-label);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--case-accent-text);
+    margin: 0 0 var(--space-2);
+  }
+
+  .case-study__body :global(.persona-neo__list) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .case-study__body :global(.persona-neo__list) :global(li) {
+    position: relative;
+    padding-left: var(--space-4);
+    font-size: var(--text-caption);
+    line-height: var(--leading-normal);
+    color: var(--color-text);
+    max-width: none;
+  }
+
+  .case-study__body :global(.persona-neo__list) :global(li::before) {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--case-accent);
+  }
+
+  @media (max-width: 480px) {
+    .case-study__body :global(.persona-neo__body) {
+      grid-template-columns: 1fr;
+      gap: var(--space-4);
+    }
+  }
+
+  /* The stakeholder map, flattened: the deck's concentric-circle chart
+     redrawn as a ranked list, highest real-world say first, each row
+     naming who they are and what actually drives them rather than a
+     diagram someone has to decode. */
+  .case-study__body :global(.stakeholder-ladder) {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .case-study__body :global(.stakeholder-row) {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-card-warm);
+    border-radius: 14px;
+    border-left: 3px solid var(--case-accent);
+  }
+
+  .case-study__body :global(.stakeholder-row__icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--case-accent) 14%, var(--color-bg));
+  }
+
+  .case-study__body :global(.stakeholder-row__icon) :global(svg) {
+    width: 22px;
+    height: 22px;
+    color: var(--case-accent);
+  }
+
+  .case-study__body :global(.stakeholder-row__text) {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .case-study__body :global(.stakeholder-row__name) {
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .case-study__body :global(.stakeholder-row__detail) {
+    font-size: var(--text-caption);
+    color: var(--color-muted);
+    line-height: var(--leading-normal);
+    margin: var(--space-1) 0 0;
+    max-width: none;
+  }
+
+  .case-study__body :global(.stakeholder-row__tag) {
+    flex-shrink: 0;
+    font-size: var(--text-micro);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--case-accent-text);
+    background: color-mix(in srgb, var(--case-accent) 14%, transparent);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    .case-study__body :global(.stakeholder-row) {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      grid-template-areas: 'icon name tag' 'icon detail detail';
+      column-gap: var(--space-3);
+      row-gap: var(--space-1);
+      align-items: start;
+    }
+
+    .case-study__body :global(.stakeholder-row__icon) {
+      grid-area: icon;
+    }
+
+    .case-study__body :global(.stakeholder-row__text) {
+      display: contents;
+    }
+
+    .case-study__body :global(.stakeholder-row__name) {
+      grid-area: name;
+      align-self: center;
+    }
+
+    .case-study__body :global(.stakeholder-row__detail) {
+      grid-area: detail;
+    }
+
+    .case-study__body :global(.stakeholder-row__tag) {
+      grid-area: tag;
+      justify-self: end;
+      align-self: center;
+    }
+  }
+
   @media (max-width: 768px) {
     .case-study__body :global(.stat-grid),
     .case-study__body :global(.outcome-grid),
