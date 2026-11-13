@@ -16,15 +16,15 @@ featured: true
 
 Most phones assume a steady nervous system and a working short-term memory: same taps, same steps, same pace, every time. That assumption breaks down for a lot of neurodivergent people on an ordinary day, and the phone has no idea anything changed. "Neurodivergent" here spans four conditions with very different daily friction: autism, dyspraxia, ADHD, and dyslexia or dyscalculia.
 
-The usual fallback is a caregiver filling the gap: repeating instructions, managing the calendar, double-checking everything got done. That works, but it's exhausting for whoever's doing it, and it leaves the person at the center of it more dependent, not less. Task paralysis on one side, nagging and micromanaging on the other.
+The project started from its sharpest case: autistic teenagers moving into adulthood and independence. Around age 15–16, parents and schools pull back the hand-holding fast, expecting a teen to self-manage homework, schedules, and daily routines with little warning. What doesn't happen is an actual transition. Task paralysis on one side, nagging and micromanaging on the other, and neither builds the independence everyone was hoping for.
 
-NeoOS is a custom mobile interface built around that gap instead of a generic "accessible phone" brief. It's built to work for anyone, regardless of age, caregiver, or household. It trades loud alarms and one-size UI for quiet visual structure a person can run on their own, with caregiver or support-person updates that confirm without needing a follow-up call.
+NeoOS is a custom mobile interface built around that transition instead of a generic "accessible phone" brief, meant to be something a teen keeps using well past adolescence rather than a tool they age out of. It trades loud alarms and one-size UI for quiet visual structure a person can run on their own, with caregiver updates that confirm without needing a follow-up call.
 
 ## Research & Data
 
 The research ran an AEIOU pass, activities, environments, interactions, objects, and users, alongside national statistics and primary visits to three psychiatry and therapy clinics in Ahmedabad, so the design would be grounded in clinical practice, not just survey data.
 
-<ul class="stat-grid stat-grid--2">
+<ul class="stat-grid">
 <li class="stat-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="44" r="16"/><path d="M16 96c0-18 11-30 24-30s24 12 24 30"/><circle cx="82" cy="50" r="12"/><path d="M62 96c2-14 10-24 20-24s20 10 22 24"/></svg>
 <p class="stat-number">1 in 8</p>
@@ -35,9 +35,14 @@ The research ran an AEIOU pass, activities, environments, interactions, objects,
 <p class="stat-number">85%</p>
 <p class="stat-label">Autistic youth who can't name what they're feeling until it's already too late</p>
 </li>
+<li class="stat-card">
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="64" r="36"/><path d="M60 40v24l18 12"/><path d="M42 22l9 9M78 22l-9 9"/></svg>
+<p class="stat-number">15–16</p>
+<p class="stat-label">The age hand-holding stops, almost overnight</p>
+</li>
 </ul>
 
-Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic, and Genius Brain, three clinics in Ahmedabad, to hear how clinicians talk about this with families, not just how it reads in a paper.
+Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic, and Genius Brain, three clinics in Ahmedabad, to hear how clinicians talk about this transition with families, not just how it reads in a paper.
 
 <ul class="takeaway-list">
 <li><strong>Teens quietly drop tools that feel juvenile.</strong> An assistive app that looks like it was built for a younger kid gets uninstalled within weeks, no matter how well it works.</li>
@@ -174,7 +179,7 @@ That structure carried almost unchanged into grayscale wireframes, then into the
 
 ## Final Design
 
-Every screen below answers a specific piece of the research: task paralysis, working-memory overload, a teen who struggles to name what he's feeling, and a parent who only wants confirmation without a follow-up call.
+Every screen below answers a specific piece of the research: an abrupt support drop at 15–16, task paralysis, working-memory overload, a teen who struggles to name what he's feeling, and a parent who only wants confirmation without a follow-up call.
 
 <figure class="figure--white">
 <p class="figure-eyebrow">Onboarding</p>
@@ -318,11 +323,22 @@ Every screen below answers a specific piece of the research: task paralysis, wor
 <li class="swatch"><span class="swatch-color" style="background:#F2F4F7"></span><p class="swatch-name">Off-White</p><p class="swatch-hex">#F2F4F7</p></li>
 </ul>
 
-Every hue stays low-saturation on purpose. A bright, high-contrast palette reads as alert and urgent, which is the opposite of what someone trying to self-regulate needs from their own phone.
+Every hue stays low-saturation on purpose. A bright, high-contrast palette reads as alert and urgent, which is the opposite of what a teen trying to self-regulate needs from their own phone.
 
 Typography runs on Atkinson Hyperlegible by default, a typeface built by the Braille Institute specifically to keep letterforms distinct at a glance, with Lexend and OpenDyslexic offered as alternatives in settings. All three exist to cut the effort of decoding text, not to make a style statement.
 
 App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. Rounded, dimensional shapes read as less harsh than hard edges, which makes a crowded home screen feel inviting instead of overwhelming. A flat icon style stays available in settings for anyone who prefers it, changing only the icon shading, not the rest of the system.
+
+<ul class="icon-grid">
+<li><img src="/images/neoos/icon-phone.webp" alt="Soft 3D phone icon" /></li>
+<li><img src="/images/neoos/icon-chat.webp" alt="Soft 3D chat icon" /></li>
+<li><img src="/images/neoos/icon-mail.webp" alt="Soft 3D mail icon" /></li>
+<li><img src="/images/neoos/icon-contacts.webp" alt="Soft 3D contacts icon" /></li>
+<li><img src="/images/neoos/icon-calendar.webp" alt="Soft 3D calendar icon" /></li>
+<li><img src="/images/neoos/icon-notes.webp" alt="Soft 3D notes icon" /></li>
+<li><img src="/images/neoos/icon-checklist.webp" alt="Soft 3D checklist icon" /></li>
+<li><img src="/images/neoos/icon-target.webp" alt="Soft 3D target icon" /></li>
+</ul>
 
 ## Retrospective
 

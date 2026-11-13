@@ -1613,6 +1613,31 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     }
   }
 
+  /* The real app icons, not a redrawn stand-in: shows the soft 3D
+     style the Color Psychology paragraph above describes instead of
+     asking the reader to take the claim on faith. */
+  .case-study__body :global(.icon-grid) {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin-inline: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .case-study__body :global(.icon-grid) :global(img) {
+    width: 100%;
+    height: auto;
+    background: transparent;
+  }
+
+  @media (max-width: 768px) {
+    .case-study__body :global(.icon-grid) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
   .case-study__body :global(.stat-card p:not(.stat-number):not(.stat-label)),
   .case-study__body :global(.outcome-card p) {
     font-size: var(--text-caption);
