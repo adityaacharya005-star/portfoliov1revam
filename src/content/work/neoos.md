@@ -146,9 +146,29 @@ Onboarding splits into the OS layer and the two native apps, Focus and Inbox, ea
 <img src="/images/neoos/user-flow.webp" alt="NeoOS user flow diagram: Installs UI leads through Onboarding (Information, Focus, Feel), font choice, and home screen setup, then branches into the Focus app loop (current task, timer, full day tasks) and the Inbox app loop (message stack, AI summary or full messages, reply), both returning to the home screen" />
 </figure>
 
+## Exploration & Sketches
+
+The first pass was paper: onboarding, home layout, app folders, and the quick panel, worked out by hand before any screen touched Figma.
+
+<figure>
+<img src="/images/neoos/sketch-board.webp" alt="Hand-drawn sketch sheet exploring NeoOS onboarding, home layout, app folders, quick panel, Focus app, and Inbox app screens, with annotations on thumb-zone ergonomics and widget placement" />
+</figure>
+
+That structure carried almost unchanged into grayscale wireframes, then into the pastel UI, color and polish added last rather than steering the layout.
+
+<figure>
+<img src="/images/neoos/wireframe-board.webp" alt="Mid-fidelity wireframe board showing NeoOS onboarding, settings, Focus app, Inbox app, and home screen variants progressing from grayscale boxes to colored mockups" />
+</figure>
+
+<ul class="takeaway-list">
+<li><strong>The preference-based onboarding was there from the first sketch.</strong> Visual, Simple, Spoken, and Mixed, even color-coded by shape in an early pass, went almost untouched into the final screens.</li>
+<li><strong>App placement was argued out on paper first.</strong> A note reading "apps should be near the thumb" became the thumb-zone layout behind the App Drawer and Quick Panel.</li>
+<li><strong>Focus and Inbox kept their grayscale bones.</strong> The task stack, timer ring, and Day at a Glance blocks are structurally the same boxes from the wireframe pass, just colored in.</li>
+</ul>
+
 ## Final Design
 
-Every screen below answers a specific piece of the research: an abrupt support drop at 15–16, a teen who can't always name what he's feeling, and a parent who only wants confirmation without a follow-up call.
+Every screen below answers a specific piece of the research: an abrupt support drop at 15–16, and a parent who only wants confirmation without a follow-up call.
 
 <figure class="figure--white">
 <p class="figure-eyebrow">Onboarding</p>
