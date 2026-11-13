@@ -2017,44 +2017,85 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     border-bottom-right-radius: 4px;
   }
 
-  /* The stakeholder map, flattened: the deck's concentric-circle chart
-     redrawn as a ranked list, highest real-world say first, each row
-     naming who they are and what actually drives them rather than a
-     diagram someone has to decode. */
+  /* The stakeholder map, redrawn as NeoOS's own stacked-card widget
+     (the Focus app's Day at a Glance blocks) instead of a flat ranked
+     list or the deck's concentric-circle chart: each tier's weight
+     reads as how many layers sit behind the card, in the product's
+     own pastel tokens, not a generic accent-colored row. */
   .case-study__body :global(.stakeholder-ladder) {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 var(--space-3) var(--space-3) 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
+    gap: var(--space-5);
   }
 
   .case-study__body :global(.stakeholder-row) {
+    position: relative;
+  }
+
+  .case-study__body :global(.stakeholder-row)::before,
+  .case-study__body :global(.stakeholder-row)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: var(--tier-tint);
+    filter: brightness(0.86);
+    z-index: 0;
+  }
+
+  .case-study__body :global(.stakeholder-row)::before {
+    transform: translate(5px, 5px);
+    opacity: 0.7;
+  }
+
+  .case-study__body :global(.stakeholder-row)::after {
+    transform: translate(10px, 10px);
+    opacity: 0.45;
+  }
+
+  .case-study__body :global(.stakeholder-row--medium)::after {
+    content: none;
+  }
+
+  .case-study__body :global(.stakeholder-row--thin)::before,
+  .case-study__body :global(.stakeholder-row--thin)::after {
+    content: none;
+  }
+
+  .case-study__body :global(.stakeholder-row__face) {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    padding: var(--space-4) var(--space-5);
-    background: var(--color-card-warm);
-    border-radius: 14px;
-    border-left: 3px solid var(--case-accent);
+    padding: var(--space-5);
+    border-radius: 16px;
+    background: var(--tier-tint);
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.stakeholder-row:hover) :global(.stakeholder-row__face) {
+    transform: translateY(-2px);
   }
 
   .case-study__body :global(.stakeholder-row__icon) {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     flex-shrink: 0;
     border-radius: 50%;
-    background: color-mix(in srgb, var(--case-accent) 14%, var(--color-bg));
+    background: rgba(255, 255, 255, 0.55);
   }
 
   .case-study__body :global(.stakeholder-row__icon) :global(svg) {
-    width: 22px;
-    height: 22px;
-    color: var(--case-accent);
+    width: 24px;
+    height: 24px;
+    color: #282828;
   }
 
   .case-study__body :global(.stakeholder-row__text) {
@@ -2063,62 +2104,32 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__body :global(.stakeholder-row__name) {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-2);
     font-weight: 700;
+    color: #1f1f1f;
     margin: 0;
+  }
+
+  .case-study__body :global(.stakeholder-row__tier) {
+    font-size: var(--text-micro);
+    font-weight: 600;
+    color: rgba(31, 31, 31, 0.55);
   }
 
   .case-study__body :global(.stakeholder-row__detail) {
     font-size: var(--text-caption);
-    color: var(--color-muted);
+    color: rgba(31, 31, 31, 0.72);
     line-height: var(--leading-normal);
     margin: var(--space-1) 0 0;
     max-width: none;
   }
 
-  .case-study__body :global(.stakeholder-row__tag) {
-    flex-shrink: 0;
-    font-size: var(--text-micro);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--case-accent-text);
-    background: color-mix(in srgb, var(--case-accent) 14%, transparent);
-    padding: var(--space-1) var(--space-3);
-    border-radius: 999px;
-    white-space: nowrap;
-  }
-
   @media (max-width: 480px) {
-    .case-study__body :global(.stakeholder-row) {
-      display: grid;
-      grid-template-columns: 40px 1fr auto;
-      grid-template-areas: 'icon name tag' 'icon detail detail';
-      column-gap: var(--space-3);
-      row-gap: var(--space-1);
-      align-items: start;
-    }
-
-    .case-study__body :global(.stakeholder-row__icon) {
-      grid-area: icon;
-    }
-
-    .case-study__body :global(.stakeholder-row__text) {
-      display: contents;
-    }
-
-    .case-study__body :global(.stakeholder-row__name) {
-      grid-area: name;
-      align-self: center;
-    }
-
-    .case-study__body :global(.stakeholder-row__detail) {
-      grid-area: detail;
-    }
-
-    .case-study__body :global(.stakeholder-row__tag) {
-      grid-area: tag;
-      justify-self: end;
-      align-self: center;
+    .case-study__body :global(.stakeholder-row__face) {
+      padding: var(--space-4);
     }
   }
 
