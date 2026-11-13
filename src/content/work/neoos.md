@@ -14,7 +14,7 @@ featured: true
 
 ## Product Context
 
-Most phones assume a steady nervous system and a working short-term memory: same taps, same steps, same pace, every time. That assumption breaks down for a lot of neurodivergent teenagers on an ordinary day, and the phone has no idea anything changed.
+Most phones assume a steady nervous system and a working short-term memory: same taps, same steps, same pace, every time. That assumption breaks down for a lot of neurodivergent teenagers on an ordinary day, and the phone has no idea anything changed. "Neurodivergent" here spans four conditions with very different daily friction: autism, dyspraxia, ADHD, and dyslexia or dyscalculia.
 
 The real gap opens around age 15–16. Up to that point, parents and schools hand-hold through routines, schedules, and reminders. Then, almost overnight, that support gets pulled, not faded, right as the teen is expected to self-manage everything from homework to leaving the house on time. One side ends up in task paralysis and anxiety; the other defaults to nagging and micromanaging, which undermines the independence everyone was hoping for.
 
