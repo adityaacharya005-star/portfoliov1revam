@@ -3,9 +3,9 @@ title: NeoOS
 description: A mobile UI made for neurodivergent users.
 cover: ./assets/neoos-cover.png
 coverAlt: "TODO: describe the NeoOS screen shown here"
-role: TODO — e.g. Product Designer
+role: Product Designer & UX Researcher
 timeline: "2026"
-tools: [Figma, TODO]
+tools: [Figma]
 services: [Mobile UI, Accessibility] # TODO — replace with real tags
 accentColor: "#2E9E6B"
 order: 3
