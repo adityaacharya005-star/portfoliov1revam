@@ -1899,40 +1899,40 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     margin: 0 0 var(--space-2);
   }
 
-  /* A wrapped chip cluster instead of a bulleted list: the same
-     facts, but reading as a loose cloud of tags rather than a report,
-     a filled pill for what helps him and an outlined one for what
-     trips him up, so the two kinds are told apart by shape, not by
-     introducing a second colour into a one-accent system. */
+  /* A chat thread instead of a bulleted list or a pill cluster: this
+     product's own Inbox app is a messaging surface, so the personas'
+     own facts read as message bubbles instead of generic tags.
+     Needs sit left like a received message, Friction sits right like
+     a reply, each with the squared near corner that reads as a
+     speech-bubble tail in every messaging app. */
   .case-study__body :global(.persona-neo__chip-row) {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: var(--space-2);
   }
 
   .case-study__body :global(.persona-neo__chip) {
+    display: inline-block;
+    max-width: 88%;
     font-size: var(--text-caption);
     line-height: var(--leading-normal);
     padding: var(--space-2) var(--space-4);
-    border-radius: 999px;
-    max-width: none;
+    border-radius: 16px;
     margin: 0;
-    transition: transform var(--duration-fast) var(--ease-standard);
-  }
-
-  .case-study__body :global(.persona-neo__chip:hover) {
-    transform: translateY(-2px);
   }
 
   .case-study__body :global(.persona-neo__chip--need) {
-    background: color-mix(in srgb, var(--case-accent) 14%, #fff);
+    align-self: flex-start;
+    background: color-mix(in srgb, var(--case-accent) 16%, #fff);
     color: var(--color-text);
+    border-bottom-left-radius: 4px;
   }
 
   .case-study__body :global(.persona-neo__chip--friction) {
-    background: transparent;
-    border: 1.5px solid color-mix(in srgb, var(--case-accent) 35%, var(--color-border));
+    align-self: flex-end;
+    background: var(--color-card-warm);
     color: var(--color-muted);
+    border-bottom-right-radius: 4px;
   }
 
   /* The stakeholder map, flattened: the deck's concentric-circle chart
