@@ -26,21 +26,13 @@ featured: true
 <p class="persona-neo__age">16 years old</p>
 </div>
 <div class="persona-neo__lists">
-<div class="persona-neo__group">
-<p class="persona-neo__label">Needs</p>
 <div class="persona-neo__chip-row">
 <span class="persona-neo__chip persona-neo__chip--need">A calm screen</span>
 <span class="persona-neo__chip persona-neo__chip--need">Visual cues over walls of text</span>
 <span class="persona-neo__chip persona-neo__chip--need">Routines that don't need repeating</span>
-</div>
-</div>
-<div class="persona-neo__group">
-<p class="persona-neo__label">Friction</p>
-<div class="persona-neo__chip-row">
 <span class="persona-neo__chip persona-neo__chip--friction">Long texts stall him</span>
 <span class="persona-neo__chip persona-neo__chip--friction">App-switching wipes his focus</span>
 <span class="persona-neo__chip persona-neo__chip--friction">Rigid schedules spike anxiety</span>
-</div>
 </div>
 </div>
 </div>
@@ -56,21 +48,13 @@ featured: true
 <p class="persona-neo__age">44 years old</p>
 </div>
 <div class="persona-neo__lists">
-<div class="persona-neo__group">
-<p class="persona-neo__label">Needs</p>
 <div class="persona-neo__chip-row">
 <span class="persona-neo__chip persona-neo__chip--need">Proof the reminder landed</span>
 <span class="persona-neo__chip persona-neo__chip--need">Following up without nagging</span>
 <span class="persona-neo__chip persona-neo__chip--need">Tools that build independence</span>
-</div>
-</div>
-<div class="persona-neo__group">
-<p class="persona-neo__label">Friction</p>
-<div class="persona-neo__chip-row">
 <span class="persona-neo__chip persona-neo__chip--friction">Repeating herself is the only fix</span>
 <span class="persona-neo__chip persona-neo__chip--friction">No visibility into what's seen</span>
 <span class="persona-neo__chip persona-neo__chip--friction">Every step back feels risky</span>
-</div>
 </div>
 </div>
 </div>
