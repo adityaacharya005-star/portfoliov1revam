@@ -207,9 +207,10 @@ Every screen below answers a specific piece of the research: an abrupt support d
 </li>
 <li class="screen-item">
 <img src="/images/neoos/home-screen-b.webp" alt="NeoOS home screen variant with a task-breakdown widget showing Morning routine steps in place of the media and calendar widgets" />
-<p class="screen-caption">Swapping to a task-first layout replaces half of those widgets with the day's routine instead, the same OS reading differently depending on what a teen needs that morning.</p>
+<p class="screen-caption">Swapping to a task-first layout replaces half of those widgets with the day's routine instead, a customization option rather than a fixed setup.</p>
 </li>
 </ul>
+<figcaption>Both layouts keep the same 50/50 split: widgets fill the top half for a glance, apps fill the bottom half within thumb's reach. That split came straight from a sketch note reading "apps should be near the thumb," so switching which widgets show up never means relearning where to tap.</figcaption>
 </figure>
 
 <figure class="figure--white">
@@ -303,8 +304,8 @@ Typography runs on Atkinson Hyperlegible by default, a typeface built by the Bra
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="30" r="9"/><circle cx="94" cy="30" r="9"/><circle cx="60" cy="90" r="9"/><path d="M34 36l20 46M86 36L66 82"/></svg>
-<h3>The Fade Has to Be Designed, Not Just the App</h3>
-<p>The real finding wasn't a UI gap, it was that support disappears overnight instead of tapering off. The two home-screen states, parent-visible and teen-independent, are an attempt to build that taper into the product itself.</p>
+<h3>A Fixed Layout Grid, Even When Everything Else Is Customizable</h3>
+<p>Whichever widgets a teen picks, they stay in the top half of the home screen, and apps stay in the bottom half, within thumb's reach. That fixed split means switching layouts never means relearning where to look or where to reach.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M60 50v24M60 82v.1" stroke-width="5"/></svg>
