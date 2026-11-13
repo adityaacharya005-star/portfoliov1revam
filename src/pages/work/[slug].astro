@@ -1886,9 +1886,43 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.persona-neo__lists) {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-3);
     padding-top: var(--space-4);
     border-top: 1px solid var(--color-border);
+  }
+
+  /* A light anchor for the left/right convention below: two small
+     dot-and-word markers, filled to match the Needs bubbles and
+     outlined to match Friction, so a first-time viewer has one quiet
+     cue for why the thread splits the way it does, without bringing
+     back a heavy uppercase section header. */
+  .case-study__body :global(.persona-neo__legend) {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--text-micro);
+    color: var(--color-muted);
+  }
+
+  .case-study__body :global(.persona-neo__legend-item) {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+
+  .case-study__body :global(.persona-neo__legend-item::before) {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  .case-study__body :global(.persona-neo__legend-item--need::before) {
+    background: var(--case-accent);
+  }
+
+  .case-study__body :global(.persona-neo__legend-item--friction::before) {
+    background: transparent;
+    border: 1.5px solid var(--color-muted);
   }
 
   /* A chat thread instead of a bulleted list or a pill cluster: this
@@ -1911,6 +1945,11 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     padding: var(--space-2) var(--space-4);
     border-radius: 16px;
     margin: 0;
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(.persona-neo__chip:hover) {
+    transform: translateY(-2px) scale(1.02);
   }
 
   .case-study__body :global(.persona-neo__chip--need) {

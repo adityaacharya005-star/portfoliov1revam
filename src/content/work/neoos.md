@@ -18,7 +18,7 @@ featured: true
 <li class="persona-card persona-card--neo">
 <div class="persona-neo__portrait" style="--persona-tint: #C6DBF0">
 <p class="persona-neo__tag">A high school student diagnosed with ADHD</p>
-<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="76" r="38"/><path d="M62 58a38 38 0 0 1 76 0"/><rect x="48" y="66" width="20" height="30" rx="10"/><rect x="132" y="66" width="20" height="30" rx="10"/><path d="M88 108v10M112 108v10"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/></svg>
+<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="76" r="38"/><path d="M62 58a38 38 0 0 1 76 0"/><rect x="48" y="66" width="20" height="30" rx="10"/><rect x="132" y="66" width="20" height="30" rx="10"/><path d="M88 108v10M112 108v10"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/><path d="M64 135c-12-15-16-30-12-45"/><circle cx="50" cy="90" r="7"/></svg>
 </div>
 <div class="persona-neo__body">
 <div class="persona-neo__head">
@@ -26,12 +26,14 @@ featured: true
 <p class="persona-neo__age">16 years old</p>
 </div>
 <div class="persona-neo__lists">
+<div class="persona-neo__legend">
+<span class="persona-neo__legend-item persona-neo__legend-item--need">Needs</span>
+<span class="persona-neo__legend-item persona-neo__legend-item--friction">Friction</span>
+</div>
 <div class="persona-neo__chip-row">
 <span class="persona-neo__chip persona-neo__chip--need">A calm screen</span>
-<span class="persona-neo__chip persona-neo__chip--need">Visual cues over walls of text</span>
-<span class="persona-neo__chip persona-neo__chip--need">Routines that don't need repeating</span>
 <span class="persona-neo__chip persona-neo__chip--friction">Long texts stall him</span>
-<span class="persona-neo__chip persona-neo__chip--friction">App-switching wipes his focus</span>
+<span class="persona-neo__chip persona-neo__chip--need">Routines that don't need repeating</span>
 <span class="persona-neo__chip persona-neo__chip--friction">Rigid schedules spike anxiety</span>
 </div>
 </div>
@@ -40,7 +42,7 @@ featured: true
 <li class="persona-card persona-card--neo">
 <div class="persona-neo__portrait" style="--persona-tint: #FCE3B8">
 <p class="persona-neo__tag">Working Parent</p>
-<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="36"/><path d="M66 58c0-24 68-24 68 0"/><circle cx="100" cy="40" r="13"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/><path d="M132 150c9-5 15-16 13-27"/></svg>
+<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="36"/><path d="M66 58c0-24 68-24 68 0"/><circle cx="100" cy="40" r="13"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/><path d="M126 150c0-16 6-30 16-38"/><circle cx="142" cy="113" r="7"/><rect x="133" y="82" width="18" height="30" rx="3"/><path d="M137 92h10"/></svg>
 </div>
 <div class="persona-neo__body">
 <div class="persona-neo__head">
@@ -48,12 +50,14 @@ featured: true
 <p class="persona-neo__age">44 years old</p>
 </div>
 <div class="persona-neo__lists">
+<div class="persona-neo__legend">
+<span class="persona-neo__legend-item persona-neo__legend-item--need">Needs</span>
+<span class="persona-neo__legend-item persona-neo__legend-item--friction">Friction</span>
+</div>
 <div class="persona-neo__chip-row">
 <span class="persona-neo__chip persona-neo__chip--need">Proof the reminder landed</span>
-<span class="persona-neo__chip persona-neo__chip--need">Following up without nagging</span>
-<span class="persona-neo__chip persona-neo__chip--need">Tools that build independence</span>
 <span class="persona-neo__chip persona-neo__chip--friction">Repeating herself is the only fix</span>
-<span class="persona-neo__chip persona-neo__chip--friction">No visibility into what's seen</span>
+<span class="persona-neo__chip persona-neo__chip--need">Tools that build independence</span>
 <span class="persona-neo__chip persona-neo__chip--friction">Every step back feels risky</span>
 </div>
 </div>
