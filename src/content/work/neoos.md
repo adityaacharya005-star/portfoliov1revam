@@ -168,11 +168,11 @@ That structure carried almost unchanged into grayscale wireframes, then into the
 
 ## Final Design
 
-Every screen below answers a specific piece of the research: an abrupt support drop at 15–16, and a parent who only wants confirmation without a follow-up call.
+Every screen below answers a specific piece of the research: an abrupt support drop at 15–16, a teen who struggles to name what he's feeling, and a parent who only wants confirmation without a follow-up call.
 
 <figure class="figure--white">
 <p class="figure-eyebrow">Onboarding</p>
-<ul class="screen-grid">
+<ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/neoos/onboard-landing.webp" alt="NeoOS onboarding landing screen reading Say hi to NeoOS, your phone built for the way you think, with a Get Started button" />
 <p class="screen-caption">The first screen just says hello and sets expectations in one line. No form, no questions yet.</p>
@@ -180,6 +180,10 @@ Every screen below answers a specific piece of the research: an abrupt support d
 <li class="screen-item">
 <img src="/images/neoos/onboard-info.webp" alt="NeoOS onboarding preference screen asking How would you like to see information, with options Visual, Simple, Spoken, and Mixed" />
 <p class="screen-caption">A single preference question decides how information gets shown across the whole OS: visual, simple, spoken, or mixed.</p>
+</li>
+<li class="screen-item">
+<img src="/images/neoos/onboard-feel.webp" alt="NeoOS onboarding preference screen asking How do you want the screen to feel, with options Calm, Clear, Fast, and Custom" />
+<p class="screen-caption">Naming an emotion is often the hardest part of regulating it, so this screen asks for a texture instead of a word: calm, clear, fast, or custom.</p>
 </li>
 <li class="screen-item">
 <img src="/images/neoos/onboard-font.webp" alt="NeoOS font selection screen offering Atkinson Hyperlegible, Lexend, and OpenDyslexic" />
