@@ -18,11 +18,11 @@ Most phones assume a steady nervous system and a working short-term memory: same
 
 The real gap opens around age 15–16. Up to that point, parents and schools hand-hold through routines, schedules, and reminders. Then, almost overnight, that support gets pulled, not faded, right as the teen is expected to self-manage everything from homework to leaving the house on time. One side ends up in task paralysis and anxiety; the other defaults to nagging and micromanaging, which undermines the independence everyone was hoping for.
 
-NeoOS is a custom mobile interface built around that transition instead of a generic "accessible phone" brief. It trades loud alarms and one-size UI for an age-fading system: quiet visual structure a teen can run without a parent standing over their shoulder, and caregiver updates that confirm without needing a follow-up call.
+NeoOS is a custom mobile interface built around that transition instead of a generic "accessible phone" brief. The working name for the reframe was bridging dependency to individuality: support that fades like training wheels coming off, not one that gets pulled like a cord. It trades loud alarms and one-size UI for an age-fading system: quiet visual structure a teen can run without a parent standing over their shoulder, and caregiver updates that confirm without needing a follow-up call.
 
 ## Research & Data
 
-The research mixed national statistics with primary visits to three psychiatry and therapy clinics in Ahmedabad, so the design would be grounded in clinical practice, not just survey data.
+The research ran an AEIOU pass, activities, environments, interactions, objects, and users, alongside national statistics and primary visits to three psychiatry and therapy clinics in Ahmedabad, so the design would be grounded in clinical practice, not just survey data.
 
 <ul class="stat-grid">
 <li class="stat-card">
@@ -43,6 +43,12 @@ The research mixed national statistics with primary visits to three psychiatry a
 </ul>
 
 Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic, and Genius Brain, three clinics in Ahmedabad, to hear how clinicians talk about this transition with families, not just how it reads in a paper.
+
+<ul class="takeaway-list">
+<li><strong>Teens quietly drop tools that feel juvenile.</strong> An assistive app that looks like it was built for a younger kid gets uninstalled within weeks, no matter how well it works.</li>
+<li><strong>Masking all day leaves nothing left for home.</strong> A teen who holds it together at school often comes home and falls apart, which parents read as defiance instead of exhaustion.</li>
+<li><strong>Reminders turn into nagging loops.</strong> A parent repeats the same instruction enough times that it stops being information and starts being noise both people tune out.</li>
+</ul>
 
 ## User Personas
 
@@ -99,7 +105,7 @@ Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic,
 
 ## Stakeholder Mapping
 
-Tap anyone in the graph to see how they connect: the teen sits at the center because nothing ships without his buy-in, and the two curved lines on the right show the one relationship that runs independent of him, parents coordinating directly with both therapists and school.
+Tap anyone in the graph to see how they connect: the teen sits at the center with absolute veto power, and the three curved lines on the right show relationships that run independent of him, parents coordinating with therapists, school, and extended family.
 
 <div class="stakeholder-graph">
 <div class="stakeholder-graph__canvas">
@@ -110,31 +116,36 @@ Tap anyone in the graph to see how they connect: the teen sits at the center bec
 <line class="graph-edge is-highlighted" data-pair="teen classmates" x1="400" y1="250" x2="210" y2="250" stroke-width="3.5"/>
 <path class="graph-edge graph-edge--arc" data-pair="parents therapists" d="M400,60 Q590,60 590,250" fill="none" stroke-width="2.5" stroke-dasharray="7 7"/>
 <path class="graph-edge graph-edge--arc" data-pair="parents teachers" d="M590,250 Q590,440 400,440" fill="none" stroke-width="2.5" stroke-dasharray="7 7"/>
+<path class="graph-edge graph-edge--arc" data-pair="parents extended-family" d="M590,250 Q650,320 620,390" fill="none" stroke-width="2" stroke-dasharray="7 7"/>
 </svg>
-<button type="button" class="graph-node graph-node--hub is-active" style="left:50%;top:50%" data-id="teen" aria-pressed="true" data-name="The teen" data-tier="Highest say" data-detail="Nothing ships if he won't use it. Every other opinion here is downstream of his.">
+<button type="button" class="graph-node graph-node--hub is-active" style="left:50%;top:50%" data-id="teen" aria-pressed="true" data-name="The teen" data-tier="Absolute veto power" data-detail="Nothing ships if he won't use it. Every other opinion here is downstream of that veto.">
 <span class="graph-node__circle" style="--node-tint:#C6DBF0"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="40" r="20"/><path d="M26 100c0-22 15-36 34-36s34 14 34 36"/></svg></span>
 <span class="graph-node__label">The teen</span>
 </button>
-<button type="button" class="graph-node" style="left:50%;top:12%" data-id="therapists" aria-pressed="false" data-name="Therapists & psychiatrists" data-tier="Medium-High" data-detail="The closest thing to an evidence-based opinion in the room.">
+<button type="button" class="graph-node" style="left:50%;top:12%" data-id="therapists" aria-pressed="false" data-name="Therapists & psychiatrists" data-tier="Clinical evaluator, referral gatekeeper" data-detail="Whether a diagnosis or referral happens at all usually runs through them first.">
 <span class="graph-node__circle" style="--node-tint:#E8D0EE"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M48 60l9 9 16-18"/></svg></span>
 <span class="graph-node__label">Therapists</span>
 </button>
-<button type="button" class="graph-node" style="left:73.75%;top:50%" data-id="parents" aria-pressed="false" data-name="Parents" data-tier="High" data-detail="They buy it, set it up, and live with whatever happens if it fails.">
+<button type="button" class="graph-node" style="left:73.75%;top:50%" data-id="parents" aria-pressed="false" data-name="Parents" data-tier="Payer, purchaser, domestic enabler" data-detail="They pay for it, set it up, and absorb the guilt and burnout if it fails. The household runs through them.">
 <span class="graph-node__circle" style="--node-tint:#FCE3B8"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="40" cy="38" r="16"/><circle cx="82" cy="40" r="14"/><path d="M14 98c0-18 12-30 28-30 10 0 18 4 23 11"/><path d="M58 98c2-16 12-26 27-26s25 10 27 26"/></svg></span>
 <span class="graph-node__label">Parents</span>
 </button>
-<button type="button" class="graph-node" style="left:50%;top:88%" data-id="teachers" aria-pressed="false" data-name="Teachers & school staff" data-tier="Medium-Low" data-detail="Enforce whatever rules the school already has, nothing more.">
+<button type="button" class="graph-node" style="left:50%;top:88%" data-id="teachers" aria-pressed="false" data-name="Teachers & school staff" data-tier="Contextual enforcer" data-detail="They apply whatever rules the school already has, nothing more.">
 <span class="graph-node__circle" style="--node-tint:#E4E4E0"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="30" width="80" height="56" rx="6"/><path d="M20 46h80"/><path d="M40 30v-8M80 30v-8"/></svg></span>
 <span class="graph-node__label">Teachers</span>
 </button>
-<button type="button" class="graph-node" style="left:26.25%;top:50%" data-id="classmates" aria-pressed="false" data-name="Classmates" data-tier="Medium" data-detail="Decide whether using the tool looks normal or makes him a target.">
+<button type="button" class="graph-node" style="left:26.25%;top:50%" data-id="classmates" aria-pressed="false" data-name="Classmates" data-tier="Indirect social filter" data-detail="They decide whether using this looks normal or makes him a target.">
 <span class="graph-node__circle" style="--node-tint:#CCE8CD"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="36" r="11"/><path d="M14 78c0-13 8-22 18-22s18 9 18 22"/><circle cx="88" cy="36" r="11"/><path d="M70 78c0-13 8-22 18-22s18 9 18 22"/><circle cx="60" cy="52" r="13"/><path d="M38 102c0-15 10-26 22-26s22 11 22 26"/></svg></span>
 <span class="graph-node__label">Classmates</span>
 </button>
+<button type="button" class="graph-node" style="left:77.5%;top:78%" data-id="extended-family" aria-pressed="false" data-name="Extended family" data-tier="Domestic social pressure" data-detail="Rarely involved directly, but the pressure they put on parents about what's 'normal' still reaches the teen secondhand.">
+<span class="graph-node__circle" style="--node-tint:#F2F4F7"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 58L60 26l40 32"/><rect x="34" y="58" width="52" height="38" rx="4"/><rect x="52" y="76" width="16" height="20"/></svg></span>
+<span class="graph-node__label">Family</span>
+</button>
 </div>
 <div class="stakeholder-graph__detail">
-<p class="stakeholder-graph__detail-name"><span class="stakeholder-graph__detail-name-text">The teen</span><span class="stakeholder-graph__detail-tier">Highest say</span></p>
-<p class="stakeholder-graph__detail-text">Nothing ships if he won't use it. Every other opinion here is downstream of his.</p>
+<p class="stakeholder-graph__detail-name"><span class="stakeholder-graph__detail-name-text">The teen</span><span class="stakeholder-graph__detail-tier">Absolute veto power</span></p>
+<p class="stakeholder-graph__detail-text">Nothing ships if he won't use it. Every other opinion here is downstream of that veto.</p>
 </div>
 </div>
 
