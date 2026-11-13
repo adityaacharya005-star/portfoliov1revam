@@ -172,22 +172,30 @@ Every screen below answers a specific piece of the research: an abrupt support d
 
 <figure class="figure--white">
 <p class="figure-eyebrow">Onboarding</p>
-<ul class="screen-grid screen-grid--2">
-<li class="screen-item">
-<img src="/images/neoos/onboard-landing.webp" alt="NeoOS onboarding landing screen reading Say hi to NeoOS, your phone built for the way you think, with a Get Started button" />
-<p class="screen-caption">The first screen just says hello and sets expectations in one line. No form, no questions yet.</p>
-</li>
+<img class="figure-img--phone" src="/images/neoos/onboard-landing.webp" alt="NeoOS onboarding landing screen reading Say hi to NeoOS, your phone built for the way you think, with a Get Started button" />
+<figcaption>The first screen just says hello and sets expectations in one line. No form, no questions yet.</figcaption>
+<ul class="screen-grid">
 <li class="screen-item">
 <img src="/images/neoos/onboard-info.webp" alt="NeoOS onboarding preference screen asking How would you like to see information, with options Visual, Simple, Spoken, and Mixed" />
-<p class="screen-caption">A single preference question decides how information gets shown across the whole OS: visual, simple, spoken, or mixed.</p>
+<p class="screen-caption">How to see information: visual, simple, spoken, or mixed.</p>
+</li>
+<li class="screen-item">
+<img src="/images/neoos/onboard-focus.webp" alt="NeoOS onboarding preference screen asking How do you like to focus, with options One Thing, Steps, Progress, and My Way" />
+<p class="screen-caption">How to break down tasks: one thing at a time, in steps, by progress, or left open-ended.</p>
 </li>
 <li class="screen-item">
 <img src="/images/neoos/onboard-feel.webp" alt="NeoOS onboarding preference screen asking How do you want the screen to feel, with options Calm, Clear, Fast, and Custom" />
-<p class="screen-caption">Naming an emotion is often the hardest part of regulating it, so this screen asks for a texture instead of a word: calm, clear, fast, or custom.</p>
+<p class="screen-caption">How the screen should feel: calm, clear, fast, or custom. Naming an emotion is often the hardest part of regulating it, so this asks for a texture instead of a word.</p>
 </li>
+</ul>
+<ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img src="/images/neoos/onboard-font.webp" alt="NeoOS font selection screen offering Atkinson Hyperlegible, Lexend, and OpenDyslexic" />
 <p class="screen-caption">The font list includes Atkinson Hyperlegible and OpenDyslexic alongside the usual options, picked for reading speed, not branding.</p>
+</li>
+<li class="screen-item">
+<img src="/images/neoos/onboard-ready.webp" alt="NeoOS loading screen reading NeoOS is ready for you" />
+<p class="screen-caption">Three questions and a font choice, and onboarding is already done. No account to set up first.</p>
 </li>
 </ul>
 </figure>
