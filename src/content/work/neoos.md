@@ -142,6 +142,14 @@ Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic,
 </li>
 </ul>
 
+## User Flow
+
+Onboarding splits into the OS layer and the two native apps, Focus and Inbox, each with its own short loop back to the home screen rather than one long path a teen has to retrace every time.
+
+<figure class="figure--flush">
+<img src="/images/neoos/user-flow.webp" alt="NeoOS user flow diagram: Installs UI leads through Onboarding (Information, Focus, Feel), font choice, and home screen setup, then branches into the Focus app loop (current task, timer, full day tasks) and the Inbox app loop (message stack, AI summary or full messages, reply), both returning to the home screen" />
+</figure>
+
 ## Final Design
 
 Every screen below answers a specific piece of the research: an abrupt support drop at 15–16, a teen who can't always name what he's feeling, and a parent who only wants confirmation without a follow-up call.
