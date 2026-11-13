@@ -202,15 +202,29 @@ Every screen below answers a specific piece of the research: an abrupt support d
 <p class="figure-eyebrow">Home Screen</p>
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
+<div class="screen-annotate">
+<p class="screen-annotate__tag">Widgets, for a glance ↓</p>
+<div class="screen-annotate__frame">
 <img src="/images/neoos/home-screen-a.webp" alt="NeoOS home screen with widgets for weather, date, music, and messages above a grid of app icons" />
-<p class="screen-caption">The default layout leads with weather, the date, music, and messages, the things most home screens open with.</p>
+<span class="screen-annotate__line" style="top:49%"></span>
+</div>
+<p class="screen-annotate__tag">↑ Apps, in thumb's reach</p>
+</div>
+<p class="screen-caption">The default pick: weather, date, music, messages.</p>
 </li>
 <li class="screen-item">
+<div class="screen-annotate">
+<p class="screen-annotate__tag">Widgets, swapped ↓</p>
+<div class="screen-annotate__frame">
 <img src="/images/neoos/home-screen-b.webp" alt="NeoOS home screen variant with a task-breakdown widget showing Morning routine steps in place of the media and calendar widgets" />
-<p class="screen-caption">Swapping to a task-first layout replaces half of those widgets with the day's routine instead, a customization option rather than a fixed setup.</p>
+<span class="screen-annotate__line" style="top:49%"></span>
+</div>
+<p class="screen-annotate__tag">↑ Apps, unchanged</p>
+</div>
+<p class="screen-caption">A task-first pick: the day's routine instead.</p>
 </li>
 </ul>
-<figcaption>Both layouts keep the same 50/50 split: widgets fill the top half for a glance, apps fill the bottom half within thumb's reach. That split came straight from a sketch note reading "apps should be near the thumb," so switching which widgets show up never means relearning where to tap.</figcaption>
+<figcaption>Same split either way. The sketch note behind it just said "apps should be near the thumb."</figcaption>
 </figure>
 
 <figure class="figure--white">
