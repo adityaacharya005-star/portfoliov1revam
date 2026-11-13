@@ -128,7 +128,7 @@ Tap anyone in the graph to see how they connect: the teen sits at the center bec
 <span class="graph-node__label">Teachers</span>
 </button>
 <button type="button" class="graph-node" style="left:26.25%;top:50%" data-id="classmates" aria-pressed="false" data-name="Classmates" data-tier="Medium" data-detail="Decide whether using the tool looks normal or makes him a target.">
-<span class="graph-node__circle" style="--node-tint:#CCE8CD"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="34" cy="42" r="13"/><circle cx="86" cy="42" r="13"/><path d="M12 92c0-16 10-26 22-26s22 10 22 26"/><path d="M64 92c0-16 10-26 22-26s22 10 22 26"/></svg></span>
+<span class="graph-node__circle" style="--node-tint:#CCE8CD"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="36" r="11"/><path d="M14 78c0-13 8-22 18-22s18 9 18 22"/><circle cx="88" cy="36" r="11"/><path d="M70 78c0-13 8-22 18-22s18 9 18 22"/><circle cx="60" cy="52" r="13"/><path d="M38 102c0-15 10-26 22-26s22 11 22 26"/></svg></span>
 <span class="graph-node__label">Classmates</span>
 </button>
 </div>
