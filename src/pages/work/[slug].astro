@@ -729,6 +729,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     max-width: 720px;
   }
 
+  /* A single centered phone screenshot reads better with its caption
+     centered under it too, instead of the caption starting flush left
+     while the screen it describes sits in the middle of the figure. */
+  .case-study__body :global(.figure-img--phone + figcaption) {
+    text-align: center;
+    margin-inline: auto;
+    max-width: 420px;
+  }
+
   /* The one screen that solves the problem the research opened with
      gets a visible marker, instead of the same even weight as every
      other screenshot. */
