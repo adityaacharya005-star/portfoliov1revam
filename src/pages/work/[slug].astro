@@ -1818,6 +1818,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     box-shadow: 0 4px 8px rgba(17, 17, 17, 0.06), 0 24px 48px rgba(17, 17, 17, 0.12);
   }
 
+  /* .persona-card > div (Qurate's rule) sets align-self: flex-start
+     and flex: 1 1 0% on every direct div child, which otherwise
+     shrinks this portrait block to its content width instead of the
+     full card width. */
+  .case-study__body :global(.persona-card--neo) > :global(div) {
+    align-self: stretch;
+    flex: none;
+  }
+
   .case-study__body :global(.persona-neo__portrait) {
     height: 240px;
     background: var(--persona-tint, color-mix(in srgb, var(--case-accent) 18%, #fff));
@@ -1830,6 +1839,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     font-size: var(--text-label);
     font-weight: 700;
     color: var(--color-text);
+    text-align: center;
     margin: 0;
   }
 
