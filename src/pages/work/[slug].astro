@@ -1489,6 +1489,57 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     margin: 0 0 var(--space-3);
   }
 
+  /* A plain color-swatch grid for a style guide that has no single
+     polished design-system export to show, built from tokens rather
+     than screenshotted off a slide. */
+  .case-study__body :global(.swatch-grid) {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .case-study__body :global(.swatch) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .case-study__body :global(.swatch-color) {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 14px;
+    border: 1px solid var(--color-border);
+  }
+
+  .case-study__body :global(.swatch-name) {
+    font-size: var(--text-caption);
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .case-study__body :global(.swatch-hex) {
+    font-size: var(--text-micro);
+    color: var(--color-muted);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .case-study__body :global(.swatch-grid) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .case-study__body :global(.swatch-grid) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   .case-study__body :global(.stat-card p:not(.stat-number):not(.stat-label)),
   .case-study__body :global(.outcome-card p) {
     font-size: var(--text-caption);
