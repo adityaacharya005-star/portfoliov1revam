@@ -1819,54 +1819,28 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__body :global(.persona-neo__portrait) {
-    position: relative;
-    height: 220px;
+    height: 240px;
     background: var(--persona-tint, color-mix(in srgb, var(--case-accent) 18%, #fff));
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-top: var(--space-6);
+    flex-direction: column;
+    padding: var(--space-5);
   }
 
   .case-study__body :global(.persona-neo__tag) {
-    position: absolute;
-    top: var(--space-5);
-    left: var(--space-5);
     font-size: var(--text-label);
     font-weight: 700;
     color: var(--color-text);
     margin: 0;
   }
 
-  .case-study__body :global(.persona-neo__dot) {
-    position: absolute;
-    top: var(--space-5);
-    right: var(--space-5);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--case-accent);
-  }
-
   .case-study__body :global(.persona-neo__figure) {
-    width: 168px;
-    height: 168px;
+    flex: 1;
+    width: 100%;
+    max-width: 190px;
+    margin: 0 auto;
     color: var(--color-text);
     opacity: 0.85;
     filter: url(#sketch-wobble);
-  }
-
-  .case-study__body :global(.persona-neo__id) {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .case-study__body :global(.persona-card--neo) :global(.persona-eyebrow) {
-    margin: 0;
-  }
-
-  .case-study__body :global(.persona-card--neo) :global(.persona-name) {
-    margin: var(--space-1) 0 0;
   }
 
   .case-study__body :global(.persona-neo__body) {
@@ -1881,12 +1855,19 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     align-items: baseline;
     justify-content: space-between;
     gap: var(--space-3);
+    margin-bottom: var(--space-1);
+  }
+
+  .case-study__body :global(.persona-card--neo) :global(.persona-name) {
+    margin: 0;
+    line-height: 1.2;
   }
 
   .case-study__body :global(.persona-neo__age) {
+    flex-shrink: 0;
     font-size: var(--text-caption);
     color: var(--color-muted);
-    margin: var(--space-1) 0 0;
+    margin: 0;
     white-space: nowrap;
   }
 
