@@ -742,6 +742,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 
   .case-study__body :global(.figure--white img) {
     background: transparent;
+    /* drop-shadow, not box-shadow: these screenshots carry real alpha
+       transparency around their rounded phone corners, so a box-shadow
+       would draw a rectangle around that invisible padding instead of
+       hugging the phone itself. Needed because a white (or near-white)
+       screen on this figure's white ground otherwise has no visible
+       edge at all. */
+    filter: drop-shadow(0 10px 24px rgba(17, 17, 17, 0.12))
+      drop-shadow(0 2px 6px rgba(17, 17, 17, 0.08));
   }
 
   /* No padding frame at all: for a diagram that's already a finished,
