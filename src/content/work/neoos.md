@@ -17,7 +17,7 @@ featured: true
 <ul class="persona-grid">
 <li class="persona-card persona-card--neo">
 <div class="persona-neo__portrait" style="--persona-tint: #C6DBF0">
-<p class="persona-neo__tag">High School Student · ADHD</p>
+<p class="persona-neo__tag">A high school student diagnosed with ADHD</p>
 <svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="76" r="38"/><path d="M62 58a38 38 0 0 1 76 0"/><rect x="48" y="66" width="20" height="30" rx="10"/><rect x="132" y="66" width="20" height="30" rx="10"/><path d="M88 108v10M112 108v10"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/></svg>
 </div>
 <div class="persona-neo__body">
