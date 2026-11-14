@@ -169,14 +169,6 @@ A curriculum on paper can't guide a student on a Tuesday morning. CareerBridge i
 
 The first screen after login asks eight situational questions: how a student reacts to failure, what kind of workspace they picture themselves in, which role they'd claim first on a team project. Subject-based onboarding just re-asks a question the student already can't answer; watching what they actually do answers it instead.
 
-<figure>
-<video src="/videos/careerbridge-demo.mp4" autoplay loop muted playsinline data-autoplay-video aria-label="CareerBridge app walkthrough: onboarding, behavioral calibration, the student dashboard, curriculum tracking, and the parent trust tracker">
-<source src="/videos/careerbridge-demo.webm" type="video/webm" />
-<source src="/videos/careerbridge-demo.mp4" type="video/mp4" />
-</video>
-<figcaption>A quick run through CareerBridge end to end before the screen-by-screen breakdown below.</figcaption>
-</figure>
-
 <figure class="figure--white">
 <ul class="screen-grid">
 <li class="screen-item">
