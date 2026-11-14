@@ -72,7 +72,9 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
           {sections.map((s) => (
             <li>
               <a href={`#${s.slug}`} data-section-link={s.slug}>
-                <span class="case-study__nav-bullet" aria-hidden="true"></span>
+                <span class="case-study__nav-bullet" aria-hidden="true">
+                  <svg viewBox="0 0 24 10" fill="none"><path d="M3 5h18" /></svg>
+                </span>
                 <span class="case-study__nav-text">{s.text}</span>
               </a>
             </li>
@@ -144,6 +146,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
           <filter id="brush-wobble" x="-25%" y="-25%" width="150%" height="150%">
             <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="4" result="noise" />
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.5" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+          <!-- Same wobble as sketch-wobble, but with a fixed userSpace
+               region instead of a percentage one: a percentage region is
+               sized off the filtered element's own bounding box, which
+               for a short 18x2 TOC dash is too small to contain the
+               displacement before it gets clipped away to nothing. -->
+          <filter id="sketch-wobble-small" x="-10" y="-14" width="44" height="38" filterUnits="userSpaceOnUse">
+            <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="7" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
           </filter>
         </defs>
       </svg>
@@ -551,20 +562,39 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__nav-bullet {
-    width: 8px;
-    height: 8px;
+    display: flex;
+    align-items: center;
+    width: 16px;
+    height: 10px;
     flex-shrink: 0;
-    border-radius: 50%;
-    background: transparent;
-    border: 1.5px solid var(--color-border);
-    transition: background var(--duration-fast) var(--ease-standard),
-      border-color var(--duration-fast) var(--ease-standard),
-      box-shadow var(--duration-fast) var(--ease-standard),
+  }
+
+  .case-study__nav-bullet svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  /* A short hand-inked dash, not a dot: the same loose-line vocabulary
+     as the case's own card-icon strokes (sketch-wobble filter, or the
+     bolder unwobbled stroke under the polished icon style), so the
+     "you are here" mark reads as part of the illustration system
+     instead of a generic UI indicator. */
+  .case-study__nav-bullet path {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-width: 2;
+    stroke-linecap: round;
+    transform-origin: left center;
+    transition: stroke var(--duration-fast) var(--ease-standard),
+      stroke-width var(--duration-fast) var(--ease-standard),
+      opacity var(--duration-fast) var(--ease-standard),
       transform var(--duration-fast) var(--ease-standard);
   }
 
-  .case-study__nav a:hover .case-study__nav-bullet {
-    border-color: var(--case-accent);
+  .case-study__nav a:hover .case-study__nav-bullet path {
+    stroke: var(--case-accent);
+    opacity: 0.7;
   }
 
   .case-study__nav-text {
@@ -594,15 +624,20 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     color: var(--case-accent);
   }
 
-  .case-study__nav a.is-active .case-study__nav-bullet {
-    background: var(--case-accent);
-    border-color: var(--case-accent);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--case-accent) 20%, transparent);
-    transform: scale(1.05);
+  .case-study__nav a.is-active .case-study__nav-bullet path {
+    stroke: var(--case-accent);
+    stroke-width: 3;
+    transform: scaleX(1.15);
+    filter: url(#sketch-wobble-small);
+  }
+
+  .case-study[data-icon-style='polished'] .case-study__nav a.is-active .case-study__nav-bullet path {
+    stroke-width: 3.5;
+    filter: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .case-study__nav-bullet {
+    .case-study__nav-bullet path {
       transition: none;
     }
   }
