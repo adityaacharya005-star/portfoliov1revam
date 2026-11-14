@@ -934,8 +934,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   /* A single phone screen, left at natural size instead of
      stretched to fill the whole column like a desktop screenshot. */
   .case-study__body :global(.figure-img--phone) {
-    width: auto;
-    max-width: 260px;
+    /* width: auto + max-width here left the browser unable to resolve
+       a definite width for a lazy, not-yet-loaded image with only an
+       aspect-ratio (from its width/height attributes) to go on inside
+       a flex column, computing 0x0 until the image actually loaded and
+       supplied its own intrinsic size — a real layout jump as it came
+       into view. min() gives a definite width up front, so the
+       aspect-ratio can size the box correctly before the image loads. */
+    width: min(260px, 100%);
     margin-inline: auto;
     background: transparent;
   }

@@ -132,7 +132,7 @@ The three structural pillars below are ordered by how much resistance each one m
 Subjects taught kids that knowledge lives in sealed boxes, Science over here, Arts over there. The redesign replaces those boxes with four zones organized by intent instead of subject: a quiet Reference vault, a collaborative Explorer zone, a hands-on Creation zone, and a Leisure corner that treats reading for fun as seriously as reading for grades. Color-coded floor paths make the whole room self-navigating, down to a third grader.
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/conversations/library-floorplan.webp" alt="Floor plan of the redesigned school library showing the Blue, Yellow, Green, and Purple intent-based zones with wayfinding paths" />
+<img loading="lazy" decoding="async" src="/images/conversations/library-floorplan.webp" width="1920" height="1390" alt="Floor plan of the redesigned school library showing the Blue, Yellow, Green, and Purple intent-based zones with wayfinding paths" />
 <figcaption>Connected by a single color-coded wayfinding path from the entrance, built and in use at the school.</figcaption>
 </figure>
 
@@ -180,57 +180,57 @@ The first screen after login asks eight situational questions: how a student rea
 <figure class="figure--white">
 <ul class="screen-grid">
 <li class="screen-item">
-<img loading="lazy" decoding="async" src="/images/conversations/app-welcome.webp" alt="CareerBridge welcome screen with the value proposition and a get-started button" />
+<img loading="lazy" decoding="async" src="/images/conversations/app-welcome.webp" width="508" height="1020" alt="CareerBridge welcome screen with the value proposition and a get-started button" />
 <p class="screen-caption">The app splits into two logins right away, before either side even sees a single screen.</p>
 </li>
 <li class="screen-item">
-<img loading="lazy" decoding="async" src="/images/conversations/app-login-student.webp" alt="CareerBridge student login screen, labeled Let's Start Exploring" />
+<img loading="lazy" decoding="async" src="/images/conversations/app-login-student.webp" width="504" height="1003" alt="CareerBridge student login screen, labeled Let's Start Exploring" />
 <p class="screen-caption">This path frames the next 90 days as discovery, not a pass-or-fail test.</p>
 </li>
 <li class="screen-item">
-<img loading="lazy" decoding="async" src="/images/conversations/app-login-parent.webp" alt="CareerBridge parent login screen, labeled Let's Start Assessing" />
+<img loading="lazy" decoding="async" src="/images/conversations/app-login-parent.webp" width="510" height="1002" alt="CareerBridge parent login screen, labeled Let's Start Assessing" />
 <p class="screen-caption">The verb changes to Assessing on purpose. It's built to inform a parent, not hand them control.</p>
 </li>
 </ul>
 </figure>
 
 <figure class="figure--white">
-<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/conversations/app-pathways.webp" alt="CareerBridge pathway results screen showing four broad industry pathways: Product Engineering & Design, Digital Systems & UX Strategy, Technology & Interactive Innovation, and Strategic Service Design" />
+<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/conversations/app-pathways.webp" width="508" height="1019" alt="CareerBridge pathway results screen showing four broad industry pathways: Product Engineering & Design, Digital Systems & UX Strategy, Technology & Interactive Innovation, and Strategic Service Design" />
 <figcaption>The eight questions produce broad industry pathways, a flexible starting point for the 90 days that the student can still revise.</figcaption>
 </figure>
 
 <figure class="figure--white">
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
-<img loading="lazy" decoding="async" src="/images/conversations/app-today-focus.webp" alt="CareerBridge Today's Focus dashboard with the day's tasks" />
+<img loading="lazy" decoding="async" src="/images/conversations/app-today-focus.webp" width="522" height="1020" alt="CareerBridge Today's Focus dashboard with the day's tasks" />
 <p class="screen-caption">Today's Focus only answers one question: what to do right now. The whole 90-day plan stays out of the way.</p>
 </li>
 <li class="screen-item">
-<img loading="lazy" decoding="async" src="/images/conversations/app-task-detail.webp" alt="CareerBridge task detail screen for a Visualizing Products task from NID Ahmedabad" />
+<img loading="lazy" decoding="async" src="/images/conversations/app-task-detail.webp" width="522" height="1020" alt="CareerBridge task detail screen for a Visualizing Products task from NID Ahmedabad" />
 <p class="screen-caption">Naming NID Ahmedabad on the task makes it feel like real coursework, not an app exercise.</p>
 </li>
 </ul>
 </figure>
 
 <figure class="figure--white">
-<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/conversations/app-curriculum.webp" alt="CareerBridge curriculum tracking screen showing completed and upcoming weeks with credit values per task" />
+<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/conversations/app-curriculum.webp" width="519" height="1020" alt="CareerBridge curriculum tracking screen showing completed and upcoming weeks with credit values per task" />
 <figcaption>Finished weeks collapse out of view, so only what's left stays on screen. Each task carries a credit value, so finishing one feels like progress banked.</figcaption>
 </figure>
 
 <figure class="figure--white">
-<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/conversations/app-progress.webp" alt="CareerBridge student progress screen showing weekly engagement hours, total ABC credits, average mentor rating, and a portfolio link" />
+<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/conversations/app-progress.webp" width="525" height="1019" alt="CareerBridge student progress screen showing weekly engagement hours, total ABC credits, average mentor rating, and a portfolio link" />
 <figcaption>Nothing here was filled in by hand. Hours, credits, ratings, even the portfolio, all collect themselves as a byproduct of doing the work.</figcaption>
 </figure>
 
 <figure class="figure--white">
-<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/conversations/app-parent.webp" alt="CareerBridge parent dashboard showing verified ABC credits, project consistency, mentor sessions, and program investment details" />
+<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/conversations/app-parent.webp" width="532" height="1020" alt="CareerBridge parent dashboard showing verified ABC credits, project consistency, mentor sessions, and program investment details" />
 <figcaption>Parents see the same data as verified credits, a consistency score, and an engagement level. That's a number they can read, instead of an anxious check-in call.</figcaption>
 </figure>
 
 ## Style Guide
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/conversations/careerbridge-design-system.webp" alt="CareerBridge design system: color palette, typography scale, and button states across student, parent, primary, secondary, and brand variants" />
+<img loading="lazy" decoding="async" src="/images/conversations/careerbridge-design-system.webp" width="925" height="2000" alt="CareerBridge design system: color palette, typography scale, and button states across student, parent, primary, secondary, and brand variants" />
 </figure>
 
 ## SETU Curriculum
@@ -252,7 +252,7 @@ In India, a gap year usually means one thing: dropping a year to retake an exam.
 <div class="field-validation-row">
 <p>The proposal went to Sri Prakash Vidyaniketan's administration before it went anywhere else, specifically to the Vice Principal, since a system that adds work for already-stretched teachers doesn't survive contact with a real school.</p>
 <div class="testimonial-card">
-<img loading="lazy" decoding="async" class="testimonial-photo" src="/images/conversations/sri-lakshmi.webp" alt="Sri Lakshmi, Vice Principal at Sri Prakash Vidyaniketan" />
+<img loading="lazy" decoding="async" class="testimonial-photo" src="/images/conversations/sri-lakshmi.webp" width="688" height="688" alt="Sri Lakshmi, Vice Principal at Sri Prakash Vidyaniketan" />
 <h3 class="testimonial-name">Sri Lakshmi</h3>
 <p class="testimonial-role">Vice Principal · Sri Prakash Vidyaniketan</p>
 <p class="testimonial-quote">"By this it will be very helpful for the kids... from the school's side, we feel content seeing the children happy with their choices and this helps them focus more for their preparation. Parents will also be happy seeing kids settled in their chosen direction."</p>

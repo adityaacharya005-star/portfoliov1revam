@@ -53,7 +53,7 @@ Design the backend tool Qurate employees use to review, manage, and approve host
 
 <ul class="persona-grid">
 <li class="persona-card">
-<img loading="lazy" decoding="async" class="persona-portrait" src="/images/qurate/persona-jitendra.webp" alt="Illustrated portrait representing Jitendra Gaur" />
+<img loading="lazy" decoding="async" class="persona-portrait" src="/images/qurate/persona-jitendra.webp" width="399" height="1000" alt="Illustrated portrait representing Jitendra Gaur" />
 <div>
 <p class="persona-eyebrow">Employee</p>
 <p class="persona-name">Jitendra Gaur</p>
@@ -63,7 +63,7 @@ Design the backend tool Qurate employees use to review, manage, and approve host
 </div>
 </li>
 <li class="persona-card">
-<img loading="lazy" decoding="async" class="persona-portrait" src="/images/qurate/persona-ritesh.webp" alt="Illustrated portrait representing Ritesh Pujara" />
+<img loading="lazy" decoding="async" class="persona-portrait" src="/images/qurate/persona-ritesh.webp" width="389" height="1000" alt="Illustrated portrait representing Ritesh Pujara" />
 <div>
 <p class="persona-eyebrow">Experience Host</p>
 <p class="persona-name">Ritesh Pujara</p>
@@ -81,7 +81,7 @@ Jitendra and Ritesh pull in opposite directions: a thorough review slows Ritesh 
 A single merged workspace was the first sketch. It fell apart once revision requests needed different handling from brand-new submissions. Splitting into three, an operations overview, the review queue, and a focused evaluation view, let Jitendra's quick status checks and his slow one-at-a-time evaluations stop competing for the same screen.
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/qurate/ia-diagram.webp" alt="Information architecture diagram: Qurate Experience Dashboard splits into Operations Dashboard, Review Queue, and Split Evaluation Workspace, each broken into their constituent panels" />
+<img loading="lazy" decoding="async" src="/images/qurate/ia-diagram.webp" width="2400" height="1660" alt="Information architecture diagram: Qurate Experience Dashboard splits into Operations Dashboard, Review Queue, and Split Evaluation Workspace, each broken into their constituent panels" />
 </figure>
 
 ## User Flow
@@ -89,7 +89,7 @@ A single merged workspace was the first sketch. It fell apart once revision requ
 Every submission runs through the same policy check before a decision locks in. Consistency matters more here than speed: two reviewers landing on the same listing need to reach the same call, not a different one depending on who's faster that day.
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/qurate/user-flow.webp" alt="User flow diagram from opening the dashboard through inspecting an experience to an approve, reject, or request-revision outcome" />
+<img loading="lazy" decoding="async" src="/images/qurate/user-flow.webp" width="2400" height="1519" alt="User flow diagram from opening the dashboard through inspecting an experience to an approve, reject, or request-revision outcome" />
 </figure>
 
 ## Exploration & Sketches
@@ -97,12 +97,12 @@ Every submission runs through the same policy check before a decision locks in. 
 Before committing to the three-panel split, each panel got its own round of rough exploration: how dense the dashboard could get before it turned into noise, how a reviewer actually wants a queue sorted, whether the calendar needed to exist as its own view at all.
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/qurate/sketch-iterations.webp" alt="Hand-drawn sketch iterations exploring the dashboard, review queue, and calendar layouts" />
+<img loading="lazy" decoding="async" src="/images/qurate/sketch-iterations.webp" width="2400" height="1843" alt="Hand-drawn sketch iterations exploring the dashboard, review queue, and calendar layouts" />
 <figcaption>Early passes leaned toward cramming status, deadline, and actions into every card. Most of that got cut once it was clear a reviewer only needs three things at a glance: what's new, what's overdue, what's already decided.</figcaption>
 </figure>
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/qurate/lofi-screens.webp" alt="Grid of low-fidelity wireframe screens for the dashboard, review queue, and operations calendar" />
+<img loading="lazy" decoding="async" src="/images/qurate/lofi-screens.webp" width="2400" height="1761" alt="Grid of low-fidelity wireframe screens for the dashboard, review queue, and operations calendar" />
 <figcaption>This is where the SLA countdown earned its place on the queue table, once sorting by submission date kept burying the listings actually at risk of breaching it.</figcaption>
 </figure>
 
@@ -111,18 +111,18 @@ Before committing to the three-panel split, each panel got its own round of roug
 Three key interfaces from the finished dashboard. Split Evaluation is the one that mattered, built to go straight at the 70% and 35% from the research. The dashboard and queue exist to feed reviewers into it fast.
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/qurate/final-dashboard.webp" alt="Final Dashboard screen: summary cards, submission review queue, operations calendar, bookings and statistics, and host activity" />
+<img loading="lazy" decoding="async" src="/images/qurate/final-dashboard.webp" width="2000" height="1422" alt="Final Dashboard screen: summary cards, submission review queue, operations calendar, bookings and statistics, and host activity" />
 <figcaption>The dashboard only shows what's overdue, what's new, and what's already decided, everything a reviewer needs for the first two minutes of the day.</figcaption>
 </figure>
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/qurate/final-review-queue.webp" alt="Final Review Queue screen: status-filtered tabs, search and sort toolbar, and a queue table with SLA countdown timers" />
+<img loading="lazy" decoding="async" src="/images/qurate/final-review-queue.webp" width="2000" height="1422" alt="Final Review Queue screen: status-filtered tabs, search and sort toolbar, and a queue table with SLA countdown timers" />
 <figcaption>Review Queue, sorted by deadline by default: a missed listing breaches SLA faster than a bad one gets caught.</figcaption>
 </figure>
 
 <figure class="figure--feature">
 <p class="figure-eyebrow">The core screen</p>
-<img loading="lazy" decoding="async" src="/images/qurate/final-split-evaluation.webp" alt="Final Split Evaluation screen: media gallery and itinerary on the left, a 5-step compliance checklist and auto-generated feedback on the right" />
+<img loading="lazy" decoding="async" src="/images/qurate/final-split-evaluation.webp" width="2000" height="1421" alt="Final Split Evaluation screen: media gallery and itinerary on the left, a 5-step compliance checklist and auto-generated feedback on the right" />
 <figcaption>Split Evaluation keeps every asset and the checklist that judges it in one viewport. No PDF viewer, no switching tabs to verify a credential.</figcaption>
 </figure>
 
@@ -132,17 +132,17 @@ Three other layouts for that same screen, each rejected for the same reason: the
 
 <ul class="compare-grid">
 <li class="compare-card">
-<img loading="lazy" decoding="async" src="/images/qurate/alt-stacked-full.webp" alt="Rejected layout: gallery, info, and itinerary stacked full-width above a separate quality checklist panel" />
+<img loading="lazy" decoding="async" src="/images/qurate/alt-stacked-full.webp" width="1600" height="1243" alt="Rejected layout: gallery, info, and itinerary stacked full-width above a separate quality checklist panel" />
 <p class="compare-label">Stacked, checklist below</p>
 <p>Gallery and itinerary filled the screen before the checklist even started. Flagging an image meant sending your eye all the way back up to find it again.</p>
 </li>
 <li class="compare-card">
-<img loading="lazy" decoding="async" src="/images/qurate/alt-checklist-first.webp" alt="Rejected layout: quality checklist on the left, experience overview and gallery on the right" />
+<img loading="lazy" decoding="async" src="/images/qurate/alt-checklist-first.webp" width="1600" height="1243" alt="Rejected layout: quality checklist on the left, experience overview and gallery on the right" />
 <p class="compare-label">Checklist first</p>
 <p>Closer to the final split, but leading with the checklist trains a reviewer to judge before they've looked at what they're judging.</p>
 </li>
 <li class="compare-card">
-<img loading="lazy" decoding="async" src="/images/qurate/alt-stacked-feedback.webp" alt="Rejected layout: gallery and info stacked above a checklist with a feedback panel beside each flagged item" />
+<img loading="lazy" decoding="async" src="/images/qurate/alt-stacked-feedback.webp" width="1600" height="1243" alt="Rejected layout: gallery and info stacked above a checklist with a feedback panel beside each flagged item" />
 <p class="compare-label">Stacked, feedback beside checklist</p>
 <p>Pairs the flagged item with its feedback box, but that pair still sits far enough from the photo that triggered it that your eye has to travel to connect them.</p>
 </li>
@@ -151,7 +151,7 @@ Three other layouts for that same screen, each rejected for the same reason: the
 ## Style Guide
 
 <figure>
-<img loading="lazy" decoding="async" src="/images/qurate/final-style-guide.webp" alt="Qurate style guide: color palette, typography scale, action button states, and status badge colors" />
+<img loading="lazy" decoding="async" src="/images/qurate/final-style-guide.webp" width="1680" height="1680" alt="Qurate style guide: color palette, typography scale, action button states, and status badge colors" />
 </figure>
 
 ## Retrospective
