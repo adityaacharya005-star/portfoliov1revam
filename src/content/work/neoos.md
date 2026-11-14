@@ -194,15 +194,15 @@ Every screen below answers a specific piece of the research: an abrupt support d
 <ul class="screen-grid">
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/neoos/onboard-info.webp" data-light="/images/neoos/onboard-info.webp" data-dark="/images/neoos/onboard-info-dark.webp" alt="NeoOS onboarding preference screen asking How would you like to see information, with options Visual, Simple, Spoken, and Mixed" />
-<p class="screen-caption">How to see information: visual, simple, spoken, or mixed.</p>
+<p class="screen-caption">Lets each teen pick how information lands easiest for them.</p>
 </li>
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/neoos/onboard-focus.webp" data-light="/images/neoos/onboard-focus.webp" data-dark="/images/neoos/onboard-focus-dark.webp" alt="NeoOS onboarding preference screen asking How do you like to focus, with options One Thing, Steps, Progress, and My Way" />
-<p class="screen-caption">How to break down tasks: one thing at a time, in steps, by progress, or left open-ended.</p>
+<p class="screen-caption">Breaks tasks down the way that works for that teen, not one default method.</p>
 </li>
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/neoos/onboard-feel.webp" data-light="/images/neoos/onboard-feel.webp" data-dark="/images/neoos/onboard-feel-dark.webp" alt="NeoOS onboarding preference screen asking How do you want the screen to feel, with options Calm, Clear, Fast, and Custom" />
-<p class="screen-caption">How the screen should feel: calm, clear, fast, or custom. Naming an emotion is often the hardest part of regulating it, so this asks for a texture instead of a word.</p>
+<p class="screen-caption">Naming an emotion is hard, so this asks for a texture instead.</p>
 </li>
 </ul>
 <ul class="screen-grid screen-grid--2">
