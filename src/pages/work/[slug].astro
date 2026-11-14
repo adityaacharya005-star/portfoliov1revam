@@ -271,6 +271,74 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     win.__revealObserver = revealObserver;
   }
 
+  // Write-on: the stat/outcome card icons (the project's own hand-drawn
+  // vocabulary, not the functional TOC dash or toggle icons) trace
+  // themselves in once as each card scrolls into view, instead of just
+  // appearing. Stroke-only shapes animate via stroke-dasharray; a shape
+  // that sets its own fill (a solid dot, a filled accent) can't be
+  // "drawn" that way since dasharray only affects the stroke, so it
+  // fades in instead, timed to land just as the stroke finishes.
+  const winIcons = window as unknown as { __iconDrawObserver?: IntersectionObserver };
+  winIcons.__iconDrawObserver?.disconnect();
+
+  const drawIcons = document.querySelectorAll<SVGSVGElement>(
+    '.stat-card > .card-icon, .outcome-card > .card-icon',
+  );
+
+  if (!prefersReducedMotion && 'IntersectionObserver' in window && drawIcons.length > 0) {
+    const STROKE_MS = 650;
+    const FILL_DELAY_MS = 480;
+
+    drawIcons.forEach((svg) => {
+      const shapes = Array.from(svg.querySelectorAll<SVGGeometryElement>('path, circle, rect, line, polyline, polygon'));
+      shapes.forEach((shape) => {
+        const fill = shape.getAttribute('fill');
+        if (fill && fill !== 'none') {
+          shape.style.opacity = '0';
+          shape.style.transition = `opacity 280ms ${FILL_DELAY_MS}ms var(--ease-standard)`;
+        } else {
+          const length = shape.getTotalLength();
+          shape.style.strokeDasharray = `${length}`;
+          shape.style.strokeDashoffset = `${length}`;
+          shape.style.transition = `stroke-dashoffset ${STROKE_MS}ms var(--ease-entrance)`;
+        }
+      });
+    });
+
+    const iconDrawObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const svg = entry.target as SVGSVGElement;
+          requestAnimationFrame(() => {
+            svg.querySelectorAll<SVGGeometryElement>('path, circle, rect, line, polyline, polygon').forEach((shape) => {
+              const fill = shape.getAttribute('fill');
+              if (fill && fill !== 'none') {
+                shape.style.opacity = '1';
+              } else {
+                shape.style.strokeDashoffset = '0';
+              }
+            });
+          });
+          iconDrawObserver.unobserve(svg);
+        });
+      },
+      { threshold: 0.4 },
+    );
+    drawIcons.forEach((svg) => iconDrawObserver.observe(svg));
+    winIcons.__iconDrawObserver = iconDrawObserver;
+  } else {
+    // Reduced motion (or no IntersectionObserver): make sure nothing is
+    // left pre-hidden by a previous view-transition navigation's setup.
+    drawIcons.forEach((svg) => {
+      svg.querySelectorAll<SVGElement>('path, circle, rect, line, polyline, polygon').forEach((shape) => {
+        shape.style.opacity = '';
+        shape.style.strokeDasharray = '';
+        shape.style.strokeDashoffset = '';
+      });
+    });
+  }
+
   // Body-content demo videos (not the hero/work-card ones, which handle
   // this themselves): skip autoplay entirely under reduced motion.
   if (prefersReducedMotion) {
