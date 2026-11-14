@@ -705,12 +705,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     letter-spacing: 0.06em;
     color: var(--color-text);
     scroll-margin-top: var(--space-8);
+    text-wrap: balance;
   }
 
   .case-study__body :global(p) {
     max-width: 720px;
     font-size: var(--text-small);
     line-height: 1.7;
+    text-wrap: pretty;
     color: var(--color-muted);
   }
 
@@ -727,6 +729,15 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     width: 100%;
     height: auto;
     background: var(--color-placeholder);
+  }
+
+  /* A hairline edge for flat diagrams/screenshots sitting directly on
+     the card background, where there's otherwise no line between the
+     image and its surroundings. Skipped on .figure--white (phone
+     screenshots already get a drop-shadow, and a box-shadow ring would
+     hug their transparent corner padding instead of the phone itself). */
+  .case-study__body :global(figure:not(.figure--white) img) {
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.1);
   }
 
   /* Framed like a card rather than bleeding edge-to-edge: padded,
@@ -940,11 +951,16 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     color: var(--color-text);
     font-size: 1.125rem;
     cursor: pointer;
-    transition: background var(--duration-fast) var(--ease-standard);
+    transition: background var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
   }
 
   .case-study__body :global(.pageflip__btn:hover:not(:disabled)) {
     background: var(--color-card-warm);
+  }
+
+  .case-study__body :global(.pageflip__btn:active:not(:disabled)) {
+    transform: scale(0.96);
   }
 
   .case-study__body :global(.pageflip__btn:disabled) {
@@ -1077,6 +1093,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     font-family: var(--font-serif);
     font-size: var(--text-h3);
     margin: 0 0 var(--space-3);
+    text-wrap: balance;
   }
 
   .case-study__body :global(.zone-card p) {
@@ -1107,7 +1124,9 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.darkmode-toggle) {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-2);
+    min-height: 40px;
     font: inherit;
     font-size: var(--text-caption);
     font-weight: 600;
@@ -1117,11 +1136,16 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     border-radius: 999px;
     padding: var(--space-2) var(--space-4);
     cursor: pointer;
-    transition: background var(--duration-fast) var(--ease-standard);
+    transition: background var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
   }
 
   .case-study__body :global(.darkmode-toggle:hover) {
     background: color-mix(in srgb, var(--case-accent) 20%, transparent);
+  }
+
+  .case-study__body :global(.darkmode-toggle:active) {
+    transform: scale(0.96);
   }
 
   .case-study__body :global(.darkmode-toggle__icon) {
@@ -1751,6 +1775,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
        same baseline across a row of cards. */
     min-height: 2.6em;
     margin: 0 0 var(--space-3);
+    text-wrap: balance;
   }
 
   .case-study__body :global(.persona-card) {
@@ -2313,6 +2338,10 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.graph-node:hover) :global(.graph-node__circle),
   .case-study__body :global(.graph-node:focus-visible) :global(.graph-node__circle) {
     transform: scale(1.08);
+  }
+
+  .case-study__body :global(.graph-node:active) :global(.graph-node__circle) {
+    transform: scale(0.96);
   }
 
   .case-study__body :global(.graph-node.is-active) :global(.graph-node__circle) {
