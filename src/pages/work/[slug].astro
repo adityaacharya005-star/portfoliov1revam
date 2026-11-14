@@ -41,6 +41,7 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
       <a href="/work" class="case-study__breadcrumb">
         <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6" /></svg> Work <span class="case-study__breadcrumb-sep">/</span>
         <span class="case-study__breadcrumb-title">{data.title}</span>
+        <svg class="case-study__breadcrumb-underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath('breadcrumb-underline')} /></svg>
       </a>
       <nav>
         <ul class="case-study__nav" data-section-nav>
@@ -61,6 +62,7 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
       </nav>
       <a href={`/work/${next.slug}`} class="case-study__next">
         Next <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        <svg class="case-study__next-underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath('next-underline')} /></svg>
       </a>
     </aside>
 
@@ -542,21 +544,35 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
     padding-bottom: 2px;
   }
 
-  .case-study__breadcrumb::after {
-    content: '';
+  /* The hand-drawn squiggle, same as the TOC dash's underline and the
+     work-card title underline — this was the last plain straight
+     ::after line left on the page besides .case-study__next below. */
+  .case-study__breadcrumb-underline {
     position: absolute;
     left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--duration-fast) var(--ease-standard);
+    bottom: -1px;
+    width: 100%;
+    height: 7px;
+    overflow: visible;
+    pointer-events: none;
   }
 
-  .case-study__breadcrumb:hover::after,
-  .case-study__breadcrumb:focus-visible::after {
+  .case-study__breadcrumb-underline path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    filter: url(#sketch-wobble-small);
+    opacity: 0;
+    transform: scaleX(0.9);
+    transform-origin: left center;
+    transition: opacity var(--duration-fast) var(--ease-standard),
+      transform 260ms var(--ease-entrance);
+  }
+
+  .case-study__breadcrumb:hover .case-study__breadcrumb-underline path,
+  .case-study__breadcrumb:focus-visible .case-study__breadcrumb-underline path {
+    opacity: 0.85;
     transform: scaleX(1);
   }
 
@@ -573,6 +589,20 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
 
   .nav-arrow--diagonal {
     vertical-align: -1px;
+  }
+
+  /* Matches the work-card arrow: a perfectly clean chevron next to a
+     wobbly hand-drawn underline would be the same mismatch we fixed
+     there, now that this link's underline is hand-drawn too. */
+  .case-study__breadcrumb .nav-arrow path,
+  .case-study__next .nav-arrow path {
+    filter: url(#sketch-wobble-small);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case-study__breadcrumb-underline path {
+      transition: none;
+    }
   }
 
   .case-study__breadcrumb-title {
@@ -740,22 +770,39 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
     padding-bottom: 2px;
   }
 
-  .case-study__next::after {
-    content: '';
+  .case-study__next-underline {
     position: absolute;
     left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--duration-fast) var(--ease-standard);
+    bottom: -1px;
+    width: 100%;
+    height: 7px;
+    overflow: visible;
+    pointer-events: none;
   }
 
-  .case-study__next:hover::after,
-  .case-study__next:focus-visible::after {
+  .case-study__next-underline path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    filter: url(#sketch-wobble-small);
+    opacity: 0;
+    transform: scaleX(0.9);
+    transform-origin: left center;
+    transition: opacity var(--duration-fast) var(--ease-standard),
+      transform 260ms var(--ease-entrance);
+  }
+
+  .case-study__next:hover .case-study__next-underline path,
+  .case-study__next:focus-visible .case-study__next-underline path {
+    opacity: 0.85;
     transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case-study__next-underline path {
+      transition: none;
+    }
   }
 
   .case-study__cover {
@@ -796,11 +843,6 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
     .case-study__cover,
     .case-study__intro {
       animation: none;
-    }
-
-    .case-study__breadcrumb::after,
-    .case-study__next::after {
-      transition: none;
     }
   }
 
