@@ -213,7 +213,7 @@ Priya wants fast, pointed critique to get job-ready. Aniket is too afraid of jud
 Onboarding funnels into five primary destinations, each one answering a single question: what's here, who's here, is it safe to post, what happened, and who am I on this app.
 
 <figure class="figure--flush">
-<img src="/images/iterate/information-architecture.webp" alt="Information architecture diagram: onboarding into Welcome/Login and Create Account, feeding the Iterate app's five primary destinations, Home, Search, Create Project, Activity, and Profile, each broken into its own sub-sections" />
+<img loading="lazy" decoding="async" src="/images/iterate/information-architecture.webp" alt="Information architecture diagram: onboarding into Welcome/Login and Create Account, feeding the Iterate app's five primary destinations, Home, Search, Create Project, Activity, and Profile, each broken into its own sub-sections" />
 </figure>
 
 ## User Flow
@@ -226,13 +226,13 @@ Mapped against Aniket, the harder case: if the product works for someone this af
 </ul>
 
 <figure>
-<img src="/images/iterate/journey-map.webp" alt="User journey map for Aniket Joshi across four stages, Onboarding, First Post, Engagement, and Retention & Advocacy, mapping touchpoints, actions, pain points, emotions, and opportunities, with an emotional curve rising from cautious to anxious to confident" />
+<img loading="lazy" decoding="async" src="/images/iterate/journey-map.webp" alt="User journey map for Aniket Joshi across four stages, Onboarding, First Post, Engagement, and Retention & Advocacy, mapping touchpoints, actions, pain points, emotions, and opportunities, with an emotional curve rising from cautious to anxious to confident" />
 </figure>
 
 That journey was then checked against the exit: a student who opens the app, finds nothing reassuring in the feed, and quits before ever posting. The whole product is designed against that one failure case.
 
 <figure class="figure--flush">
-<img src="/images/iterate/user-flow.webp" alt="User flow diagram: Opens Application leads to Log In or Sign Up, then discipline selection, Home Page, projects, events, lists, and a project search, down into the project itself, then across profile, friends and notifications, activity, posting, and similar projects, ending at Quits the Application" />
+<img loading="lazy" decoding="async" src="/images/iterate/user-flow.webp" alt="User flow diagram: Opens Application leads to Log In or Sign Up, then discipline selection, Home Page, projects, events, lists, and a project search, down into the project itself, then across profile, friends and notifications, activity, posting, and similar projects, ending at Quits the Application" />
 </figure>
 
 ## Exploration & Sketches
@@ -241,12 +241,12 @@ The first sketch pass mapped every screen the app could plausibly need: profile 
 
 <div class="figure-row">
 <figure>
-<img src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" />
+<img loading="lazy" decoding="async" src="/images/iterate/sketch.webp" alt="Hand-drawn sketch iterations exploring the Iterate app's core screens and navigation flow" />
 <figcaption>Sketch Iterations</figcaption>
 </figure>
 
 <figure>
-<img src="/images/iterate/wireframe-iterations.webp" alt="Figma board showing dozens of iterative wireframe screens across onboarding, feed, search, posting, and profile flows" />
+<img loading="lazy" decoding="async" src="/images/iterate/wireframe-iterations.webp" alt="Figma board showing dozens of iterative wireframe screens across onboarding, feed, search, posting, and profile flows" />
 <figcaption>Wireframe Iterations</figcaption>
 </figure>
 </div>
@@ -267,15 +267,15 @@ The screens across onboarding and the core flow, each one answering a specific f
 <p class="figure-eyebrow">Onboarding</p>
 <ul class="screen-grid">
 <li class="screen-item">
-<img src="/images/iterate/onboard-splash.webp" alt="Iterate onboarding splash screen with the tagline Discover new perspectives, elevate your work, over a background of the app's own hand-drawn sketches" />
+<img loading="lazy" decoding="async" src="/images/iterate/onboard-splash.webp" alt="Iterate onboarding splash screen with the tagline Discover new perspectives, elevate your work, over a background of the app's own hand-drawn sketches" />
 <p class="screen-caption">The first screen is the app's own sketches, not a signup form. It sets the mood before asking for anything.</p>
 </li>
 <li class="screen-item">
-<img src="/images/iterate/onboard-login.webp" alt="Iterate login screen with options to continue with Google, phone, or email" />
+<img loading="lazy" decoding="async" src="/images/iterate/onboard-login.webp" alt="Iterate login screen with options to continue with Google, phone, or email" />
 <p class="screen-caption">Three ways to log in: Google, phone, or email. No one option to get stuck on.</p>
 </li>
 <li class="screen-item">
-<img src="/images/iterate/onboard-signup.webp" alt="Iterate create account screen requiring a name, college email, and password" />
+<img loading="lazy" decoding="async" src="/images/iterate/onboard-signup.webp" alt="Iterate create account screen requiring a name, college email, and password" />
 <p class="screen-caption">Signing up needs a college email. That's what keeps the whole feed verified-student-only.</p>
 </li>
 </ul>
@@ -283,7 +283,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 
 <figure class="figure--white">
 <p class="figure-eyebrow">Home</p>
-<img class="figure-img--phone" src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
+<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/iterate/home.webp" alt="Iterate home feed showing Projects, Events, and Lists tabs with a curated gallery of student design work" />
 <figcaption>The feed shows projects first, each tagged in progress or complete, so no one mistakes a sketch for a finished pitch.</figcaption>
 </figure>
 
@@ -291,11 +291,11 @@ The screens across onboarding and the core flow, each one answering a specific f
 <p class="figure-eyebrow">Search</p>
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
-<img src="/images/iterate/search.webp" alt="Iterate search screen with fields for author name, project name, college name, and discipline name" />
+<img loading="lazy" decoding="async" src="/images/iterate/search.webp" alt="Iterate search screen with fields for author name, project name, college name, and discipline name" />
 <p class="screen-caption">Search filters by discipline and college, not just keywords, so a student can find peers in their own field quickly.</p>
 </li>
 <li class="screen-item">
-<img src="/images/iterate/search-results.webp" alt="Iterate search results screen with active filter chips for author, project, college, and discipline, plus a similar projects section" />
+<img loading="lazy" decoding="async" src="/images/iterate/search-results.webp" alt="Iterate search results screen with active filter chips for author, project, college, and discipline, plus a similar projects section" />
 <p class="screen-caption">Results show the filters used as chips, with similar projects listed below in case the search comes up short.</p>
 </li>
 </ul>
@@ -305,11 +305,11 @@ The screens across onboarding and the core flow, each one answering a specific f
 <p class="figure-eyebrow">New Project</p>
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
-<img src="/images/iterate/new-project-a.webp" alt="Iterate new project form with fields for Project Title, Visuals, and Project Bio" />
+<img loading="lazy" decoding="async" src="/images/iterate/new-project-a.webp" alt="Iterate new project form with fields for Project Title, Visuals, and Project Bio" />
 <p class="screen-caption">Starting a post only needs a title, some visuals, and a short bio.</p>
 </li>
 <li class="screen-item">
-<img src="/images/iterate/new-project-b.webp" alt="Iterate new project screen with tags for Ongoing or Complete, an Add People option, and a Publish button" />
+<img loading="lazy" decoding="async" src="/images/iterate/new-project-b.webp" alt="Iterate new project screen with tags for Ongoing or Complete, an Add People option, and a Publish button" />
 <p class="screen-caption">The "Ongoing" tag is the key part. It makes posting unfinished work expected, not risky.</p>
 </li>
 </ul>
@@ -320,15 +320,15 @@ The screens across onboarding and the core flow, each one answering a specific f
 <p class="figure-eyebrow">Activity, three tabs</p>
 <ul class="screen-grid">
 <li class="screen-item">
-<img src="/images/iterate/activity-friends.webp" alt="Iterate activity feed, Friends tab, showing friends' recent posts, comments, and collaboration invites" />
+<img loading="lazy" decoding="async" src="/images/iterate/activity-friends.webp" alt="Iterate activity feed, Friends tab, showing friends' recent posts, comments, and collaboration invites" />
 <p class="screen-caption">Friends shows a simple timeline of what people are up to, not a pile of notifications.</p>
 </li>
 <li class="screen-item">
-<img src="/images/iterate/activity-you.webp" alt="Iterate activity feed, You tab, showing the student's own recent posts, comments, and collaborations" />
+<img loading="lazy" decoding="async" src="/images/iterate/activity-you.webp" alt="Iterate activity feed, You tab, showing the student's own recent posts, comments, and collaborations" />
 <p class="screen-caption">You shows that same timeline, filtered down to just your own activity.</p>
 </li>
 <li class="screen-item">
-<img src="/images/iterate/activity-incoming.webp" alt="Iterate activity feed, Incoming tab, showing connection requests and messages sent to the student" />
+<img loading="lazy" decoding="async" src="/images/iterate/activity-incoming.webp" alt="Iterate activity feed, Incoming tab, showing connection requests and messages sent to the student" />
 <p class="screen-caption">Incoming keeps requests and messages separate, so one doesn't get buried in the other.</p>
 </li>
 </ul>
@@ -338,11 +338,11 @@ The screens across onboarding and the core flow, each one answering a specific f
 <p class="figure-eyebrow">Profile, any student</p>
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
-<img src="/images/iterate/profile-aditya.webp" alt="Iterate profile screen showing Aditya Nair's university, discipline, bio, external portfolio links, and published posts" />
+<img loading="lazy" decoding="async" src="/images/iterate/profile-aditya.webp" alt="Iterate profile screen showing Aditya Nair's university, discipline, bio, external portfolio links, and published posts" />
 <p class="screen-caption">Posts, connections, and likes build up here automatically, just from using the app.</p>
 </li>
 <li class="screen-item">
-<img src="/images/iterate/profile-arka.webp" alt="Iterate profile screen for a different student, Arka Gupta, showing the same layout with their own bio and posts" />
+<img loading="lazy" decoding="async" src="/images/iterate/profile-arka.webp" alt="Iterate profile screen for a different student, Arka Gupta, showing the same layout with their own bio and posts" />
 <p class="screen-caption">Every student gets this same layout filled in with their own work. No one designs their own profile.</p>
 </li>
 </ul>
@@ -350,14 +350,14 @@ The screens across onboarding and the core flow, each one answering a specific f
 
 <figure class="figure--white">
 <p class="figure-eyebrow">Project Detail</p>
-<img class="figure-img--phone" src="/images/iterate/project-detail.webp" alt="Iterate project detail screen for Solace, a conceptual smart companion by Arka Gupta, tagged Ongoing" />
+<img loading="lazy" decoding="async" class="figure-img--phone" src="/images/iterate/project-detail.webp" alt="Iterate project detail screen for Solace, a conceptual smart companion by Arka Gupta, tagged Ongoing" />
 <figcaption>Opening a project keeps its "Ongoing" tag visible, so that context carries through from the feed to the profile to the post itself.</figcaption>
 </figure>
 
 ## Style Guide
 
 <figure>
-<img src="/images/iterate/design-system.webp" alt="Iterate design system: color palette, Poppins typography scale, button and navigation bar components, primary logo mark, typography weights, and logo color variants" />
+<img loading="lazy" decoding="async" src="/images/iterate/design-system.webp" alt="Iterate design system: color palette, Poppins typography scale, button and navigation bar components, primary logo mark, typography weights, and logo color variants" />
 </figure>
 
 ## Retrospective

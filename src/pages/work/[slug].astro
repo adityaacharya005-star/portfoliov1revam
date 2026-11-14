@@ -154,6 +154,11 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     </article>
   </div>
 
+  <dialog class="lightbox" data-lightbox>
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close enlarged image">&times;</button>
+    <img class="lightbox__image" data-lightbox-image src="" alt="" />
+  </dialog>
+
   <Contact />
 </Base>
 
@@ -234,6 +239,51 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
       video.removeAttribute('autoplay');
       video.pause();
       video.currentTime = 0;
+    });
+  }
+
+  // Lightbox: the dense reference diagrams (sketch sheets, IA maps,
+  // journey maps) render small in the body column and are genuinely
+  // hard to read at that width, especially on mobile. Clicking one
+  // opens it full-size in a native <dialog>; phone-screenshot figures
+  // (.figure--white) are excluded since those already read fine small.
+  const lightbox = document.querySelector<HTMLDialogElement>('[data-lightbox]');
+  const lightboxImage = document.querySelector<HTMLImageElement>('[data-lightbox-image]');
+  const lightboxClose = document.querySelector<HTMLButtonElement>('[data-lightbox-close]');
+  if (lightbox && lightboxImage && lightboxClose) {
+    let trigger: HTMLImageElement | null = null;
+
+    const openLightbox = (img: HTMLImageElement) => {
+      trigger = img;
+      lightboxImage.src = img.currentSrc || img.src;
+      lightboxImage.alt = img.alt;
+      lightbox.showModal();
+    };
+
+    document
+      .querySelectorAll<HTMLImageElement>('.case-study__body figure:not(.figure--white) img')
+      .forEach((img) => {
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        if (!img.hasAttribute('aria-label')) {
+          img.setAttribute('aria-label', `Enlarge image: ${img.alt}`);
+        }
+        img.addEventListener('click', () => openLightbox(img));
+        img.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(img);
+          }
+        });
+      });
+
+    lightboxClose.addEventListener('click', () => lightbox.close());
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.close();
+    });
+    lightbox.addEventListener('close', () => {
+      lightboxImage.src = '';
+      trigger?.focus();
     });
   }
 
@@ -738,6 +788,79 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
      hug their transparent corner padding instead of the phone itself). */
   .case-study__body :global(figure:not(.figure--white) img) {
     box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.1);
+    /* These are reference diagrams a reader may want to study closer
+       (sketch sheets, IA maps, journey maps), not decorative — clicking
+       opens the lightbox below, so the cursor and a slightly firmer
+       edge on hover are the only affordance needed. */
+    cursor: zoom-in;
+    transition: box-shadow var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__body :global(figure:not(.figure--white) img:hover) {
+    box-shadow: 0 0 0 1px rgba(17, 17, 17, 0.22);
+  }
+
+  .case-study__body :global(figure:not(.figure--white) img:focus-visible) {
+    outline: 2px solid var(--case-accent);
+    outline-offset: 3px;
+  }
+
+  .lightbox {
+    /* No position override: a native <dialog> already defaults to
+       position: fixed with auto margins, which is what centers it in
+       the viewport regardless of scroll position. Overriding that to
+       relative (an earlier version of this rule) made it render inline
+       in the document instead of as a centered overlay. fixed is still
+       a valid positioning context for the absolutely-positioned close
+       button below. */
+    border: none;
+    padding: 0;
+    background: transparent;
+    max-width: min(92vw, 1400px);
+    max-height: 92vh;
+    overscroll-behavior: contain;
+  }
+
+  .lightbox::backdrop {
+    background: rgba(17, 17, 17, 0.72);
+  }
+
+  .lightbox__image {
+    display: block;
+    max-width: 100%;
+    max-height: 92vh;
+    border-radius: 12px;
+    box-shadow: 0 24px 64px rgba(17, 17, 17, 0.35);
+  }
+
+  .lightbox__close {
+    /* Fixed to the viewport, not absolute within the dialog: the image
+       behind it can be light or dark edge to edge (these are diagrams,
+       not photos with a predictable dark vignette), so the button needs
+       to sit over the backdrop, where contrast is always the same,
+       rather than over the image itself. */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(17, 17, 17, 0.55);
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .lightbox__close:hover {
+    background: rgba(17, 17, 17, 0.75);
+  }
+
+  .lightbox__close:active {
+    transform: scale(0.96);
   }
 
   /* Framed like a card rather than bleeding edge-to-edge: padded,

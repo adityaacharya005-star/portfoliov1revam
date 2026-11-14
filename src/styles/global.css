@@ -9,6 +9,7 @@
 html {
   background: var(--color-bg);
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -78,6 +79,10 @@ button:focus-visible {
   *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 }
 
