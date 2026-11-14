@@ -185,24 +185,35 @@ const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .work-card__underline path {
+    .work-card__underline path,
+    .work-card__arrow {
       transition: none;
     }
   }
 
+  /* Hidden at rest rather than sitting there unconditionally: the card
+     already says "this is clickable" three other ways on hover (the
+     title's color, the hand-drawn underline, the image's zoom), so the
+     arrow's job is just to reinforce direction once that intent is
+     already there, not to advertise clickability on its own. */
   .work-card__arrow {
     flex-shrink: 0;
     width: 14px;
     height: 14px;
-    color: var(--color-muted);
-    transition: transform var(--duration-fast) var(--ease-standard),
-      color var(--duration-fast) var(--ease-standard);
+    color: var(--card-accent, var(--color-text));
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(0.25) translateX(-2px);
+    transition: opacity var(--duration-fast) var(--ease-standard),
+      filter var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
   }
 
   .work-card:hover .work-card__arrow,
   .work-card:focus-visible .work-card__arrow {
-    transform: translateX(3px);
-    color: var(--card-accent, var(--color-text));
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1) translateX(3px);
   }
 
   .work-card__tags {
