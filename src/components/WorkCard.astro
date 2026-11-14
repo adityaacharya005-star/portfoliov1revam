@@ -46,23 +46,33 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
   <span class="work-card__cursor" aria-hidden="true" data-card-cursor>
     <span class="work-card__cursor-dot">View</span>
   </span>
-  <span class="work-card__media">
+  <span class="work-card__media" data-video-media={hasVideo ? '' : undefined}>
     {hasVideo ? (
-      <video
-        class="work-card__image"
-        poster={poster!.src}
-        autoplay
-        loop
-        muted
-        playsinline
-        disablepictureinpicture
-        controlslist="nodownload noremoteplayback nofullscreen noplaybackrate"
-        aria-label={coverAlt}
-        data-autoplay-video
-      >
-        <source src={thumbVideoWebm} type="video/webm" />
-        <source src={thumbVideoMp4} type="video/mp4" />
-      </video>
+      <>
+        <video
+          class="work-card__image"
+          poster={poster!.src}
+          autoplay
+          preload="auto"
+          loop
+          muted
+          playsinline
+          disablepictureinpicture
+          controlslist="nodownload noremoteplayback nofullscreen noplaybackrate"
+          aria-label={coverAlt}
+          data-autoplay-video
+        >
+          <source src={thumbVideoWebm} type="video/webm" />
+          <source src={thumbVideoMp4} type="video/mp4" />
+        </video>
+        {/* Covers the video until it's actually playing, then fades out —
+            so however long decoding takes (instant on a warm cache, longer
+            on a cold one), the thumbnail never pops from a frozen poster
+            straight into motion. The <video> poster attribute stays too,
+            as the ultimate fallback if this image or the fade script
+            never runs. */}
+        <img class="work-card__poster" src={poster!.src} alt="" aria-hidden="true" />
+      </>
     ) : (
       <Image src={cover} alt={coverAlt} class="work-card__image" />
     )}
@@ -92,13 +102,40 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
   // instead of data-astro-rerun).
   document.addEventListener('astro:page-load', () => {
     const videos = document.querySelectorAll<HTMLVideoElement>('[data-autoplay-video]');
-    if (videos.length > 0 && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (videos.length > 0 && prefersReducedMotion) {
       videos.forEach((video) => {
         video.removeAttribute('autoplay');
         video.pause();
         video.currentTime = 0;
       });
+      // The poster stays up top forever here (its CSS fade-out is only
+      // triggered by the "playing" listener below, which never fires
+      // once autoplay is removed) — exactly the static image a reduced-
+      // motion visitor should see, so there's nothing further to wire up.
+      return;
     }
+
+    videos.forEach((video) => {
+      const media = video.closest<HTMLElement>('[data-video-media]');
+      if (!media) return;
+      // On a fast/warm load, "playing" can fire before this script even
+      // runs — it's a one-time paused-to-playing transition, so a
+      // listener attached after the fact would wait forever. Check the
+      // current state first and only fall back to the event for a video
+      // still genuinely loading.
+      if (!video.paused) {
+        media.classList.add('is-video-playing');
+        return;
+      }
+      // A fresh view-transition navigation reuses this same script run
+      // but the video is a brand-new element each time, so this listener
+      // needs re-adding every time too — { once: true } keeps it from
+      // ever double-firing on the same element if "playing" fires more
+      // than once (e.g. after the loop restarts).
+      video.addEventListener('playing', () => media.classList.add('is-video-playing'), { once: true });
+    });
   });
 
   // The scoped work-card cursor: a small "View" dot that follows the
@@ -262,6 +299,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
   }
 
   .work-card__media {
+    position: relative;
     display: block;
     width: 100%;
     aspect-ratio: var(--card-aspect-ratio);
@@ -279,6 +317,37 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
   .work-card:hover .work-card__image,
   .work-card:focus-visible .work-card__image {
     transform: scale(1.02);
+  }
+
+  /* Sits on top of the <video>, showing the same frame instantly while
+     the video itself decodes, then fades out once the script below
+     hears the video's own "playing" event — never an abrupt swap from
+     a frozen frame to motion, whether that takes 50ms or 2s. */
+  .work-card__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 400ms var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .work-card:hover .work-card__poster,
+  .work-card:focus-visible .work-card__poster {
+    transform: scale(1.02);
+  }
+
+  [data-video-media].is-video-playing .work-card__poster {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .work-card__poster {
+      transition: none;
+    }
   }
 
   .work-card__top {
