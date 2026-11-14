@@ -124,6 +124,18 @@ const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
     font-size: 0.9375rem;
     font-weight: 600;
     color: var(--color-text);
+    transition: color var(--duration-fast) var(--ease-standard);
+  }
+
+  .work-card:hover .work-card__title,
+  .work-card:focus-visible .work-card__title {
+    color: var(--card-accent, var(--color-accent));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .work-card__title {
+      transition: none;
+    }
   }
 
   .work-card__title-text {
