@@ -736,7 +736,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
     padding: var(--space-7);
     background: var(--color-card-warm);
   }
@@ -967,7 +967,8 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   .case-study__body :global(.screen-grid) {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-6);
+    column-gap: var(--space-6);
+    row-gap: var(--space-8);
     margin-inline: 0;
     margin-bottom: 0;
     padding: 0;
@@ -978,7 +979,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-4);
+    gap: var(--space-5);
   }
 
   .case-study__body :global(.screen-item img) {
