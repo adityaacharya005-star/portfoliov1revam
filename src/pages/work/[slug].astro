@@ -71,9 +71,9 @@ function squigglePath(seed: string) {
   const b = seedFrom(`${seed}-b`);
   const c = seedFrom(`${seed}-c`);
   const sign = a > 0.5 ? 1 : -1;
-  const amp = 1.4 + b * 1.6; // 1.4–3.0
+  const amp = 0.5 + b * 0.6; // 0.5–1.1, just enough to notice
   const qx = 6.5 + c * 2; // 6.5–8.5
-  const y0 = 5.3 + (a - 0.5) * 0.8;
+  const y0 = 5.15 + (a - 0.5) * 0.3;
   const qy = 5 - sign * amp;
   const y1 = 5 + sign * amp * 0.55;
   const y2 = 5 - sign * amp * 0.25;
@@ -183,8 +183,8 @@ function squigglePath(seed: string) {
                for a short 18x2 TOC dash is too small to contain the
                displacement before it gets clipped away to nothing. -->
           <filter id="sketch-wobble-small" x="-10" y="-14" width="44" height="38" filterUnits="userSpaceOnUse">
-            <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="7" result="noise" />
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
+            <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="7" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" xChannelSelector="R" yChannelSelector="G" />
           </filter>
         </defs>
       </svg>
@@ -695,9 +695,9 @@ function squigglePath(seed: string) {
 
   .case-study__nav a.is-active .case-study__nav-bullet path {
     stroke: var(--case-accent);
-    stroke-width: 3;
+    stroke-width: 2.75;
     opacity: 1;
-    transform: scaleX(1.45);
+    transform: scaleX(1.2);
   }
 
   .case-study__nav a.is-active .case-study__nav-underline path {
