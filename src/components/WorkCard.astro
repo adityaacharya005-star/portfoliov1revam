@@ -389,6 +389,14 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
     transform: scale(1) translateX(3px);
   }
 
+  /* The arrow's stroke itself, not just its entrance, now matches the
+     hand-drawn underline right beside it — a perfectly clean chevron
+     next to a wobbly underline was the same kind of mismatch the TOC
+     dash and its old straight underline had. */
+  .work-card__arrow path {
+    filter: url(#sketch-wobble-small);
+  }
+
   .work-card__tags {
     display: flex;
     flex-shrink: 0;
