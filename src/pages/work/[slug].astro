@@ -551,11 +551,20 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__nav-bullet {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     flex-shrink: 0;
+    border-radius: 50%;
     background: transparent;
-    transition: background var(--duration-fast) var(--ease-standard);
+    border: 1.5px solid var(--color-border);
+    transition: background var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .case-study__nav a:hover .case-study__nav-bullet {
+    border-color: var(--case-accent);
   }
 
   .case-study__nav-text {
@@ -582,11 +591,20 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__nav a.is-active {
-    color: var(--color-accent);
+    color: var(--case-accent);
   }
 
   .case-study__nav a.is-active .case-study__nav-bullet {
-    background: var(--color-accent);
+    background: var(--case-accent);
+    border-color: var(--case-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--case-accent) 20%, transparent);
+    transform: scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .case-study__nav-bullet {
+      transition: none;
+    }
   }
 
   .case-study__next {
