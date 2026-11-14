@@ -123,7 +123,7 @@ Tap anyone in the graph to see how they connect: the teen sits at the center wit
 <span class="graph-node__label">The teen</span>
 </button>
 <button type="button" class="graph-node" style="left:50%;top:12%" data-id="therapists" aria-pressed="false" data-name="Therapists & psychiatrists" data-tier="Clinical evaluator, referral gatekeeper" data-detail="Whether a diagnosis or referral happens at all usually runs through them first.">
-<span class="graph-node__circle" style="--node-tint:#E8D0EE"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="60" r="40"/><path d="M60 40v40M40 60h40"/></svg></span>
+<span class="graph-node__circle" style="--node-tint:#E8D0EE"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M48 20L72 20L72 48L100 48L100 72L72 72L72 100L48 100L48 72L20 72L20 48L48 48Z"/></svg></span>
 <span class="graph-node__label">Therapists</span>
 </button>
 <button type="button" class="graph-node" style="left:73.75%;top:50%" data-id="parents" aria-pressed="false" data-name="Parents" data-tier="Payer, purchaser, domestic enabler" data-detail="They pay for it, set it up, and absorb the guilt and burnout if it fails. The household runs through them.">
