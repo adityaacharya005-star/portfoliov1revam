@@ -9,20 +9,6 @@ interface Props {
 const { entries } = Astro.props;
 ---
 
-<svg width="0" height="0" style="position: absolute" aria-hidden="true">
-  <defs>
-    <!-- Same loose-ink displacement as the case study pages' TOC dash,
-         with a fixed userSpace region (a percentage one is too small to
-         contain the displacement on an element this thin and clips it
-         away to nothing). Defined once here since WorkCard's filter
-         reference just needs the id to exist somewhere in the page. -->
-    <filter id="sketch-wobble-small" x="-10" y="-14" width="44" height="38" filterUnits="userSpaceOnUse">
-      <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="7" result="noise" />
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </defs>
-</svg>
-
 <div class="work-grid">
   {entries.map((entry) => (
     <WorkCard

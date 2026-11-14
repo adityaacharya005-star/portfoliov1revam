@@ -3,15 +3,34 @@ import { Image } from 'astro:assets';
 import { site } from '../data/site';
 import avatar from '../assets/images/avatar.png';
 import avatarHover from '../assets/images/avatar-hover.png';
+import { squigglePath } from '../lib/squiggle';
 
 interface Props {
   hideOnScroll?: boolean;
 }
 
 const { hideOnScroll = false } = Astro.props;
+
+// Highlights the section you're actually in, not just /work itself —
+// /work/neoos should still mark "Work" current.
+const currentPath = Astro.url.pathname;
+const isCurrent = (href: string) => currentPath === href || currentPath.startsWith(`${href}/`);
 ---
 
 <header class:list={['header', { 'header--hide-on-scroll': hideOnScroll }]} data-header>
+  <!-- The hand-drawn displacement used by the nav underline below, and
+       by the work-card and case-study TOC underlines elsewhere — defined
+       here since Header renders on every page, so this is the one place
+       guaranteed to exist before anything references it. -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+    <defs>
+      <filter id="sketch-wobble-small" x="-10" y="-14" width="44" height="38" filterUnits="userSpaceOnUse">
+        <feTurbulence type="fractalNoise" baseFrequency="0.12" numOctaves="2" seed="7" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.4" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+
   <div class="wrapper header__row">
     <a href="/" class="header__brand">
       <span class="header__avatar-link">
@@ -37,7 +56,10 @@ const { hideOnScroll = false } = Astro.props;
     </a>
     <nav class="header__nav" aria-label="Primary">
       {site.nav.map((item) => (
-        <a href={item.href}>{item.label}</a>
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined} class:list={{ 'is-active': isCurrent(item.href) }}>
+          {item.label}
+          <svg class="header__nav-underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath(`${item.href}-underline`)} /></svg>
+        </a>
       ))}
       <a href={site.resumeUrl} target="_blank" rel="noopener noreferrer" class="header__resume">
         Resume
@@ -198,35 +220,62 @@ const { hideOnScroll = false } = Astro.props;
 
   .header__nav a {
     position: relative;
+    display: inline-block;
     text-decoration: none;
-    padding-bottom: 2px;
+    padding-bottom: 6px;
+    color: var(--color-muted);
+    transition: color var(--duration-fast) var(--ease-standard);
   }
 
-  .header__nav a::after {
-    content: '';
+  /* The current page, not just hover: muted at rest like everything
+     else, full text color and a touch heavier once it's where you
+     actually are — the one piece of nav that previously gave no sign
+     of which section you were in. */
+  .header__nav a.is-active {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  /* Same hand-drawn squiggle as the work-card and TOC underlines,
+     in place of the old dead-straight ::after line — this was the
+     last plain geometric underline left on the site. */
+  .header__nav-underline {
     position: absolute;
     left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--duration-fast) var(--ease-standard);
+    bottom: -1px;
+    width: 100%;
+    height: 7px;
+    overflow: visible;
+    pointer-events: none;
   }
 
-  .header__nav a:hover::after,
-  .header__nav a:focus-visible::after {
+  .header__nav-underline path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    filter: url(#sketch-wobble-small);
+    opacity: 0;
+    transform: scaleX(0.9);
+    transform-origin: left center;
+    transition: opacity var(--duration-fast) var(--ease-standard),
+      transform 260ms var(--ease-entrance);
+  }
+
+  .header__nav a:hover .header__nav-underline path,
+  .header__nav a:focus-visible .header__nav-underline path,
+  .header__nav a.is-active .header__nav-underline path {
+    opacity: 0.85;
     transform: scaleX(1);
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .header__nav a::after {
+    .header__nav-underline path {
       transition: none;
     }
   }
 
-  .header__resume {
+  .header__nav a.header__resume {
     color: var(--color-accent);
   }
 
