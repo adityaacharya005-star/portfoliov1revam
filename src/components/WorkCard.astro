@@ -292,7 +292,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
   .work-card__title {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-1);
     min-width: 0;
     font-size: 0.9375rem;
     font-weight: 600;
@@ -384,7 +384,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
     color: var(--card-accent, var(--color-text));
     opacity: 0;
     filter: blur(4px);
-    transform: scale(0.25) translate(-2px, -3px);
+    transform: scale(0.25) translate(-1px, -3px);
     transition: opacity var(--duration-fast) var(--ease-standard),
       filter var(--duration-fast) var(--ease-standard),
       transform var(--duration-fast) var(--ease-standard);
@@ -394,7 +394,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
   .work-card:focus-visible .work-card__arrow {
     opacity: 1;
     filter: blur(0);
-    transform: scale(1) translate(3px, -3px);
+    transform: scale(1) translate(1px, -3px);
   }
 
   /* The arrow's stroke itself, not just its entrance, now matches the
