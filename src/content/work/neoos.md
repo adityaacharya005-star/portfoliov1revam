@@ -384,7 +384,7 @@ App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. R
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="40" height="40" rx="8"/><rect x="64" y="16" width="40" height="40" rx="8"/><rect x="16" y="64" width="40" height="40" rx="8"/><rect x="64" y="64" width="40" height="40" rx="8"/><path d="M80 86v-6a4 4 0 0 1 8 0v6"/><rect x="76" y="86" width="16" height="12" rx="2"/></svg>
 <h3>A Fixed Layout Grid, Even When Everything Else Is Customizable</h3>
-<p>Whichever widgets a teen picks, they stay in the top half of the home screen, and apps stay in the bottom half, within thumb's reach. That fixed split means switching layouts never means relearning where to look or where to reach.</p>
+<p>Whichever widgets a teen picks, they stay in the top half of the home screen, and apps stay in the bottom half, within thumb's reach. That fixed split means switching layouts never requires relearning where to look or where to reach.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M60 50v24M60 82v.1" stroke-width="5"/></svg>

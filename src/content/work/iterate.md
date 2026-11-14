@@ -371,7 +371,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="30" r="9"/><circle cx="94" cy="30" r="9"/><circle cx="60" cy="90" r="9"/><path d="M34 36l20 46M86 36L66 82"/></svg>
 <h3>A Flow Diagram Finds the Dead Ends</h3>
-<p>Mapping Aniket's journey instead of a generic one surfaced a real exit ramp: a student who checks the feed, finds nothing reassuring, and quits before ever posting. That single path shaped more of the final design than any other single insight from the research.</p>
+<p>Mapping Aniket's journey instead of a generic one surfaced a real exit ramp: a student who checks the feed, finds nothing reassuring, and quits before ever posting. That one path shaped more of the final design than any other insight from the research.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M48 60l9 9 16-18"/></svg>

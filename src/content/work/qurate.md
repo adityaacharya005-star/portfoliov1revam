@@ -117,7 +117,7 @@ Three key interfaces from the finished dashboard. Split Evaluation is the one th
 
 <figure>
 <img src="/images/qurate/final-review-queue.webp" alt="Final Review Queue screen: status-filtered tabs, search and sort toolbar, and a queue table with SLA countdown timers" />
-<figcaption>Review Queue. Sorted by deadline by default, because the real risk was never a bad listing, it was a missed one.</figcaption>
+<figcaption>Review Queue, sorted by deadline by default: a missed listing breaches SLA faster than a bad one gets caught.</figcaption>
 </figure>
 
 <figure class="figure--feature">
@@ -160,17 +160,17 @@ Three other layouts for that same screen, each rejected for the same reason: the
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="20" width="80" height="56" rx="7"/><path d="M50 76v8M70 76v8"/><path d="M38 92h44"/><path d="M42 50l10 10 24-24" stroke-width="3.5"/><path d="M28 30q7 -5 12 0" stroke-width="3.5"/></svg>
 <h3>One Screen Beats One Fewer Tab</h3>
-<p>The 35% wasn't lost to a bad tool, it was lost to switching between good ones. Cutting a context switch did more for that number than any feature added inside either screen it replaced.</p>
+<p>The 35% came from switching between two good tools, not from either tool being bad. Cutting that context switch did more for the number than any feature added inside either screen it replaced.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="46" r="22"/><path d="M54 68L46 80h28l-8-12Z"/><rect x="46" y="80" width="28" height="8" rx="2" fill="currentColor" stroke="none"/><path d="M48 92h24"/><path d="M51 44l5 6 4-9 4 9 5-6" stroke-width="2.6"/><path d="M60 14v8M38 22l5 7M82 22l-5 7" stroke-width="3.5"/></svg>
 <h3>Specific Feedback Beats a Generic Rejection</h3>
-<p>Replacing the form-letter rejection with a structured checklist taught me the real lever wasn't speed, it was clarity: a host who knows exactly what to fix resolves it faster than one left guessing. That principle is carrying into the next tool I design.</p>
+<p>Replacing the form-letter rejection with a structured checklist showed me clarity is the real lever, not speed: a host who knows exactly what to fix resolves it faster than one left guessing. That principle is carrying into the next tool I design.</p>
 </li>
 <li class="outcome-card">
 <svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="28" width="72" height="64" rx="7"/><path d="M40 28v-8M80 28v-8" stroke-width="4"/><path d="M24 44h72"/><circle cx="38" cy="58" r="2.2" fill="currentColor" stroke="none"/><circle cx="54" cy="58" r="2.2" fill="currentColor" stroke="none"/><circle cx="70" cy="58" r="2.2" fill="currentColor" stroke="none"/><circle cx="86" cy="58" r="2.2" fill="currentColor" stroke="none"/><circle cx="38" cy="74" r="2.2" fill="currentColor" stroke="none"/><circle cx="54" cy="74" r="2.2" fill="currentColor" stroke="none"/><path d="M20 92L100 28" stroke-width="4"/></svg>
 <h3>Booking Management, Deliberately Cut</h3>
-<p>One week meant the review workspace only. Booking management stayed untouched, not because it's less important, but because it wasn't where the 70% and 35% were bleeding.</p>
+<p>One week meant the review workspace only. Booking management stayed untouched simply because the 70% and 35% weren't coming from there.</p>
 </li>
 </ul>
 
