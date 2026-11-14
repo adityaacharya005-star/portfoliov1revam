@@ -2,7 +2,7 @@
 import { Image, getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { squigglePath } from '../lib/squiggle';
-import { darkenUntilContrast } from '../lib/color';
+import { darkenUntilContrast, hexToRgb, mixRgb } from '../lib/color';
 
 interface Props {
   href: string;
@@ -25,12 +25,23 @@ const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
 // pink) don't clear 4.5:1 against plain white, so darken a copy of the
 // accent specifically for this use rather than reusing the raw color.
 const cursorFill = accentColor ? darkenUntilContrast(accentColor, [255, 255, 255], 4.5) : undefined;
+
+// The tag pill's hover background is only a 14% tint of the accent
+// over --color-bg (kept light on purpose, so the pill still reads as a
+// label, not a solid button) — but that leaves the accent itself, used
+// as the text color, well under 4.5:1 for every project's hue (as low
+// as 2.1:1 for the orange). Mirror that same color-mix here so the text
+// color can be darkened against the *actual* resulting background
+// rather than an approximation.
+const colorBg = hexToRgb('#f1eee8');
+const tagHoverBg = accentColor ? mixRgb(hexToRgb(accentColor), colorBg, 14) : colorBg;
+const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) : undefined;
 ---
 
 <a
   href={href}
   class="work-card"
-  style={`${accentColor ? `--card-accent: ${accentColor};` : ''}${cursorFill ? `--cursor-fill: ${cursorFill};` : ''}`}
+  style={`${accentColor ? `--card-accent: ${accentColor};` : ''}${cursorFill ? `--cursor-fill: ${cursorFill};` : ''}${tagText ? `--tag-text: ${tagText};` : ''}`}
 >
   <span class="work-card__cursor" aria-hidden="true" data-card-cursor>
     <span class="work-card__cursor-dot">View</span>
@@ -111,35 +122,40 @@ const cursorFill = accentColor ? darkenUntilContrast(accentColor, [255, 255, 255
       const follower = card.querySelector<HTMLElement>('[data-card-cursor]');
       if (!follower) return;
 
-      let targetX = 0;
-      let targetY = 0;
+      // Position tracks the pointer's viewport coordinates against the
+      // card's rect, re-measured every frame rather than only on
+      // mousemove. Scrolling moves the card under a stationary pointer
+      // without firing any mouse event, so a version that only updated
+      // on mousemove would freeze mid-scroll while the card (and the
+      // rest of the page) kept moving under it.
+      let lastClientX = 0;
+      let lastClientY = 0;
       let curX = 0;
       let curY = 0;
       let raf = 0;
       let active = false;
 
       const render = () => {
+        const rect = card.getBoundingClientRect();
+        const targetX = lastClientX - rect.left;
+        const targetY = lastClientY - rect.top;
         curX += (targetX - curX) * 0.2;
         curY += (targetY - curY) * 0.2;
         follower.style.transform = `translate(${curX}px, ${curY}px)`;
         if (active) raf = requestAnimationFrame(render);
       };
 
-      const setTargetFromEvent = (e: MouseEvent) => {
-        const rect = card.getBoundingClientRect();
-        return { x: e.clientX - rect.left, y: e.clientY - rect.top };
-      };
-
       const onMove = (e: MouseEvent) => {
-        const p = setTargetFromEvent(e);
-        targetX = p.x;
-        targetY = p.y;
+        lastClientX = e.clientX;
+        lastClientY = e.clientY;
       };
 
       const onEnter = (e: MouseEvent) => {
-        const p = setTargetFromEvent(e);
-        curX = targetX = p.x;
-        curY = targetY = p.y;
+        lastClientX = e.clientX;
+        lastClientY = e.clientY;
+        const rect = card.getBoundingClientRect();
+        curX = e.clientX - rect.left;
+        curY = e.clientY - rect.top;
         follower.style.transform = `translate(${curX}px, ${curY}px)`;
         active = true;
         card.classList.add('is-cursor-active');
@@ -399,7 +415,10 @@ const cursorFill = accentColor ? darkenUntilContrast(accentColor, [255, 255, 255
      it's clearly this card's color for as long as the pointer is here. */
   .work-card:hover .work-card__tag,
   .work-card:focus-visible .work-card__tag {
-    color: var(--card-accent, var(--color-text));
+    /* --tag-text is the accent darkened until it clears 4.5:1 against
+       this exact background (computed in the frontmatter) — the raw
+       accent alone measured as low as 2.1:1 here for some projects. */
+    color: var(--tag-text, var(--card-accent, var(--color-text)));
     background: color-mix(in srgb, var(--card-accent, var(--color-muted)) 14%, var(--color-bg));
   }
 

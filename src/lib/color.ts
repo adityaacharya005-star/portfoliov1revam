@@ -31,3 +31,10 @@ export function darkenUntilContrast(hex: string, against: number[], minRatio = 4
   }
   return rgbToHex(rgb);
 }
+
+// Mirrors CSS color-mix(in srgb, a pctA%, b) for cases that need the
+// resulting color in JS (as the "against" input to darkenUntilContrast)
+// rather than only in a stylesheet.
+export function mixRgb(a: number[], b: number[], pctA: number): number[] {
+  return a.map((c, i) => c * (pctA / 100) + b[i] * (1 - pctA / 100));
+}
