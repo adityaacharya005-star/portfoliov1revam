@@ -1154,8 +1154,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   .case-study__body :global(.screen-item img) {
-    width: auto;
-    max-width: 220px;
+    /* Same fix as .figure-img--phone: width: auto + max-width left the
+       browser unable to resolve a definite width for a lazy,
+       not-yet-loaded image from its aspect-ratio alone inside a flex
+       column, so it rendered 0x0 until the image loaded, then jumped
+       to full size — a real, visible layout shift as a reader scrolled
+       past each screen-grid figure. min() gives a definite width up
+       front so the aspect-ratio can size it correctly immediately. */
+    width: min(220px, 100%);
     background: transparent;
   }
 
@@ -1169,6 +1175,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     flex-direction: column;
     align-items: center;
     gap: var(--space-2);
+    /* align-items: center means this flex child shrink-wraps instead
+       of stretching to .screen-item's width, so it has no definite
+       width of its own — and neither does .screen-annotate__frame
+       below it. That left the image inside unable to resolve its
+       `min(220px, 100%)` width (100% of an indefinite ancestor), so it
+       rendered 0x0 until loaded. width: 100% gives this (and the frame
+       below it) a definite width to anchor that percentage against. */
+    width: 100%;
   }
 
   .case-study__body :global(.screen-annotate__tag) {
@@ -1180,6 +1194,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 
   .case-study__body :global(.screen-annotate__frame) {
     position: relative;
+    width: 100%;
   }
 
   .case-study__body :global(.screen-annotate__line) {
