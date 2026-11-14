@@ -57,14 +57,19 @@ const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
 </a>
 
 <script>
-  const videos = document.querySelectorAll<HTMLVideoElement>('[data-autoplay-video]');
-  if (videos.length > 0 && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    videos.forEach((video) => {
-      video.removeAttribute('autoplay');
-      video.pause();
-      video.currentTime = 0;
-    });
-  }
+  // Re-run on every view-transition navigation, not just the first time
+  // this card's markup appears (see Header.astro for why this event
+  // instead of data-astro-rerun).
+  document.addEventListener('astro:page-load', () => {
+    const videos = document.querySelectorAll<HTMLVideoElement>('[data-autoplay-video]');
+    if (videos.length > 0 && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      videos.forEach((video) => {
+        video.removeAttribute('autoplay');
+        video.pause();
+        video.currentTime = 0;
+      });
+    }
+  });
 </script>
 
 <style>

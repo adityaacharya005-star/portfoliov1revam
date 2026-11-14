@@ -163,10 +163,30 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 </Base>
 
 <script>
+  // astro:page-load fires on the initial load and again after every
+  // view-transition navigation, so everything below re-runs for each
+  // case study visited in a session without needing the script tag
+  // itself re-executed (data-astro-rerun forces Astro to inline the
+  // script unprocessed, which breaks the TypeScript syntax used
+  // throughout this block — see Header.astro for the same note).
+  document.addEventListener('astro:page-load', async () => {
   const links = document.querySelectorAll<HTMLAnchorElement>('[data-section-link]');
   const sections = Array.from(links)
     .map((link) => document.getElementById(link.dataset.sectionLink!))
     .filter((el): el is HTMLElement => el !== null);
+
+  // With view transitions, window/document survive navigation (unlike a
+  // real reload). Drop the previous page's scroll listener and observer
+  // before wiring up this page's, so they don't keep stacking up across
+  // case studies visited in the same session.
+  const win = window as unknown as {
+    __tocScrollHandler?: () => void;
+    __revealObserver?: IntersectionObserver;
+  };
+  if (win.__tocScrollHandler) {
+    window.removeEventListener('scroll', win.__tocScrollHandler);
+  }
+  win.__revealObserver?.disconnect();
 
   if (sections.length > 0) {
     const setActive = (slug: string) => {
@@ -206,6 +226,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
+    win.__tocScrollHandler = onScroll;
     updateActive();
   }
 
@@ -230,6 +251,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
       { threshold: 0.12, rootMargin: '0px 0px -60px 0px' },
     );
     Array.from(body.children).forEach((child) => revealObserver.observe(child));
+    win.__revealObserver = revealObserver;
   }
 
   // Body-content demo videos (not the hero/work-card ones, which handle
@@ -427,6 +449,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
         if (source) img.src = source;
       });
     });
+  });
   });
 </script>
 

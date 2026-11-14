@@ -47,38 +47,55 @@ const { hideOnScroll = false } = Astro.props;
 </header>
 
 <script>
-  const header = document.querySelector<HTMLElement>('[data-header].header--hide-on-scroll');
+  // astro:page-load fires on the initial load and again after every
+  // view-transition navigation, so this setup re-runs for each new page
+  // without needing the script tag itself re-executed (data-astro-rerun
+  // forces Astro to inline the script unprocessed, which breaks the
+  // TypeScript syntax used here — this event is the supported way to
+  // get the same "run again per page" behavior on a normally-bundled
+  // script).
+  document.addEventListener('astro:page-load', () => {
+    const header = document.querySelector<HTMLElement>('[data-header].header--hide-on-scroll');
 
-  if (header) {
-    let lastY = window.scrollY;
-    let ticking = false;
-    const revealThreshold = 80; // don't hide until scrolled a bit past the top
+    // `window` survives a view-transition navigation (unlike a real
+    // reload), so a listener added here on every page would keep
+    // stacking up, each one still pointlessly updating a detached header
+    // from a previous page. Drop the last one before adding a new one.
+    const win = window as unknown as { __headerScrollHandler?: () => void };
+    if (win.__headerScrollHandler) {
+      window.removeEventListener('scroll', win.__headerScrollHandler);
+    }
 
-    const updateHeader = () => {
-      ticking = false;
-      const y = window.scrollY;
-      const scrollingDown = y > lastY;
+    if (header) {
+      let lastY = window.scrollY;
+      let ticking = false;
+      const revealThreshold = 80; // don't hide until scrolled a bit past the top
 
-      if (y > revealThreshold && scrollingDown) {
-        header.classList.add('is-hidden');
-      } else {
-        header.classList.remove('is-hidden');
-      }
+      const updateHeader = () => {
+        ticking = false;
+        const y = window.scrollY;
+        const scrollingDown = y > lastY;
 
-      lastY = y;
-    };
+        if (y > revealThreshold && scrollingDown) {
+          header.classList.add('is-hidden');
+        } else {
+          header.classList.remove('is-hidden');
+        }
 
-    window.addEventListener(
-      'scroll',
-      () => {
+        lastY = y;
+      };
+
+      const onScroll = () => {
         if (!ticking) {
           ticking = true;
           requestAnimationFrame(updateHeader);
         }
-      },
-      { passive: true },
-    );
-  }
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      win.__headerScrollHandler = onScroll;
+    }
+  });
 </script>
 
 <style>

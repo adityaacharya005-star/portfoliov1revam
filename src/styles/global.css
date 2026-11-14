@@ -92,6 +92,42 @@ button:focus-visible {
   }
 }
 
+/* Page-to-page transition (Astro's <ClientRouter />, native View
+   Transitions API): echoes the case-fade-up entrance already used on a
+   case study's own cover/intro, so arriving at a page and leaving one
+   feel like the same motion language instead of an abrupt cut. Astro's
+   own injected CSS already disables every ::view-transition-* animation
+   under prefers-reduced-motion, so no separate override is needed here. */
+@keyframes view-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes view-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 180ms var(--ease-standard) both view-fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 420ms var(--ease-entrance) both view-fade-in;
+}
+
 /* Touch targets: on phones, links sized by their text alone (nav words, inline
    underlined links) are expanded to a 44px-tall tap zone via an invisible
    pseudo-element, without changing the visible text size or layout. */
