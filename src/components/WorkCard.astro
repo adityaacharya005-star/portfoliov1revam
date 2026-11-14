@@ -205,21 +205,32 @@ const cursorFill = accentColor ? darkenUntilContrast(accentColor, [255, 255, 255
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--cursor-fill, var(--color-accent));
+    width: 44px;
+    height: 44px;
     color: #fff;
-    font-size: 0.6875rem;
+    font-size: 0.5625rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     opacity: 0;
     filter: blur(4px);
     transform: translate(-50%, -50%) scale(0.25);
     transition: opacity var(--duration-fast) var(--ease-standard),
       filter var(--duration-fast) var(--ease-standard),
       transform var(--duration-fast) var(--ease-standard);
+  }
+
+  /* The fill lives on ::before, not the badge itself, so the hand-drawn
+     wobble filter below only touches the circle's edge — the "View"
+     text stays crisp instead of getting displaced along with it. */
+  .work-card__cursor-dot::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 50%;
+    background: var(--cursor-fill, var(--color-accent));
+    filter: url(#sketch-wobble-badge);
   }
 
   .work-card.is-cursor-active .work-card__cursor-dot {
