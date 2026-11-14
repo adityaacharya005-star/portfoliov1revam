@@ -382,7 +382,7 @@ App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. R
 <p>The first screen doesn't assume how a teen takes in information: it asks, visual, simple, spoken, or mixed. That one question acknowledges, before anything else loads, that no two neurodivergent profiles work the same way.</p>
 </li>
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="30" r="9"/><circle cx="94" cy="30" r="9"/><circle cx="60" cy="90" r="9"/><path d="M34 36l20 46M86 36L66 82"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="40" height="40" rx="8"/><rect x="64" y="16" width="40" height="40" rx="8"/><rect x="16" y="64" width="40" height="40" rx="8"/><rect x="64" y="64" width="40" height="40" rx="8"/><path d="M80 86v-6a4 4 0 0 1 8 0v6"/><rect x="76" y="86" width="16" height="12" rx="2"/></svg>
 <h3>A Fixed Layout Grid, Even When Everything Else Is Customizable</h3>
 <p>Whichever widgets a teen picks, they stay in the top half of the home screen, and apps stay in the bottom half, within thumb's reach. That fixed split means switching layouts never means relearning where to look or where to reach.</p>
 </li>
