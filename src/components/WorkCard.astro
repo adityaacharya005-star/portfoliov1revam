@@ -368,7 +368,15 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
      already says "this is clickable" three other ways on hover (the
      title's color, the hand-drawn underline, the image's zoom), so the
      arrow's job is just to reinforce direction once that intent is
-     already there, not to advertise clickability on its own. */
+     already there, not to advertise clickability on its own.
+
+     The -3px y-offset corrects an optical misalignment, not a
+     decorative nudge: .work-card__title centers the arrow against
+     .work-card__title-text's full box, which is 6px taller than the
+     text glyphs themselves (that space is reserved for the underline
+     below). Centered against the padded box, the arrow sat noticeably
+     below the title's true optical center — nearer the gap before the
+     description than the title it's meant to sit beside. */
   .work-card__arrow {
     flex-shrink: 0;
     width: 14px;
@@ -376,7 +384,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
     color: var(--card-accent, var(--color-text));
     opacity: 0;
     filter: blur(4px);
-    transform: scale(0.25) translateX(-2px);
+    transform: scale(0.25) translate(-2px, -3px);
     transition: opacity var(--duration-fast) var(--ease-standard),
       filter var(--duration-fast) var(--ease-standard),
       transform var(--duration-fast) var(--ease-standard);
@@ -386,7 +394,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
   .work-card:focus-visible .work-card__arrow {
     opacity: 1;
     filter: blur(0);
-    transform: scale(1) translateX(3px);
+    transform: scale(1) translate(3px, -3px);
   }
 
   /* The arrow's stroke itself, not just its entrance, now matches the
