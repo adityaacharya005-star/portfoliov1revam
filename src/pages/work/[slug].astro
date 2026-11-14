@@ -64,7 +64,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   >
     <aside class="case-study__sidebar" aria-label="Case study sections">
       <a href="/work" class="case-study__breadcrumb">
-        <span aria-hidden="true">&larr;</span> Work <span class="case-study__breadcrumb-sep">/</span>
+        <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6" /></svg> Work <span class="case-study__breadcrumb-sep">/</span>
         <span class="case-study__breadcrumb-title">{data.title}</span>
       </a>
       <nav>
@@ -80,7 +80,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
         </ul>
       </nav>
       <a href={`/work/${next.slug}`} class="case-study__next">
-        Next <span aria-hidden="true">&rarr;</span>
+        Next <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
       </a>
     </aside>
 
@@ -94,7 +94,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
           {data.eyebrow && <p class="case-study__eyebrow">{data.eyebrow}</p>}
           {data.slidesUrl && (
             <a href={data.slidesUrl} class="case-study__slides" target="_blank" rel="noopener noreferrer">
-              View slides <span aria-hidden="true">&#8599;</span>
+              View slides <svg class="nav-arrow nav-arrow--diagonal" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8" /></svg>
             </a>
           )}
         </div>
@@ -155,7 +155,9 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   </div>
 
   <dialog class="lightbox" data-lightbox>
-    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close enlarged image">&times;</button>
+    <button type="button" class="lightbox__close" data-lightbox-close aria-label="Close enlarged image">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
+    </button>
     <img class="lightbox__image" data-lightbox-image src="" alt="" />
   </dialog>
 
@@ -509,6 +511,17 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 
   .case-study__breadcrumb-sep {
     margin: 0 var(--space-1);
+  }
+
+  .nav-arrow {
+    width: 13px;
+    height: 13px;
+    vertical-align: -2px;
+    flex-shrink: 0;
+  }
+
+  .nav-arrow--diagonal {
+    vertical-align: -1px;
   }
 
   .case-study__breadcrumb-title {
@@ -865,17 +878,23 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     position: fixed;
     top: 20px;
     right: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: none;
     background: rgba(17, 17, 17, 0.55);
     color: #fff;
-    font-size: 1.5rem;
-    line-height: 1;
     cursor: pointer;
     transition: background var(--duration-fast) var(--ease-standard),
       transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .lightbox__close svg {
+    width: 18px;
+    height: 18px;
   }
 
   .lightbox__close:hover {

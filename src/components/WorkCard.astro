@@ -43,7 +43,7 @@ const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
   <span class="work-card__top">
     <span class="work-card__title">
       <span class="work-card__title-text">{title}</span>
-      <span class="work-card__arrow" aria-hidden="true">&rarr;</span>
+      <svg class="work-card__arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
     </span>
     {tags && tags.length > 0 && (
       <span class="work-card__tags">
@@ -153,8 +153,8 @@ const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
 
   .work-card__arrow {
     flex-shrink: 0;
-    font-size: 0.875rem;
-    line-height: 1;
+    width: 14px;
+    height: 14px;
     color: var(--color-muted);
     transition: transform var(--duration-fast) var(--ease-standard),
       color var(--duration-fast) var(--ease-standard);
