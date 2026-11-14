@@ -52,6 +52,33 @@ function accessibleAccentText(hex: string) {
   return rgbToHex([r, g, b]);
 }
 const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor) : undefined;
+
+// A deterministic 0-1 value per string, so each TOC item gets its own
+// squiggle instead of one wave shape stamped out N times — enough
+// variation to read as drawn by hand across several strokes, not
+// randomized on every build (same seed in, same path out).
+function seedFrom(str: string) {
+  let h = 2166136261;
+  for (let i = 0; i < str.length; i++) {
+    h ^= str.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return ((h >>> 0) % 1000) / 1000;
+}
+
+function squigglePath(seed: string) {
+  const a = seedFrom(seed);
+  const b = seedFrom(`${seed}-b`);
+  const c = seedFrom(`${seed}-c`);
+  const sign = a > 0.5 ? 1 : -1;
+  const amp = 1.4 + b * 1.6; // 1.4–3.0
+  const qx = 6.5 + c * 2; // 6.5–8.5
+  const y0 = 5.3 + (a - 0.5) * 0.8;
+  const qy = 5 - sign * amp;
+  const y1 = 5 + sign * amp * 0.55;
+  const y2 = 5 - sign * amp * 0.25;
+  return `M2 ${y0.toFixed(2)}Q${qx.toFixed(1)} ${qy.toFixed(2)} 11 ${y1.toFixed(2)}T20 ${y2.toFixed(2)}`;
+}
 ---
 
 <Base title={data.title} description={data.description} hideHeaderOnScroll>
@@ -73,9 +100,12 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
             <li>
               <a href={`#${s.slug}`} data-section-link={s.slug}>
                 <span class="case-study__nav-bullet" aria-hidden="true">
-                  <svg viewBox="0 0 24 10" fill="none"><path d="M2 5.6Q7 3.1 11 5.3T20 5" /></svg>
+                  <svg viewBox="0 0 24 10" fill="none"><path d={squigglePath(s.slug)} /></svg>
                 </span>
-                <span class="case-study__nav-text">{s.text}</span>
+                <span class="case-study__nav-text">
+                  {s.text}
+                  <svg class="case-study__nav-underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath(`${s.slug}-underline`)} /></svg>
+                </span>
               </a>
             </li>
           ))}
@@ -558,13 +588,11 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     letter-spacing: 0.06em;
     color: var(--color-muted);
     text-decoration: none;
-    border-radius: 4px;
     transition: color 200ms var(--ease-standard);
   }
 
   .case-study__nav a:focus-visible {
-    outline: 2px solid var(--case-accent);
-    outline-offset: 4px;
+    outline: none;
   }
 
   .case-study__nav-bullet {
@@ -582,16 +610,11 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
   }
 
   /* A short hand-inked dash, not a dot: a gently wavy stroke (baked
-     into the path itself, not just the filter) run through the same
+     into the path itself, not just the filter, and seeded per section
+     so no two dashes trace the exact same wave) run through the same
      sketch-wobble displacement as the case's own card-icon strokes, so
      every dash in the list reads as hand-drawn at rest, not just the
-     active one. This is also the ONLY hover/active affordance for the
-     whole row: a second, perfectly straight underline on the text next
-     to a wobbly dash read as two unrelated line languages fighting
-     each other, so that underline is gone and this stroke now carries
-     hover, focus and active state by itself (brighter, thicker,
-     longer), the way a person would re-trace the same pen mark harder
-     rather than draw a second, different line next to it. */
+     active one. */
   .case-study__nav-bullet path {
     fill: none;
     stroke: var(--color-border);
@@ -621,6 +644,48 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
 
   .case-study__nav-text {
     position: relative;
+    padding-bottom: 6px;
+  }
+
+  /* A second hand-drawn squiggle, this time doing the job a straight
+     underline normally would: it only appears on hover/focus, and
+     being the same loose-ink stroke as the dash (not a ruled line)
+     means the two no longer fight each other the way a wobbly dash
+     and a crisp straight underline did before. Replaces the old
+     rectangular focus outline too — this wavy underline alone is the
+     focus indicator for keyboard users, since it's exactly as visible
+     as it is for a mouse hover. */
+  .case-study__nav-underline {
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 7px;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .case-study__nav-underline path {
+    fill: none;
+    stroke: var(--case-accent);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    filter: url(#sketch-wobble-small);
+    opacity: 0;
+    transform: scaleX(0.9);
+    transform-origin: left center;
+    transition: opacity 200ms var(--ease-standard),
+      transform 260ms var(--ease-entrance);
+  }
+
+  .case-study[data-icon-style='polished'] .case-study__nav-underline path {
+    filter: none;
+  }
+
+  .case-study__nav a:hover .case-study__nav-underline path,
+  .case-study__nav a:focus-visible .case-study__nav-underline path {
+    opacity: 0.85;
+    transform: scaleX(1);
   }
 
   .case-study__nav a.is-active {
@@ -635,12 +700,18 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     transform: scaleX(1.45);
   }
 
+  .case-study__nav a.is-active .case-study__nav-underline path {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
   .case-study[data-icon-style='polished'] .case-study__nav a.is-active .case-study__nav-bullet path {
     stroke-width: 3.5;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .case-study__nav-bullet path {
+    .case-study__nav-bullet path,
+    .case-study__nav-underline path {
       transition: none;
     }
   }
