@@ -2,6 +2,7 @@
 import { Image, getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { squigglePath } from '../lib/squiggle';
+import { darkenUntilContrast } from '../lib/color';
 
 interface Props {
   href: string;
@@ -18,13 +19,22 @@ interface Props {
 const { href, title, description, cover, coverAlt, tags, thumbVideoMp4, thumbVideoWebm, accentColor } = Astro.props;
 const hasVideo = Boolean(thumbVideoMp4 && thumbVideoWebm);
 const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
+
+// The custom cursor's label sits on a filled circle in the project's
+// accent, with white text on top — several accents (the orange, the
+// pink) don't clear 4.5:1 against plain white, so darken a copy of the
+// accent specifically for this use rather than reusing the raw color.
+const cursorFill = accentColor ? darkenUntilContrast(accentColor, [255, 255, 255], 4.5) : undefined;
 ---
 
 <a
   href={href}
   class="work-card"
-  style={accentColor ? `--card-accent: ${accentColor}` : undefined}
+  style={`${accentColor ? `--card-accent: ${accentColor};` : ''}${cursorFill ? `--cursor-fill: ${cursorFill};` : ''}`}
 >
+  <span class="work-card__cursor" aria-hidden="true" data-card-cursor>
+    <span class="work-card__cursor-dot">View</span>
+  </span>
   <span class="work-card__media">
     {hasVideo ? (
       <video
@@ -79,13 +89,149 @@ const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
       });
     }
   });
+
+  // The scoped work-card cursor: a small "View" dot that follows the
+  // pointer, only while it's over a card, only on devices with a real
+  // mouse (hover + a fine pointer — never touch), and never under
+  // reduced motion. Position is JS-driven with its own light lerp
+  // smoothing (not a CSS transition — that would fight a value changing
+  // every mousemove); the dot's own scale/opacity/blur entrance is
+  // handled separately in CSS so the two don't fight over `transform`.
+  document.addEventListener('astro:page-load', () => {
+    const win = window as unknown as { __cardCursorCleanup?: () => void };
+    win.__cardCursorCleanup?.();
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const supportsFineHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (prefersReducedMotion || !supportsFineHover) return;
+
+    const cleanups: Array<() => void> = [];
+
+    document.querySelectorAll<HTMLAnchorElement>('.work-card').forEach((card) => {
+      const follower = card.querySelector<HTMLElement>('[data-card-cursor]');
+      if (!follower) return;
+
+      let targetX = 0;
+      let targetY = 0;
+      let curX = 0;
+      let curY = 0;
+      let raf = 0;
+      let active = false;
+
+      const render = () => {
+        curX += (targetX - curX) * 0.2;
+        curY += (targetY - curY) * 0.2;
+        follower.style.transform = `translate(${curX}px, ${curY}px)`;
+        if (active) raf = requestAnimationFrame(render);
+      };
+
+      const setTargetFromEvent = (e: MouseEvent) => {
+        const rect = card.getBoundingClientRect();
+        return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      };
+
+      const onMove = (e: MouseEvent) => {
+        const p = setTargetFromEvent(e);
+        targetX = p.x;
+        targetY = p.y;
+      };
+
+      const onEnter = (e: MouseEvent) => {
+        const p = setTargetFromEvent(e);
+        curX = targetX = p.x;
+        curY = targetY = p.y;
+        follower.style.transform = `translate(${curX}px, ${curY}px)`;
+        active = true;
+        card.classList.add('is-cursor-active');
+        card.addEventListener('mousemove', onMove);
+        raf = requestAnimationFrame(render);
+      };
+
+      const onLeave = () => {
+        active = false;
+        cancelAnimationFrame(raf);
+        card.classList.remove('is-cursor-active');
+        card.removeEventListener('mousemove', onMove);
+      };
+
+      card.classList.add('has-custom-cursor');
+      card.addEventListener('mouseenter', onEnter);
+      card.addEventListener('mouseleave', onLeave);
+
+      cleanups.push(() => {
+        active = false;
+        cancelAnimationFrame(raf);
+        card.classList.remove('has-custom-cursor', 'is-cursor-active');
+        card.removeEventListener('mouseenter', onEnter);
+        card.removeEventListener('mouseleave', onLeave);
+        card.removeEventListener('mousemove', onMove);
+      });
+    });
+
+    win.__cardCursorCleanup = () => cleanups.forEach((fn) => fn());
+  });
 </script>
 
 <style>
   .work-card {
+    position: relative;
     display: block;
     text-decoration: none;
     color: inherit;
+  }
+
+  /* Only swap away the real cursor once the replacement is actually
+     running (the class is added by the script that also checks
+     hover+fine-pointer and reduced motion) — never from CSS alone, or
+     a browser without that JS path would just lose its cursor. */
+  .work-card.has-custom-cursor:hover {
+    cursor: none;
+  }
+
+  .work-card__cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .work-card__cursor-dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--cursor-fill, var(--color-accent));
+    color: #fff;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0;
+    filter: blur(4px);
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: opacity var(--duration-fast) var(--ease-standard),
+      filter var(--duration-fast) var(--ease-standard),
+      transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .work-card.is-cursor-active .work-card__cursor-dot {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .work-card__cursor-dot {
+      transition: none;
+    }
   }
 
   .work-card__media {

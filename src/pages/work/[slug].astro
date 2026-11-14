@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import Contact from '../../components/Contact.astro';
 import { squigglePath } from '../../lib/squiggle';
+import { darkenUntilContrast } from '../../lib/color';
 
 export async function getStaticPaths() {
   const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
@@ -18,41 +19,14 @@ const { data } = entry;
 const { Content, headings } = await render(entry);
 const sections = headings.filter((h) => h.depth === 2);
 
-function hexToRgb(hex: string) {
-  const h = hex.replace('#', '');
-  return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)];
-}
-function rgbToHex([r, g, b]: number[]) {
-  return '#' + [r, g, b].map((v) => Math.round(v).toString(16).padStart(2, '0')).join('');
-}
-function relLuminance([r, g, b]: number[]) {
-  const lin = (c: number) => {
-    c /= 255;
-    return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4;
-  };
-  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
-}
-function contrastRatio(a: number[], b: number[]) {
-  const [l1, l2] = [relLuminance(a), relLuminance(b)].sort((x, y) => y - x);
-  return (l1 + 0.05) / (l2 + 0.05);
-}
 // A case's accentColor is tuned to look good as a border, icon fill or
 // large bold number (3:1 is enough there), but several places set it as
 // running text at 11-16px (eyebrows, role labels, the "Key behavior"
 // tag), which needs 4.5:1. Rather than hand-picking a second color per
 // case, darken the same hue until it clears 4.5:1 against the lightest
 // surface it appears on, and use that for text only.
-function accessibleAccentText(hex: string) {
-  const worstBg = [226, 221, 205]; // a shade under --color-card-warm, as a safety margin
-  let [r, g, b] = hexToRgb(hex);
-  for (let i = 0; i < 60 && contrastRatio([r, g, b], worstBg) < 4.5; i++) {
-    r *= 0.95;
-    g *= 0.95;
-    b *= 0.95;
-  }
-  return rgbToHex([r, g, b]);
-}
-const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor) : undefined;
+const worstBg = [226, 221, 205]; // a shade under --color-card-warm, as a safety margin
+const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor, worstBg, 4.5) : undefined;
 ---
 
 <Base title={data.title} description={data.description} hideHeaderOnScroll>
