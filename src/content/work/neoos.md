@@ -317,14 +317,20 @@ Every screen below answers a specific piece of the research: an abrupt support d
 </figure>
 
 <figure class="figure--white">
+<div class="figure-header">
 <p class="figure-eyebrow">Settings</p>
+<button type="button" class="darkmode-toggle" data-darkmode-toggle aria-pressed="false">
+<svg class="darkmode-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+<span>Dark mode</span>
+</button>
+</div>
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
-<img src="/images/neoos/settings-main.webp" alt="NeoOS settings screen grouped into visual cards for Dark and Light Mode, Pastel Themes, Font and Size, Smart Summaries, and more" />
+<img src="/images/neoos/settings-main.webp" data-light="/images/neoos/settings-main.webp" data-dark="/images/neoos/settings-main-dark.webp" alt="NeoOS settings screen grouped into visual cards for Dark and Light Mode, Pastel Themes, Font and Size, Smart Summaries, and more" />
 <p class="screen-caption">Settings group into a few visual cards instead of one long scrolling list, so nothing gets lost past the fold.</p>
 </li>
 <li class="screen-item">
-<img src="/images/neoos/settings-darkmode.webp" alt="NeoOS Dark and Light Mode settings screen with a live side-by-side preview of both home screen states" />
+<img src="/images/neoos/settings-darkmode.webp" data-light="/images/neoos/settings-darkmode.webp" data-dark="/images/neoos/settings-darkmode-dark.webp" alt="NeoOS Dark and Light Mode settings screen with a live side-by-side preview of both home screen states" />
 <p class="screen-caption">Dark and light mode show a live preview of the actual home screen before switching, rather than asking for a blind toggle.</p>
 </li>
 </ul>
@@ -347,16 +353,25 @@ Typography defaults to Atkinson Hyperlegible, a typeface the Braille Institute b
 
 App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. Rounded, dimensional shapes read as less harsh than hard edges, so a crowded home screen feels inviting rather than loud. A flat icon style stays available in settings for anyone who prefers it, changing only the icon shading, not the rest of the system.
 
+<div class="icon-showcase">
+<div class="figure-header">
+<p class="figure-eyebrow">App Icons</p>
+<button type="button" class="darkmode-toggle" data-icon-style-toggle aria-pressed="false">
+<svg class="darkmode-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="9" height="9" rx="2"/><rect x="12" y="12" width="9" height="9" rx="2"/></svg>
+<span>Flat icons</span>
+</button>
+</div>
 <ul class="icon-grid">
-<li><img src="/images/neoos/icon-phone.webp" alt="Soft 3D phone icon" /></li>
-<li><img src="/images/neoos/icon-chat.webp" alt="Soft 3D chat icon" /></li>
-<li><img src="/images/neoos/icon-mail.webp" alt="Soft 3D mail icon" /></li>
-<li><img src="/images/neoos/icon-contacts.webp" alt="Soft 3D contacts icon" /></li>
-<li><img src="/images/neoos/icon-calendar.webp" alt="Soft 3D calendar icon" /></li>
-<li><img src="/images/neoos/icon-notes.webp" alt="Soft 3D notes icon" /></li>
-<li><img src="/images/neoos/icon-checklist.webp" alt="Soft 3D checklist icon" /></li>
-<li><img src="/images/neoos/icon-target.webp" alt="Soft 3D target icon" /></li>
+<li><img src="/images/neoos/icon-phone.webp" data-style-default="/images/neoos/icon-phone.webp" data-style-flat="/images/neoos/icon-phone-flat.webp" alt="Phone icon, shown in the 3D default style" /></li>
+<li><img src="/images/neoos/icon-chat.webp" data-style-default="/images/neoos/icon-chat.webp" data-style-flat="/images/neoos/icon-chat-flat.webp" alt="Chat icon, shown in the 3D default style" /></li>
+<li><img src="/images/neoos/icon-mail.webp" data-style-default="/images/neoos/icon-mail.webp" data-style-flat="/images/neoos/icon-mail-flat.webp" alt="Mail icon, shown in the 3D default style" /></li>
+<li><img src="/images/neoos/icon-contacts.webp" data-style-default="/images/neoos/icon-contacts.webp" data-style-flat="/images/neoos/icon-contacts-flat.webp" alt="Contacts icon, shown in the 3D default style" /></li>
+<li><img src="/images/neoos/icon-calendar.webp" data-style-default="/images/neoos/icon-calendar.webp" data-style-flat="/images/neoos/icon-calendar-flat.webp" alt="Calendar icon, shown in the 3D default style" /></li>
+<li><img src="/images/neoos/icon-notes.webp" data-style-default="/images/neoos/icon-notes.webp" data-style-flat="/images/neoos/icon-notes-flat.webp" alt="Notes icon, shown in the 3D default style" /></li>
+<li><img src="/images/neoos/icon-checklist.webp" data-style-default="/images/neoos/icon-checklist.webp" data-style-flat="/images/neoos/icon-checklist-flat.webp" alt="Checklist icon, shown in the 3D default style" /></li>
+<li><img src="/images/neoos/icon-target.webp" data-style-default="/images/neoos/icon-target.webp" data-style-flat="/images/neoos/icon-target-flat.webp" alt="Target icon, shown in the 3D default style" /></li>
 </ul>
+</div>
 
 ## Retrospective
 

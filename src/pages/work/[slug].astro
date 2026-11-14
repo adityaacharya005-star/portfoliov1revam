@@ -359,6 +359,25 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
       });
     });
   });
+
+  // NeoOS icon-style toggle: swaps the whole icon grid between the 3D
+  // default and the flat alternative, the same compare-the-whole-set
+  // pattern as the dark-mode toggles above.
+  document.querySelectorAll<HTMLButtonElement>('[data-icon-style-toggle]').forEach((toggle) => {
+    const showcase = toggle.closest('.icon-showcase');
+    if (!showcase) return;
+    const images = showcase.querySelectorAll<HTMLImageElement>('img[data-style-flat]');
+
+    toggle.addEventListener('click', () => {
+      const isFlat = toggle.getAttribute('aria-pressed') === 'true';
+      const next = !isFlat;
+      toggle.setAttribute('aria-pressed', String(next));
+      images.forEach((img) => {
+        const source = next ? img.dataset.styleFlat : img.dataset.styleDefault;
+        if (source) img.src = source;
+      });
+    });
+  });
 </script>
 
 <style>
@@ -1678,6 +1697,14 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     .case-study__body :global(.swatch-grid) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+  }
+
+  /* Pairs the toggle with the grid it switches, the same flex-column
+     rhythm a figure uses for its own header + content. */
+  .case-study__body :global(.icon-showcase) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
   }
 
   /* The real app icons, not a redrawn stand-in: shows the soft 3D
