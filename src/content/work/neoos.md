@@ -208,7 +208,7 @@ Every screen below answers a specific piece of the research: an abrupt support d
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/neoos/onboard-font.webp" data-light="/images/neoos/onboard-font.webp" data-dark="/images/neoos/onboard-font-dark.webp" alt="NeoOS font selection screen offering Atkinson Hyperlegible, Lexend, and OpenDyslexic" />
-<p class="screen-caption">The font list includes Atkinson Hyperlegible and OpenDyslexic alongside the usual options, picked for reading speed, not branding.</p>
+<p class="screen-caption">Every font option here is picked for reading speed, not branding.</p>
 </li>
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/neoos/onboard-ready.webp" data-light="/images/neoos/onboard-ready.webp" data-dark="/images/neoos/onboard-ready-dark.webp" alt="NeoOS loading screen reading NeoOS is ready for you" />
@@ -235,7 +235,7 @@ Every screen below answers a specific piece of the research: an abrupt support d
 </div>
 <p class="screen-annotate__tag">↑ Apps, in thumb's reach</p>
 </div>
-<p class="screen-caption">The default pick: weather, date, music, messages.</p>
+<p class="screen-caption">One widget layout a teen might choose.</p>
 </li>
 <li class="screen-item">
 <div class="screen-annotate">
@@ -246,7 +246,7 @@ Every screen below answers a specific piece of the research: an abrupt support d
 </div>
 <p class="screen-annotate__tag">↑ Apps, unchanged</p>
 </div>
-<p class="screen-caption">A task-first pick: the day's routine instead.</p>
+<p class="screen-caption">A different layout, same fixed app grid underneath.</p>
 </li>
 </ul>
 <figcaption>Same split either way. The sketch note behind it just said "apps should be near the thumb."</figcaption>
@@ -311,7 +311,7 @@ Every screen below answers a specific piece of the research: an abrupt support d
 </li>
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/neoos/inbox-ai-summary.webp" data-light="/images/neoos/inbox-ai-summary.webp" data-dark="/images/neoos/inbox-ai-summary-dark.webp" alt="NeoOS Inbox app AI summary of the Parents message stack, listing items to grab and a schedule change before the raw messages" />
-<p class="screen-caption">Opening a stack offers an AI summary first, items to grab, a schedule change, before the raw messages underneath it.</p>
+<p class="screen-caption">The AI summary surfaces what matters first, so a teen doesn't have to read the full thread.</p>
 </li>
 </ul>
 </figure>

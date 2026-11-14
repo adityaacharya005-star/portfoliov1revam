@@ -272,7 +272,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 </li>
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/iterate/onboard-login.webp" alt="Iterate login screen with options to continue with Google, phone, or email" />
-<p class="screen-caption">Three ways to log in: Google, phone, or email. No one option to get stuck on.</p>
+<p class="screen-caption">Multiple ways in, so no single option is a dead end.</p>
 </li>
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/iterate/onboard-signup.webp" alt="Iterate create account screen requiring a name, college email, and password" />
@@ -306,7 +306,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 <ul class="screen-grid screen-grid--2">
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/iterate/new-project-a.webp" alt="Iterate new project form with fields for Project Title, Visuals, and Project Bio" />
-<p class="screen-caption">Starting a post only needs a title, some visuals, and a short bio.</p>
+<p class="screen-caption">Posting is kept to three fields, so starting takes under a minute.</p>
 </li>
 <li class="screen-item">
 <img loading="lazy" decoding="async" src="/images/iterate/new-project-b.webp" alt="Iterate new project screen with tags for Ongoing or Complete, an Add People option, and a Publish button" />
