@@ -73,7 +73,7 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
             <li>
               <a href={`#${s.slug}`} data-section-link={s.slug}>
                 <span class="case-study__nav-bullet" aria-hidden="true">
-                  <svg viewBox="0 0 24 10" fill="none"><path d="M3 5h18" /></svg>
+                  <svg viewBox="0 0 24 10" fill="none"><path d="M2 5.6Q7 3.1 11 5.3T20 5" /></svg>
                 </span>
                 <span class="case-study__nav-text">{s.text}</span>
               </a>
@@ -558,13 +558,19 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     letter-spacing: 0.06em;
     color: var(--color-muted);
     text-decoration: none;
-    transition: color var(--duration-fast) var(--ease-standard);
+    border-radius: 4px;
+    transition: color 200ms var(--ease-standard);
+  }
+
+  .case-study__nav a:focus-visible {
+    outline: 2px solid var(--case-accent);
+    outline-offset: 4px;
   }
 
   .case-study__nav-bullet {
     display: flex;
     align-items: center;
-    width: 16px;
+    width: 18px;
     height: 10px;
     flex-shrink: 0;
   }
@@ -575,65 +581,62 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     overflow: visible;
   }
 
-  /* A short hand-inked dash, not a dot: the same loose-line vocabulary
-     as the case's own card-icon strokes (sketch-wobble filter, or the
-     bolder unwobbled stroke under the polished icon style), so the
-     "you are here" mark reads as part of the illustration system
-     instead of a generic UI indicator. */
+  /* A short hand-inked dash, not a dot: a gently wavy stroke (baked
+     into the path itself, not just the filter) run through the same
+     sketch-wobble displacement as the case's own card-icon strokes, so
+     every dash in the list reads as hand-drawn at rest, not just the
+     active one. This is also the ONLY hover/active affordance for the
+     whole row: a second, perfectly straight underline on the text next
+     to a wobbly dash read as two unrelated line languages fighting
+     each other, so that underline is gone and this stroke now carries
+     hover, focus and active state by itself (brighter, thicker,
+     longer), the way a person would re-trace the same pen mark harder
+     rather than draw a second, different line next to it. */
   .case-study__nav-bullet path {
     fill: none;
     stroke: var(--color-border);
     stroke-width: 2;
     stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.75;
+    filter: url(#sketch-wobble-small);
     transform-origin: left center;
-    transition: stroke var(--duration-fast) var(--ease-standard),
-      stroke-width var(--duration-fast) var(--ease-standard),
-      opacity var(--duration-fast) var(--ease-standard),
-      transform var(--duration-fast) var(--ease-standard);
+    transition: stroke 200ms var(--ease-standard),
+      stroke-width 200ms var(--ease-standard),
+      opacity 200ms var(--ease-standard),
+      transform 260ms var(--ease-entrance);
   }
 
-  .case-study__nav a:hover .case-study__nav-bullet path {
+  .case-study[data-icon-style='polished'] .case-study__nav-bullet path {
+    filter: none;
+  }
+
+  .case-study__nav a:hover .case-study__nav-bullet path,
+  .case-study__nav a:focus-visible .case-study__nav-bullet path {
     stroke: var(--case-accent);
-    opacity: 0.7;
+    stroke-width: 2.5;
+    opacity: 0.95;
+    transform: scaleX(1.2);
   }
 
   .case-study__nav-text {
     position: relative;
-    padding-bottom: 2px;
-  }
-
-  .case-study__nav-text::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--duration-fast) var(--ease-standard);
-  }
-
-  .case-study__nav a:hover .case-study__nav-text::after,
-  .case-study__nav a:focus-visible .case-study__nav-text::after {
-    transform: scaleX(1);
   }
 
   .case-study__nav a.is-active {
     color: var(--case-accent);
+    font-weight: 600;
   }
 
   .case-study__nav a.is-active .case-study__nav-bullet path {
     stroke: var(--case-accent);
     stroke-width: 3;
-    transform: scaleX(1.15);
-    filter: url(#sketch-wobble-small);
+    opacity: 1;
+    transform: scaleX(1.45);
   }
 
   .case-study[data-icon-style='polished'] .case-study__nav a.is-active .case-study__nav-bullet path {
     stroke-width: 3.5;
-    filter: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -713,7 +716,6 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     }
 
     .case-study__breadcrumb::after,
-    .case-study__nav-text::after,
     .case-study__next::after {
       transition: none;
     }
