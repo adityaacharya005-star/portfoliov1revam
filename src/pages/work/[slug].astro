@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import Contact from '../../components/Contact.astro';
+import { squigglePath } from '../../lib/squiggle';
 
 export async function getStaticPaths() {
   const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
@@ -52,33 +53,6 @@ function accessibleAccentText(hex: string) {
   return rgbToHex([r, g, b]);
 }
 const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor) : undefined;
-
-// A deterministic 0-1 value per string, so each TOC item gets its own
-// squiggle instead of one wave shape stamped out N times — enough
-// variation to read as drawn by hand across several strokes, not
-// randomized on every build (same seed in, same path out).
-function seedFrom(str: string) {
-  let h = 2166136261;
-  for (let i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return ((h >>> 0) % 1000) / 1000;
-}
-
-function squigglePath(seed: string) {
-  const a = seedFrom(seed);
-  const b = seedFrom(`${seed}-b`);
-  const c = seedFrom(`${seed}-c`);
-  const sign = a > 0.5 ? 1 : -1;
-  const amp = 0.5 + b * 0.6; // 0.5–1.1, just enough to notice
-  const qx = 6.5 + c * 2; // 6.5–8.5
-  const y0 = 5.15 + (a - 0.5) * 0.3;
-  const qy = 5 - sign * amp;
-  const y1 = 5 + sign * amp * 0.55;
-  const y2 = 5 - sign * amp * 0.25;
-  return `M2 ${y0.toFixed(2)}Q${qx.toFixed(1)} ${qy.toFixed(2)} 11 ${y1.toFixed(2)}T20 ${y2.toFixed(2)}`;
-}
 ---
 
 <Base title={data.title} description={data.description} hideHeaderOnScroll>
