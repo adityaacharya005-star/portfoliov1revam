@@ -872,7 +872,10 @@ const accentColorText = data.accentColor ? accessibleAccentText(data.accentColor
     flex-direction: column;
     gap: var(--space-5);
     padding: var(--space-7);
-    background: var(--color-card-warm);
+    /* A light tint of this case's own accent instead of one neutral
+       warm tone reused on every project, so the frame around every
+       diagram/screenshot carries a bit of each case's own color. */
+    background: color-mix(in srgb, var(--case-accent) 12%, var(--color-bg));
   }
 
   .case-study__body :global(figcaption) {
