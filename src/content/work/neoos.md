@@ -6,7 +6,7 @@ coverAlt: "TODO: describe the NeoOS screen shown here"
 role: Product Designer & UX Researcher
 timeline: "2026"
 tools: [Figma]
-services: [Mobile UI, Accessibility] # TODO — replace with real tags
+services: [Product Design, Accessibility, Mobile UI]
 accentColor: "#2E9E6B"
 order: 3
 featured: true

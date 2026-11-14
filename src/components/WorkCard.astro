@@ -231,6 +231,25 @@ const poster = hasVideo ? await getImage({ src: cover, width: 960 }) : null;
     background: color-mix(in srgb, var(--color-placeholder) 45%, var(--color-bg));
     border-radius: 999px;
     white-space: nowrap;
+    transition: color var(--duration-fast) var(--ease-standard),
+      background var(--duration-fast) var(--ease-standard);
+  }
+
+  /* Gray at rest, not accent: the same tag text ("Product Design")
+     repeats across different projects, so tinting it permanently would
+     make one tag's color mean "this project" on one card and nothing
+     in particular on the next. On hover there's no such ambiguity —
+     it's clearly this card's color for as long as the pointer is here. */
+  .work-card:hover .work-card__tag,
+  .work-card:focus-visible .work-card__tag {
+    color: var(--card-accent, var(--color-text));
+    background: color-mix(in srgb, var(--card-accent, var(--color-muted)) 14%, var(--color-bg));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .work-card__tag {
+      transition: none;
+    }
   }
 
   .work-card__description {
