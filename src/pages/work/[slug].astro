@@ -634,12 +634,19 @@ function squigglePath(seed: string) {
     filter: none;
   }
 
+  /* A softer, tinted preview, not the full accent: hovering a
+     different item while another stays active (common while scanning
+     the list) used to color both dashes the same strong accent, which
+     made "where you are" and "what your mouse is over" briefly
+     indistinguishable. This is deliberately muted and grows less, so
+     the active item's dash below stays the one unambiguously bold
+     mark even when a neighbor is hovered at the same time. */
   .case-study__nav a:hover .case-study__nav-bullet path,
   .case-study__nav a:focus-visible .case-study__nav-bullet path {
-    stroke: var(--case-accent);
-    stroke-width: 2.5;
-    opacity: 0.95;
-    transform: scaleX(1.2);
+    stroke: color-mix(in srgb, var(--case-accent) 55%, var(--color-muted));
+    stroke-width: 2.2;
+    opacity: 0.9;
+    transform: scaleX(1.08);
   }
 
   .case-study__nav-text {
@@ -695,9 +702,9 @@ function squigglePath(seed: string) {
 
   .case-study__nav a.is-active .case-study__nav-bullet path {
     stroke: var(--case-accent);
-    stroke-width: 2.75;
+    stroke-width: 3;
     opacity: 1;
-    transform: scaleX(1.2);
+    transform: scaleX(1.3);
   }
 
   .case-study[data-icon-style='polished'] .case-study__nav a.is-active .case-study__nav-bullet path {
