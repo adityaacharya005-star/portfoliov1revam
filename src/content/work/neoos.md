@@ -123,7 +123,7 @@ Tap anyone in the graph to see how they connect: the teen sits at the center wit
 <span class="graph-node__label">The teen</span>
 </button>
 <button type="button" class="graph-node" style="left:50%;top:12%" data-id="therapists" aria-pressed="false" data-name="Therapists & psychiatrists" data-tier="Clinical evaluator, referral gatekeeper" data-detail="Whether a diagnosis or referral happens at all usually runs through them first.">
-<span class="graph-node__circle" style="--node-tint:#E8D0EE"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18l34 14v26c0 28-16 46-34 54-18-8-34-26-34-54V32Z"/><path d="M48 60l9 9 16-18"/></svg></span>
+<span class="graph-node__circle" style="--node-tint:#E8D0EE"><svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="60" r="40"/><path d="M60 40v40M40 60h40"/></svg></span>
 <span class="graph-node__label">Therapists</span>
 </button>
 <button type="button" class="graph-node" style="left:73.75%;top:50%" data-id="parents" aria-pressed="false" data-name="Parents" data-tier="Payer, purchaser, domestic enabler" data-detail="They pay for it, set it up, and absorb the guilt and burnout if it fails. The household runs through them.">
@@ -377,7 +377,7 @@ App icons default to soft, pastel-shaded 3D surfaces instead of flat line art. R
 
 <ul class="outcome-grid">
 <li class="outcome-card">
-<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="24" width="56" height="72" rx="6"/><path d="M32 42h32M32 56h32M32 70h20"/><circle cx="86" cy="80" r="20"/><path d="M78 80l6 6 12-14"/></svg>
+<svg class="card-icon" viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="60" r="36"/><circle cx="60" cy="24" r="5"/><circle cx="96" cy="60" r="5"/><circle cx="60" cy="96" r="5"/><circle cx="24" cy="60" r="5"/><path d="M60 60L60 30"/><circle cx="60" cy="60" r="4" fill="currentColor" stroke="none"/></svg>
 <h3>A Preference Screen Instead of One Fixed Interface</h3>
 <p>The first screen doesn't assume how a teen takes in information: it asks, visual, simple, spoken, or mixed. That one question acknowledges, before anything else loads, that no two neurodivergent profiles work the same way.</p>
 </li>
