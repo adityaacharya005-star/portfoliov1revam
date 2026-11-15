@@ -7,7 +7,7 @@ coverRatio: "16 / 9"
 role: Lead System & Interaction Designer
 team: Group Project · 4 Designers
 timeline: March – April 2026
-services: [Product Design, UX Research, System Design, Service Design]
+services: [Product Design, UX Research, System Design]
 order: 2
 featured: true
 eyebrow: System Design Case Study · March 2026

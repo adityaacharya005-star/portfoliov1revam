@@ -354,10 +354,9 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
 
   .work-card__top {
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-1);
+    gap: var(--space-3);
     margin-top: var(--space-4);
   }
 
@@ -482,17 +481,13 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
     flex-shrink: 1;
     flex-wrap: nowrap;
     justify-content: flex-end;
-    gap: 0.125rem;
+    gap: var(--space-1);
     min-width: 0;
   }
 
-  /* Compact on purpose — the title's job is to be read, the tags' job
-     is to be scanned, so they can afford to be visibly smaller. Keeps
-     a project with four tags (a broader-scope case study) on the same
-     line as its title instead of pushing either one onto its own row. */
   .work-card__tag {
-    padding: 0.0625rem 0.25rem;
-    font-size: 0.5rem;
+    padding: 0.125rem 0.375rem;
+    font-size: 0.625rem;
     color: var(--color-muted);
     background: color-mix(in srgb, var(--color-placeholder) 45%, var(--color-bg));
     border-radius: 999px;
@@ -531,16 +526,13 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
   /* Keyed to the card's own rendered width (a container query, not a
      viewport breakpoint) since the 2-column grid means the same
      viewport can give very different card widths depending on how
-     much content the card holds — and a 4-tag project needs more room
-     than a 2-tag one to stay on one line in the first place. The
-     widest real case (title + 4 tags) needs ~493px; 491px is just
-     below that so it wraps right at the edge instead of leaving a gap
-     where neither the one-line nor the wrapped layout has room. The
-     title itself also wraps here instead of relying on a separate
-     viewport breakpoint — otherwise a 2-up card can land narrower than
-     the title's own fixed width (e.g. viewport ~480-540px) with
-     nothing keyed to that case, and the title overflows the card. */
-  @container (max-width: 491px) {
+     much content the card holds. The title never shrinks or
+     truncates; below this threshold even the tags can't compact
+     enough to share the row with it, so both wrap instead of
+     overlapping. 489px sits just under the widest real case (title +
+     three tags, ~491px) so it wraps right at the edge rather than
+     leaving a gap where neither layout has room. */
+  @container (max-width: 489px) {
     .work-card__top {
       flex-wrap: wrap;
     }
@@ -548,11 +540,6 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
     .work-card__tags {
       flex-wrap: wrap;
       justify-content: flex-start;
-    }
-
-    .work-card__title {
-      flex-shrink: 1;
-      min-width: 0;
     }
 
     .work-card__title-text {
