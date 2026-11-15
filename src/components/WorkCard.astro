@@ -476,6 +476,12 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
     filter: url(#sketch-wobble-small);
   }
 
+  /* The -3px y-offset matches the one on .work-card__arrow just above:
+     .work-card__top centers the tags against .work-card__title-text's
+     full box, which is 6px taller than the title's glyphs themselves
+     (reserved for the underline below), so centered against that
+     padded box the tags sit visibly lower than the title's true
+     optical center. */
   .work-card__tags {
     display: flex;
     flex-shrink: 1;
@@ -483,6 +489,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
     justify-content: flex-end;
     gap: var(--space-1);
     min-width: 0;
+    transform: translateY(-3px);
   }
 
   .work-card__tag {
