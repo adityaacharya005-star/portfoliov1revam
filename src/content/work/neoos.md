@@ -1,8 +1,10 @@
 ---
 title: NeoOS
 description: A mobile UI made for neurodivergent users.
-cover: ./assets/neoos-cover.png
-coverAlt: "TODO: describe the NeoOS screen shown here"
+cover: ./assets/neoos-cover.webp
+coverAlt: "NeoOS home screen with weather, calendar and music widgets above a simplified app grid"
+thumbVideoMp4: /videos/neoos-thumb.mp4
+thumbVideoWebm: /videos/neoos-thumb.webm
 role: Product Designer & UX Researcher
 timeline: "2026"
 tools: [Figma]
