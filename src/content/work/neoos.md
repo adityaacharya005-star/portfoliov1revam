@@ -8,7 +8,7 @@ thumbVideoWebm: /videos/neoos-thumb.webm
 role: Product Designer & UX Researcher
 timeline: "2026"
 tools: [Figma]
-services: [UI Design, UX Research, Accessibility]
+services: [Product Design, UX Research, Accessibility]
 accentColor: "#2E9E6B"
 order: 3
 featured: true

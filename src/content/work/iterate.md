@@ -7,7 +7,7 @@ coverRatio: "1165 / 785"
 role: Product Designer
 timeline: "2025"
 tools: [Figma]
-services: [UI Design, UX Research, Mobile App]
+services: [Product Design, UX Research, Mobile App]
 order: 4
 featured: true
 accentColor: "#F97316"
