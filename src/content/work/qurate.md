@@ -6,7 +6,7 @@ coverAlt: Qurate Experiences dashboard shown on a desktop display, with a Mac St
 role: Product Designer
 timeline: 1 week
 tools: [Figma]
-services: [Product Design, Web Dashboard]
+services: [UI Design, UX Research, Web Dashboard]
 eyebrow: Product Case Study · October 2026
 order: 1
 featured: true
