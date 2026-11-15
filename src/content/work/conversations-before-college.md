@@ -97,17 +97,7 @@ These research findings map directly onto the three systemic interventions below
 
 ## The Goal
 
-Design a system that replaces fear-based stream selection with structured autonomy, built on the Academic Bank of Credits that NEP 2020 already opened up but never gave students a way to use. The brief split into three deliverables, one connected system:
-
-<p><strong>The Library.</strong> A physical space, repainted into four intent-based zones.</p>
-<p><strong>SETU.</strong> A one-year transition curriculum, credit-backed from day one.</p>
-<p><strong>CareerBridge.</strong> The daily app tying both of them to real university credit.</p>
-
-<p>Across the four of us, I owned the CareerBridge app end to end and worked alongside the team on the curriculum and the research behind all three pieces.</p>
-
-## Systemic Interventions
-
-The three structural pillars below are ordered by how much resistance each one meets on the way in.
+Design a system that replaces fear-based stream selection with structured autonomy, built on the Academic Bank of Credits that NEP 2020 already opened up but never gave students a way to use. The brief split into three deliverables, one connected system, ordered below by how much resistance each one meets on the way in.
 
 <ul class="outcome-grid">
 <li class="outcome-card">
@@ -126,6 +116,8 @@ The three structural pillars below are ordered by how much resistance each one m
 <p>Digital, medium friction. The daily engine that turns the curriculum into tasks and the library's habits into data.</p>
 </li>
 </ul>
+
+<p>Across the four of us, I owned the CareerBridge app end to end and worked alongside the team on the curriculum and the research behind all three pieces.</p>
 
 ## The Library
 
@@ -219,7 +211,7 @@ The first screen after login asks eight situational questions: how a student rea
 <figcaption>Parents see the same data as verified credits, a consistency score, and an engagement level. That's a number they can read, instead of an anxious check-in call.</figcaption>
 </figure>
 
-## Style Guide
+## Design System
 
 <figure>
 <img loading="lazy" decoding="async" src="/images/conversations/careerbridge-design-system.webp" width="925" height="2000" alt="CareerBridge design system: color palette, typography scale, and button states across student, parent, primary, secondary, and brand variants" />
