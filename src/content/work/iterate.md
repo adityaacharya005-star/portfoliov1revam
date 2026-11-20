@@ -354,7 +354,7 @@ The screens across onboarding and the core flow, each one answering a specific f
 <figcaption>Opening a project keeps its "Ongoing" tag visible, so that context carries through from the feed to the profile to the post itself.</figcaption>
 </figure>
 
-## Style Guide
+## Design System
 
 <figure>
 <img loading="lazy" decoding="async" src="/images/iterate/design-system.webp" width="881" height="2000" alt="Iterate design system: color palette, Poppins typography scale, button and navigation bar components, primary logo mark, typography weights, and logo color variants" />
