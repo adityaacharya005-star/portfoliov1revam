@@ -2009,17 +2009,19 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
     width: 112px;
     height: 112px;
     margin-bottom: var(--space-5);
-    color: var(--color-text);
+    color: var(--case-accent);
     filter: url(#sketch-wobble);
   }
 
   /* Qurate's brand icon style: medium-weight rounded strokes, a
      filled accent shape somewhere in each icon (a folded page corner,
      a cursor), and one confident curled/swept line per icon for
-     personality, in the case's own accent color. */
+     personality. Every case study's icons already read in its own
+     accent (just above); this variant additionally trades the
+     loose-ink wobble for a heavier, clean stroke - Qurate's own
+     brand language, not the sitewide default. */
   .case-study[data-icon-style='polished'] .case-study__body :global(.card-icon) {
     stroke-width: 4.5;
-    color: var(--case-accent);
     filter: none;
   }
 
