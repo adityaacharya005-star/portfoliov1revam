@@ -1684,9 +1684,13 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
 
   /* Research insight -> system intervention: a plain divided list
      rather than another card grid, since this is a logical mapping,
-     not a set of parallel items. A serif index number and a hand-drawn
-     arrow (same displacement filter as the card icons) give it some
-     rhythm; the arrow nudges forward on hover as a small sign of life. */
+     not a set of parallel items. These three rows are independent
+     (each insight maps to its own intervention; none depends on the
+     one before it), so there's no index number - numbering would
+     imply a sequence that isn't there. A hand-drawn arrow (same
+     displacement filter as the card icons) carries the "maps to"
+     relationship instead, and nudges forward on hover as a small sign
+     of life. */
   .case-study__body :global(.insight-map) {
     margin-inline: 0;
     margin-bottom: 0;
@@ -1698,7 +1702,7 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
 
   .case-study__body :global(.insight-row) {
     display: grid;
-    grid-template-columns: auto 1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr;
     gap: var(--space-5);
     align-items: center;
     padding: var(--space-6) 0;
@@ -1708,14 +1712,6 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
   .case-study__body :global(.insight-row:first-child) {
     border-top: none;
     padding-top: 0;
-  }
-
-  .case-study__body :global(.insight-number) {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1;
-    color: var(--case-accent);
   }
 
   .case-study__body :global(.insight-from),

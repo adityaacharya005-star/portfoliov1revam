@@ -76,19 +76,16 @@ These research findings map directly onto the three systemic interventions below
 
 <ul class="insight-map">
 <li class="insight-row">
-<span class="insight-number">01</span>
 <p class="insight-from">Information overload pushes families toward whichever coaching brand has the biggest billboard.</p>
 <svg class="insight-arrow" viewBox="0 0 48 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h38M30 3l12 9-12 9"/></svg>
 <p class="insight-to"><strong>CareerBridge</strong>, verified by real universities, to replace billboard trust with earned credit.</p>
 </li>
 <li class="insight-row">
-<span class="insight-number">02</span>
 <p class="insight-from">Subject silos teach kids that knowledge lives in separate, non-overlapping boxes.</p>
 <svg class="insight-arrow" viewBox="0 0 48 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h38M30 3l12 9-12 9"/></svg>
 <p class="insight-to"><strong>An intent-based library</strong>, organized by human goal instead of subject label.</p>
 </li>
 <li class="insight-row">
-<span class="insight-number">03</span>
 <p class="insight-from">Parents treat a gap year as a stigmatized, wasted year spent re-sitting exams.</p>
 <svg class="insight-arrow" viewBox="0 0 48 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h38M30 3l12 9-12 9"/></svg>
 <p class="insight-to"><strong>SETU</strong>, a credit-backed transition year with its own structure and deliverables.</p>
