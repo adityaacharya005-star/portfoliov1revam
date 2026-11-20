@@ -172,7 +172,7 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 </div>
 <div class="id-card__body">
 <span class="persona-portrait persona-portrait--sketch" role="img" aria-label="Sketch illustration representing Priya Sharma">
-<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="42" r="17"/><path d="M44 32c4-9 28-9 32 0"/><path d="M43 30c-6 10-8 26-3 42"/><path d="M77 30c6 10 8 26 3 42"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
+<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="42" r="17"/><path d="M44 32Q60 19 76 32"/><path d="M44 32C39 37 36 42 35 47"/><circle cx="32" cy="50" r="7"/><path d="M76 32C81 37 84 42 85 47"/><circle cx="88" cy="50" r="7"/><path d="M49 36q5-4.5 9 0M62 36q5-4.5 9 0" stroke-width="2.2"/><circle cx="53" cy="43" r="2.1" fill="currentColor" stroke="none"/><circle cx="67" cy="43" r="2.1" fill="currentColor" stroke="none"/><path d="M52 52q8 5 16 0" stroke-width="2.6"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
 </span>
 <p class="persona-eyebrow">UI/UX Student · NID</p>
 <p class="persona-name">Priya Sharma</p>
@@ -191,7 +191,7 @@ Affinity-mapped straight from the 74 survey and interview responses, before any 
 </div>
 <div class="id-card__body">
 <span class="persona-portrait persona-portrait--sketch" role="img" aria-label="Sketch illustration representing Aniket Joshi">
-<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="44" r="17"/><path d="M43 37c2-11 32-11 34 0"/><circle cx="52" cy="46" r="6.5"/><circle cx="68" cy="46" r="6.5"/><path d="M58.5 46h3"/><path d="M39 44h6.5"/><path d="M74.5 44h6.5"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
+<svg viewBox="0 0 120 120" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="44" r="17"/><path d="M43 37c2-11 32-11 34 0"/><circle cx="52" cy="46" r="6.5"/><circle cx="68" cy="46" r="6.5"/><path d="M58.5 46h3"/><path d="M39 44h6.5"/><path d="M74.5 44h6.5"/><path d="M46 36q4-2.5 8 0M64 36q4-2.5 8 0" stroke-width="2.6"/><circle cx="52" cy="46" r="2" fill="currentColor" stroke="none"/><circle cx="68" cy="46" r="2" fill="currentColor" stroke="none"/><path d="M55 56q5 3 10 0" stroke-width="2.6"/><path d="M26 100c0-20 15-32 34-32s34 12 34 32"/></svg>
 </span>
 <p class="persona-eyebrow">Graphic Design Student · MIT-WPU</p>
 <p class="persona-name">Aniket Joshi</p>
