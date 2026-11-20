@@ -59,7 +59,7 @@ Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic,
 <li class="persona-card persona-card--neo">
 <div class="persona-neo__portrait" style="--persona-tint: #C6DBF0">
 <p class="persona-neo__tag">A high school student diagnosed with ADHD</p>
-<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="76" r="38"/><path d="M62 58a38 38 0 0 1 76 0"/><rect x="48" y="66" width="20" height="30" rx="10"/><rect x="132" y="66" width="20" height="30" rx="10"/><path d="M88 108v10M112 108v10"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/><path d="M64 135c-12-15-16-30-12-45"/><circle cx="50" cy="90" r="7"/><path d="M90 41l-3-9M100 39v-10M110 41l3-9" stroke-width="3.5"/><path d="M81 72q4 5 8 0M111 72q4 5 8 0" stroke-width="4"/></svg>
+<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="76" r="38"/><path d="M62 58a38 38 0 0 1 76 0"/><rect x="48" y="66" width="20" height="30" rx="10"/><rect x="132" y="66" width="20" height="30" rx="10"/><path d="M88 108v10M112 108v10"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/><path d="M64 135c-12-15-16-30-12-45"/><circle cx="50" cy="90" r="7"/><path d="M90 41l-3-9M100 39v-10M110 41l3-9" stroke-width="3.5"/><path d="M78 66l11-4M111 63l11 3" stroke-width="3.5"/><circle cx="85" cy="75" r="3.2" fill="currentColor" stroke="none"/><circle cx="115" cy="74" r="3.2" fill="currentColor" stroke="none"/><path d="M89 91q11 5 22 0" stroke-width="3.5"/></svg>
 </div>
 <div class="persona-neo__body">
 <div class="persona-neo__head">
@@ -83,7 +83,7 @@ Beyond the numbers, I sat in on sessions at Zen Mind, Akshar Psychiatric Clinic,
 <li class="persona-card persona-card--neo">
 <div class="persona-neo__portrait" style="--persona-tint: #FCE3B8">
 <p class="persona-neo__tag">Working Parent</p>
-<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="36"/><path d="M66 58c0-24 68-24 68 0"/><circle cx="100" cy="40" r="13"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/><path d="M126 150c0-16 6-30 16-38"/><circle cx="142" cy="113" r="7"/><rect x="133" y="82" width="18" height="30" rx="3"/><path d="M137 92h10"/><path d="M83 75q4 4 8 0M109 75q4 4 8 0" stroke-width="4"/></svg>
+<svg class="persona-neo__figure" viewBox="0 0 200 200" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><circle cx="100" cy="78" r="36"/><path d="M66 58c0-24 68-24 68 0"/><circle cx="100" cy="40" r="13"/><path d="M38 186c0-42 28-66 62-66s62 24 62 66"/><path d="M126 150c0-16 6-30 16-38"/><circle cx="142" cy="113" r="7"/><rect x="133" y="82" width="18" height="30" rx="3"/><path d="M137 92h10"/><path d="M80 68q6-4 12-1M108 67q6-3 12 1" stroke-width="3.5"/><circle cx="86" cy="77" r="3.2" fill="currentColor" stroke="none"/><circle cx="114" cy="77" r="3.2" fill="currentColor" stroke="none"/><path d="M84 92q16 8 32 0" stroke-width="3.5"/></svg>
 </div>
 <div class="persona-neo__body">
 <div class="persona-neo__head">
