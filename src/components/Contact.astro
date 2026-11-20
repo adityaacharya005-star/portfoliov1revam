@@ -1,23 +1,60 @@
 ---
 import { site } from '../data/site';
+import { squigglePath } from '../lib/squiggle';
 ---
 
 <section class="section contact">
+  <div class="wrapper contact__divider" aria-hidden="true">
+    <svg viewBox="0 0 24 10" preserveAspectRatio="none"><path d={squigglePath('footer-divider')} /></svg>
+  </div>
   <div class="wrapper contact__row">
     <div class="contact__main">
       <h2 class="contact__heading">Would love to connect.</h2>
       <a href={`mailto:${site.email}`} class="underline-link contact__email">{site.email}</a>
     </div>
     <div class="contact__links">
-      <a href={site.linkedinUrl} class="underline-link" target="_blank" rel="noopener noreferrer">linkedin</a>
-      <a href={site.behanceUrl} class="underline-link" target="_blank" rel="noopener noreferrer">behance</a>
-      <a href={site.resumeUrl} class="underline-link" target="_blank" rel="noopener noreferrer">resume</a>
+      <a href={site.linkedinUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="10" r="3"/><path d="M7 18c0-3 2.2-5 5-5s5 2 5 5"/></svg>
+        <span class="contact__link-text">linkedin</span>
+      </a>
+      <a href={site.behanceUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="8" cy="9" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <span class="contact__link-text">behance</span>
+      </a>
+      <a href={site.resumeUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15h6M9 18h3"/></svg>
+        <span class="contact__link-text">resume</span>
+      </a>
     </div>
   </div>
   <div class="wrapper contact__spacer" aria-hidden="true"></div>
 </section>
 
 <style>
+  /* A hand-drawn closing rule instead of the page just stopping - the
+     same squiggle used under work-card titles, stretched the full
+     content width, so the sketchbook gets a last stroke of its own
+     ink rather than an abrupt cut to the end of the page. */
+  .contact__divider {
+    margin-bottom: var(--space-8);
+  }
+
+  .contact__divider svg {
+    display: block;
+    width: 100%;
+    height: 14px;
+    overflow: visible;
+  }
+
+  .contact__divider path {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    filter: url(#sketch-wobble-small);
+    opacity: 0.6;
+  }
+
   .contact__row {
     display: flex;
     justify-content: space-between;
@@ -50,6 +87,37 @@ import { site } from '../data/site';
     gap: var(--space-3);
     font-size: var(--text-body);
     text-transform: lowercase;
+  }
+
+  /* .underline-link's own text-decoration doesn't render once its
+     element becomes a flex container (every current browser silently
+     drops text-decoration on flex/inline-flex boxes), so the
+     underline moves to .contact__link-text, an ordinary inline child,
+     while .underline-link still supplies the hover/focus color swap
+     and the mobile 44px tap target. */
+  .contact__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+  }
+
+  .contact__link-text {
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 3px;
+  }
+
+  /* Same loose-ink filter as the rest of the site's iconography, at
+     the small scale it was actually tuned for (the TOC dash, this),
+     rather than the bigger sketch-wobble built for 112px card icons.
+     No separate hover color: the icon's currentColor already follows
+     whatever .underline-link sets on the shared anchor. */
+  .contact__link-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    filter: url(#sketch-wobble-small);
   }
 
   .contact__spacer {
