@@ -1,164 +1,100 @@
 ---
 import { site } from '../data/site';
-
-const CUP_COUNT = 5;
-// Small fixed per-cup offsets so the finished cups read as set down by
-// hand rather than snapped to a grid - deterministic, not Math.random(),
-// so the layout never shifts between renders.
-const CUP_JITTER = [
-  { y: 4, r: -3 },
-  { y: -3, r: 2 },
-  { y: 2, r: -2 },
-  { y: -4, r: 3 },
-  { y: 3, r: -1 },
-];
+import { squigglePath } from '../lib/squiggle';
 ---
 
 <section class="section contact">
-  <!-- The board and the machine/cups both anchor to the same bottom
-       line (the tile's own top edge, .contact__countertop's height up
-       from this scene's bottom) rather than one sitting in normal
-       flow above the other - that mismatch was what made the board
-       read as floating above the counter instead of standing on it. -->
-  <div class="contact__counter-scene">
-    <div class="contact__countertop" aria-hidden="true"></div>
-
-    <div class="wrapper contact__board-wrap">
-      <div class="contact__board">
-        <h2 class="contact__heading">Would love to connect.</h2>
-        <a href={`mailto:${site.email}`} class="underline-link contact__email">{site.email}</a>
-        <div class="contact__links">
-          <a href={site.linkedinUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
-            <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="10" r="3"/><path d="M7 18c0-3 2.2-5 5-5s5 2 5 5"/></svg>
-            <span class="contact__link-text">linkedin</span>
-          </a>
-          <a href={site.behanceUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
-            <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="8" cy="9" r="1.1" fill="currentColor" stroke="none"/></svg>
-            <span class="contact__link-text">behance</span>
-          </a>
-          <a href={site.resumeUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
-            <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15h6M9 18h3"/></svg>
-            <span class="contact__link-text">resume</span>
-          </a>
-        </div>
-      </div>
+  <div class="wrapper contact__divider" aria-hidden="true">
+    <svg viewBox="0 0 24 10" preserveAspectRatio="none"><path d={squigglePath('footer-divider')} /></svg>
+  </div>
+  <div class="wrapper contact__row">
+    <div class="contact__main">
+      <h2 class="contact__heading">Would love to connect.</h2>
+      <a href={`mailto:${site.email}`} class="underline-link contact__email">{site.email}</a>
     </div>
-
-    <div class="contact__brew" aria-hidden="true">
-      <div class="contact__machine-wrap">
-        <img class="contact__machine" src="/images/footer/coffee-machine.png" alt="" width="1024" height="765" loading="lazy" decoding="async" />
-        <span class="contact__drip"></span>
-        <div class="contact__cup contact__cup--active" data-active-cup>
-          <span class="contact__cup-pour"></span>
-          <svg class="contact__cup-steam" viewBox="0 0 40 20" aria-hidden="true">
-            <path d="M14 14q3-3-1-6t1-6M22 14q3-3-1-6t1-6" fill="none" stroke="var(--color-muted)" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          <img class="contact__cup-stage contact__cup-stage--empty" src="/images/footer/mug-empty.png" alt="" width="2000" height="1493" loading="lazy" decoding="async" />
-          <img class="contact__cup-stage contact__cup-stage--half" src="/images/footer/mug-half.png" alt="" width="2000" height="1493" loading="lazy" decoding="async" />
-          <img class="contact__cup-stage contact__cup-stage--full" src="/images/footer/mug-full.png" alt="" width="2000" height="1493" loading="lazy" decoding="async" />
-        </div>
-      </div>
-
-      <div class="contact__cups">
-        {Array.from({ length: CUP_COUNT }).map((_, i) => (
-          <div class="contact__cup" data-cup style={`transform: translateY(${CUP_JITTER[i].y}px) rotate(${CUP_JITTER[i].r}deg);`}>
-            <img class="contact__cup-stage contact__cup-stage--empty" src="/images/footer/mug-empty.png" alt="" width="2000" height="1493" loading="lazy" decoding="async" />
-            <img class="contact__cup-stage contact__cup-stage--full" src="/images/footer/mug-full.png" alt="" width="2000" height="1493" loading="lazy" decoding="async" />
-          </div>
-        ))}
-      </div>
+    <div class="contact__links">
+      <a href={site.linkedinUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="10" r="3"/><path d="M7 18c0-3 2.2-5 5-5s5 2 5 5"/></svg>
+        <span class="contact__link-text">linkedin</span>
+      </a>
+      <a href={site.behanceUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="8" cy="9" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <span class="contact__link-text">behance</span>
+      </a>
+      <a href={site.resumeUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+        <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15h6M9 18h3"/></svg>
+        <span class="contact__link-text">resume</span>
+      </a>
     </div>
   </div>
-
-  <p class="contact__brew-caption" aria-hidden="true">brewing while you read</p>
-
   <div class="wrapper contact__spacer" aria-hidden="true"></div>
 </section>
 
-<script define:vars={{ CUP_COUNT }}>
-  const activeCup = document.querySelector('[data-active-cup]');
-  const cups = document.querySelectorAll('[data-cup]');
-  const INTERVAL_MS = 35000;
-  const ACTIVE_FILL_MS = 1000; // matches the half/full transition delays below
-  const HOLD_MS = 1300; // how long the finished cup sits at the machine before moving down
-  let filled = 0;
-
-  function brewCycle() {
-    if (filled >= CUP_COUNT) return;
-    activeCup.classList.add('is-filled');
-    setTimeout(() => {
-      cups[filled].classList.add('is-filled');
-      filled += 1;
-      setTimeout(() => {
-        activeCup.classList.remove('is-filled');
-        if (filled >= CUP_COUNT) clearInterval(timer);
-      }, 250);
-    }, ACTIVE_FILL_MS + HOLD_MS);
-  }
-
-  const timer = setInterval(brewCycle, INTERVAL_MS);
-</script>
-
 <style>
-  .contact__board-wrap {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 128px;
+  /* A hand-drawn closing rule instead of the page just stopping - the
+     same squiggle used under work-card titles, stretched the full
+     content width, so the sketchbook gets a last stroke of its own
+     ink rather than an abrupt cut to the end of the page. */
+  .contact__divider {
+    margin-bottom: var(--space-8);
   }
 
-  /* The left column as a standee chalkboard sign resting on the same
-     counter as the machine, so the two halves of the footer read as
-     one scene instead of text beside an illustration. Same type and
-     colors the rest of the site uses, just inverted onto a dark
-     slate board - no chalk-style font, that would clash sitewide. */
-  .contact__board {
+  .contact__divider svg {
+    display: block;
+    width: 100%;
+    height: 14px;
+    overflow: visible;
+  }
+
+  .contact__divider path {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    filter: url(#sketch-wobble-small);
+    opacity: 0.6;
+  }
+
+  .contact__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--space-6);
+  }
+
+  .contact__main {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
     min-width: 0;
-    width: 300px;
-    padding: var(--space-4) var(--space-5) var(--space-5);
-    background: color-mix(in srgb, var(--color-text) 80%, var(--color-accent) 20%);
-    border-radius: 10px 10px 3px 3px;
-    box-shadow: 0 10px 24px rgba(17, 17, 17, 0.12);
-  }
-
-  .contact__board .contact__heading,
-  .contact__board .contact__email,
-  .contact__board .contact__link {
-    color: var(--color-bg);
-  }
-
-  .contact__board .contact__email {
-    opacity: 0.75;
-  }
-
-  .contact__board .underline-link:hover,
-  .contact__board .underline-link:focus-visible {
-    color: var(--color-card-warm);
   }
 
   .contact__heading {
-    font-size: var(--text-h3);
+    font-size: var(--text-h2);
     line-height: var(--leading-tight);
   }
 
   .contact__email {
     color: var(--color-muted);
-    font-size: var(--text-caption);
+    font-size: var(--text-body-lg);
     overflow-wrap: anywhere;
   }
 
   .contact__links {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-2);
-    font-size: var(--text-caption);
+    align-items: flex-end;
+    gap: var(--space-3);
+    font-size: var(--text-body);
     text-transform: lowercase;
   }
 
+  /* .underline-link's own text-decoration doesn't render once its
+     element becomes a flex container (every current browser silently
+     drops text-decoration on flex/inline-flex boxes), so the
+     underline moves to .contact__link-text, an ordinary inline child,
+     while .underline-link still supplies the hover/focus color swap
+     and the mobile 44px tap target. */
   .contact__link {
     display: inline-flex;
     align-items: center;
@@ -172,6 +108,11 @@ const CUP_JITTER = [
     text-underline-offset: 3px;
   }
 
+  /* Same loose-ink filter as the rest of the site's iconography, at
+     the small scale it was actually tuned for (the TOC dash, this),
+     rather than the bigger sketch-wobble built for 112px card icons.
+     No separate hover color: the icon's currentColor already follows
+     whatever .underline-link sets on the shared anchor. */
   .contact__link-icon {
     width: 16px;
     height: 16px;
@@ -179,263 +120,18 @@ const CUP_JITTER = [
     filter: url(#sketch-wobble-small);
   }
 
-  /* The footer's own hand-drawn moment: a little espresso machine
-     that drips continuously, and "brews" one cup for roughly every
-     35s someone spends reading, capped at 5 so a long visit doesn't
-     turn into an endless row of cups. Resets on every load rather
-     than persisting, so it never feels like someone is being tracked
-     across visits. */
-  /* Machine and the row of finished cups sit side by side on the same
-     counter line, not stacked - the machine's own photographed base
-     has to touch the counter directly, the same as the reference's
-     mugs and espresso machine sharing one tabletop. */
-  /* Sits over the full-width counter, not confined to the narrower
-     text column above - positioned and sized as percentages of the
-     viewport so the machine:mug:counter proportions track the
-     reference photo at any screen width. */
-  .contact__counter-scene {
-    position: relative;
-    height: 420px;
-  }
-
-  .contact__brew {
-    position: absolute;
-    bottom: 128px;
-    left: 70%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 2.5vw;
-  }
-
-  /* A full-width tiled café counter running under the whole footer -
-     both the chalkboard sign and the machine/cups stand on it, rather
-     than each column carrying its own separate background. It's a
-     plain block, not positioned - the board's bottom and the cup
-     row's bottom (both last in their column, thanks to
-     .contact__row's align-items: flex-end) meet it exactly, so
-     everything reads as resting on the same surface. */
-  /* A real crop straight out of the reference photo (its tile top and
-     dark apron together, with every mug/napkin/stain patched out of
-     frame), repeated edge-to-edge - not a CSS recreation. The crop
-     starts exactly at the tile's own top edge, so anything placed in
-     normal flow right above this div sits flush on the tile, same as
-     it would sit on the real counter. */
-  .contact__countertop {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 128px;
-    background-image: url('/images/footer/counter-top.png');
-    background-repeat: repeat-x;
-    background-size: auto 100%;
-    background-position: bottom left;
-  }
-
-  .contact__machine-wrap {
-    position: relative;
-    width: clamp(225px, 26.25vw, 345px);
-  }
-
-  /* Real alpha transparency (cut from the source photo's white
-     background), not a blend-mode trick - it has to stay a solid,
-     opaque object regardless of what's behind it (the dark counter,
-     the machine's own body), not just the page background. */
-  .contact__machine {
-    display: block;
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
-  }
-
-  /* Positioned from the real drip point measured in the source image
-     (~63% across, ~70% down), so the animated drop falls exactly
-     where the machine's own spout sits. */
-  .contact__drip {
-    position: absolute;
-    left: 63.3%;
-    top: 69%;
-    width: 5px;
-    height: 7px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(45deg);
-    background: var(--color-accent);
-    animation: contact-drip 1.8s ease-in infinite;
-  }
-
-  @keyframes contact-drip {
-    0% {
-      transform: rotate(45deg) translateY(-4px);
-      opacity: 0;
-    }
-    15% {
-      opacity: 1;
-    }
-    70% {
-      transform: rotate(45deg) translateY(10px);
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(45deg) translateY(12px);
-      opacity: 0;
-    }
-  }
-
-  .contact__cups {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: var(--space-4);
-  }
-
-  .contact__cup {
-    position: relative;
-    width: clamp(42px, 5.25vw, 69px);
-  }
-
-  .contact__cup-stage {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  /* The empty mug sits as the base layer; half and full are the same
-     photographed mug with more coffee, stacked on top and crossfaded
-     in with staggered delays so filling a cup plays as a real
-     empty-to-half-to-full sequence instead of one opacity swap. */
-  .contact__cup-stage--half,
-  .contact__cup-stage--full {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .contact__cup--active.is-filled .contact__cup-stage--half {
-    opacity: 1;
-    transition-delay: 0.15s;
-  }
-
-  .contact__cup--active.is-filled .contact__cup-stage--full {
-    opacity: 1;
-    transition-delay: 0.6s;
-  }
-
-  /* Row cups only ever get told "is-filled" once the active cup at the
-     machine has already finished brewing, so this is a quick snap
-     into place rather than the slow pour upstream. */
-  .contact__cups .contact__cup.is-filled .contact__cup-stage--full {
-    opacity: 1;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    animation: contact-cup-arrive 0.3s ease-out 1;
-  }
-
-  @keyframes contact-cup-arrive {
-    0% {
-      transform: scale(0.75) translateY(-6px);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1) translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .contact__cup--active {
-    position: absolute;
-    left: 39%;
-    bottom: 20%;
-    width: 25%;
-  }
-
-
-  .contact__cup-steam {
-    position: absolute;
-    left: 10%;
-    top: -34%;
-    width: 80%;
-    height: auto;
-    opacity: 0;
-  }
-
-  /* A short pour streak that plays once right as a cup fills, standing
-     in for an actual poured-coffee animation frame (the reference
-     photos are single stills, not a frame sequence) - a stylized
-     flourish rather than a literal continuation of the machine's own
-     drip across the gap to each cup. */
-  .contact__cup-pour {
-    position: absolute;
-    left: 50%;
-    top: -70%;
-    width: 3px;
-    height: 0;
-    background: linear-gradient(var(--color-text), color-mix(in srgb, var(--color-text) 60%, transparent));
-    border-radius: 2px;
-    opacity: 0;
-  }
-
-  .contact__cup.is-filled .contact__cup-steam {
-    opacity: 0.8;
-    animation: contact-steam 2.4s ease-in-out 1;
-    animation-delay: 0.6s;
-  }
-
-  .contact__cup.is-filled .contact__cup-pour {
-    animation: contact-pour 0.7s ease-out 1;
-  }
-
-  @keyframes contact-pour {
-    0% {
-      height: 0;
-      opacity: 0;
-    }
-    20% {
-      opacity: 1;
-    }
-    70% {
-      height: 70%;
-      opacity: 1;
-    }
-    100% {
-      height: 70%;
-      opacity: 0;
-    }
-  }
-
-  @keyframes contact-steam {
-    0% {
-      opacity: 0;
-      transform: translateY(2px);
-    }
-    30% {
-      opacity: 0.6;
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-4px);
-    }
-  }
-
-  .contact__brew-caption {
-    margin-top: var(--space-3);
-    text-align: center;
-    font-size: var(--text-micro);
-    color: var(--color-muted);
-    text-transform: lowercase;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .contact__drip,
-    .contact__cup-steam,
-    .contact__cup-pour {
-      animation: none;
-    }
-  }
-
   .contact__spacer {
     height: var(--space-9);
   }
 
+  @media (max-width: 768px) {
+    .contact__row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .contact__links {
+      align-items: flex-start;
+    }
+  }
 </style>
