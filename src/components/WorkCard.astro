@@ -155,6 +155,28 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
 
     const cleanups: Array<() => void> = [];
 
+    // Scrolling moves a different card under a stationary pointer
+    // without firing mouseenter/mouseleave on either one, so without
+    // this the badge would keep showing whichever card the pointer
+    // last *moved* over - wrong color, sometimes stuck mid-page after
+    // its real card has scrolled away entirely. A single tracked
+    // pointer position plus a post-scroll elementFromPoint check
+    // re-fires the same enter/leave handlers each card already has.
+    let lastPointerX = -1;
+    let lastPointerY = -1;
+    const onGlobalMove = (e: MouseEvent) => {
+      lastPointerX = e.clientX;
+      lastPointerY = e.clientY;
+    };
+    window.addEventListener('mousemove', onGlobalMove, { passive: true });
+
+    const entries: Array<{
+      card: HTMLAnchorElement;
+      onEnter: (e: MouseEvent) => void;
+      onLeave: () => void;
+    }> = [];
+    let activeCard: HTMLAnchorElement | null = null;
+
     document.querySelectorAll<HTMLAnchorElement>('.work-card').forEach((card) => {
       const follower = card.querySelector<HTMLElement>('[data-card-cursor]');
       if (!follower) return;
@@ -195,6 +217,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
         curY = e.clientY - rect.top;
         follower.style.transform = `translate(${curX}px, ${curY}px)`;
         active = true;
+        activeCard = card;
         card.classList.add('is-cursor-active');
         card.addEventListener('mousemove', onMove);
         raf = requestAnimationFrame(render);
@@ -202,6 +225,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
 
       const onLeave = () => {
         active = false;
+        if (activeCard === card) activeCard = null;
         cancelAnimationFrame(raf);
         card.classList.remove('is-cursor-active');
         card.removeEventListener('mousemove', onMove);
@@ -210,6 +234,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
       card.classList.add('has-custom-cursor');
       card.addEventListener('mouseenter', onEnter);
       card.addEventListener('mouseleave', onLeave);
+      entries.push({ card, onEnter, onLeave });
 
       cleanups.push(() => {
         active = false;
@@ -219,6 +244,33 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
         card.removeEventListener('mouseleave', onLeave);
         card.removeEventListener('mousemove', onMove);
       });
+    });
+
+    let scrollTicking = false;
+    const onScroll = () => {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(() => {
+        scrollTicking = false;
+        if (lastPointerX < 0) return;
+        const el = document.elementFromPoint(lastPointerX, lastPointerY);
+        const cardUnderPointer = el?.closest<HTMLAnchorElement>('.work-card') ?? null;
+        if (cardUnderPointer === activeCard) return;
+
+        const activeEntry = entries.find((entry) => entry.card === activeCard);
+        activeEntry?.onLeave();
+
+        const nextEntry = cardUnderPointer && entries.find((entry) => entry.card === cardUnderPointer);
+        if (nextEntry) {
+          nextEntry.onEnter({ clientX: lastPointerX, clientY: lastPointerY } as MouseEvent);
+        }
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    cleanups.push(() => {
+      window.removeEventListener('mousemove', onGlobalMove);
+      window.removeEventListener('scroll', onScroll);
     });
 
     win.__cardCursorCleanup = () => cleanups.forEach((fn) => fn());
