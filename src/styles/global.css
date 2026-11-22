@@ -20,6 +20,11 @@ body {
   font-size: var(--text-body);
   line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
+  /* The footer's full-bleed video uses the standard 100vw/-50vw
+     break-out trick, which can introduce a 1px horizontal scrollbar
+     in some browsers since 100vw includes the scrollbar gutter while
+     the actual body width doesn't - this is the standard guard. */
+  overflow-x: hidden;
 }
 
 img {

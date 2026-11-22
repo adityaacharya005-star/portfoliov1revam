@@ -1,39 +1,61 @@
 ---
+import { getImage } from 'astro:assets';
 import { site } from '../data/site';
 import { squigglePath } from '../lib/squiggle';
+import footerPosterSrc from '../assets/images/footer-poster.png';
+
+const footerPoster = await getImage({ src: footerPosterSrc, width: 1280 });
 ---
 
 <section class="section contact">
   <div class="wrapper contact__divider" aria-hidden="true">
     <svg viewBox="0 0 24 10" preserveAspectRatio="none"><path d={squigglePath('footer-divider')} /></svg>
   </div>
-  <div class="wrapper contact__content">
-    <!-- The one deliberately oversized moment on the site - the hero
-         opens the page with a mixed roman/italic sentence, this closes
-         it the same way, so the two read as one voice bookending the
-         whole portfolio rather than a generic big "let's talk" CTA. -->
-    <h2 class="contact__headline" data-headline>
-      Would love to <em class="contact__connect">connect<svg class="contact__connect-underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath('footer-connect-underline')} /></svg></em>.
-    </h2>
-    <div class="contact__meta">
-      <a href={`mailto:${site.email}`} class="underline-link contact__email">{site.email}</a>
-      <div class="contact__links">
-        <a href={site.linkedinUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
-          <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="10" r="3"/><path d="M7 18c0-3 2.2-5 5-5s5 2 5 5"/></svg>
-          <span class="contact__link-text">linkedin</span>
-        </a>
-        <a href={site.behanceUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
-          <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="8" cy="9" r="1.1" fill="currentColor" stroke="none"/></svg>
-          <span class="contact__link-text">behance</span>
-        </a>
-        <a href={site.resumeUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
-          <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15h6M9 18h3"/></svg>
-          <span class="contact__link-text">resume</span>
-        </a>
+  <div class="contact__scene">
+    <video
+      class="contact__scene-video"
+      poster={footerPoster.src}
+      autoplay
+      loop
+      muted
+      playsinline
+      disablepictureinpicture
+      disableRemotePlayback
+      controlslist="nodownload noremoteplayback nofullscreen noplaybackrate"
+      aria-label="Looping pixel-art animation of a café scene, a figure at the counter drinking coffee"
+      data-footer-video
+    >
+      <source src="/videos/footer-loop.webm" type="video/webm" />
+      <source src="/videos/footer-loop.mp4" type="video/mp4" />
+    </video>
+    <div class="contact__scrim" aria-hidden="true"></div>
+    <div class="wrapper contact__content">
+      <!-- The one deliberately oversized moment on the site - the hero
+           opens the page with a mixed roman/italic sentence, this closes
+           it the same way, so the two read as one voice bookending the
+           whole portfolio rather than a generic big "let's talk" CTA. -->
+      <h2 class="contact__headline" data-headline>
+        Would love to <em class="contact__connect">connect<svg class="contact__connect-underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath('footer-connect-underline')} /></svg></em>.
+      </h2>
+      <div class="contact__meta">
+        <a href={`mailto:${site.email}`} class="underline-link contact__email">{site.email}</a>
+        <div class="contact__links">
+          <a href={site.linkedinUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+            <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="10" r="3"/><path d="M7 18c0-3 2.2-5 5-5s5 2 5 5"/></svg>
+            <span class="contact__link-text">linkedin</span>
+          </a>
+          <a href={site.behanceUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+            <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/><circle cx="8" cy="9" r="1.1" fill="currentColor" stroke="none"/></svg>
+            <span class="contact__link-text">behance</span>
+          </a>
+          <a href={site.resumeUrl} class="contact__link underline-link" target="_blank" rel="noopener noreferrer">
+            <svg class="contact__link-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4"/><path d="M9 12h6M9 15h6M9 18h3"/></svg>
+            <span class="contact__link-text">resume</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-  <div class="wrapper contact__spacer" aria-hidden="true"></div>
 </section>
 
 <script>
@@ -60,6 +82,19 @@ import { squigglePath } from '../lib/squiggle';
       );
       observer.observe(headline);
     }
+
+    // This component (unlike the hero) renders on every page, some of
+    // which never load WorkCard's own script - so the footer video's
+    // reduced-motion handling can't borrow that one and has to be its
+    // own, scoped to its own attribute rather than reusing
+    // data-autoplay-video and risking the two scripts double-handling
+    // the same element on pages that do load both.
+    const footerVideo = document.querySelector<HTMLVideoElement>('[data-footer-video]');
+    if (footerVideo && prefersReducedMotion) {
+      footerVideo.removeAttribute('autoplay');
+      footerVideo.pause();
+      footerVideo.currentTime = 0;
+    }
   });
 </script>
 
@@ -70,6 +105,48 @@ import { squigglePath } from '../lib/squiggle';
      ink rather than an abrupt cut to the end of the page. */
   .contact__divider {
     margin-bottom: var(--space-8);
+  }
+
+  /* Full-bleed: the one place on the site that breaks out of
+     .wrapper's max-width, because the brief here is specifically a
+     scene filling the entire footer, not a framed photo within the
+     content column like the work-card thumbs. object-fit: cover (not
+     aspect-ratio) is what actually guarantees no empty strip on any
+     edge - the box's own height can be anything and the video still
+     fills it exactly, where aspect-ratio would letterbox the instant
+     the box's proportions didn't match the source's. Sharp corners
+     still carried over: nothing on the site gets a border-radius. */
+  .contact__scene {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    min-height: clamp(480px, 62vw, 760px);
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--color-placeholder);
+  }
+
+  .contact__scene-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Guarantees the overlaid text reads regardless of which part of a
+     fairly busy, mixed-light scene happens to sit behind it - without
+     this, the headline would be legible over the dark shelving but
+     not over the lit countertop right below it. */
+  .contact__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(17, 13, 10, 0) 35%, rgba(17, 13, 10, 0.72) 100%);
+    pointer-events: none;
   }
 
   .contact__divider svg {
@@ -88,16 +165,29 @@ import { squigglePath } from '../lib/squiggle';
     opacity: 0.6;
   }
 
+  /* Local, scene-only text colors: the rest of the site's palette is
+     tuned for dark text on the cream background, which has no
+     contrast left to give once that background is a dark video.
+     Generous padding keeps the text clear of the scene's edges on
+     every side, not just resting on the scrim at the bottom. */
   .contact__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: var(--space-7);
+    padding-block: var(--space-8);
+    --scene-text: #f8f4ec;
+    --scene-muted: rgb(248 244 236 / 76%);
+    --scene-ink: #e7bd72;
   }
 
   .contact__headline {
     font-size: var(--text-footer);
     line-height: var(--leading-tight);
     max-width: 16ch;
+    color: var(--scene-text);
   }
 
   .contact__headline em {
@@ -128,7 +218,7 @@ import { squigglePath } from '../lib/squiggle';
 
   .contact__connect-underline path {
     fill: none;
-    stroke: var(--color-accent);
+    stroke: var(--scene-ink);
     stroke-width: 2.2;
     stroke-linecap: round;
     filter: url(#sketch-wobble-small);
@@ -162,7 +252,7 @@ import { squigglePath } from '../lib/squiggle';
   }
 
   .contact__email {
-    color: var(--color-muted);
+    color: var(--scene-muted);
     font-size: var(--text-body-lg);
     overflow-wrap: anywhere;
   }
@@ -174,6 +264,16 @@ import { squigglePath } from '../lib/squiggle';
     font-size: var(--text-body);
     text-transform: lowercase;
     flex-shrink: 0;
+    color: var(--scene-text);
+  }
+
+  /* Overrides .underline-link's global hover color (the site-wide
+     maroon accent, tuned for dark text on the cream background) -
+     against this scene's dark scrim it would barely read at all, so
+     this scene brightens to its own warm ink color instead. */
+  .contact__content .underline-link:hover,
+  .contact__content .underline-link:focus-visible {
+    color: var(--scene-ink);
   }
 
   /* .underline-link's own text-decoration doesn't render once its
@@ -238,11 +338,24 @@ import { squigglePath } from '../lib/squiggle';
     }
   }
 
-  .contact__spacer {
-    height: var(--space-9);
-  }
-
   @media (max-width: 768px) {
+    .contact__scene {
+      min-height: clamp(420px, 92vw, 560px);
+    }
+
+    /* The mobile crop (a shorter, closer-to-square box) lands the
+       email/links row over a lighter stretch of countertop than the
+       desktop crop does - still above the contrast floor there, but
+       with less margin, so this scrim goes darker and starts higher
+       to cover more of that lighter area. */
+    .contact__scrim {
+      background: linear-gradient(to bottom, rgba(17, 13, 10, 0) 15%, rgba(17, 13, 10, 0.86) 100%);
+    }
+
+    .contact__content {
+      padding-block: var(--space-6) var(--space-7);
+    }
+
     .contact__meta {
       flex-direction: column;
       align-items: flex-start;
