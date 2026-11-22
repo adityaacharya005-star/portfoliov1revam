@@ -60,6 +60,7 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
           ))}
         </ul>
       </nav>
+      <div class="case-study__nav-spacer" data-nav-spacer aria-hidden="true"></div>
       <a href={`/work/${next.slug}`} class="case-study__next">
         Next <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
         <svg class="case-study__next-underline" viewBox="2 0 18 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath('next-underline')} /></svg>
@@ -175,6 +176,48 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
   }
   win.__revealObserver?.disconnect();
 
+  // Below 768px the TOC is a horizontal row stacked above the article
+  // rather than a sticky sidebar, and CSS `position: sticky` can't pin
+  // it there: its containing block is the shrink-wrapped flex row
+  // around it, which is only ever as tall as the row itself, so there's
+  // no room to stick within. Toggling a fixed-position class once it
+  // scrolls to where the (by-then-hidden) header would be gets the
+  // same effect without that constraint.
+  const navEl = document.querySelector<HTMLElement>('[data-section-nav]');
+  const spacerEl = document.querySelector<HTMLElement>('[data-nav-spacer]');
+  let updatePin = () => {};
+
+  if (navEl && spacerEl) {
+    const mobileQuery = window.matchMedia('(max-width: 768px)');
+    let pinTop = 0;
+
+    const measurePinTop = () => {
+      if (!navEl.classList.contains('is-pinned')) {
+        pinTop = navEl.getBoundingClientRect().top + window.scrollY;
+      }
+    };
+    measurePinTop();
+    window.addEventListener('resize', measurePinTop);
+
+    updatePin = () => {
+      if (!mobileQuery.matches) {
+        navEl.classList.remove('is-pinned');
+        spacerEl.classList.remove('is-active');
+        return;
+      }
+      const shouldPin = window.scrollY >= pinTop;
+      if (shouldPin && !navEl.classList.contains('is-pinned')) {
+        spacerEl.style.height = `${navEl.offsetHeight}px`;
+        navEl.classList.add('is-pinned');
+        spacerEl.classList.add('is-active');
+      } else if (!shouldPin && navEl.classList.contains('is-pinned')) {
+        navEl.classList.remove('is-pinned');
+        spacerEl.classList.remove('is-active');
+      }
+    };
+    updatePin();
+  }
+
   if (sections.length > 0) {
     const setActive = (slug: string) => {
       links.forEach((link) => {
@@ -208,13 +251,32 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
     const onScroll = () => {
       if (!ticking) {
         ticking = true;
-        requestAnimationFrame(updateActive);
+        requestAnimationFrame(() => {
+          ticking = false;
+          updateActive();
+          updatePin();
+        });
       }
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
     win.__tocScrollHandler = onScroll;
     updateActive();
+  } else if (navEl) {
+    // No section headings, so the active-link tracking above never
+    // runs - the pin still needs its own scroll listener.
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          ticking = false;
+          updatePin();
+        });
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    win.__tocScrollHandler = onScroll;
   }
 
   // Scroll-reveal: each direct child of the body content (headings,
@@ -629,6 +691,11 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
     color: var(--color-muted);
     text-decoration: none;
     transition: color 200ms var(--ease-standard);
+    /* Padding grows the tap target toward the mobile minimum; the
+       matching negative margin keeps the visible row spacing (the
+       list's own gap) exactly as it was. */
+    padding-block: 10px;
+    margin-block: -10px;
   }
 
   .case-study__nav a:focus-visible {
@@ -2886,10 +2953,62 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
       margin-bottom: var(--space-6);
     }
 
+    /* On a page this long, losing the section list off the top of the
+       screen left no way back to another section short of scrolling
+       all the way up. Pinning just the link row (not the breadcrumb or
+       "next", which don't need to stay reachable) keeps that wayfinding
+       without permanently eating a big chunk of a small screen.
+
+       This can't be plain `position: sticky`: its containing block is
+       this shrink-wrapped flex row's own immediate parent (<nav>),
+       which is only ever as tall as the row itself, so there's no
+       room to stick within - it would scroll away immediately. The
+       script below toggles .is-pinned once the row's natural position
+       scrolls past the (hidden, at that point) header instead. */
     .case-study__nav {
       flex-direction: row;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
+      overflow-x: auto;
       gap: var(--space-4);
+      margin-inline: calc(var(--layout-padding-tablet) * -1);
+      padding: var(--space-3) var(--layout-padding-tablet);
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .case-study__nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .case-study__nav li {
+      flex-shrink: 0;
+    }
+
+    .case-study__nav.is-pinned {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      /* left/right: 0 already gives the full-bleed span the negative
+         margin trick above was for - without resetting it here, that
+         margin would push the box past the viewport on both sides. */
+      margin-inline: 0;
+      padding-inline: var(--layout-padding-tablet);
+      z-index: 40;
+      background: var(--color-bg);
+      box-shadow: 0 1px 0 var(--color-border);
+    }
+
+    /* Pinning the nav takes it out of flow, so without this the
+       breadcrumb/next row above and the article below would jump up
+       by the nav's own height the instant it's pinned. The script
+       sets this to the nav's measured height only while pinned. */
+    .case-study__nav-spacer {
+      display: none;
+    }
+
+    .case-study__nav-spacer.is-active {
+      display: block;
     }
 
     .case-study__next {
@@ -2899,6 +3018,16 @@ const accentColorText = data.accentColor ? darkenUntilContrast(data.accentColor,
 
   @media (max-width: 480px) {
     .case-study {
+      padding-inline: var(--layout-padding-mobile);
+    }
+
+    .case-study__nav {
+      margin-inline: calc(var(--layout-padding-mobile) * -1);
+      padding-inline: var(--layout-padding-mobile);
+    }
+
+    .case-study__nav.is-pinned {
+      margin-inline: 0;
       padding-inline: var(--layout-padding-mobile);
     }
 

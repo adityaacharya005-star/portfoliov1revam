@@ -234,7 +234,11 @@ const isCurrent = (href: string) => currentPath === href || currentPath.startsWi
     position: relative;
     display: inline-block;
     text-decoration: none;
-    padding-bottom: 6px;
+    /* Padding grows the tap target to the mobile minimum (44pt default,
+       28pt floor); the matching negative margin cancels it back out of
+       the flex row's flow so the visible text position doesn't shift. */
+    padding: 10px 4px 16px;
+    margin: -10px -4px -16px;
     color: var(--color-muted);
     transition: color var(--duration-fast) var(--ease-standard);
   }
@@ -254,7 +258,10 @@ const isCurrent = (href: string) => currentPath === href || currentPath.startsWi
   .header__nav-underline {
     position: absolute;
     left: 0;
-    bottom: -1px;
+    /* Offset to land in the same spot relative to the text as before -
+       the link's padding-bottom grew by 10px for a bigger tap target,
+       so this moves down by the same 10px to compensate. */
+    bottom: 9px;
     width: 100%;
     height: 7px;
     overflow: visible;
