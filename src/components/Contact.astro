@@ -35,7 +35,7 @@ const footerPoster = await getImage({ src: footerPosterSrc, width: 1280 });
         Would love to <em class="contact__connect">connect<svg class="contact__connect-underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath('footer-connect-underline')} /></svg></em>.
       </h2>
       <div class="contact__meta">
-        <a href={`mailto:${site.email}`} class="underline-link contact__email">
+        <a href={`mailto:${site.email}`} class="underline-link contact__email" target="_blank" rel="noopener noreferrer">
           <span class="contact__email-text">
             {site.email}
             <svg class="contact__underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath('footer-email-underline')} /></svg>
