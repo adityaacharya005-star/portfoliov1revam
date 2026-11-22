@@ -54,6 +54,13 @@ const footerPoster = await getImage({ src: footerPosterSrc, width: 1280 });
           </a>
         </div>
       </div>
+      <div class="contact__credit">
+        <p class="contact__credit-text">Made by {site.name}</p>
+        <a href="#top" class="contact__top">
+          Top
+          <svg class="contact__top-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6" /></svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -335,6 +342,73 @@ const footerPoster = await getImage({ src: footerPosterSrc, width: 1280 });
     .contact__link:hover .contact__link-icon,
     .contact__link:focus-visible .contact__link-icon {
       animation: none;
+    }
+  }
+
+  /* Folded into the scene itself rather than a separate bar below it -
+     a plain cream strip after the video would end the page on a flat
+     note instead of the scene it had just settled into. Kept quiet
+     (smaller type, more transparent border) so it reads as a closing
+     credit line, not a second row of equally-weighted content next to
+     the headline and contact details above it. */
+  .contact__credit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-top: var(--space-2);
+    padding-top: var(--space-5);
+    border-top: 1px solid rgb(248 244 236 / 38%);
+    font-size: var(--text-small);
+    color: var(--scene-muted);
+  }
+
+  .contact__credit-text {
+    margin: 0;
+  }
+
+  .contact__top {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid rgb(248 244 236 / 32%);
+    border-radius: 999px;
+    color: var(--scene-text);
+    text-decoration: none;
+    transition: border-color var(--duration-fast) var(--ease-standard),
+      background-color var(--duration-fast) var(--ease-standard);
+  }
+
+  .contact__top:hover,
+  .contact__top:focus-visible {
+    border-color: var(--scene-ink);
+    background: rgb(231 189 114 / 12%);
+    color: var(--scene-ink);
+  }
+
+  .contact__top-arrow {
+    width: 13px;
+    height: 13px;
+    filter: url(#sketch-wobble-small);
+    transition: transform var(--duration-fast) var(--ease-standard);
+  }
+
+  .contact__top:hover .contact__top-arrow,
+  .contact__top:focus-visible .contact__top-arrow {
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact__top,
+    .contact__top-arrow {
+      transition: none;
+    }
+
+    .contact__top:hover .contact__top-arrow,
+    .contact__top:focus-visible .contact__top-arrow {
+      transform: none;
     }
   }
 
