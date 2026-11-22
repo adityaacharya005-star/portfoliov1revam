@@ -23,6 +23,7 @@
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --text-hero: clamp(1.5rem, 1.1rem + 2.1vw, 2.375rem); /* fluid: scales down in step with the hero video's width so the two stay proportionally in sync on any viewport, capped at 38px so each scripted hero line break fits its column width without an unwanted extra wrap */
+  --text-footer: clamp(2.25rem, 1.65rem + 3.2vw, 4.5rem); /* the one deliberately oversized moment on the site, reserved for the footer's closing line - bigger than --text-h2 since nothing else should compete with it */
   --text-h2: 3rem;          /* 48px */
   --text-h3: 1.75rem;       /* 28px */
   --text-body-lg: 1.125rem; /* 18px */
