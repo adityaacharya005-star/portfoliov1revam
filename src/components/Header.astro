@@ -74,7 +74,11 @@ const isCurrent = (href: string) => currentPath === href || currentPath.startsWi
         </a>
       ))}
       <a href={site.resumeUrl} target="_blank" rel="noopener noreferrer" class="header__resume">
-        Resume
+        <span class="header__resume-text">
+          Resume
+          <svg class="header__nav-underline" viewBox="0 0 24 10" preserveAspectRatio="none" aria-hidden="true"><path d={squigglePath('resume-underline')} /></svg>
+        </span>
+        <svg class="header__resume-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8" /></svg>
       </a>
     </nav>
   </div>
@@ -296,6 +300,33 @@ const isCurrent = (href: string) => currentPath === href || currentPath.startsWi
 
   .header__nav a.header__resume {
     color: var(--color-accent);
+  }
+
+  /* Resume opens in a new tab, same as every other external link on the
+     site (email, LinkedIn, Behance in the footer) - it gets the same
+     hand-drawn external-arrow cue they do, instead of being the one
+     link with no visual sign it leaves the page. The squiggle underline
+     lives on this inner span, not the <a> itself, so its width matches
+     just the word "Resume" rather than stretching under the arrow too. */
+  .header__resume-text {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* .header__nav-underline's bottom:9px offset is tuned for the other
+     nav links' own padded box (padding-bottom:16px on the <a> itself);
+     this span carries none of that padding, so the same offset would
+     land inside the text instead of under it. */
+  .header__resume-text .header__nav-underline {
+    bottom: -3px;
+  }
+
+  .header__resume-arrow {
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+    vertical-align: middle;
+    filter: url(#sketch-wobble-small);
   }
 
   @media (max-width: 480px) {
