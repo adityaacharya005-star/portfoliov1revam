@@ -24,14 +24,13 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 // it on), while duplicating a job the Selected Works grid right below
 // already does with full context (title, description, thumbnail).
 //
-// Simplified flat silhouettes of Aditya's own things (a cassette
-// walkman, a fan of game cases, a football boot, a stack of DVDs) -
-// personal rather than generic UX iconography, but redrawn as single-
-// tone shapes instead of the detailed photos they're based on, so they
-// stay legible at this size and inside the one-accent discipline the
-// rest of the page keeps. A different tonal step per icon (lightest to
+// Simplified flat silhouettes of Aditya's own things (a coffee cup, a
+// football, a film reel, a game controller) - personal rather than
+// generic UX iconography, redrawn as single-tone shapes so they stay
+// legible at this size and inside the one-accent discipline the rest
+// of the page keeps. A different tonal step per icon (lightest to
 // darkest) adds rhythm without new hues.
-type HeroIconKind = 'walkman' | 'cases' | 'boot' | 'stack';
+type HeroIconKind = 'coffee' | 'football' | 'film' | 'controller';
 interface HeroIconWord {
   type: 'icon';
   icon: HeroIconKind;
@@ -42,10 +41,10 @@ type HeroWord = { type: 'text'; text: string; variant?: 'em' | 'muted' } | HeroI
 
 const heroAccentRgb = hexToRgb('#6b2737');
 const heroIconTones: Record<HeroIconKind, { light: number; dark: number }> = {
-  walkman: { light: 58, dark: 60 },
-  cases: { light: 44, dark: 68 },
-  boot: { light: 32, dark: 76 },
-  stack: { light: 22, dark: 84 },
+  coffee: { light: 58, dark: 60 },
+  football: { light: 44, dark: 68 },
+  film: { light: 32, dark: 76 },
+  controller: { light: 22, dark: 84 },
 };
 
 const heroIcon = (icon: HeroIconKind): HeroIconWord => {
@@ -62,19 +61,19 @@ const heroLineWords: HeroWord[][] = [
   [
     { type: 'text', text: "Hi," },
     { type: 'text', text: "it's" },
-    heroIcon('walkman'),
+    heroIcon('coffee'),
     { type: 'text', text: 'Aditya', variant: 'em' },
   ],
   [
     { type: 'text', text: 'an' },
     { type: 'text', text: 'experience' },
-    heroIcon('cases'),
+    heroIcon('football'),
     { type: 'text', text: 'designer' },
   ],
   [
     { type: 'text', text: 'with' },
     { type: 'text', text: 'roots' },
-    heroIcon('boot'),
+    heroIcon('film'),
     { type: 'text', text: 'in' },
     { type: 'text', text: 'product' },
   ],
@@ -83,7 +82,7 @@ const heroLineWords: HeroWord[][] = [
     { type: 'text', text: 'UI/UX' },
     { type: 'text', text: 'who', variant: 'muted' },
     { type: 'text', text: 'builds', variant: 'muted' },
-    heroIcon('stack'),
+    heroIcon('controller'),
     { type: 'text', text: 'for', variant: 'muted' },
     { type: 'text', text: 'impact.', variant: 'muted' },
   ],
@@ -118,30 +117,42 @@ const heroLines = heroLineWords.map((line) =>
                         <stop offset="1" stop-color={word.gradientDark} />
                       </linearGradient>
                     </defs>
-                    {word.icon === 'walkman' ? (
-                      <g filter="url(#hero-icon-shadow)" fill={`url(#hero-grad-${word.icon})`}>
-                        <rect x="20" y="4" width="8" height="6" rx="2" />
-                        <rect x="6" y="9" width="36" height="30" rx="5" />
-                        <circle cx="17" cy="24" r="6" fill="#fff" opacity="0.35" />
-                        <circle cx="31" cy="24" r="6" fill="#fff" opacity="0.35" />
+                    {word.icon === 'coffee' ? (
+                      <g filter="url(#hero-icon-shadow)">
+                        <rect x="10" y="5" width="28" height="9" rx="4.5" fill={`url(#hero-grad-${word.icon})`} />
+                        <path d="M13 15 H35 L31 39 Q31 42 28 42 H20 Q17 42 17 39 Z" fill={`url(#hero-grad-${word.icon})`} />
+                        <rect x="18.5" y="37" width="11" height="4" rx="2" fill="#fff" opacity="0.4" />
                       </g>
-                    ) : word.icon === 'cases' ? (
-                      <g filter="url(#hero-icon-shadow)" fill={`url(#hero-grad-${word.icon})`}>
-                        <rect x="9" y="6" width="16" height="30" rx="2.5" transform="rotate(-20 17 21)" opacity="0.7" />
-                        <rect x="16" y="6" width="16" height="30" rx="2.5" opacity="0.87" />
-                        <rect x="23" y="6" width="16" height="30" rx="2.5" transform="rotate(20 31 21)" />
+                    ) : word.icon === 'football' ? (
+                      <g filter="url(#hero-icon-shadow)">
+                        <circle cx="24" cy="24" r="19" fill={`url(#hero-grad-${word.icon})`} />
+                        <path d="M24 14 L31 20 L28 29 L20 29 L17 20 Z" fill={word.gradientDark} opacity="0.65" />
                       </g>
-                    ) : word.icon === 'boot' ? (
-                      <path
-                        d="M14 6 L26 6 Q30 6 30 11 L30 22 L39 22 Q45 22 45 28 Q45 33 39 35 L10 41 Q5 40 5 35 L5 12 Q5 6 14 6 Z"
-                        fill={`url(#hero-grad-${word.icon})`}
-                        filter="url(#hero-icon-shadow)"
-                      />
+                    ) : word.icon === 'film' ? (
+                      <g filter="url(#hero-icon-shadow)">
+                        <rect x="10" y="4" width="28" height="40" rx="4" fill={`url(#hero-grad-${word.icon})`} />
+                        <rect x="12.5" y="7" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="12.5" y="14" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="12.5" y="21" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="12.5" y="28" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="12.5" y="35" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="31.5" y="7" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="31.5" y="14" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="31.5" y="21" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="31.5" y="28" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="31.5" y="35" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
+                        <rect x="19" y="9" width="10" height="12" rx="2" fill="#fff" opacity="0.55" />
+                        <rect x="19" y="25" width="10" height="12" rx="2" fill="#fff" opacity="0.55" />
+                      </g>
                     ) : (
-                      <g filter="url(#hero-icon-shadow)" fill={`url(#hero-grad-${word.icon})`}>
-                        <rect x="7" y="6" width="32" height="9" rx="3" transform="rotate(-7 23 10.5)" opacity="0.7" />
-                        <rect x="6" y="19" width="34" height="9" rx="3" transform="rotate(3 23 23.5)" opacity="0.87" />
-                        <rect x="8" y="32" width="32" height="9" rx="3" transform="rotate(-4 24 36.5)" />
+                      <g filter="url(#hero-icon-shadow)">
+                        <path
+                          d="M13 15 H35 Q41 15 42 21 L44 31 Q45 37 39 37 Q35 37 33 32 H15 Q13 37 9 37 Q3 37 4 31 L6 21 Q7 15 13 15 Z"
+                          fill={`url(#hero-grad-${word.icon})`}
+                        />
+                        <path d="M13 22 V28 M10 25 H16" stroke="#fff" stroke-width="2.6" stroke-linecap="round" opacity="0.45" />
+                        <circle cx="32" cy="22" r="2.1" fill="#fff" opacity="0.45" />
+                        <circle cx="37" cy="27" r="2.1" fill="#fff" opacity="0.45" />
                       </g>
                     )}
                   </svg>
