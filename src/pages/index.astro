@@ -23,10 +23,15 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 // hover, and no affordance at all on a touch device (no hover to gate
 // it on), while duplicating a job the Selected Works grid right below
 // already does with full context (title, description, thumbnail).
-// Tinted from the site's own accent so the hero stays inside the
-// one-accent discipline the rest of the page keeps; a different tonal
-// step per icon (lightest to darkest) adds rhythm without new hues.
-type HeroIconKind = 'bars' | 'chat' | 'phone' | 'loop';
+//
+// Simplified flat silhouettes of Aditya's own things (a cassette
+// walkman, a fan of game cases, a football boot, a stack of DVDs) -
+// personal rather than generic UX iconography, but redrawn as single-
+// tone shapes instead of the detailed photos they're based on, so they
+// stay legible at this size and inside the one-accent discipline the
+// rest of the page keeps. A different tonal step per icon (lightest to
+// darkest) adds rhythm without new hues.
+type HeroIconKind = 'walkman' | 'cases' | 'boot' | 'stack';
 interface HeroIconWord {
   type: 'icon';
   icon: HeroIconKind;
@@ -37,10 +42,10 @@ type HeroWord = { type: 'text'; text: string; variant?: 'em' | 'muted' } | HeroI
 
 const heroAccentRgb = hexToRgb('#6b2737');
 const heroIconTones: Record<HeroIconKind, { light: number; dark: number }> = {
-  bars: { light: 62, dark: 60 },
-  chat: { light: 50, dark: 68 },
-  phone: { light: 38, dark: 76 },
-  loop: { light: 26, dark: 84 },
+  walkman: { light: 58, dark: 60 },
+  cases: { light: 44, dark: 68 },
+  boot: { light: 32, dark: 76 },
+  stack: { light: 22, dark: 84 },
 };
 
 const heroIcon = (icon: HeroIconKind): HeroIconWord => {
@@ -57,19 +62,19 @@ const heroLineWords: HeroWord[][] = [
   [
     { type: 'text', text: "Hi," },
     { type: 'text', text: "it's" },
-    heroIcon('bars'),
+    heroIcon('walkman'),
     { type: 'text', text: 'Aditya', variant: 'em' },
   ],
   [
     { type: 'text', text: 'an' },
     { type: 'text', text: 'experience' },
-    heroIcon('chat'),
+    heroIcon('cases'),
     { type: 'text', text: 'designer' },
   ],
   [
     { type: 'text', text: 'with' },
     { type: 'text', text: 'roots' },
-    heroIcon('phone'),
+    heroIcon('boot'),
     { type: 'text', text: 'in' },
     { type: 'text', text: 'product' },
   ],
@@ -78,7 +83,7 @@ const heroLineWords: HeroWord[][] = [
     { type: 'text', text: 'UI/UX' },
     { type: 'text', text: 'who', variant: 'muted' },
     { type: 'text', text: 'builds', variant: 'muted' },
-    heroIcon('loop'),
+    heroIcon('stack'),
     { type: 'text', text: 'for', variant: 'muted' },
     { type: 'text', text: 'impact.', variant: 'muted' },
   ],
@@ -113,32 +118,30 @@ const heroLines = heroLineWords.map((line) =>
                         <stop offset="1" stop-color={word.gradientDark} />
                       </linearGradient>
                     </defs>
-                    {word.icon === 'bars' ? (
+                    {word.icon === 'walkman' ? (
                       <g filter="url(#hero-icon-shadow)" fill={`url(#hero-grad-${word.icon})`}>
-                        <rect x="6" y="24" width="9" height="18" rx="4.5" />
-                        <rect x="19.5" y="10" width="9" height="32" rx="4.5" />
-                        <rect x="33" y="18" width="9" height="24" rx="4.5" />
+                        <rect x="20" y="4" width="8" height="6" rx="2" />
+                        <rect x="6" y="9" width="36" height="30" rx="5" />
+                        <circle cx="17" cy="24" r="6" fill="#fff" opacity="0.35" />
+                        <circle cx="31" cy="24" r="6" fill="#fff" opacity="0.35" />
                       </g>
-                    ) : word.icon === 'chat' ? (
+                    ) : word.icon === 'cases' ? (
                       <g filter="url(#hero-icon-shadow)" fill={`url(#hero-grad-${word.icon})`}>
-                        <rect x="5" y="8" width="38" height="26" rx="13" />
-                        <path d="M14 32 L10 42 L21 33 Z" />
+                        <rect x="9" y="6" width="16" height="30" rx="2.5" transform="rotate(-20 17 21)" opacity="0.7" />
+                        <rect x="16" y="6" width="16" height="30" rx="2.5" opacity="0.87" />
+                        <rect x="23" y="6" width="16" height="30" rx="2.5" transform="rotate(20 31 21)" />
                       </g>
-                    ) : word.icon === 'phone' ? (
-                      <g filter="url(#hero-icon-shadow)">
-                        <rect x="13" y="4" width="22" height="40" rx="7" fill={`url(#hero-grad-${word.icon})`} />
-                        <rect x="19" y="36" width="10" height="3" rx="1.5" fill="#fff" opacity="0.5" />
-                      </g>
+                    ) : word.icon === 'boot' ? (
+                      <path
+                        d="M14 6 L26 6 Q30 6 30 11 L30 22 L39 22 Q45 22 45 28 Q45 33 39 35 L10 41 Q5 40 5 35 L5 12 Q5 6 14 6 Z"
+                        fill={`url(#hero-grad-${word.icon})`}
+                        filter="url(#hero-icon-shadow)"
+                      />
                     ) : (
-                      <g filter="url(#hero-icon-shadow)">
-                        <path
-                          d="M24 8 A16 16 0 1 1 10.6 16"
-                          fill="none"
-                          stroke={`url(#hero-grad-${word.icon})`}
-                          stroke-width="7"
-                          stroke-linecap="round"
-                        />
-                        <path d="M8 10 L12 18 L18 12 Z" fill={word.gradientDark} />
+                      <g filter="url(#hero-icon-shadow)" fill={`url(#hero-grad-${word.icon})`}>
+                        <rect x="7" y="6" width="32" height="9" rx="3" transform="rotate(-7 23 10.5)" opacity="0.7" />
+                        <rect x="6" y="19" width="34" height="9" rx="3" transform="rotate(3 23 23.5)" opacity="0.87" />
+                        <rect x="8" y="32" width="32" height="9" rx="3" transform="rotate(-4 24 36.5)" />
                       </g>
                     )}
                   </svg>
