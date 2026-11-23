@@ -22,12 +22,11 @@ const heroIcons = {
   games: await getImage({ src: heroIconGamesSrc, width: 180 }),
 };
 
-// Word-by-word mask reveal (each word, and now each icon, its own
-// hidden-overflow slot, sliding up into view on a stagger) rather than the
-// old per-line version - same masking technique, just split one level
-// finer. Delay is computed once across the whole headline (not reset per
-// line) so the cascade reads as one continuous wave rather than four
-// separate ones, icons included.
+// Word-by-word reveal matching gsap.com/text's own hero: each word
+// scrambles through random characters before settling on the real text,
+// each icon scales/fades in - both on the same staggered timeline so the
+// whole sentence cascades in as one continuous wave rather than four
+// separate per-line ones.
 type HeroWord =
   | { type: 'text'; text: string; variant?: 'em' | 'muted' }
   | { type: 'icon'; icon: keyof typeof heroIcons; alt: string };
@@ -75,28 +74,31 @@ const heroLines = heroLineWords.map((line) =>
       <h1 class="hero__headline">
         {heroLines.map((line) => (
           <span class="hero__line">
-            {line.map((word) => (
-              <span class:list={['hero__word', { 'hero__word--icon': word.type === 'icon' }]}>
-                <span class="hero__word-inner" style={`animation-delay: ${word.delay}ms`}>
-                  {word.type === 'icon' ? (
-                    <img
-                      src={heroIcons[word.icon].src}
-                      width={heroIcons[word.icon].attributes.width}
-                      height={heroIcons[word.icon].attributes.height}
-                      alt={word.alt}
-                      aria-hidden="true"
-                      class="hero__word-icon"
-                    />
-                  ) : word.variant === 'em' ? (
-                    <em>{word.text}</em>
+            {line.map((word) =>
+              word.type === 'icon' ? (
+                <span class="hero__word hero__word--icon">
+                  <img
+                    src={heroIcons[word.icon].src}
+                    width={heroIcons[word.icon].attributes.width}
+                    height={heroIcons[word.icon].attributes.height}
+                    alt={word.alt}
+                    aria-hidden="true"
+                    class="hero__word-icon"
+                    style={`animation-delay: ${word.delay}ms`}
+                  />
+                </span>
+              ) : (
+                <span class="hero__word">
+                  {word.variant === 'em' ? (
+                    <em data-scramble data-delay={word.delay}>{word.text}</em>
                   ) : word.variant === 'muted' ? (
-                    <em class="hero__muted-em">{word.text}</em>
+                    <em class="hero__muted-em" data-scramble data-delay={word.delay}>{word.text}</em>
                   ) : (
-                    word.text
+                    <span data-scramble data-delay={word.delay}>{word.text}</span>
                   )}
                 </span>
-              </span>
-            ))}
+              ),
+            )}
           </span>
         ))}
       </h1>
@@ -129,6 +131,43 @@ const heroLines = heroLineWords.map((line) =>
       video.removeAttribute('autoplay');
       video.pause();
       video.currentTime = 0;
+    }
+
+    // Matches gsap.com/text's own hero: each word is hidden until its
+    // turn, then cycles through random characters for a beat before
+    // settling on the real word - a scramble reveal, not a slide/fade.
+    // Server-rendered markup already holds the real words (so no-JS and
+    // reduced-motion both just show correct, static text); this only
+    // hides and scrambles them when motion is allowed.
+    if (!prefersReducedMotion) {
+      const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+      const randomChar = () => charset[Math.floor(Math.random() * charset.length)];
+      const scrambleDuration = 360;
+      const frameInterval = 45;
+
+      document.querySelectorAll<HTMLElement>('[data-scramble]').forEach((el) => {
+        const original = el.textContent ?? '';
+        const delay = Number(el.dataset.delay ?? 0);
+        el.classList.add('is-pending');
+
+        setTimeout(() => {
+          el.classList.remove('is-pending');
+          let elapsed = 0;
+          const tick = () => {
+            elapsed += frameInterval;
+            if (elapsed >= scrambleDuration) {
+              el.textContent = original;
+              return;
+            }
+            el.textContent = original
+              .split('')
+              .map((ch) => (/\s/.test(ch) ? ch : randomChar()))
+              .join('');
+            setTimeout(tick, frameInterval);
+          };
+          tick();
+        }, delay);
+      });
     }
   </script>
 
@@ -183,39 +222,23 @@ const heroLines = heroLineWords.map((line) =>
     display: block;
   }
 
-  /* The mask now lives on each word, not the whole line - inline-block so
-     words wrap naturally within a line on narrow widths, overflow:hidden
-     so each one can slide up out of a hidden slot independently, and the
-     same padding/margin trick as before (not the line's problem anymore)
-     so a descender (the comma, "g", "p") doesn't get clipped by that
-     overflow during the slide. */
   .hero__word {
     display: inline-block;
-    overflow: hidden;
-    padding-bottom: 0.18em;
-    margin-bottom: -0.18em;
     margin-right: 0.26em;
   }
 
-  /* A pure clip-reveal (no fade) - the word is fully opaque the whole
-     time, it's the hidden-overflow box around it that's doing the work,
-     so each word reads as sliding up from behind a hard mask edge rather
-     than materializing out of a blur. That hard edge is what reads as a
-     "masked text reveal" (gsap.com/text's own effect) instead of a soft
-     entrance fade; a snappier duration/stagger than the old per-line
-     version keeps it feeling mechanical rather than lazy. */
-  .hero__word-inner {
-    display: inline-block;
-    transform: translateY(110%);
-    animation: hero-line-in 520ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  /* Hidden only once the script has confirmed motion is allowed (added
+     as a class, never baked into the default style) - so no-JS and
+     reduced-motion visitors always get the plain, correct, already-
+     visible sentence underneath. */
+  [data-scramble].is-pending {
+    opacity: 0;
   }
 
   /* The one spot the hero borrows the gsap.com/text reference's trick of
      splicing small images into the sentence - except these are Aditya's
      own things (a walkman, game cases, DVDs, football boots), not generic
-     stock icons. Same clip-and-slide as every word around it, just a
-     taller box since the images need more height than a line of text to
-     read clearly at this scale. */
+     stock icons. */
   .hero__word--icon {
     vertical-align: middle;
     margin-bottom: -0.1em;
@@ -231,21 +254,28 @@ const heroLines = heroLineWords.map((line) =>
     margin-right: 0.14em;
   }
 
+  /* Icons scale and fade in (not scramble - there's no text to scramble),
+     each on the same staggered timeline as the words around it. */
   .hero__word-icon {
     display: block;
     height: 1.4em;
     width: auto;
+    opacity: 0;
+    transform: scale(0.4);
+    animation: hero-icon-in 420ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   }
 
-  @keyframes hero-line-in {
+  @keyframes hero-icon-in {
     to {
-      transform: translateY(0);
+      opacity: 1;
+      transform: scale(1);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero__word-inner {
+    .hero__word-icon {
       animation: none;
+      opacity: 1;
       transform: none;
     }
   }
