@@ -8,20 +8,58 @@ import heroPosterSrc from '../assets/images/hero-poster.png';
 
 const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
+
+// Word-by-word mask reveal (each word its own hidden-overflow slot, sliding
+// up into view on a stagger) rather than the old per-line version - same
+// masking technique, just split one level finer. Delay is computed once
+// across the whole headline (not reset per line) so the cascade reads as
+// one continuous wave rather than four separate ones.
+interface HeroWord {
+  text: string;
+  variant?: 'em' | 'muted';
+}
+
+const heroLineWords: HeroWord[][] = [
+  [{ text: "Hi," }, { text: "it's" }, { text: 'Aditya', variant: 'em' }],
+  [{ text: 'an' }, { text: 'experience' }, { text: 'designer' }],
+  [{ text: 'with' }, { text: 'roots' }, { text: 'in' }, { text: 'product' }],
+  [
+    { text: 'and' },
+    { text: 'UI/UX' },
+    { text: 'who', variant: 'muted' },
+    { text: 'builds', variant: 'muted' },
+    { text: 'for', variant: 'muted' },
+    { text: 'impact.', variant: 'muted' },
+  ],
+];
+
+let heroWordIndex = 0;
+const heroLines = heroLineWords.map((line) =>
+  line.map((word) => ({ ...word, delay: 80 + heroWordIndex++ * 45 })),
+);
 ---
 
 <Base title="Home">
   <section class="hero wrapper">
     <div class="hero__text">
       <h1 class="hero__headline">
-        <span class="hero__line"><span class="hero__line-inner">Hi, it's <em>Aditya</em></span></span>
-        <span class="hero__line"><span class="hero__line-inner">an experience designer</span></span>
-        <span class="hero__line"><span class="hero__line-inner">with roots in product</span></span>
-        <span class="hero__line"
-          ><span class="hero__line-inner"
-            >and UI/UX <em class="hero__muted-em">who builds for impact.</em></span
-          ></span
-        >
+        {heroLines.map((line) => (
+          <span class="hero__line">
+            {line.map((word) => (
+              <span class="hero__word">
+                <span class="hero__word-inner" style={`animation-delay: ${word.delay}ms`}>
+                  {word.variant === 'em' ? (
+                    <em>{word.text}</em>
+                  ) : word.variant === 'muted' ? (
+                    <em class="hero__muted-em">{word.text}</em>
+                  ) : (
+                    word.text
+                  )}
+                </span>
+              </span>
+            ))}
+          </span>
+        ))}
       </h1>
     </div>
     <div class="hero__media">
@@ -104,32 +142,27 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 
   .hero__line {
     display: block;
+  }
+
+  /* The mask now lives on each word, not the whole line - inline-block so
+     words wrap naturally within a line on narrow widths, overflow:hidden
+     so each one can slide up out of a hidden slot independently, and the
+     same padding/margin trick as before (not the line's problem anymore)
+     so a descender (the comma, "g", "p") doesn't get clipped by that
+     overflow during the slide. */
+  .hero__word {
+    display: inline-block;
     overflow: hidden;
     padding-bottom: 0.18em;
     margin-bottom: -0.18em;
+    margin-right: 0.26em;
   }
 
-  .hero__line-inner {
-    display: block;
+  .hero__word-inner {
+    display: inline-block;
     transform: translateY(100%);
     opacity: 0;
-    animation: hero-line-in 900ms var(--ease-entrance) forwards;
-  }
-
-  .hero__line:nth-of-type(1) .hero__line-inner {
-    animation-delay: 80ms;
-  }
-
-  .hero__line:nth-of-type(2) .hero__line-inner {
-    animation-delay: 200ms;
-  }
-
-  .hero__line:nth-of-type(3) .hero__line-inner {
-    animation-delay: 320ms;
-  }
-
-  .hero__line:nth-of-type(4) .hero__line-inner {
-    animation-delay: 440ms;
+    animation: hero-line-in 700ms var(--ease-entrance) forwards;
   }
 
   @keyframes hero-line-in {
@@ -140,7 +173,7 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero__line-inner {
+    .hero__word-inner {
       animation: none;
       transform: none;
       opacity: 1;
