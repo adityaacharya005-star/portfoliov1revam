@@ -110,7 +110,7 @@ const heroLines = heroLineWords.map((line) =>
             {line.map((word) =>
               word.type === 'icon' ? (
                 <span class="hero__word hero__word--icon" style={`animation-delay: ${word.delay}ms`} aria-hidden="true">
-                  <svg viewBox="0 0 48 48" class="hero__word-icon">
+                  <svg viewBox="0 0 48 48" class={`hero__word-icon hero__word-icon--${word.icon}`}>
                     <defs>
                       <linearGradient id={`hero-grad-${word.icon}`} x1="0" y1="0" x2="1" y2="1">
                         <stop offset="0" stop-color={word.gradientLight} />
@@ -122,17 +122,20 @@ const heroLines = heroLineWords.map((line) =>
                         <rect x="7" y="5" width="34" height="10" rx="5" fill={`url(#hero-grad-${word.icon})`} />
                         <path d="M9 16 H39 L34 39 Q34 42 30 42 H18 Q14 42 14 39 Z" fill={`url(#hero-grad-${word.icon})`} />
                         <rect x="16" y="37" width="16" height="4" rx="2" fill="#fff" opacity="0.4" />
+                        <path class="hero__icon-fx hero__icon-fx--steam" d="M19 3 Q17 0 19 -3 M26 3 Q24 0 26 -3" fill="none" stroke={word.gradientDark} stroke-width="2" stroke-linecap="round" />
                       </g>
                     ) : word.icon === 'football' ? (
                       <g filter="url(#hero-icon-shadow)">
                         <circle cx="24" cy="24" r="19" fill={`url(#hero-grad-${word.icon})`} />
-                        <path d="M24 14 L31 20 L28 29 L20 29 L17 20 Z" fill={word.gradientDark} opacity="0.7" />
-                        <g stroke={word.gradientDark} stroke-width="2" stroke-linecap="round" opacity="0.6" fill="none">
-                          <path d="M24 14 Q23 9 22 6" />
-                          <path d="M31 20 Q36 17 40 15" />
-                          <path d="M28 29 Q31 34 33 38" />
-                          <path d="M20 29 Q17 34 15 38" />
-                          <path d="M17 20 Q12 17 8 15" />
+                        <g class="hero__icon-fx hero__icon-fx--spin">
+                          <path d="M24 14 L31 20 L28 29 L20 29 L17 20 Z" fill={word.gradientDark} opacity="0.7" />
+                          <g stroke={word.gradientDark} stroke-width="2" stroke-linecap="round" opacity="0.6" fill="none">
+                            <path d="M24 14 Q23 9 22 6" />
+                            <path d="M31 20 Q36 17 40 15" />
+                            <path d="M28 29 Q31 34 33 38" />
+                            <path d="M20 29 Q17 34 15 38" />
+                            <path d="M17 20 Q12 17 8 15" />
+                          </g>
                         </g>
                       </g>
                     ) : word.icon === 'film' ? (
@@ -148,8 +151,8 @@ const heroLines = heroLineWords.map((line) =>
                         <rect x="31.5" y="21" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
                         <rect x="31.5" y="28" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
                         <rect x="31.5" y="35" width="4" height="4" rx="1" fill="#fff" opacity="0.4" />
-                        <rect x="19" y="9" width="10" height="12" rx="2" fill="#fff" opacity="0.55" />
-                        <rect x="19" y="25" width="10" height="12" rx="2" fill="#fff" opacity="0.55" />
+                        <rect class="hero__icon-fx hero__icon-fx--frame" x="19" y="9" width="10" height="12" rx="2" fill="#fff" opacity="0.55" />
+                        <rect class="hero__icon-fx hero__icon-fx--frame" x="19" y="25" width="10" height="12" rx="2" fill="#fff" opacity="0.55" style="animation-delay: 90ms" />
                       </g>
                     ) : (
                       <g filter="url(#hero-icon-shadow)">
@@ -158,8 +161,8 @@ const heroLines = heroLineWords.map((line) =>
                           fill={`url(#hero-grad-${word.icon})`}
                         />
                         <path d="M13 22 V28 M10 25 H16" stroke="#fff" stroke-width="2.6" stroke-linecap="round" opacity="0.45" />
-                        <circle cx="32" cy="22" r="2.1" fill="#fff" opacity="0.45" />
-                        <circle cx="37" cy="27" r="2.1" fill="#fff" opacity="0.45" />
+                        <circle class="hero__icon-fx hero__icon-fx--btn" cx="32" cy="22" r="2.1" fill="#fff" opacity="0.45" />
+                        <circle class="hero__icon-fx hero__icon-fx--btn" cx="37" cy="27" r="2.1" fill="#fff" opacity="0.45" style="animation-delay: 80ms" />
                       </g>
                     )}
                   </svg>
@@ -321,6 +324,100 @@ const heroLines = heroLineWords.map((line) =>
     display: block;
     height: 1.4em;
     width: auto;
+    overflow: visible;
+  }
+
+  /* A resting tilt per icon, not dead-straight, so the four read as a
+     loosely scattered handful of things rather than a row of identical
+     boxes - small, distinct angles, no two alike. */
+  .hero__word-icon--coffee {
+    transform: rotate(-7deg);
+  }
+
+  .hero__word-icon--football {
+    transform: rotate(9deg);
+  }
+
+  .hero__word-icon--film {
+    transform: rotate(-5deg);
+  }
+
+  .hero__word-icon--controller {
+    transform: rotate(6deg);
+  }
+
+  /* One themed gesture per icon on hover/focus - a steam wisp, a spin,
+     a frame advancing, a button press - but all on the same trigger,
+     duration family and easing, so they read as one disciplined set
+     rather than four unrelated party tricks. Mouse/trackpad only: a
+     touch tap has no hover to answer, so nothing here is the only way
+     to notice these are illustrations, just a bonus for lingering. */
+  .hero__icon-fx--steam {
+    opacity: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .hero__word--icon:hover .hero__icon-fx--steam,
+    .hero__word--icon:focus-visible .hero__icon-fx--steam {
+      animation: hero-icon-steam 700ms var(--ease-standard);
+    }
+
+    .hero__word--icon:hover .hero__icon-fx--spin,
+    .hero__word--icon:focus-visible .hero__icon-fx--spin {
+      animation: hero-icon-spin 550ms var(--ease-standard);
+      transform-origin: 24px 24px;
+    }
+
+    .hero__word--icon:hover .hero__icon-fx--frame,
+    .hero__word--icon:focus-visible .hero__icon-fx--frame {
+      animation: hero-icon-frame-advance 500ms var(--ease-standard);
+    }
+
+    .hero__word--icon:hover .hero__icon-fx--btn,
+    .hero__word--icon:focus-visible .hero__icon-fx--btn {
+      animation: hero-icon-btn-press 450ms var(--ease-standard);
+      transform-origin: center;
+    }
+  }
+
+  @keyframes hero-icon-steam {
+    0% {
+      opacity: 0;
+      transform: translateY(2px);
+    }
+    35% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes hero-icon-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes hero-icon-frame-advance {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+  }
+
+  @keyframes hero-icon-btn-press {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scale(0.65);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -330,6 +427,17 @@ const heroLines = heroLineWords.map((line) =>
       opacity: 1;
       filter: none;
       transform: none;
+    }
+
+    .hero__word--icon:hover .hero__icon-fx--steam,
+    .hero__word--icon:focus-visible .hero__icon-fx--steam,
+    .hero__word--icon:hover .hero__icon-fx--spin,
+    .hero__word--icon:focus-visible .hero__icon-fx--spin,
+    .hero__word--icon:hover .hero__icon-fx--frame,
+    .hero__word--icon:focus-visible .hero__icon-fx--frame,
+    .hero__word--icon:hover .hero__icon-fx--btn,
+    .hero__word--icon:focus-visible .hero__icon-fx--btn {
+      animation: none;
     }
   }
 
