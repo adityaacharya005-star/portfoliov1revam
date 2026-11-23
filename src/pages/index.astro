@@ -5,6 +5,7 @@ import Base from '../layouts/Base.astro';
 import WorkGrid from '../components/WorkGrid.astro';
 import Contact from '../components/Contact.astro';
 import heroPosterSrc from '../assets/images/hero-poster.png';
+import { hexToRgb, mixRgb, rgbToHex } from '../lib/color';
 
 const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
@@ -16,33 +17,55 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 // separate per-line ones.
 //
 // The icons themselves echo that reference's glossy gradient-blob
-// language (not literal photos) but in the site's own maroon/gold
-// palette, and shaped around the work itself rather than staying purely
-// abstract: a spark and a diamond (direct nods to gsap.com/text's own
-// asterisk and diamond), a cursor (interaction design) and a browser
-// frame (product/UI).
-type HeroIconKind = 'spark' | 'diamond' | 'cursor' | 'frame';
-type HeroWord =
-  | { type: 'text'; text: string; variant?: 'em' | 'muted' }
-  | { type: 'icon'; icon: HeroIconKind };
+// language (not literal photos), but instead of staying decorative, each
+// one is shaped after a real project and links straight to its case
+// study, tinted in that project's own accentColor (so the gradient here
+// stays in sync automatically if that color ever changes on the work
+// entry itself).
+type HeroIconKind = 'bars' | 'chat' | 'phone' | 'loop';
+interface HeroIconWord {
+  type: 'icon';
+  icon: HeroIconKind;
+  slug: string;
+  title: string;
+  gradientLight: string;
+  gradientDark: string;
+}
+type HeroWord = { type: 'text'; text: string; variant?: 'em' | 'muted' } | HeroIconWord;
+
+const findWork = (slug: string) => work.find((entry) => entry.slug === slug)!;
+
+const heroIcon = (icon: HeroIconKind, slug: string): HeroIconWord => {
+  const entry = findWork(slug);
+  const accent = entry.data.accentColor ?? '#6b2737';
+  const rgb = hexToRgb(accent);
+  return {
+    type: 'icon',
+    icon,
+    slug,
+    title: entry.data.title,
+    gradientLight: rgbToHex(mixRgb(rgb, [255, 255, 255], 55)),
+    gradientDark: rgbToHex(mixRgb(rgb, [0, 0, 0], 72)),
+  };
+};
 
 const heroLineWords: HeroWord[][] = [
   [
     { type: 'text', text: "Hi," },
     { type: 'text', text: "it's" },
-    { type: 'icon', icon: 'spark' },
+    heroIcon('bars', 'qurate'),
     { type: 'text', text: 'Aditya', variant: 'em' },
   ],
   [
     { type: 'text', text: 'an' },
     { type: 'text', text: 'experience' },
-    { type: 'icon', icon: 'cursor' },
+    heroIcon('chat', 'conversations-before-college'),
     { type: 'text', text: 'designer' },
   ],
   [
     { type: 'text', text: 'with' },
     { type: 'text', text: 'roots' },
-    { type: 'icon', icon: 'diamond' },
+    heroIcon('phone', 'neoos'),
     { type: 'text', text: 'in' },
     { type: 'text', text: 'product' },
   ],
@@ -51,7 +74,7 @@ const heroLineWords: HeroWord[][] = [
     { type: 'text', text: 'UI/UX' },
     { type: 'text', text: 'who', variant: 'muted' },
     { type: 'text', text: 'builds', variant: 'muted' },
-    { type: 'icon', icon: 'frame' },
+    heroIcon('loop', 'iterate'),
     { type: 'text', text: 'for', variant: 'muted' },
     { type: 'text', text: 'impact.', variant: 'muted' },
   ],
@@ -71,14 +94,6 @@ const heroLines = heroLineWords.map((line) =>
           <filter id="hero-icon-shadow" x="-50%" y="-50%" width="200%" height="200%">
             <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#2a1a14" flood-opacity="0.22" />
           </filter>
-          <linearGradient id="hero-grad-gold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#f8e3b3" />
-            <stop offset="1" stop-color="#c9862f" />
-          </linearGradient>
-          <linearGradient id="hero-grad-maroon" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#b9697f" />
-            <stop offset="1" stop-color="#5a1f2d" />
-          </linearGradient>
         </defs>
       </svg>
       <h1 class="hero__headline">
@@ -86,41 +101,49 @@ const heroLines = heroLineWords.map((line) =>
           <span class="hero__line">
             {line.map((word) =>
               word.type === 'icon' ? (
-                <span class="hero__word hero__word--icon">
-                  {word.icon === 'spark' ? (
-                    <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true" style={`animation-delay: ${word.delay}ms`}>
-                      <g filter="url(#hero-icon-shadow)" fill="url(#hero-grad-gold)">
-                        <rect x="20" y="2" width="8" height="44" rx="4" />
-                        <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(45 24 24)" />
-                        <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(90 24 24)" />
-                        <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(135 24 24)" />
+                <a
+                  href={`/work/${word.slug}`}
+                  class="hero__word hero__word--icon"
+                  aria-label={`View the ${word.title} case study`}
+                  style={`animation-delay: ${word.delay}ms`}
+                >
+                  <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true">
+                    <defs>
+                      <linearGradient id={`hero-grad-${word.icon}`} x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color={word.gradientLight} />
+                        <stop offset="1" stop-color={word.gradientDark} />
+                      </linearGradient>
+                    </defs>
+                    {word.icon === 'bars' ? (
+                      <g filter="url(#hero-icon-shadow)" fill={`url(#hero-grad-${word.icon})`}>
+                        <rect x="6" y="24" width="9" height="18" rx="4.5" />
+                        <rect x="19.5" y="10" width="9" height="32" rx="4.5" />
+                        <rect x="33" y="18" width="9" height="24" rx="4.5" />
                       </g>
-                    </svg>
-                  ) : word.icon === 'diamond' ? (
-                    <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true" style={`animation-delay: ${word.delay}ms`}>
-                      <rect x="9" y="9" width="30" height="30" rx="7" transform="rotate(45 24 24)" fill="url(#hero-grad-maroon)" filter="url(#hero-icon-shadow)" />
-                    </svg>
-                  ) : word.icon === 'cursor' ? (
-                    <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true" style={`animation-delay: ${word.delay}ms`}>
-                      <path
-                        d="M14 6 L14 38 L21 31 L27 42 L33 39 L27 28 L37 28 Z"
-                        fill="url(#hero-grad-gold)"
-                        stroke="url(#hero-grad-gold)"
-                        stroke-width="3"
-                        stroke-linejoin="round"
-                        stroke-linecap="round"
-                        filter="url(#hero-icon-shadow)"
-                      />
-                    </svg>
-                  ) : (
-                    <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true" style={`animation-delay: ${word.delay}ms`}>
+                    ) : word.icon === 'chat' ? (
+                      <g filter="url(#hero-icon-shadow)" fill={`url(#hero-grad-${word.icon})`}>
+                        <rect x="5" y="8" width="38" height="26" rx="13" />
+                        <path d="M14 32 L10 42 L21 33 Z" />
+                      </g>
+                    ) : word.icon === 'phone' ? (
                       <g filter="url(#hero-icon-shadow)">
-                        <rect x="5" y="7" width="38" height="34" rx="9" fill="url(#hero-grad-maroon)" />
-                        <rect x="5" y="7" width="38" height="9" rx="9" fill="#fff" opacity="0.22" />
+                        <rect x="13" y="4" width="22" height="40" rx="7" fill={`url(#hero-grad-${word.icon})`} />
+                        <rect x="19" y="36" width="10" height="3" rx="1.5" fill="#fff" opacity="0.5" />
                       </g>
-                    </svg>
-                  )}
-                </span>
+                    ) : (
+                      <g filter="url(#hero-icon-shadow)">
+                        <path
+                          d="M24 8 A16 16 0 1 1 10.6 16"
+                          fill="none"
+                          stroke={`url(#hero-grad-${word.icon})`}
+                          stroke-width="7"
+                          stroke-linecap="round"
+                        />
+                        <path d="M8 10 L12 18 L18 12 Z" fill={word.gradientDark} />
+                      </g>
+                    )}
+                  </svg>
+                </a>
               ) : (
                 <span class="hero__word">
                   {word.variant === 'em' ? (
@@ -270,30 +293,13 @@ const heroLines = heroLineWords.map((line) =>
   }
 
   /* The one spot the hero borrows the gsap.com/text reference's trick of
-     splicing small glossy-gradient shapes into the sentence - recolored
-     to the site's own maroon/gold palette and tied to the work itself
-     (a cursor, a browser frame) rather than staying purely decorative. */
+     splicing small glossy-gradient shapes into the sentence - except
+     each one is a real link to the project it's tinted from (its own
+     accentColor), not a decorative glyph. */
   .hero__word--icon {
     vertical-align: middle;
     margin-bottom: -0.1em;
     margin-right: 0.14em;
-  }
-
-  /* Tightens the gap on the word right before an icon too (not just the
-     icon's own trailing gap above) - an icon slotted between two words
-     turns what used to be one gap into two, and reclaiming space on both
-     sides is what buys this image enough room to read clearly without
-     pushing its line onto a second row. */
-  .hero__word:has(+ .hero__word--icon) {
-    margin-right: 0.14em;
-  }
-
-  /* Icons scale and fade in (not scramble - there's no text to scramble),
-     each on the same staggered timeline as the words around it. */
-  .hero__word-icon {
-    display: block;
-    height: 1.4em;
-    width: auto;
     opacity: 0;
     transform: scale(0.4);
     animation: hero-icon-in 420ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
@@ -306,11 +312,60 @@ const heroLines = heroLineWords.map((line) =>
     }
   }
 
+  /* Tightens the gap on the word right before an icon too (not just the
+     icon's own trailing gap above) - an icon slotted between two words
+     turns what used to be one gap into two, and reclaiming space on both
+     sides is what buys this image enough room to read clearly without
+     pushing its line onto a second row. */
+  .hero__word:has(+ .hero__word--icon) {
+    margin-right: 0.14em;
+  }
+
+  /* The icon itself (inside the already-entered link) is untouched by
+     the entrance animation above - that's purely the link's own
+     opacity/scale - so its own transform is free for the hover wiggle
+     below without the two fighting over the same property. */
+  .hero__word-icon {
+    display: block;
+    height: 1.4em;
+    width: auto;
+  }
+
+  /* Each icon is a real link to the project it's tinted from - a small
+     hand-nudged wiggle on hover/focus (the same answer-to-the-pointer
+     language as the footer's social icons) signals that before anyone
+     reads the tiny case-study label, plus the standard focus ring every
+     link on the site already gets for free. */
+  .hero__word--icon:hover .hero__word-icon,
+  .hero__word--icon:focus-visible .hero__word-icon {
+    animation: hero-icon-wiggle 420ms var(--ease-standard);
+  }
+
+  @keyframes hero-icon-wiggle {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    30% {
+      transform: scale(1.12) rotate(-7deg);
+    }
+    65% {
+      transform: scale(1.12) rotate(5deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .hero__word-icon {
+    .hero__word--icon {
       animation: none;
       opacity: 1;
       transform: none;
+    }
+
+    .hero__word--icon:hover .hero__word-icon,
+    .hero__word--icon:focus-visible .hero__word-icon {
+      animation: none;
     }
   }
 
