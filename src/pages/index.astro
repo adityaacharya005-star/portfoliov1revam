@@ -378,6 +378,85 @@ const heroLines = heroLineWords.map((line) =>
       animation: hero-icon-btn-press 450ms var(--ease-standard);
       transform-origin: center;
     }
+
+    /* A shared compress-then-spring-back layered on top of each icon's
+       own gesture above - a quick squash on contact and an overshoot
+       past full size on the way back, the same shape a physical button
+       or a haptic tap gives, rather than a plain hover scale. Each
+       icon's own keyframe keeps its resting tilt (the transform these
+       fire on also carries that static rotate) so the bounce doesn't
+       momentarily straighten it out. */
+    .hero__word--icon:hover .hero__word-icon--coffee,
+    .hero__word--icon:focus-visible .hero__word-icon--coffee {
+      animation: hero-icon-haptic-coffee 420ms var(--ease-standard);
+    }
+
+    .hero__word--icon:hover .hero__word-icon--football,
+    .hero__word--icon:focus-visible .hero__word-icon--football {
+      animation: hero-icon-haptic-football 420ms var(--ease-standard);
+    }
+
+    .hero__word--icon:hover .hero__word-icon--film,
+    .hero__word--icon:focus-visible .hero__word-icon--film {
+      animation: hero-icon-haptic-film 420ms var(--ease-standard);
+    }
+
+    .hero__word--icon:hover .hero__word-icon--controller,
+    .hero__word--icon:focus-visible .hero__word-icon--controller {
+      animation: hero-icon-haptic-controller 420ms var(--ease-standard);
+    }
+  }
+
+  @keyframes hero-icon-haptic-coffee {
+    0%,
+    100% {
+      transform: rotate(-7deg) scale(1);
+    }
+    35% {
+      transform: rotate(-7deg) scale(0.86);
+    }
+    65% {
+      transform: rotate(-7deg) scale(1.06);
+    }
+  }
+
+  @keyframes hero-icon-haptic-football {
+    0%,
+    100% {
+      transform: rotate(9deg) scale(1);
+    }
+    35% {
+      transform: rotate(9deg) scale(0.86);
+    }
+    65% {
+      transform: rotate(9deg) scale(1.06);
+    }
+  }
+
+  @keyframes hero-icon-haptic-film {
+    0%,
+    100% {
+      transform: rotate(-5deg) scale(1);
+    }
+    35% {
+      transform: rotate(-5deg) scale(0.86);
+    }
+    65% {
+      transform: rotate(-5deg) scale(1.06);
+    }
+  }
+
+  @keyframes hero-icon-haptic-controller {
+    0%,
+    100% {
+      transform: rotate(6deg) scale(1);
+    }
+    35% {
+      transform: rotate(6deg) scale(0.86);
+    }
+    65% {
+      transform: rotate(6deg) scale(1.06);
+    }
   }
 
   @keyframes hero-icon-steam {
@@ -436,7 +515,15 @@ const heroLines = heroLineWords.map((line) =>
     .hero__word--icon:hover .hero__icon-fx--frame,
     .hero__word--icon:focus-visible .hero__icon-fx--frame,
     .hero__word--icon:hover .hero__icon-fx--btn,
-    .hero__word--icon:focus-visible .hero__icon-fx--btn {
+    .hero__word--icon:focus-visible .hero__icon-fx--btn,
+    .hero__word--icon:hover .hero__word-icon--coffee,
+    .hero__word--icon:focus-visible .hero__word-icon--coffee,
+    .hero__word--icon:hover .hero__word-icon--football,
+    .hero__word--icon:focus-visible .hero__word-icon--football,
+    .hero__word--icon:hover .hero__word-icon--film,
+    .hero__word--icon:focus-visible .hero__word-icon--film,
+    .hero__word--icon:hover .hero__word-icon--controller,
+    .hero__word--icon:focus-visible .hero__word-icon--controller {
       animation: none;
     }
   }
