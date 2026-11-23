@@ -5,31 +5,63 @@ import Base from '../layouts/Base.astro';
 import WorkGrid from '../components/WorkGrid.astro';
 import Contact from '../components/Contact.astro';
 import heroPosterSrc from '../assets/images/hero-poster.png';
+import heroIconWalkmanSrc from '../assets/images/hero-icon-walkman.png';
+import heroIconDvdsSrc from '../assets/images/hero-icon-dvds.png';
+import heroIconCleatsSrc from '../assets/images/hero-icon-cleats.png';
+import heroIconGamesSrc from '../assets/images/hero-icon-games.png';
 
 const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 
-// Word-by-word mask reveal (each word its own hidden-overflow slot, sliding
-// up into view on a stagger) rather than the old per-line version - same
-// masking technique, just split one level finer. Delay is computed once
-// across the whole headline (not reset per line) so the cascade reads as
-// one continuous wave rather than four separate ones.
-interface HeroWord {
-  text: string;
-  variant?: 'em' | 'muted';
-}
+// A handful of Aditya's own things (not stock icons) standing in as the
+// decorative glyphs between words - rendered at 2x the largest on-screen
+// size (roughly 90px at the hero's biggest breakpoint) for a crisp retina
+// image at a size this small.
+const heroIcons = {
+  walkman: await getImage({ src: heroIconWalkmanSrc, width: 180 }),
+  dvds: await getImage({ src: heroIconDvdsSrc, width: 180 }),
+  cleats: await getImage({ src: heroIconCleatsSrc, width: 180 }),
+  games: await getImage({ src: heroIconGamesSrc, width: 180 }),
+};
+
+// Word-by-word mask reveal (each word, and now each icon, its own
+// hidden-overflow slot, sliding up into view on a stagger) rather than the
+// old per-line version - same masking technique, just split one level
+// finer. Delay is computed once across the whole headline (not reset per
+// line) so the cascade reads as one continuous wave rather than four
+// separate ones, icons included.
+type HeroWord =
+  | { type: 'text'; text: string; variant?: 'em' | 'muted' }
+  | { type: 'icon'; icon: keyof typeof heroIcons; alt: string };
 
 const heroLineWords: HeroWord[][] = [
-  [{ text: "Hi," }, { text: "it's" }, { text: 'Aditya', variant: 'em' }],
-  [{ text: 'an' }, { text: 'experience' }, { text: 'designer' }],
-  [{ text: 'with' }, { text: 'roots' }, { text: 'in' }, { text: 'product' }],
   [
-    { text: 'and' },
-    { text: 'UI/UX' },
-    { text: 'who', variant: 'muted' },
-    { text: 'builds', variant: 'muted' },
-    { text: 'for', variant: 'muted' },
-    { text: 'impact.', variant: 'muted' },
+    { type: 'text', text: "Hi," },
+    { type: 'text', text: "it's" },
+    { type: 'icon', icon: 'walkman', alt: '' },
+    { type: 'text', text: 'Aditya', variant: 'em' },
+  ],
+  [
+    { type: 'text', text: 'an' },
+    { type: 'text', text: 'experience' },
+    { type: 'icon', icon: 'dvds', alt: '' },
+    { type: 'text', text: 'designer' },
+  ],
+  [
+    { type: 'text', text: 'with' },
+    { type: 'text', text: 'roots' },
+    { type: 'icon', icon: 'cleats', alt: '' },
+    { type: 'text', text: 'in' },
+    { type: 'text', text: 'product' },
+  ],
+  [
+    { type: 'text', text: 'and' },
+    { type: 'text', text: 'UI/UX' },
+    { type: 'text', text: 'who', variant: 'muted' },
+    { type: 'text', text: 'builds', variant: 'muted' },
+    { type: 'icon', icon: 'games', alt: '' },
+    { type: 'text', text: 'for', variant: 'muted' },
+    { type: 'text', text: 'impact.', variant: 'muted' },
   ],
 ];
 
@@ -46,9 +78,18 @@ const heroLines = heroLineWords.map((line) =>
         {heroLines.map((line) => (
           <span class="hero__line">
             {line.map((word) => (
-              <span class="hero__word">
+              <span class:list={['hero__word', { 'hero__word--icon': word.type === 'icon' }]}>
                 <span class="hero__word-inner" style={`animation-delay: ${word.delay}ms`}>
-                  {word.variant === 'em' ? (
+                  {word.type === 'icon' ? (
+                    <img
+                      src={heroIcons[word.icon].src}
+                      width={heroIcons[word.icon].attributes.width}
+                      height={heroIcons[word.icon].attributes.height}
+                      alt={word.alt}
+                      aria-hidden="true"
+                      class="hero__word-icon"
+                    />
+                  ) : word.variant === 'em' ? (
                     <em>{word.text}</em>
                   ) : word.variant === 'muted' ? (
                     <em class="hero__muted-em">{word.text}</em>
@@ -116,7 +157,7 @@ const heroLines = heroLineWords.map((line) =>
     min-height: min(calc(100svh - 150px), 56vw);
     margin-top: var(--space-8);
     display: grid;
-    grid-template-columns: 0.85fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-7);
     align-items: center;
   }
@@ -163,6 +204,34 @@ const heroLines = heroLineWords.map((line) =>
     transform: translateY(100%);
     opacity: 0;
     animation: hero-line-in 700ms var(--ease-entrance) forwards;
+  }
+
+  /* The one spot the hero borrows the gsap.com/text reference's trick of
+     splicing small images into the sentence - except these are Aditya's
+     own things (a walkman, game cases, DVDs, football boots), not generic
+     stock icons, so it still reads as this person's headline rather than
+     a lifted template effect. Same mask-and-slide as every word around
+     it, just a taller box since the images need more height than a line
+     of text to read clearly at this scale. */
+  .hero__word--icon {
+    vertical-align: middle;
+    margin-bottom: -0.1em;
+    margin-right: 0.14em;
+  }
+
+  /* Tightens the gap on the word right before an icon too (not just the
+     icon's own trailing gap above) - an icon slotted between two words
+     turns what used to be one gap into two, and reclaiming space on both
+     sides is what buys this image enough room to read clearly without
+     pushing its line onto a second row. */
+  .hero__word:has(+ .hero__word--icon) {
+    margin-right: 0.14em;
+  }
+
+  .hero__word-icon {
+    display: block;
+    height: 1.4em;
+    width: auto;
   }
 
   @keyframes hero-line-in {
