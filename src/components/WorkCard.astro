@@ -136,6 +136,34 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
       // than once (e.g. after the loop restarts).
       video.addEventListener('playing', () => media.classList.add('is-video-playing'), { once: true });
     });
+
+    // Browsers auto-pause an autoplaying video once it scrolls off-screen
+    // (readyState stays at "can play through" the whole time - it's not
+    // still loading, just paused as a resource optimization) and only
+    // resume it again once it's back in view, on their own timing. That
+    // resume isn't instant, which is exactly the frozen-poster beat a
+    // scroll into the work grid shows. Calling play() ourselves slightly
+    // before the card is actually visible (rather than waiting for the
+    // browser's own re-autoplay heuristic once it already is) gives
+    // playback a head start, so it's already running by the time the
+    // card is on screen.
+    const win2 = window as unknown as { __cardVideoResumeObserver?: IntersectionObserver };
+    win2.__cardVideoResumeObserver?.disconnect();
+
+    if ('IntersectionObserver' in window && videos.length > 0) {
+      const resumeObserver = new IntersectionObserver(
+        (observerEntries) => {
+          observerEntries.forEach((observerEntry) => {
+            if (observerEntry.isIntersecting) {
+              (observerEntry.target as HTMLVideoElement).play().catch(() => {});
+            }
+          });
+        },
+        { rootMargin: '200px 0px 200px 0px' },
+      );
+      videos.forEach((video) => resumeObserver.observe(video));
+      win2.__cardVideoResumeObserver = resumeObserver;
+    }
   });
 
   // The scoped work-card cursor: a small "View" dot that follows the
