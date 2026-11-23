@@ -126,7 +126,14 @@ const heroLines = heroLineWords.map((line) =>
                     ) : word.icon === 'football' ? (
                       <g filter="url(#hero-icon-shadow)">
                         <circle cx="24" cy="24" r="19" fill={`url(#hero-grad-${word.icon})`} />
-                        <path d="M24 14 L31 20 L28 29 L20 29 L17 20 Z" fill={word.gradientDark} opacity="0.65" />
+                        <g fill={word.gradientDark} opacity="0.65">
+                          <path d="M24 14 L31 20 L28 29 L20 29 L17 20 Z" />
+                          <path d="M22 7 L29 10 L26 14.5 L20.5 13.5 Z" />
+                          <path d="M8 18 L15 17 L17 22.5 L11.5 26 Z" />
+                          <path d="M13 38 L17.5 32 L23.5 33.5 L22 40 Z" />
+                          <path d="M35 38 L26 40 L24.5 33.5 L30.5 32 Z" />
+                          <path d="M40 18 L36.5 26 L31 22.5 L33 17 Z" />
+                        </g>
                       </g>
                     ) : word.icon === 'film' ? (
                       <g filter="url(#hero-icon-shadow)">
