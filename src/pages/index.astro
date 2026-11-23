@@ -17,11 +17,12 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 // separate per-line ones.
 //
 // The icons themselves echo that reference's glossy gradient-blob
-// language (not literal photos), but instead of staying decorative, each
-// one is shaped after a real project and links straight to its case
-// study, tinted in that project's own accentColor (so the gradient here
-// stays in sync automatically if that color ever changes on the work
-// entry itself).
+// language (not literal photos), and each is a real link to the project
+// it's shaped after - but tinted from the site's own accent (not each
+// project's own accentColor) so the hero stays inside the one-accent
+// discipline the rest of the page keeps. Shape alone tells the projects
+// apart; a slightly different tonal step per icon (lightest to darkest)
+// adds rhythm without introducing new hues.
 type HeroIconKind = 'bars' | 'chat' | 'phone' | 'loop';
 interface HeroIconWord {
   type: 'icon';
@@ -35,17 +36,24 @@ type HeroWord = { type: 'text'; text: string; variant?: 'em' | 'muted' } | HeroI
 
 const findWork = (slug: string) => work.find((entry) => entry.slug === slug)!;
 
+const heroAccentRgb = hexToRgb('#6b2737');
+const heroIconTones: Record<HeroIconKind, { light: number; dark: number }> = {
+  bars: { light: 62, dark: 60 },
+  chat: { light: 50, dark: 68 },
+  phone: { light: 38, dark: 76 },
+  loop: { light: 26, dark: 84 },
+};
+
 const heroIcon = (icon: HeroIconKind, slug: string): HeroIconWord => {
   const entry = findWork(slug);
-  const accent = entry.data.accentColor ?? '#6b2737';
-  const rgb = hexToRgb(accent);
+  const tone = heroIconTones[icon];
   return {
     type: 'icon',
     icon,
     slug,
     title: entry.data.title,
-    gradientLight: rgbToHex(mixRgb(rgb, [255, 255, 255], 55)),
-    gradientDark: rgbToHex(mixRgb(rgb, [0, 0, 0], 72)),
+    gradientLight: rgbToHex(mixRgb(heroAccentRgb, [255, 255, 255], tone.light)),
+    gradientDark: rgbToHex(mixRgb(heroAccentRgb, [0, 0, 0], tone.dark)),
   };
 };
 
