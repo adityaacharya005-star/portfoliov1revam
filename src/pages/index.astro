@@ -147,11 +147,11 @@ const heroLines = heroLineWords.map((line) =>
               ) : (
                 <span class="hero__word">
                   {word.variant === 'em' ? (
-                    <em data-scramble data-delay={word.delay}>{word.text}</em>
+                    <em class="hero__word-text" style={`animation-delay: ${word.delay}ms`}>{word.text}</em>
                   ) : word.variant === 'muted' ? (
-                    <em class="hero__muted-em" data-scramble data-delay={word.delay}>{word.text}</em>
+                    <em class="hero__muted-em hero__word-text" style={`animation-delay: ${word.delay}ms`}>{word.text}</em>
                   ) : (
-                    <span data-scramble data-delay={word.delay}>{word.text}</span>
+                    <span class="hero__word-text" style={`animation-delay: ${word.delay}ms`}>{word.text}</span>
                   )}
                 </span>
               ),
@@ -188,43 +188,6 @@ const heroLines = heroLineWords.map((line) =>
       video.removeAttribute('autoplay');
       video.pause();
       video.currentTime = 0;
-    }
-
-    // Matches gsap.com/text's own hero: each word is hidden until its
-    // turn, then cycles through random characters for a beat before
-    // settling on the real word - a scramble reveal, not a slide/fade.
-    // Server-rendered markup already holds the real words (so no-JS and
-    // reduced-motion both just show correct, static text); this only
-    // hides and scrambles them when motion is allowed.
-    if (!prefersReducedMotion) {
-      const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-      const randomChar = () => charset[Math.floor(Math.random() * charset.length)];
-      const scrambleDuration = 360;
-      const frameInterval = 45;
-
-      document.querySelectorAll<HTMLElement>('[data-scramble]').forEach((el) => {
-        const original = el.textContent ?? '';
-        const delay = Number(el.dataset.delay ?? 0);
-        el.classList.add('is-pending');
-
-        setTimeout(() => {
-          el.classList.remove('is-pending');
-          let elapsed = 0;
-          const tick = () => {
-            elapsed += frameInterval;
-            if (elapsed >= scrambleDuration) {
-              el.textContent = original;
-              return;
-            }
-            el.textContent = original
-              .split('')
-              .map((ch) => (/\s/.test(ch) ? ch : randomChar()))
-              .join('');
-            setTimeout(tick, frameInterval);
-          };
-          tick();
-        }, delay);
-      });
     }
   </script>
 
@@ -284,33 +247,38 @@ const heroLines = heroLineWords.map((line) =>
     margin-right: 0.26em;
   }
 
-  /* Hidden only once the script has confirmed motion is allowed (added
-     as a class, never baked into the default style) - so no-JS and
-     reduced-motion visitors always get the plain, correct, already-
-     visible sentence underneath. */
-  [data-scramble].is-pending {
+  /* A calm fade-up rather than the scramble this replaced - each word
+     settles in on its own beat, but smoothly, with the same decelerating
+     entrance ease already reserved site-wide for one-off moments like
+     this (tokens.css's --ease-entrance). */
+  .hero__word-text {
+    display: inline-block;
     opacity: 0;
+    transform: translateY(0.35em);
+    animation: hero-word-in 600ms var(--ease-entrance) forwards;
+  }
+
+  @keyframes hero-word-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   /* The one spot the hero borrows the gsap.com/text reference's trick of
      splicing small glossy-gradient shapes into the sentence - except
      each one is a real link to the project it's tinted from (its own
-     accentColor), not a decorative glyph. */
+     accentColor), not a decorative glyph. Same fade-up as the words
+     around it, so the whole line reads as one wave rather than two
+     different effects running side by side. */
   .hero__word--icon {
     position: relative;
     top: -0.1em;
     vertical-align: middle;
     margin-right: 0.14em;
     opacity: 0;
-    transform: scale(0.4);
-    animation: hero-icon-in 420ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-  }
-
-  @keyframes hero-icon-in {
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+    transform: translateY(0.35em);
+    animation: hero-word-in 600ms var(--ease-entrance) forwards;
   }
 
   /* Tightens the gap on the word right before an icon too (not just the
@@ -358,6 +326,7 @@ const heroLines = heroLineWords.map((line) =>
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .hero__word-text,
     .hero__word--icon {
       animation: none;
       opacity: 1;
