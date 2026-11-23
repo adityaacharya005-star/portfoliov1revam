@@ -86,7 +86,7 @@ const heroLineWords: HeroWord[][] = [
 
 let heroWordIndex = 0;
 const heroLines = heroLineWords.map((line) =>
-  line.map((word) => ({ ...word, delay: 60 + heroWordIndex++ * 35 })),
+  line.map((word) => ({ ...word, delay: 100 + heroWordIndex++ * 60 })),
 );
 ---
 
@@ -246,29 +246,35 @@ const heroLines = heroLineWords.map((line) =>
     margin-right: 0.26em;
   }
 
-  /* A calm fade-up rather than the scramble this replaced - each word
-     settles in on its own beat, but smoothly, with the same decelerating
-     entrance ease already reserved site-wide for one-off moments like
-     this (tokens.css's --ease-entrance). */
+  /* A slow focus-pull rather than a rise - each word starts slightly
+     enlarged and soft, then sharpens and settles into place, like a
+     camera finding focus. No vertical motion at all, so it reads as a
+     distinctly different gesture from the usual fade-up-on-scroll,
+     and a longer duration with a wider per-word stagger (tokens.css's
+     --ease-entrance, the same decelerating curve reserved site-wide for
+     one-off moments like this) makes the whole sentence settle in
+     slowly and deliberately instead of snapping into place. */
   .hero__word-text {
     display: inline-block;
     opacity: 0;
-    transform: translateY(0.35em);
-    animation: hero-word-in 600ms var(--ease-entrance) forwards;
+    filter: blur(10px);
+    transform: scale(1.14);
+    animation: hero-word-in 950ms var(--ease-entrance) forwards;
   }
 
   @keyframes hero-word-in {
     to {
       opacity: 1;
-      transform: translateY(0);
+      filter: blur(0);
+      transform: scale(1);
     }
   }
 
   /* The one spot the hero borrows the gsap.com/text reference's trick of
      splicing small glossy-gradient shapes into the sentence - purely
      decorative (see the note above the data), so no hover state or
-     affordance to imply otherwise. Same fade-up as the words around it,
-     so the whole line reads as one wave rather than two different
+     affordance to imply otherwise. Same focus-pull as the words around
+     it, so the whole line reads as one wave rather than two different
      effects running side by side. */
   .hero__word--icon {
     position: relative;
@@ -276,8 +282,9 @@ const heroLines = heroLineWords.map((line) =>
     vertical-align: middle;
     margin-right: 0.14em;
     opacity: 0;
-    transform: translateY(0.35em);
-    animation: hero-word-in 600ms var(--ease-entrance) forwards;
+    filter: blur(10px);
+    transform: scale(1.14);
+    animation: hero-word-in 950ms var(--ease-entrance) forwards;
   }
 
   /* Tightens the gap on the word right before an icon too (not just the
@@ -300,6 +307,7 @@ const heroLines = heroLineWords.map((line) =>
     .hero__word--icon {
       animation: none;
       opacity: 1;
+      filter: none;
       transform: none;
     }
   }
