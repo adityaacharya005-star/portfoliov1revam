@@ -68,7 +68,14 @@ const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
 
 <style>
   .hero {
-    min-height: calc(100svh - 150px);
+    /* Capped by width (56vw), not just height: on a landscape viewport
+       the 100svh term wins and the hero reads as a near-full-viewport
+       splash as before. On a tall/portrait one (tablet portrait, a
+       narrow laptop window) 100svh alone would blow this row out far
+       past the actual text+video content height, leaving a dead gap
+       before Selected Works - the 56vw cap keeps the row's height tied
+       to its own width instead of the viewport's height. */
+    min-height: min(calc(100svh - 150px), 56vw);
     margin-top: var(--space-8);
     display: grid;
     grid-template-columns: 0.85fr 1fr;
