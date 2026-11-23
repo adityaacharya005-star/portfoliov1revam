@@ -5,49 +5,44 @@ import Base from '../layouts/Base.astro';
 import WorkGrid from '../components/WorkGrid.astro';
 import Contact from '../components/Contact.astro';
 import heroPosterSrc from '../assets/images/hero-poster.png';
-import heroIconWalkmanSrc from '../assets/images/hero-icon-walkman.png';
-import heroIconDvdsSrc from '../assets/images/hero-icon-dvds.png';
-import heroIconCleatsSrc from '../assets/images/hero-icon-cleats.png';
-import heroIconGamesSrc from '../assets/images/hero-icon-games.png';
 
 const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const heroPoster = await getImage({ src: heroPosterSrc, width: 1280 });
-
-// A handful of Aditya's own things (not stock icons) standing in as the
-// decorative glyphs between words.
-const heroIcons = {
-  walkman: await getImage({ src: heroIconWalkmanSrc, width: 180 }),
-  dvds: await getImage({ src: heroIconDvdsSrc, width: 180 }),
-  cleats: await getImage({ src: heroIconCleatsSrc, width: 180 }),
-  games: await getImage({ src: heroIconGamesSrc, width: 180 }),
-};
 
 // Word-by-word reveal matching gsap.com/text's own hero: each word
 // scrambles through random characters before settling on the real text,
 // each icon scales/fades in - both on the same staggered timeline so the
 // whole sentence cascades in as one continuous wave rather than four
 // separate per-line ones.
+//
+// The icons themselves echo that reference's glossy gradient-blob
+// language (not literal photos) but in the site's own maroon/gold
+// palette, and shaped around the work itself rather than staying purely
+// abstract: a spark and a diamond (direct nods to gsap.com/text's own
+// asterisk and diamond), a cursor (interaction design) and a browser
+// frame (product/UI).
+type HeroIconKind = 'spark' | 'diamond' | 'cursor' | 'frame';
 type HeroWord =
   | { type: 'text'; text: string; variant?: 'em' | 'muted' }
-  | { type: 'icon'; icon: keyof typeof heroIcons; alt: string };
+  | { type: 'icon'; icon: HeroIconKind };
 
 const heroLineWords: HeroWord[][] = [
   [
     { type: 'text', text: "Hi," },
     { type: 'text', text: "it's" },
-    { type: 'icon', icon: 'walkman', alt: '' },
+    { type: 'icon', icon: 'spark' },
     { type: 'text', text: 'Aditya', variant: 'em' },
   ],
   [
     { type: 'text', text: 'an' },
     { type: 'text', text: 'experience' },
-    { type: 'icon', icon: 'dvds', alt: '' },
+    { type: 'icon', icon: 'cursor' },
     { type: 'text', text: 'designer' },
   ],
   [
     { type: 'text', text: 'with' },
     { type: 'text', text: 'roots' },
-    { type: 'icon', icon: 'cleats', alt: '' },
+    { type: 'icon', icon: 'diamond' },
     { type: 'text', text: 'in' },
     { type: 'text', text: 'product' },
   ],
@@ -56,7 +51,7 @@ const heroLineWords: HeroWord[][] = [
     { type: 'text', text: 'UI/UX' },
     { type: 'text', text: 'who', variant: 'muted' },
     { type: 'text', text: 'builds', variant: 'muted' },
-    { type: 'icon', icon: 'games', alt: '' },
+    { type: 'icon', icon: 'frame' },
     { type: 'text', text: 'for', variant: 'muted' },
     { type: 'text', text: 'impact.', variant: 'muted' },
   ],
@@ -71,21 +66,60 @@ const heroLines = heroLineWords.map((line) =>
 <Base title="Home">
   <section class="hero wrapper">
     <div class="hero__text">
+      <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+        <defs>
+          <filter id="hero-icon-shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#2a1a14" flood-opacity="0.22" />
+          </filter>
+          <linearGradient id="hero-grad-gold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f8e3b3" />
+            <stop offset="1" stop-color="#c9862f" />
+          </linearGradient>
+          <linearGradient id="hero-grad-maroon" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#b9697f" />
+            <stop offset="1" stop-color="#5a1f2d" />
+          </linearGradient>
+        </defs>
+      </svg>
       <h1 class="hero__headline">
         {heroLines.map((line) => (
           <span class="hero__line">
             {line.map((word) =>
               word.type === 'icon' ? (
                 <span class="hero__word hero__word--icon">
-                  <img
-                    src={heroIcons[word.icon].src}
-                    width={heroIcons[word.icon].attributes.width}
-                    height={heroIcons[word.icon].attributes.height}
-                    alt={word.alt}
-                    aria-hidden="true"
-                    class="hero__word-icon"
-                    style={`animation-delay: ${word.delay}ms`}
-                  />
+                  {word.icon === 'spark' ? (
+                    <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true" style={`animation-delay: ${word.delay}ms`}>
+                      <g filter="url(#hero-icon-shadow)" fill="url(#hero-grad-gold)">
+                        <rect x="20" y="2" width="8" height="44" rx="4" />
+                        <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(45 24 24)" />
+                        <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(90 24 24)" />
+                        <rect x="20" y="2" width="8" height="44" rx="4" transform="rotate(135 24 24)" />
+                      </g>
+                    </svg>
+                  ) : word.icon === 'diamond' ? (
+                    <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true" style={`animation-delay: ${word.delay}ms`}>
+                      <rect x="9" y="9" width="30" height="30" rx="7" transform="rotate(45 24 24)" fill="url(#hero-grad-maroon)" filter="url(#hero-icon-shadow)" />
+                    </svg>
+                  ) : word.icon === 'cursor' ? (
+                    <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true" style={`animation-delay: ${word.delay}ms`}>
+                      <path
+                        d="M14 6 L14 38 L21 31 L27 42 L33 39 L27 28 L37 28 Z"
+                        fill="url(#hero-grad-gold)"
+                        stroke="url(#hero-grad-gold)"
+                        stroke-width="3"
+                        stroke-linejoin="round"
+                        stroke-linecap="round"
+                        filter="url(#hero-icon-shadow)"
+                      />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 48 48" class="hero__word-icon" aria-hidden="true" style={`animation-delay: ${word.delay}ms`}>
+                      <g filter="url(#hero-icon-shadow)">
+                        <rect x="5" y="7" width="38" height="34" rx="9" fill="url(#hero-grad-maroon)" />
+                        <rect x="5" y="7" width="38" height="9" rx="9" fill="#fff" opacity="0.22" />
+                      </g>
+                    </svg>
+                  )}
                 </span>
               ) : (
                 <span class="hero__word">
@@ -236,9 +270,9 @@ const heroLines = heroLineWords.map((line) =>
   }
 
   /* The one spot the hero borrows the gsap.com/text reference's trick of
-     splicing small images into the sentence - except these are Aditya's
-     own things (a walkman, game cases, DVDs, football boots), not generic
-     stock icons. */
+     splicing small glossy-gradient shapes into the sentence - recolored
+     to the site's own maroon/gold palette and tied to the work itself
+     (a cursor, a browser frame) rather than staying purely decorative. */
   .hero__word--icon {
     vertical-align: middle;
     margin-bottom: -0.1em;
