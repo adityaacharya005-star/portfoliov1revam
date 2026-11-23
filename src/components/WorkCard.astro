@@ -246,6 +246,32 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
       });
     });
 
+    // elementFromPoint alone treats the grid's own gutters (the gap
+    // between rows/columns) as "no card here", so scrolling a card past
+    // the pointer at any real speed means the badge hides for the brief
+    // moment the pointer is crossing that gutter, then reappears on the
+    // next card - a flicker, not a bug in the handoff itself. Expanding
+    // each card's hit test by half its own grid gap bridges that gutter
+    // so the badge hands off cleanly instead of blinking out between
+    // every row.
+    const rootStyles = getComputedStyle(document.documentElement);
+    const gapToleranceX = (parseFloat(rootStyles.getPropertyValue('--grid-gap-column')) || 0) / 2;
+    const gapToleranceY = (parseFloat(rootStyles.getPropertyValue('--grid-gap-row')) || 0) / 2;
+    const findCardAt = (x: number, y: number) => {
+      for (const entry of entries) {
+        const rect = entry.card.getBoundingClientRect();
+        if (
+          x >= rect.left - gapToleranceX &&
+          x <= rect.right + gapToleranceX &&
+          y >= rect.top - gapToleranceY &&
+          y <= rect.bottom + gapToleranceY
+        ) {
+          return entry.card;
+        }
+      }
+      return null;
+    };
+
     let scrollTicking = false;
     const onScroll = () => {
       if (scrollTicking) return;
@@ -253,8 +279,7 @@ const tagText = accentColor ? darkenUntilContrast(accentColor, tagHoverBg, 4.5) 
       requestAnimationFrame(() => {
         scrollTicking = false;
         if (lastPointerX < 0) return;
-        const el = document.elementFromPoint(lastPointerX, lastPointerY);
-        const cardUnderPointer = el?.closest<HTMLAnchorElement>('.work-card') ?? null;
+        const cardUnderPointer = findCardAt(lastPointerX, lastPointerY);
         if (cardUnderPointer === activeCard) return;
 
         const activeEntry = entries.find((entry) => entry.card === activeCard);
